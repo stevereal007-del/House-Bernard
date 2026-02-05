@@ -337,6 +337,7 @@ By issuing $HOUSEBERNARD, the Governor commits:
 
 This is not a legal contract. It is a statement of mutual expectations.
 
+On Research Timelines: Legitimate research often produces no results for extended periods. House Bernard labs may operate for years before generating revenue or breakthroughs. This is not failure — it is the nature of research. Tokens fund the process, not guaranteed outcomes.
 ---
 
 *Last Updated: February 2025*
