@@ -5,6 +5,35 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 
+CANONICAL_CLASSES = {
+    "OK",
+    "FORMAT_INVALID",
+    "MANIFEST_INVALID",
+    "SIGNATURE_INVALID",
+    "DENYLISTED",
+    "POLICY_VIOLATION",
+    "ISOLATION_VIOLATION",
+    "PROBE_DETECTED",
+    "RESOURCE_EXHAUSTION",
+    "NONTERMINATION",
+    "INTERNAL_ERROR",
+    "DETERMINISM_FAIL",
+    "INVARIANT_FAIL",
+    "HARNESS_FAIL_T1",
+    "HARNESS_FAIL_T2",
+    "HARNESS_FAIL_T3",
+    "HARNESS_FAIL_T4",
+    "HARNESS_FAIL_T5",
+    "HARNESS_FAIL_T6",
+    "INTENT_FAIL_I1",
+    "INTENT_FAIL_I2",
+    "INTENT_FAIL_I3",
+    "INTENT_FAIL_I4",
+    "INTENT_FAIL_I5",
+    "INTENT_FAIL_I6",
+}
+
+
 def write_outcome(
     results_dir: Path,
     artifact_id: str,
@@ -20,6 +49,12 @@ def write_outcome(
     Write canonical outcome.json for an artifact.
     Public-safe fields only unless details is explicitly provided and kept private.
     """
+
+    # ---- Enforce canonical class vocabulary ----
+    unknown = [c for c in classes if c not in CANONICAL_CLASSES]
+    if unknown:
+        raise ValueError(f"Unknown HB class(es): {unknown}")
+
     root = results_dir / artifact_id.replace("sha256:", "")
     root.mkdir(parents=True, exist_ok=True)
 
