@@ -1,8 +1,8 @@
-Here is the raw copy
+
 HOUSE BERNARD: THE IMPERIAL LEDGER
 MOTTO: AD ASTRA PER ASPERA
 I. THE MISSION
-To compound Clarity, Capital, and Capability in a strict dependency chain. We solve the physics of context rot to build an unstoppable capital engine.
+To compound Clarity, Capital, and Capability in a strict dependency chain. We solvep the physics of context rot to build an unstoppable capital engine.
 II. THE PRIME DIRECTIVES
 	1.	LAW OF ENTROPY: Context rot is the enemy. Trust only the Card (SAIF v1.1).
 	2.	LAW OF DENSITY: No prose. No helpfulness theater. Truth is measured in density.
