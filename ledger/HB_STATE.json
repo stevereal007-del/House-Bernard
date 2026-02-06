@@ -7,7 +7,8 @@
     "saif": "v1.1",
     "splicer": "v0.2",
     "executioner": "v1.0",
-    "airlock": "v1.0"
+    "airlock": "v1.0",
+    "openclaw_agent": "v0.1"
   },
 
   "labs": {
@@ -36,6 +37,7 @@
     "executioner_dir": "executioner",
     "splicer_dir": "splicer",
     "ledger_dir": "ledger",
+    "openclaw_dir": "openclaw",
     "genes_dir": "genes",
     "results_dir": "results",
     "inbox_dir": "inbox",
@@ -54,7 +56,7 @@
   },
 
   "notes": {
-    "last_update_reason": "Initial HB_STATE bootstrap",
+    "last_update_reason": "Added openclaw agent spec v0.1",
     "last_update_commit": null
   }
 }
