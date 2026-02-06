@@ -14,6 +14,7 @@ To compound **Clarity**, **Capital**, and **Capability** in a strict dependency 
 * **/executioner**: The selection furnace. T1–T6 adversarial torture testing.
 * **/splicer**: Genetic extraction via AST analysis.
 * **/ledger**: The Master Genome. Immutable system logic.
+* **/openclaw**: Agent specification, deployment configs, and behavioral directives.
 
 ## IV. GOVERNANCE
 House Bernard is a sovereign "Dark Lab."
