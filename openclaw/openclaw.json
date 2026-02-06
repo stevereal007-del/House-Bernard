@@ -1,0 +1,105 @@
+{
+  "_comment": "House Bernard OpenClaw Reference Config — Beelink EQ13",
+  "_version": "0.1",
+  "_spec": "See AGENT_SPEC.md for the law governing this config",
+
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "ollama/mistral:7b"
+      },
+      "models": {
+        "ollama/mistral:7b": {
+          "alias": "worker",
+          "temperature": 0.7,
+          "max_tokens": 4096
+        },
+        "ollama/llama3:8b": {
+          "alias": "master",
+          "temperature": 0.3,
+          "max_tokens": 8192
+        },
+        "ollama/llama3.2:3b": {
+          "alias": "watcher",
+          "temperature": 0.1,
+          "max_tokens": 1024
+        },
+        "anthropic/claude-sonnet-4-5": {
+          "alias": "oracle",
+          "temperature": 0.2,
+          "max_tokens": 16384
+        }
+      },
+      "compaction": {
+        "mode": "safeguard",
+        "triggerTokens": 50000,
+        "targetTokens": 8000
+      }
+    }
+  },
+
+  "heartbeat": {
+    "every": "30m",
+    "model": "ollama/llama3.2:3b",
+    "session": "helios_continuity",
+    "target": "local",
+    "prompt": "Department of Continuity check: context size, rot indicators, alerts"
+  },
+
+  "gateway": {
+    "bind": "127.0.0.1",
+    "port": 18789,
+    "cors": false
+  },
+
+  "mdns": {
+    "enabled": false
+  },
+
+  "channels": {
+    "dm_policy": "allowlist",
+    "allowed_users": ["steve_bernard"]
+  },
+
+  "layers": {
+    "commons": {
+      "workspace": "commons",
+      "persistence": false,
+      "model": "worker",
+      "rot_level": "high"
+    },
+    "yard": {
+      "workspace": "yard",
+      "persistence": "7d_rolling",
+      "model": "worker",
+      "rot_level": "moderate"
+    },
+    "workshop": {
+      "workspace": "workshop",
+      "persistence": "task_scoped",
+      "model": "worker",
+      "fallback": "master",
+      "rot_level": "low"
+    },
+    "sanctum": {
+      "workspace": "sanctum",
+      "persistence": "append_only",
+      "model": "master",
+      "access": "tailscale_only",
+      "rot_level": "zero"
+    }
+  },
+
+  "covenant": {
+    "enforce": true,
+    "kernel_file": "sanctum/COVENANT.md",
+    "veto_authority": "department_of_continuity"
+  },
+
+  "budget": {
+    "daily_limit_usd": 5.00,
+    "daily_warning_usd": 3.00,
+    "monthly_limit_usd": 50.00,
+    "monthly_warning_usd": 37.50
+  }
+}
