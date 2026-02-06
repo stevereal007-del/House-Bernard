@@ -1,33 +1,30 @@
-# HOUSE BERNARD: THE IMPERIAL LEDGER
+# Ledger - Master Genome
 
-> **MOTTO: AD ASTRA PER ASPERA**
+Stores validated memory genes from Lab A survivors.
 
-## I. THE MISSION
+## Structure
 
-To compound **Clarity**, **Capital**, and **Capability** in a strict dependency chain. We solve the physics of context rot to build an unstoppable capital engine.
+- `GENE_REGISTRY.md` - Master list of all genes
+- `genes/` - Individual gene documentation (Phase 1+)
 
-## II. THE PRIME DIRECTIVES
+## Phase 0
 
-1. **LAW OF ENTROPY:** Context rot is the enemy. Trust only the Card (SAIF v1.1).
-1. **LAW OF DENSITY:** No prose. No helpfulness theater. Truth is measured in density.
-1. **LAW OF THE LATTICE:** Everything is connected. A signal is a mutation; a mutation is an evolution.
+Manual gene documentation in GENE_REGISTRY.md
 
-## III. THE SOVEREIGN DOMAINS
+## Adding a Gene
 
-- **/airlock**: Intake monitoring and priority queuing.
-- **/executioner**: The selection furnace. T1–T6 adversarial torture testing.
-- **/splicer**: Genetic extraction via AST analysis.
-- **/ledger**: The Master Genome. Immutable system logic.
-- **/openclaw**: Agent specification, deployment configs, and behavioral directives.
+1. Survivor passes T0-T4
+2. Splicer analyzes pattern
+3. Gene documented in registry
+4. Marked as "Discovered"
+5. Integration planning
+6. Deployment to production
+7. Marked as "Integrated"
 
-## IV. GOVERNANCE
+## Gene Lifecycle
 
-House Bernard is a sovereign “Dark Lab.”
+DISCOVERED → REVIEWED → APPROVED → INTEGRATED → VERIFIED
 
-- We seek **Invariants**, not consensus.
-- We publish **Results**, never **Genetics**.
-- We are a **Filter**, not a community.
+## First Gene
 
------
-
-[STATUS: GREEN | TURN: 48 | SIGNED: THE GOVERNOR]
+Awaiting first Phase 0 survivor.
