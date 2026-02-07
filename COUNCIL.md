@@ -13,7 +13,7 @@ The Council is the validation layer of House Bernard. Council members review res
 ```
 ┌─────────────────────────────────────────────┐
 │              THE GOVERNOR                   │
-│         (Steve Bernard - Human)             │
+│         (HeliosBlade - Governor)             │
 │                                             │
 │  • Final authority on Treasury              │
 │  • Appoints and removes Council members     │
@@ -49,7 +49,7 @@ The Council is the validation layer of House Bernard. Council members review res
 
 ## The Governor
 
-**Current Governor:** Steve Bernard  
+**Current Governor:** HeliosBlade  
 **Wallet Address:** TBD  
 **Status:** Active
 
@@ -284,7 +284,7 @@ Banned contributors may not earn bounties or hold tokens in official capacity.
 
 | Role | Member | Wallet | Appointed | Status |
 |------|--------|--------|-----------|--------|
-| Governor | Steve Bernard | TBD | Genesis | Active |
+| Governor | HeliosBlade | TBD | Genesis | Active |
 | — | — | — | — | Vacant |
 | — | — | — | — | Vacant |
 
