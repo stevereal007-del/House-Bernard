@@ -17,19 +17,40 @@ class AirlockHandler(FileSystemEventHandler):
         self.sandbox = Path.home() / '.openclaw/sandbox'
         self.sandbox.mkdir(parents=True, exist_ok=True)
     
+    def _wait_for_stable(self, path: Path, timeout: float = 10.0, interval: float = 1.0) -> bool:
+        """Wait until file size is stable (write complete). Returns False on timeout."""
+        prev_size = -1
+        elapsed = 0.0
+        while elapsed < timeout:
+            try:
+                curr_size = path.stat().st_size
+            except OSError:
+                return False
+            if curr_size == prev_size and curr_size > 0:
+                return True
+            prev_size = curr_size
+            time.sleep(interval)
+            elapsed += interval
+        return False
+
     def on_created(self, event):
         if event.is_directory:
             return
-        
+
         artifact = Path(event.src_path)
-        
+
         # Only process .zip files
         if artifact.suffix != '.zip':
             print(f'[AIRLOCK] Ignoring non-zip: {artifact.name}')
             return
-        
+
         print(f'[AIRLOCK] New artifact detected: {artifact.name}')
-        
+
+        # Wait for file write to complete before moving
+        if not self._wait_for_stable(artifact):
+            print(f'[AIRLOCK] File not stable after timeout, skipping: {artifact.name}')
+            return
+
         # Move to sandbox
         dest = self.sandbox / artifact.name
         try:
@@ -66,11 +87,11 @@ def main():
     import sys
     
     # Path to executioner
-    executioner_path = Path.home() / 'house-bernard/executioner/executioner_production.py'
-    
+    executioner_path = Path.home() / 'House-Bernard/executioner/executioner_production.py'
+
     if not executioner_path.exists():
         print(f'Error: Executioner not found at {executioner_path}')
-        print('Expected location: ~/house-bernard/executioner/executioner_production.py')
+        print('Expected location: ~/House-Bernard/executioner/executioner_production.py')
         sys.exit(1)
     
     # Inbox directory
