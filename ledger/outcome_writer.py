@@ -55,7 +55,12 @@ def write_outcome(
     if unknown:
         raise ValueError(f"Unknown HB class(es): {unknown}")
 
-    root = results_dir / artifact_id.replace("sha256:", "")
+    # ---- Sanitize artifact_id against path traversal ----
+    safe_id = artifact_id.replace("sha256:", "")
+    if "/" in safe_id or "\\" in safe_id or ".." in safe_id:
+        raise ValueError(f"Invalid artifact_id (path separators not allowed): {artifact_id!r}")
+
+    root = results_dir / safe_id
     root.mkdir(parents=True, exist_ok=True)
 
     outcome = {

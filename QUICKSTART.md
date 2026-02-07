@@ -51,16 +51,18 @@ python3 airlock_monitor.py
 
 Leave this running in one terminal.
 
-### 6. Create Test Artifact
+### 6. Submit a SAIF Artifact
 
-In another terminal:
+In another terminal, create a valid SAIF artifact (a `.zip` containing
+`manifest.json`, `schema.json`, `mutation.py`, `SELFTEST.py`, and `README.md`
+per the SAIF v1.1 contract), then drop it in the inbox:
 ```bash
-# Download example artifact from repo
-# OR create your own SAIF artifact
-
-# Move to inbox
-cp test_artifact.zip ~/.openclaw/inbox/
+# Create your SAIF artifact as my_artifact.zip, then:
+cp my_artifact.zip ~/.openclaw/inbox/
 ```
+
+> **Note:** No pre-built test artifact is shipped with the repo.
+> See `executioner/README.md` for the required SAIF v1.1 file structure.
 
 ### 7. Watch the Magic
 

@@ -73,16 +73,28 @@ class ExtractResult:
     gene_module_text: str
 
 
-def _strip_function_docstring_in_ast(fn: ast.FunctionDef) -> ast.FunctionDef:
+def _strip_docstring_from_source(fn_src: str, fn: ast.FunctionDef) -> str:
     """
-    Remove function docstring if present as first statement.
-    Done on a copied node reference (we mutate the node, but we never execute it).
+    Remove function docstring from extracted source text using AST line info.
+    Works on the raw source segment so it preserves original formatting.
     """
-    if fn.body and isinstance(fn.body[0], ast.Expr):
-        v = fn.body[0].value
-        if isinstance(v, ast.Constant) and isinstance(v.value, str):
-            fn.body = fn.body[1:]
-    return fn
+    if not fn.body or not isinstance(fn.body[0], ast.Expr):
+        return fn_src
+    v = fn.body[0].value
+    if not (isinstance(v, ast.Constant) and isinstance(v.value, str)):
+        return fn_src
+
+    doc_start = v.lineno  # 1-indexed, relative to file
+    doc_end = v.end_lineno
+    fn_start = fn.lineno
+
+    lines = fn_src.splitlines(True)
+    # Convert file-relative line numbers to segment-relative (0-indexed)
+    rel_start = doc_start - fn_start
+    rel_end = doc_end - fn_start + 1
+
+    stripped = lines[:rel_start] + lines[rel_end:]
+    return "".join(stripped)
 
 
 def _extract_src_segment(src: str, node: ast.AST) -> str:
@@ -151,11 +163,8 @@ def extract_genes_from_source(src: str, allow: List[str]) -> ExtractResult:
             missing_names.append(name)
             continue
 
-        # Remove docstring in AST (doesn't change offsets unless we regenerate;
-        # we only use AST for docstring detection, but we still extract raw source range.)
-        _strip_function_docstring_in_ast(fn)
-
         fn_src = _extract_src_segment(src, fn)
+        fn_src = _strip_docstring_from_source(fn_src, fn)
         fn_src = _rstrip_lines(_normalize_newlines(fn_src))
 
         extracted_names.append(name)

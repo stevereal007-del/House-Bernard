@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Results - OpenClaw</title>
+<style>
+body { font-family: monospace; background: #111; color: #ccc; margin: 2em; }
+h1 { color: #f90; }
+table { border-collapse: collapse; margin-top: 1em; }
+td, th { border: 1px solid #444; padding: 0.4em 1em; text-align: left; }
+th { background: #222; color: #f90; }
+a { color: #6cf; }
+nav { margin-bottom: 1em; }
+nav a { margin-right: 1em; }
+</style>
+</head>
+<body>
+<h1>Execution Results</h1>
+<nav>
+  <a href="index.html">Dashboard</a>
+  <a href="results.html">Results</a>
+  <a href="genes.html">Genes</a>
+  <a href="denylist.html">Denylist</a>
+  <a href="about.html">About</a>
+</nav>
+<table>
+<tr><th>Artifact</th><th>Stage</th><th>Result</th><th>Classes</th><th>Fingerprint</th></tr>
+{{rows}}
+</table>
+</body>
+</html>

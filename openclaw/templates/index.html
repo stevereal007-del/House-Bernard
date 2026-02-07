@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{project}} - OpenClaw</title>
+<style>
+body { font-family: monospace; background: #111; color: #ccc; margin: 2em; }
+h1 { color: #f90; }
+table { border-collapse: collapse; margin-top: 1em; }
+td, th { border: 1px solid #444; padding: 0.4em 1em; text-align: left; }
+th { background: #222; color: #f90; }
+a { color: #6cf; }
+nav { margin-bottom: 1em; }
+nav a { margin-right: 1em; }
+</style>
+</head>
+<body>
+<h1>{{project}}</h1>
+<nav>
+  <a href="index.html">Dashboard</a>
+  <a href="results.html">Results</a>
+  <a href="genes.html">Genes</a>
+  <a href="denylist.html">Denylist</a>
+  <a href="about.html">About</a>
+</nav>
+<h2>Lab A Dashboard</h2>
+<table>
+<tr><th>Status</th><th>Count</th></tr>
+<tr><td>Survived</td><td>{{survived}}</td></tr>
+<tr><td>Culled</td><td>{{culled}}</td></tr>
+<tr><td>Blacklisted</td><td>{{blacklisted}}</td></tr>
+<tr><td>Queued</td><td>{{queued}}</td></tr>
+<tr><td>Quarantined</td><td>{{quarantined}}</td></tr>
+<tr><td>Rejected</td><td>{{rejected}}</td></tr>
+</table>
+</body>
+</html>
