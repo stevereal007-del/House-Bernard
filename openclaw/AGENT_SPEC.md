@@ -624,5 +624,5 @@ Material changes require updating HB_STATE.json.
 
 *Last Updated: February 2026*
 *Document Version: 0.1*
-*Governor: Steve Bernard*
+*Governor: HeliosBlade*
 *House Bernard — Research Without Permission*

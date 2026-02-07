@@ -1,26 +1,49 @@
 {
-  "hb_state_version": "1.0",
+  "hb_state_version": "1.1",
   "project": "House Bernard",
   "public_face": "House Bernard",
+  "governor_alias": "HeliosBlade",
 
   "protocols": {
     "saif": "v1.1",
     "splicer": "v0.2",
     "executioner": "v1.0",
     "airlock": "v1.0",
-    "openclaw_agent": "v0.1"
+    "openclaw_agent": "v0.1",
+    "security_scanner": "v1.0",
+    "intake_server": "v1.0"
   },
 
   "labs": {
     "lab_a_memory": {
       "status": "ACTIVE",
-      "harness_set": "T1-T6",
+      "harness_set": "T0-T4",
       "harness_hash": null
     },
     "lab_b_intent_integrity": {
-      "status": "PLANNED",
+      "status": "ACTIVATING",
       "harness_set": "I1-I6",
-      "harness_hash": null
+      "harness_hash": null,
+      "operational": ["I1"],
+      "pending": ["I2", "I3", "I4", "I5", "I6"]
+    }
+  },
+
+  "infrastructure": {
+    "layer_1_vps": {
+      "provider": "1984 Hosting",
+      "location": "Iceland",
+      "role": "Public shield wall / intake server",
+      "status": "PLANNED"
+    },
+    "layer_2_beelink": {
+      "hardware": "Beelink EQ13 (N150, 16GB)",
+      "role": "Processing / Labs / Local models",
+      "status": "ACTIVE"
+    },
+    "layer_3_github": {
+      "role": "Archive / version control / dead state",
+      "status": "ACTIVE"
     }
   },
 
@@ -38,6 +61,9 @@
     "splicer_dir": "splicer",
     "ledger_dir": "ledger",
     "openclaw_dir": "openclaw",
+    "lab_b_dir": "lab_b",
+    "security_dir": "security",
+    "infrastructure_dir": "infrastructure",
     "genes_dir": "genes",
     "results_dir": "results",
     "inbox_dir": "inbox",
@@ -47,7 +73,7 @@
   },
 
   "governance": {
-    "release_manager": "Father",
+    "release_manager": "HeliosBlade",
     "single_canonical_projects_folder": true,
     "filesystem_is_the_law": true,
     "publish_genetics": false,
@@ -56,7 +82,7 @@
   },
 
   "notes": {
-    "last_update_reason": "Added openclaw agent spec v0.1",
+    "last_update_reason": "HeliosBlade package: anonymization, Lab B activation, security scanner, VPS infrastructure",
     "last_update_commit": null
   }
 }

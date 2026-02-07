@@ -1,0 +1,72 @@
+{
+  "_comment": "House Bernard — Lab A Seccomp Profile v1.0. Memory survivability testing. Standard lockdown: no network, no dangerous syscalls, filesystem restricted to /work.",
+  "defaultAction": "SCMP_ACT_ERRNO",
+  "defaultErrnoRet": 1,
+  "architectures": [
+    "SCMP_ARCH_X86_64",
+    "SCMP_ARCH_AARCH64"
+  ],
+  "syscalls": [
+    {
+      "names": [
+        "read", "write", "close", "fstat", "lseek",
+        "mmap", "mprotect", "munmap", "brk",
+        "rt_sigaction", "rt_sigprocmask", "rt_sigreturn",
+        "ioctl", "access", "pipe", "select", "poll",
+        "dup", "dup2",
+        "nanosleep", "clock_nanosleep", "clock_gettime", "clock_getres",
+        "gettimeofday", "getpid", "getppid", "getuid", "getgid",
+        "geteuid", "getegid", "getgroups",
+        "openat", "newfstatat", "readlinkat",
+        "getrandom",
+        "futex", "set_robust_list", "get_robust_list",
+        "exit", "exit_group",
+        "arch_prctl", "set_tid_address",
+        "pread64", "pwrite64",
+        "readv", "writev",
+        "sched_getaffinity", "sched_yield",
+        "madvise",
+        "fcntl",
+        "statx",
+        "rseq",
+        "prlimit64"
+      ],
+      "action": "SCMP_ACT_ALLOW"
+    },
+    {
+      "_comment": "Block all network syscalls",
+      "names": [
+        "socket", "connect", "accept", "sendto", "recvfrom",
+        "sendmsg", "recvmsg", "bind", "listen", "accept4",
+        "socketpair", "setsockopt", "getsockopt",
+        "getpeername", "getsockname"
+      ],
+      "action": "SCMP_ACT_ERRNO",
+      "errnoRet": 1
+    },
+    {
+      "_comment": "Block process creation (no fork bombs, no shell escapes)",
+      "names": [
+        "clone", "clone3", "fork", "vfork", "execve", "execveat",
+        "kill", "tkill", "tgkill",
+        "ptrace", "process_vm_readv", "process_vm_writev"
+      ],
+      "action": "SCMP_ACT_ERRNO",
+      "errnoRet": 1
+    },
+    {
+      "_comment": "Block filesystem mount/unmount and privilege escalation",
+      "names": [
+        "mount", "umount2", "pivot_root",
+        "chroot", "setuid", "setgid", "setresuid", "setresgid",
+        "setgroups", "capset",
+        "unshare", "setns",
+        "kexec_load", "kexec_file_load",
+        "init_module", "finit_module", "delete_module",
+        "reboot", "swapon", "swapoff"
+      ],
+      "action": "SCMP_ACT_ERRNO",
+      "errnoRet": 1
+    }
+  ]
+}

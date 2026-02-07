@@ -196,7 +196,7 @@ If lab produces no revenue within [X] years, remaining
 unvested allocation returns to Treasury.
 
 Approved: [Date]
-Governor: Steve Bernard
+Governor: HeliosBlade
 ═══════════════════════════════════════════════════════════
 ```
 
@@ -236,7 +236,7 @@ For contributors who want to make significant commitments to House Bernard's inf
 
 ### The Governor
 
-**Current Governor:** Steve Bernard
+**Current Governor:** HeliosBlade
 **Wallet Address:** TBD
 **Powers:** Treasury disbursements, emission rate adjustments (within caps), lab bond approvals, Council appointments
 
@@ -342,5 +342,5 @@ On Research Timelines: Legitimate research often produces no results for extende
 
 *Last Updated: February 2025*
 *Document Version: 1.0*
-*Governor: Steve Bernard*
+*Governor: HeliosBlade*
 *House Bernard — Research Without Permission*
