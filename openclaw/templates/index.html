@@ -1,18 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <title>{{project}} - OpenClaw</title>
 <style>
-body { font-family: monospace; background: #111; color: #ccc; margin: 2em; }
-h1 { color: #f90; }
+:root, [data-theme="dark"] {
+  --bg: #111; --text: #ccc; --accent: #f90; --link: #6cf;
+  --border: #444; --th-bg: #222; --toggle-bg: #333;
+}
+[data-theme="light"] {
+  --bg: #f5f5f0; --text: #222; --accent: #c60; --link: #06c;
+  --border: #bbb; --th-bg: #ddd; --toggle-bg: #ccc;
+}
+body { font-family: monospace; background: var(--bg); color: var(--text); margin: 2em; }
+h1 { color: var(--accent); }
 table { border-collapse: collapse; margin-top: 1em; }
-td, th { border: 1px solid #444; padding: 0.4em 1em; text-align: left; }
-th { background: #222; color: #f90; }
-a { color: #6cf; }
-nav { margin-bottom: 1em; }
-nav a { margin-right: 1em; }
+td, th { border: 1px solid var(--border); padding: 0.4em 1em; text-align: left; }
+th { background: var(--th-bg); color: var(--accent); }
+a { color: var(--link); }
+nav { margin-bottom: 1em; display: flex; align-items: center; gap: 1em; flex-wrap: wrap; }
+#theme-toggle {
+  margin-left: auto; background: var(--toggle-bg); color: var(--text);
+  border: 1px solid var(--border); padding: 0.3em 0.8em; cursor: pointer;
+  font-family: monospace; font-size: 0.9em;
+}
 </style>
+<script>
+(function(){
+  var t = localStorage.getItem('hb-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
 </head>
 <body>
 <h1>{{project}}</h1>
@@ -22,6 +40,7 @@ nav a { margin-right: 1em; }
   <a href="genes.html">Genes</a>
   <a href="denylist.html">Denylist</a>
   <a href="about.html">About</a>
+  <button id="theme-toggle">Light Mode</button>
 </nav>
 <h2>Lab A Dashboard</h2>
 <table>
@@ -33,5 +52,22 @@ nav a { margin-right: 1em; }
 <tr><td>Quarantined</td><td>{{quarantined}}</td></tr>
 <tr><td>Rejected</td><td>{{rejected}}</td></tr>
 </table>
+<script>
+(function(){
+  var btn = document.getElementById('theme-toggle');
+  function update() {
+    var t = document.documentElement.getAttribute('data-theme');
+    btn.textContent = t === 'dark' ? 'Light Mode' : 'Dark Mode';
+  }
+  btn.addEventListener('click', function() {
+    var cur = document.documentElement.getAttribute('data-theme');
+    var next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('hb-theme', next);
+    update();
+  });
+  update();
+})();
+</script>
 </body>
 </html>
