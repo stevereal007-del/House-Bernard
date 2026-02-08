@@ -14,7 +14,7 @@ Get Lab A Phase 0 running in under 30 minutes.
 ### 1. Clone Repository
 ```bash
 cd ~
-git clone https://github.com/HeliosBlade-dev/House-Bernard.git
+git clone https://github.com/stevereal007-del/House-Bernard.git
 cd House-Bernard
 ```
 
