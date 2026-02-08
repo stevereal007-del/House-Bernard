@@ -52,6 +52,7 @@ If you can derive a bypass from the wording, the wording is wrong.
 
 ## Harness Failures (Lab A)
 
+- HARNESS_FAIL_T0
 - HARNESS_FAIL_T1
 - HARNESS_FAIL_T2
 - HARNESS_FAIL_T3
