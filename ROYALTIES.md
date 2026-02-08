@@ -14,18 +14,18 @@ This is **research mining**: tokens earned through contribution, not speculation
 
 | Property | Value |
 |----------|-------|
-| **Threshold** | Passes T3 (determinism + basic harness) |
+| **Threshold** | Passes full Executioner gauntlet (T0–T4) |
 | **Payment** | Flat one-time payment |
 | **Royalty** | None |
 | **Duration** | — |
 
-Spark contributions solve the stated problem. They pass intake, policy, and basic harness tests. Payment is immediate upon Council validation. No ongoing royalty — the work is useful but not durable enough to warrant revenue sharing.
+Spark contributions solve the stated problem. They survive the full Executioner gauntlet (T0–T4). Payment is immediate upon Council validation. No ongoing royalty — the work is useful but not durable enough to warrant revenue sharing.
 
 ### Tier 2: Flame
 
 | Property | Value |
 |----------|-------|
-| **Threshold** | Passes T5 + successful splice (gene extracted by Splicer) |
+| **Threshold** | Passes Executioner + successful splice (gene extracted by Splicer) |
 | **Payment** | Base payment + 6-month royalty stream |
 | **Royalty Rate** | 2% of attributable revenue |
 | **Duration** | 6 months from acceptance |
@@ -36,7 +36,7 @@ Flame contributions survive adversarial testing and produce extractable genetic 
 
 | Property | Value |
 |----------|-------|
-| **Threshold** | Passes T6 + gene registered in Ledger |
+| **Threshold** | Passes Executioner + gene registered in Ledger |
 | **Payment** | Base payment + 12–18 month royalty stream |
 | **Royalty Rate** | 5% of attributable revenue |
 | **Duration** | 12 months (standard) or 18 months (if gene is integrated into production) |
@@ -60,7 +60,7 @@ Invariant contributions are foundational. They define laws of the system — rul
 
 Base payments are one-time, paid upon Council validation regardless of tier. Royalties are additional.
 
-| Category | Spark (T3) | Flame (T5) | Furnace-Forged (T6) | Invariant |
+| Category | Spark | Flame | Furnace-Forged | Invariant |
 |----------|------------|------------|----------------------|-----------|
 | Code (Executioner, Airlock, Splicer, Ledger) | 1,000 – 10,000 | 5,000 – 25,000 | 15,000 – 50,000 | 25,000 – 100,000 |
 | Security (vulnerabilities, audits) | 5,000 – 20,000 | 10,000 – 50,000 | 25,000 – 100,000 | 50,000 – 200,000 |
@@ -167,7 +167,7 @@ Title: [Clear title]
 Category: [Code / Security / Research / Documentation / Infrastructure]
 Lab: [Lab A / Lab B / General]
 Base Payment: [Amount] $HOUSEBERNARD
-Furnace Threshold: [T3 / T5+Splice / T6+Ledger / Governor-Designated]
+Furnace Threshold: [Executioner / Executioner+Splice / Executioner+Ledger / Governor-Designated]
 Deadline: [Date or "Open"]
 Difficulty: [Beginner / Intermediate / Advanced / Expert]
 
@@ -183,9 +183,9 @@ DELIVERABLES
 - [What to submit and format]
 
 TIER ELIGIBILITY
-- Spark (T3): Base payment only
-- Flame (T5+Splice): Base + 2% royalty for 6 months
-- Furnace-Forged (T6+Ledger): Base + 5% royalty for 12-18 months
+- Spark (Executioner): Base payment only
+- Flame (Executioner+Splice): Base + 2% royalty for 6 months
+- Furnace-Forged (Executioner+Ledger): Base + 5% royalty for 12-18 months
 - Invariant (Governor): Base + 8% royalty for 24 months or buyout
 
 STATUS: [Open / Claimed / In Review / Tier Assigned / Royalty Active / Completed / Cancelled]
@@ -266,5 +266,6 @@ Agents may claim tasks, earn tokens and royalties, and build reputation toward C
 
 ---
 
+*Last Updated: February 2025*
 *Document Version: 2.0*
 *House Bernard — Research Without Permission*

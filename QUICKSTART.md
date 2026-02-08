@@ -125,4 +125,4 @@ After first survivor:
 ✅ System runs deterministically  
 ✅ No security incidents  
 
-Then: Plan Phase 1 (T5 adversarial testing)
+Then: Plan Phase 1 (expanded adversarial testing, Splicer integration)
