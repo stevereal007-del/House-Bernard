@@ -21,7 +21,7 @@ To compound **Clarity**, **Capital**, and **Capability** in a strict dependency 
 - **/openclaw**: Agent specification, deployment configs, and behavioral directives.
 - **/treasury**: Financial engine. Royalty decay, bond yields, emission enforcement.
 - **/security**: AST-based static analysis and seccomp profiles for sandboxed execution.
-- **/infrastructure**: VPS deployment configs, intake server, and operational tooling.
+- **/infrastructure**: Beelink deployment script and operational architecture.
 - **/lab_b**: Security genetics laboratory. Adversarial harness for security-domain mutations.
 
 ## IV. GOVERNANCE

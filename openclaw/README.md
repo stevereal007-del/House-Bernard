@@ -1,42 +1,55 @@
-# OpenClaw — House Bernard Integration
+# House Bernard — AchillesRun Agent
 
-## Overview
+## What This Is
 
-This directory contains the specification, configuration, and tooling for deploying
-OpenClaw agents within the House Bernard sovereign Dark Lab architecture.
+AchillesRun is House Bernard deployed as an OpenClaw agent. OpenClaw is the body — gateway, channels, sessions, cron. House Bernard is the mind — what to trust, what to kill, what to remember, what to forget.
+
+The Beelink EQ13 runs the OpenClaw gateway. AchillesRun runs inside it. The Governor communicates via Discord DM (Phase 0) or iMessage (Phase 1).
 
 ## Files
 
 | File | Purpose |
 |------|---------|
-| `AGENT_SPEC.md` | The law. Complete agent architecture, security, cost control, and selection furnace integration. |
-| `build.py` | OpenClaw static site builder (public-facing results viewer) |
-| `openclaw.json` | Reference configuration for Beelink EQ13 deployment |
-| `SOUL.md` | Agent behavioral directives (loaded at session init) |
+| `AGENT_SPEC.md` | The law governing AchillesRun's behavior, model selection, layers, and security |
+| `SOUL.md` | OpenClaw system prompt — AchillesRun's identity and operating principles |
+| `openclaw.json` | OpenClaw configuration — models, channels, sessions, cron, budget |
+| `build.py` | Static dashboard builder (reads HB_STATE.json, outputs HTML) |
+| `templates/` | HTML templates for the dashboard |
 
-## Architecture
+## Architecture Mapping
 
+| House Bernard Concept | OpenClaw Implementation |
+|----------------------|------------------------|
+| Bicameral Mind (Worker/Master/Oracle) | OpenClaw model config with Ollama aliases |
+| Ring System (Commons/Yard/Workshop/Sanctum) | OpenClaw workspace directories |
+| Selection Furnace | OpenClaw skills running Airlock→Executioner→Splicer |
+| Monthly Ops | OpenClaw cron job (1st of month, 6am UTC) |
+| Heartbeat / Watcher | OpenClaw heartbeat config (30min, Llama 3.2:3b) |
+| Governor Contact | OpenClaw channel (Discord DM / iMessage) |
+| Session Isolation | OpenClaw `dmScope: per-channel-peer` |
+| Swarm (Phase 2) | OpenClaw multi-agent routing |
+
+## Quick Start
+
+```bash
+# On the Beelink:
+cd ~/House-Bernard/infrastructure/deployment
+chmod +x deploy_achillesrun.sh
+./deploy_achillesrun.sh
+
+# Then:
+export DISCORD_BOT_TOKEN='your-token'
+export GOVERNOR_DISCORD_ID='your-id'
+export ANTHROPIC_API_KEY='your-key'
+openclaw onboard
 ```
-OpenClaw Gateway (localhost:18789)
-        │
-        ├── Layer 0: Commons  → Scouts, intake, noise
-        ├── Layer 1: Yard     → Collaborative work
-        ├── Layer 2: Workshop → Executioner integration
-        └── Layer 3: Sanctum  → Covenant enforcement
-```
 
-## Quick Reference
+## Channels
 
-- **Spec:** Read `AGENT_SPEC.md` before touching anything
-- **Models:** Ollama local (Mistral 7B worker, Llama 3 8B master)
-- **Cost:** $0-5/month (97% reduction vs standard OpenClaw)
-- **Security:** Localhost-only, Tailscale VPN, UFW firewall
-- **Version:** OpenClaw v2026.2.2+ required
+**Phase 0 (now):** Discord DM — Governor only, allowlist enforced.
 
-## Integration with House Bernard
+**Phase 1 (when Mac Mini available):** iMessage via `imsg` CLI. Governor texts AchillesRun at 860-204-1350. Requires a Mac running Messages.app with SSH bridge to Beelink over Tailscale.
 
-OpenClaw agents submit SAIF v1.1 artifacts to the Airlock (`~/.openclaw/inbox/`).
-The Executioner processes them through T0-T4. Survivors are spliced.
-Genes are promoted to the Sanctum's append-only ledger.
+---
 
-The agent does not judge quality. The harness defines what dies.
+*House Bernard — Research Without Permission*

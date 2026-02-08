@@ -73,9 +73,21 @@ Based on documented incidents (OpenClaw hijack, ClawHub malware), expect these a
 **What happens:** Scammers pose as "House Bernard team members" in Discord, Telegram, or DMs offering "support" or "airdrops."
 
 **Defense:**
-- House Bernard has no Discord or Telegram (until documented here)
+- House Bernard communicates via Discord DM to the AchillesRun agent (Phase 0)
 - The Governor will never DM you first
 - There are no airdrops unless announced in this repository
+
+---
+
+## Threat Landscape Validation
+
+In February 2026, VirusTotal detected hundreds of malicious skills in the OpenClaw ClawHub marketplace, including trojan infostealers (Atomic Stealer / AMOS) and backdoors disguised as helpful automation. Cisco's independent audit confirmed that OpenClaw agents with elevated privileges create a new class of supply-chain attack surface.
+
+House Bernard's Executioner pipeline, AST-based security scanner, and Docker+seccomp isolation were designed to prevent exactly this class of attack. The security_scanner.py bans subprocess, exec, eval, pickle, and network imports at the AST level — the exact vectors used in the ClawHub attacks. Lab B's intent integrity tests (I1-I6) specifically test for behavioral manipulation through prompt injection and disguised payloads.
+
+When House Bernard skills are published to ClawHub, they pass through three layers of defense: VirusTotal Code Insight scan, House Bernard's own security_scanner.py, and the Executioner's Docker sandbox with seccomp lockdown. Defense in depth, not defense by hope.
+
+References: blog.virustotal.com/2026/02/from-automation-to-infection-how.html, blogs.cisco.com/ai/personal-ai-agents-like-openclaw-are-a-security-nightmare
 
 ---
 

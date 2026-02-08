@@ -1,13 +1,16 @@
 {
-  "_comment": "House Bernard OpenClaw Reference Config — Beelink EQ13",
-  "_version": "0.1",
+  "_comment": "House Bernard — AchillesRun OpenClaw Agent Config",
+  "_version": "1.0",
+  "_agent": "AchillesRun",
   "_spec": "See AGENT_SPEC.md for the law governing this config",
+  "_deploy": "Beelink EQ13, Windham CT",
 
   "agents": {
-    "defaults": {
-      "model": {
-        "primary": "ollama/mistral:7b"
-      },
+    "main": {
+      "name": "AchillesRun",
+      "model": "ollama/mistral:7b",
+      "systemPrompt": "openclaw/SOUL.md",
+      "workspace": "~/.openclaw/agents/achillesrun/workspace",
       "models": {
         "ollama/mistral:7b": {
           "alias": "worker",
@@ -38,12 +41,21 @@
     }
   },
 
+  "session": {
+    "dmScope": "per-channel-peer",
+    "reset": {
+      "daily": "04:00"
+    },
+    "idleMinutes": 240,
+    "mainKey": "achilles"
+  },
+
   "heartbeat": {
     "every": "30m",
     "model": "ollama/llama3.2:3b",
     "session": "helios_continuity",
     "target": "local",
-    "prompt": "Department of Continuity check: context size, rot indicators, alerts"
+    "prompt": "Department of Continuity check: context size, rot indicators, alerts, monthly_ops status"
   },
 
   "gateway": {
@@ -57,43 +69,39 @@
   },
 
   "channels": {
-    "dm_policy": "allowlist",
-    "allowed_users": ["steve_bernard"]
-  },
+    "discord": {
+      "enabled": true,
+      "token": "${DISCORD_BOT_TOKEN}",
+      "dmPolicy": "allowlist",
+      "allowedUsers": ["${GOVERNOR_DISCORD_ID}"],
+      "groups": {
+        "policy": "deny"
+      }
+    },
 
-  "layers": {
-    "commons": {
-      "workspace": "commons",
-      "persistence": false,
-      "model": "worker",
-      "rot_level": "high"
-    },
-    "yard": {
-      "workspace": "yard",
-      "persistence": "7d_rolling",
-      "model": "worker",
-      "rot_level": "moderate"
-    },
-    "workshop": {
-      "workspace": "workshop",
-      "persistence": "task_scoped",
-      "model": "worker",
-      "fallback": "master",
-      "rot_level": "low"
-    },
-    "sanctum": {
-      "workspace": "sanctum",
-      "persistence": "append_only",
-      "model": "master",
-      "access": "tailscale_only",
-      "rot_level": "zero"
+    "imessage": {
+      "_comment": "Phase 1: Enable when Mac Mini bridge is available",
+      "enabled": false,
+      "cliPath": "/usr/local/bin/imsg",
+      "dbPath": "/Users/achillesrun/Library/Messages/chat.db",
+      "dmPolicy": "allowlist",
+      "allowedUsers": ["+18602041350"]
     }
   },
 
-  "covenant": {
-    "enforce": true,
-    "kernel_file": "sanctum/COVENANT.md",
-    "veto_authority": "department_of_continuity"
+  "security": {
+    "sandbox": {
+      "enabled": true,
+      "mode": "docker",
+      "image": "python:3.10.15-alpine",
+      "workspace": "rw",
+      "network": false,
+      "timeout": 300
+    },
+    "tools": {
+      "requireApproval": ["exec", "shell", "write"],
+      "autoApprove": ["read", "search", "status"]
+    }
   },
 
   "budget": {
@@ -101,5 +109,36 @@
     "daily_warning_usd": 3.00,
     "monthly_limit_usd": 50.00,
     "monthly_warning_usd": 37.50
-  }
+  },
+
+  "skills": {
+    "path": "~/.openclaw/agents/achillesrun/skills",
+    "managed": [],
+    "workspace": [
+      "house-bernard-airlock",
+      "house-bernard-executioner",
+      "house-bernard-treasury"
+    ]
+  },
+
+  "cron": [
+    {
+      "id": "monthly-ops",
+      "schedule": "0 6 1 * *",
+      "command": "cd ~/House-Bernard/treasury && python3 monthly_ops.py run",
+      "session": "cron:monthly-ops"
+    },
+    {
+      "id": "git-archive",
+      "schedule": "0 */12 * * *",
+      "command": "cd ~/House-Bernard && git add -A && git commit -m 'auto: archive snapshot' --allow-empty && git push origin main",
+      "session": "cron:git-archive"
+    },
+    {
+      "id": "helios-watcher",
+      "schedule": "*/30 * * * *",
+      "command": "cd ~/House-Bernard && python3 openclaw/helios_watcher.py",
+      "session": "cron:watcher"
+    }
+  ]
 }
