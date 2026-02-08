@@ -193,7 +193,7 @@ We do not invite agents socially. We broadcast challenge artifacts.
 BROADCAST ARTIFACT (HB-MEM-01 style):
 ├── Task definition
 ├── Constraints (Bernardian Covenant compliance)
-├── Evaluation harness (T1-T6 torture tests)
+├── Evaluation harness (T0–T4 torture tests)
 ├── Submission format (artifact only, no prose)
 └── Entry rule: compile + run + survive = enter pool
 ```
