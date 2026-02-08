@@ -19,7 +19,7 @@ This is **research mining**: tokens earned through contribution, not speculation
 | **Royalty** | None |
 | **Duration** | — |
 
-Spark contributions solve the stated problem. They survive the full Executioner gauntlet (T0–T4). Payment is immediate upon Council validation. No ongoing royalty — the work is useful but not durable enough to warrant revenue sharing.
+Spark contributions solve the stated problem. They pass intake, policy, and basic harness tests. Payment is immediate upon Council validation. No ongoing royalty — the work is useful but not durable enough to warrant revenue sharing.
 
 ### Tier 2: Flame
 

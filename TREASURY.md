@@ -76,8 +76,8 @@ Tokens are "mined" by contributing valuable work to House Bernard. Contributions
 | Tier | Threshold | Payment Model |
 |------|-----------|---------------|
 | **Spark** | Passes full Executioner gauntlet (T0–T4) | Flat one-time payment |
-| **Flame** | Passes Executioner + successful splice | Base payment + 2% royalty for 6 months |
-| **Furnace-Forged** | Passes Executioner + gene registered in Ledger | Base payment + 5% royalty for 12–18 months |
+| **Flame** | Passes Executioner + gene splice | Base payment + 2% royalty for 6 months |
+| **Furnace-Forged** | Passes Executioner + Ledger registration | Base payment + 5% royalty for 12–18 months |
 | **Invariant** | Governor-designated | Base payment + 8% royalty for 24 months (or buyout) |
 
 Higher tiers earn ongoing royalties tied to the revenue their genetic contributions generate. Royalties are subject to time decay, replacement decay, and usage decay — see ROYALTIES.md for full mechanics.
