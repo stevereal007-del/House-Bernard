@@ -12,6 +12,11 @@ Automated bookkeeping for the Governor. Tracks royalties, bonds, emission caps, 
 | `treasury_cli.py` | Command-line interface. Run reports, record payments, activate royalties/bonds. |
 | `treasury_state.json` | Master state. All active obligations. Governor commits changes. |
 | `treasury_report.json` | Generated monthly report. Archive in Ledger after signing. |
+| `monthly_ops.py` | Automated monthly cycle: lifecycle, decay, reputation, escalations. Runs on cron. |
+| `ops_state.json` | Ops state: contributor reputation, gene usage tracking, run history. |
+| `ops_log.jsonl` | Append-only log of every ops run. |
+| `monthly_ops_report.json` | Latest ops report. Includes Governor escalations. |
+| `redteam_monthly_ops.py` | Red team test suite for monthly_ops (51 tests). |
 
 ## Usage
 
@@ -35,11 +40,58 @@ python treasury_cli.py bond BOND-001 carol builder 10000
 
 ## Monthly Process
 
-1. Update `attributed_revenue_this_period` on each active royalty in `treasury_state.json`
-2. Run `python treasury_cli.py report`
-3. Review the report output
-4. If approved, execute disbursements and log in Ledger
-5. Archive `treasury_report.json` in `/ledger/reports/`
+### Automated (cron runs this — you don't have to)
+
+```bash
+# Full monthly cycle: lifecycle, decay, reputation, emission check, escalations
+python monthly_ops.py run
+
+# Dry run (no state changes, just shows what would happen)
+python monthly_ops.py check
+
+# Backdate for testing
+python monthly_ops.py run --date 2026-04-01
+
+# View recent ops log
+python monthly_ops.py log
+```
+
+Cron entry (1st of month, 6am UTC):
+```
+0 6 1 * * cd ~/House-Bernard/treasury && python3 monthly_ops.py run >> /var/log/hb_monthly.log 2>&1
+```
+
+### What the cron handles automatically
+
+- Expire finished royalties (time decay complete)
+- Mature bonds past their maturity date
+- Suspend royalties for genes idle 90+ days
+- Resume royalties for genes that re-enter active use
+- Decay reputation for contributors inactive 90+ days (-5 rep/month)
+- Check emission utilization and flag warnings
+- Generate report with Governor escalations
+- Write to ops_log.jsonl (append-only audit trail)
+
+### What YOU review (only when escalated)
+
+1. Open `monthly_ops_report.json` — check `governor_required` section
+2. If bond matured → authorize principal + yield return
+3. If payouts due → review and authorize disbursements within 14 days
+4. If emission warning → review pace, consider slowing
+5. Sign off. That's it.
+
+### Manual operations (unchanged)
+
+```bash
+# Record a base payment
+python treasury_cli.py pay HB-2026-001 alice 5000 1
+
+# Activate a royalty stream
+python treasury_cli.py royalty GENE-001 bob 2
+
+# Activate a bond
+python treasury_cli.py bond BOND-001 carol builder 10000
+```
 
 ## What It Tracks
 
