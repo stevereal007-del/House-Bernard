@@ -35,6 +35,32 @@ CANONICAL_CLASSES = {
 }
 
 
+# F4 FIX: Executioner verdicts -> canonical classes translation.
+# The executioner uses its own verdict strings (e.g. "KILLED_T0_SELFTEST").
+# This mapping translates them to the HB canonical class vocabulary.
+EXECUTIONER_VERDICT_MAP: Dict[str, List[str]] = {
+    "KILLED_INVALID_ZIP": ["FORMAT_INVALID"],
+    "KILLED_INVALID_SAIF": ["MANIFEST_INVALID"],
+    "KILLED_T0_SELFTEST": ["HARNESS_FAIL_T0"],
+    "KILLED_T1_SYNTAX": ["HARNESS_FAIL_T1"],
+    "KILLED_T2_DEGRADATION": ["HARNESS_FAIL_T2"],
+    "KILLED_T3_COMPACTION": ["HARNESS_FAIL_T3"],
+    "KILLED_T4_RESTART": ["HARNESS_FAIL_T4"],
+    "DUPLICATE_FAILURE": ["POLICY_VIOLATION"],
+    "SURVIVOR_PHASE_0": ["OK"],
+}
+
+
+def translate_executioner_verdict(verdict: str) -> List[str]:
+    """
+    Translate an executioner verdict string to canonical HB class(es).
+
+    Returns a list of canonical classes. Falls back to ["INTERNAL_ERROR"] for
+    unknown verdicts.
+    """
+    return EXECUTIONER_VERDICT_MAP.get(verdict, ["INTERNAL_ERROR"])
+
+
 def write_outcome(
     results_dir: Path,
     artifact_id: str,

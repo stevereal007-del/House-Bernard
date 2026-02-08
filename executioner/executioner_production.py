@@ -138,6 +138,9 @@ class ExecutionerProduction:
 
         self.failure_cache: Set[str] = self._load_failures()
 
+        # Seccomp profile for Lab A containers
+        self.seccomp_profile = Path(__file__).resolve().parent.parent / "security" / "seccomp_lab_a.json"
+
     # -------------------------
     # Public entry
     # -------------------------
@@ -275,6 +278,7 @@ class ExecutionerProduction:
             "--read-only",
             "--cap-drop=ALL",
             "--security-opt", "no-new-privileges",
+            "--security-opt", f"seccomp={self.seccomp_profile}",
             "--pids-limit", pids,
             "--user", "65534:65534",
             "--tmpfs", "/tmp:rw,noexec,nosuid,size=16m",
