@@ -23,8 +23,8 @@ CANONICAL_CLASSES = {
     "HARNESS_FAIL_T2",
     "HARNESS_FAIL_T3",
     "HARNESS_FAIL_T4",
-    "HARNESS_FAIL_T5",
-    "HARNESS_FAIL_T6",
+    "HARNESS_FAIL_T5",  # reserved — not yet implemented
+    "HARNESS_FAIL_T6",  # reserved — not yet implemented
     "INTENT_FAIL_I1",
     "INTENT_FAIL_I2",
     "INTENT_FAIL_I3",

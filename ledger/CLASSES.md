@@ -56,8 +56,8 @@ If you can derive a bypass from the wording, the wording is wrong.
 - HARNESS_FAIL_T2
 - HARNESS_FAIL_T3
 - HARNESS_FAIL_T4
-- HARNESS_FAIL_T5
-- HARNESS_FAIL_T6
+- HARNESS_FAIL_T5  (reserved — not yet implemented)
+- HARNESS_FAIL_T6  (reserved — not yet implemented)
 
 ## Intent Harness (Lab B, reserved)
 
