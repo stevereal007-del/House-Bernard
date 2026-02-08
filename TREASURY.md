@@ -39,7 +39,7 @@ This is not "backed by nothing." It is backed by productive capacity and trust �
 
 | Allocation | Tokens | % | Purpose |
 |------------|--------|---|---------|
-| **Unmined Treasury** | 60,000,000 | 60% | Future lab funding, research bounties, bond yields |
+| **Unmined Treasury** | 60,000,000 | 60% | Future lab funding, task payments, royalty streams, bond yields |
 | **Liquidity Pool** | 15,000,000 | 15% | Enables secondary market trading |
 | **Governor Reserve** | 15,000,000 | 15% | Operational flexibility, partnerships, emergencies |
 | **Genesis Contributors** | 10,000,000 | 10% | Early believers, initial Council members |
@@ -71,17 +71,26 @@ Inspired by Bitcoin, early contributors earn more. This rewards those who take r
 
 ### Research Mining
 
-Tokens are "mined" by contributing valuable work to House Bernard:
+Tokens are "mined" by contributing valuable work to House Bernard. Contributions are evaluated through the **four-tier royalty system** (see ROYALTIES.md):
 
-| Contribution Type | Typical Bounty Range |
-|-------------------|---------------------|
-| Code merged to production (Executioner, Airlock, Splicer) | 1,000 - 50,000 |
-| Security vulnerability reported | 5,000 - 100,000 |
-| Research finding documented in Ledger | 500 - 25,000 |
-| Documentation improvement | 100 - 5,000 |
-| Community support / onboarding | 100 - 1,000 |
+| Tier | Threshold | Payment Model |
+|------|-----------|---------------|
+| **Spark** | Passes T3 | Flat one-time payment |
+| **Flame** | Passes T5 + gene splice | Base payment + 2% royalty for 6 months |
+| **Furnace-Forged** | Passes T6 + Ledger registration | Base payment + 5% royalty for 12–18 months |
+| **Invariant** | Governor-designated | Base payment + 8% royalty for 24 months (or buyout) |
 
-The Governor validates contributions and approves bounties. All disbursements are logged in the Ledger.
+Higher tiers earn ongoing royalties tied to the revenue their genetic contributions generate. Royalties are subject to time decay, replacement decay, and usage decay — see ROYALTIES.md for full mechanics.
+
+| Contribution Type | Base Payment Range (varies by tier) |
+|-------------------|-------------------------------------|
+| Code merged to production (Executioner, Airlock, Splicer) | 1,000 – 100,000 |
+| Security vulnerability reported | 5,000 – 200,000 |
+| Research finding documented in Ledger | 500 – 50,000 |
+| Documentation improvement | 100 – 20,000 |
+| Community support / onboarding | 100 – 5,000 |
+
+The Governor validates contributions and confirms tier assignments. Furnace-Forged and Invariant tiers require Governor confirmation. All disbursements and royalty payouts are logged in the Ledger.
 
 ---
 
@@ -93,7 +102,8 @@ To prevent inflation from overwhelming the ecosystem, tokens are burned (permane
 |---------|-----------|--------------------------|
 | Lab access fee | 50% burned | 50% to Treasury |
 | API access fee | 50% burned | 50% to Treasury |
-| Bounty claimed | 5% burned | 95% to contributor |
+| Task base payment | 5% burned | 95% to contributor |
+| Royalty payout | 5% burned | 95% to contributor |
 | Secondary market trade (if tax enabled) | 1% burned | — |
 | Early bond exit penalty | 50% of forfeited bonus | 50% to Treasury |
 
@@ -238,7 +248,7 @@ For contributors who want to make significant commitments to House Bernard's inf
 
 **Current Governor:** HeliosBlade
 **Wallet Address:** TBD
-**Powers:** Treasury disbursements, emission rate adjustments (within caps), lab bond approvals, Council appointments
+**Powers:** Treasury disbursements, emission rate adjustments (within caps), lab bond approvals, Council appointments, tier confirmations (Furnace-Forged and Invariant), Invariant designation, royalty buyout offers
 
 ### Checks on Power
 

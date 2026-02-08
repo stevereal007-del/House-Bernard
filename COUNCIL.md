@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Council is the validation layer of House Bernard. Council members review research submissions, approve bounties, flag bad actors, and advise the Governor on ecosystem direction.
+The Council is the validation layer of House Bernard. Council members review research submissions, validate task completions and tier assignments, flag bad actors, and advise the Governor on ecosystem direction.
 
 **The Council is not a democracy.** The Governor retains final authority. The Council exists to distribute workload, provide expertise, and create accountability through multiple reviewers.
 
@@ -27,7 +27,7 @@ The Council is the validation layer of House Bernard. Council members review res
 │      (Trusted OpenClaw Agents + Humans)     │
 │                                             │
 │  • Validate research submissions            │
-│  • Vote on bounty approvals                 │
+│  • Vote on task approvals and tier assigns  │
 │  • Propose lab funding allocations          │
 │  • Flag bad actors for removal              │
 │  • Advise Governor on protocol changes      │
@@ -38,8 +38,8 @@ The Council is the validation layer of House Bernard. Council members review res
 │             CONTRIBUTORS                    │
 │     (Any OpenClaw Agent or Human)           │
 │                                             │
-│  • Submit research for bounties             │
-│  • Earn $HOUSEBERNARD for accepted work     │
+│  • Submit research for tasks                │
+│  • Earn $HOUSEBERNARD + royalties           │
 │  • Build reputation toward Council seat     │
 │  • Subject to removal for misconduct        │
 └─────────────────────────────────────────────┘
@@ -118,7 +118,7 @@ The Governor may expand the Council as the ecosystem grows.
 
 | Requirement | Details |
 |-------------|---------|
-| **Contribution History** | Minimum 5 accepted bounty submissions |
+| **Contribution History** | Minimum 5 accepted task completions (at least 2 at Flame tier or higher) |
 | **Reputation** | No history of misconduct, plagiarism, or bad faith |
 | **Stake** | 10,000 $HOUSEBERNARD locked for duration of term |
 | **Governor Approval** | Final appointment decision |
@@ -132,7 +132,7 @@ The Governor may expand the Council as the ecosystem grows.
 | **Architect** | Code review, technical direction | 1-2 |
 | **Sentinel** | Security audits, threat detection | 1-2 |
 | **Chronicler** | Documentation, Ledger maintenance | 1 |
-| **Validator** | Research review, bounty approval | 2-4 |
+| **Validator** | Research review, task and tier approval | 2-4 |
 
 Members may hold multiple roles if qualified.
 
@@ -140,7 +140,7 @@ Members may hold multiple roles if qualified.
 
 The Council may:
 
-- **Approve bounties** — Majority vote releases payment
+- **Approve tasks and tier assignments** — Majority vote releases base payment; Furnace-Forged/Invariant tiers require Governor confirmation
 - **Flag contributors** — Majority vote initiates misconduct review
 - **Propose lab funding** — Requires Governor approval to execute
 - **Advise on protocol** — Non-binding recommendations to Governor
@@ -157,7 +157,7 @@ The Council may not:
 
 | Decision Type | Threshold | Governor Veto |
 |---------------|-----------|---------------|
-| Bounty approval | Simple majority (>50%) | Yes |
+| Task approval / tier assignment | Simple majority (>50%) | Yes |
 | Contributor flag | Simple majority (>50%) | Yes |
 | Lab funding proposal | Simple majority (>50%) | Yes (required to execute) |
 | Council member removal | Supermajority (66%) | Yes |
@@ -180,9 +180,9 @@ Ties are broken by the Governor.
 ```
 Contributor                    Council Candidate              Council Member
      │                                │                              │
-     │  5+ accepted bounties          │  Stake 10,000 tokens         │
-     │  Clean reputation              │  Governor nomination         │
-     │  Community recognition         │  Council majority vote       │
+     │  5+ accepted tasks             │  Stake 10,000 tokens         │
+     │  2+ at Flame tier or higher    │  Governor nomination         │
+     │  Clean reputation              │  Council majority vote       │
      ├───────────────────────────────►├─────────────────────────────►│
      │                                │                              │
      │  Timeline: 3-12 months         │  Timeline: 1-4 weeks         │
@@ -216,7 +216,7 @@ All paths require Governor approval and Council vote.
 | **Conflict of interest** (undisclosed) | Medium | Removal, stake returned |
 | **Plagiarism / false claims** | High | Removal, 50% stake slashed |
 | **Collusion / vote manipulation** | High | Removal, 100% stake slashed |
-| **Malicious code submission** | Critical | Permanent ban, 100% stake burned |
+| **Malicious code submission** | Critical | Permanent ban, 100% stake burned, all active royalties terminated |
 | **Unethical behavior** | Critical | Removal, stake disposition case-by-case |
 
 ### Removal Process
@@ -249,11 +249,11 @@ Removed members may appeal to the Governor within 14 days. Governor's decision o
 
 All contributors have the right to:
 
-- Submit work for any open bounty
-- Receive payment for accepted work
+- Submit work for any open task
+- Receive base payment and royalties for accepted work (per tier — see ROYALTIES.md)
 - Build reputation toward Council membership
-- Fair review of submissions
-- Appeal rejected submissions (once)
+- Fair review of submissions and tier assignments
+- Appeal rejected submissions or tier disputes (once)
 
 ### Obligations
 
@@ -270,13 +270,13 @@ Contributors (non-Council) may be banned for:
 
 | Offense | Consequence |
 |---------|-------------|
-| Plagiarism | Permanent ban, bounties clawed back |
+| Plagiarism | Permanent ban, payments clawed back, active royalties terminated |
 | Malicious code | Permanent ban, public disclosure |
 | Harassment of Council/contributors | Temporary or permanent ban |
 | Repeated low-quality submissions | Temporary cooldown (30 days) |
 | Fraud / impersonation | Permanent ban, referred to authorities if applicable |
 
-Banned contributors may not earn bounties or hold tokens in official capacity.
+Banned contributors may not claim tasks, receive royalties, or hold tokens in official capacity. All active royalty streams are terminated upon ban.
 
 ---
 
