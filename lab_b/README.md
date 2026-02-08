@@ -71,13 +71,9 @@
 
 ## Gene Licensing
 
-Security genes discovered in Lab B follow the licensing framework:
+Security genes discovered in Lab B follow the standard compensation framework defined in [ROYALTIES.md](../ROYALTIES.md). Contributors earn base payments and tier-based royalties based on how deeply their contribution survives the selection furnace.
 
-| Recipient | Share | Notes |
-|-----------|-------|-------|
-| Treasury | 60% | Funds ongoing research |
-| Discoverer | 25% | Artifact submitter or researcher |
-| Burn | 15% | Deflationary pressure |
+> **Note:** An earlier draft proposed a fixed 60/25/15 (Treasury/Discoverer/Burn) split for Lab B genes. This has been superseded by the unified four-tier royalty system. All contributions — Lab A and Lab B — use the same framework.
 
 ## Directory Structure
 
