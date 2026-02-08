@@ -8,12 +8,14 @@ F9 FIX: Paths resolved relative to repo root, not hardcoded to home directory.
 """
 
 import json
+import shutil
+import subprocess
+import tempfile
 import time
+import zipfile
 from pathlib import Path
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-import subprocess
-import shutil
 
 
 # Resolve paths relative to this file's location in the repo
@@ -53,21 +55,19 @@ class AirlockHandler(FileSystemEventHandler):
 
         try:
             result = subprocess.run(
-                ['python3', str(SECURITY_SCANNER), str(artifact_dir)],
+                ['python3', str(SECURITY_SCANNER), '--scan-dir', str(artifact_dir)],
                 capture_output=True, text=True, timeout=60,
             )
 
-            if result.returncode == 0:
-                return "PASS"
-            elif result.returncode == 2:
-                return "QUARANTINE"
-            else:
-                # Parse output for verdict if possible
-                try:
-                    scan_result = json.loads(result.stdout)
-                    return scan_result.get("verdict", "REJECT")
-                except (json.JSONDecodeError, ValueError):
-                    return "REJECT"
+            # Parse JSON output for overall_verdict
+            try:
+                scan_result = json.loads(result.stdout)
+                return scan_result.get("overall_verdict", "REJECT")
+            except (json.JSONDecodeError, ValueError):
+                # Fall back to exit code
+                if result.returncode == 0:
+                    return "PASS"
+                return "REJECT"
 
         except subprocess.TimeoutExpired:
             print('[AIRLOCK] Security scan timed out')
@@ -104,8 +104,20 @@ class AirlockHandler(FileSystemEventHandler):
             return
 
         # --- F2: Security scan BEFORE executioner ---
-        print(f'[AIRLOCK] Running security scan...')
-        scan_verdict = self._run_security_scan(self.sandbox)
+        # Extract zip to temp dir for scanning (scanner needs .py files, not .zip)
+        scan_dir = None
+        try:
+            scan_dir = Path(tempfile.mkdtemp(prefix="airlock_scan_"))
+            with zipfile.ZipFile(str(dest), 'r') as zf:
+                zf.extractall(scan_dir)
+            print(f'[AIRLOCK] Running security scan...')
+            scan_verdict = self._run_security_scan(scan_dir)
+        except Exception as e:
+            print(f'[AIRLOCK] Failed to extract for scanning: {e}')
+            scan_verdict = "QUARANTINE"
+        finally:
+            if scan_dir and scan_dir.exists():
+                shutil.rmtree(scan_dir, ignore_errors=True)
 
         if scan_verdict == "REJECT":
             print(f'[AIRLOCK] REJECTED by security scanner: {artifact.name}')
@@ -125,7 +137,9 @@ class AirlockHandler(FileSystemEventHandler):
                 pass
             return
 
-        # PASS - proceed to executioner
+        # PASS or FLAG - proceed to executioner
+        if scan_verdict == "FLAG":
+            print(f'[AIRLOCK] Security scan flagged (low-severity), proceeding: {artifact.name}')
         print(f'[AIRLOCK] Security scan PASSED, executing harness...')
         try:
             result = subprocess.run([
