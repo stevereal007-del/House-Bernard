@@ -5,7 +5,8 @@ Requires=docker.service
 
 [Service]
 Type=simple
-User=%i
+# Set User to your Linux username on the Beelink
+User=hb
 WorkingDirectory=%h/House-Bernard
 ExecStart=/usr/bin/python3 %h/House-Bernard/airlock/airlock_monitor.py
 Restart=on-failure

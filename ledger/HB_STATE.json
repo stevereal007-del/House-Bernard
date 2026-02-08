@@ -1,5 +1,5 @@
 {
-  "hb_state_version": "2.0",
+  "hb_state_version": "2.1",
   "project": "House Bernard",
   "public_face": "House Bernard",
   "governor_alias": "HeliosBlade",
@@ -34,7 +34,6 @@
   "infrastructure": {
     "layer_1_beelink": {
       "hardware": "Beelink EQ13 (N150, 16GB, 500GB SSD)",
-      "location": "Windham, CT",
       "role": "OpenClaw gateway, AchillesRun agent, Labs, local models, treasury",
       "status": "ACTIVE",
       "openclaw_version": "latest",
@@ -60,8 +59,7 @@
     "phase_1": {
       "primary": "imessage",
       "status": "PENDING_HARDWARE",
-      "requires": "Mac Mini with Messages.app + imsg CLI",
-      "governor_phone": "860-204-1350"
+      "requires": "Mac Mini with Messages.app + imsg CLI"
     }
   },
 
@@ -73,21 +71,35 @@
   },
 
   "paths": {
-    "repo_root": ".",
-    "airlock_dir": "airlock",
-    "executioner_dir": "executioner",
-    "splicer_dir": "splicer",
-    "ledger_dir": "ledger",
-    "openclaw_dir": "openclaw",
-    "lab_b_dir": "lab_b",
-    "security_dir": "security",
-    "infrastructure_dir": "infrastructure",
-    "genes_dir": "genes",
-    "results_dir": "results",
-    "inbox_dir": "inbox",
-    "purgatory_dir": "purgatory",
-    "quarantine_dir": "quarantine",
-    "nullsink_dir": "nullsink"
+    "_comment": "Repo paths are relative to repo root. Runtime paths are under ~/.openclaw/ and created at startup.",
+    "repo": {
+      "root": ".",
+      "airlock": "airlock",
+      "executioner": "executioner",
+      "splicer": "splicer",
+      "ledger": "ledger",
+      "openclaw": "openclaw",
+      "lab_b": "lab_b",
+      "security": "security",
+      "infrastructure": "infrastructure"
+    },
+    "runtime": {
+      "_comment": "These directories live under ~/.openclaw/ and are NOT in the repo.",
+      "genes": "genes",
+      "results": "results",
+      "inbox": "inbox",
+      "sandbox": "sandbox",
+      "purgatory": "purgatory",
+      "quarantine": "quarantine",
+      "nullsink": "nullsink"
+    }
+  },
+
+  "treasury": {
+    "engine": "PLANNED",
+    "fee_schedule": null,
+    "payout_address": null,
+    "balance_wei": 0
   },
 
   "governance": {
@@ -100,7 +112,7 @@
   },
 
   "notes": {
-    "last_update_reason": "Batch 7: VPS removed, two-layer architecture, AchillesRun agent identity, OpenClaw deployment rewrite",
+    "last_update_reason": "Batch 8: repo/runtime paths split, treasury block added, PII removed from channels/infrastructure",
     "last_update_commit": null
   }
 }
