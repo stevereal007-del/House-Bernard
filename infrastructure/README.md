@@ -1,68 +1,85 @@
-# Infrastructure
-
-Three-Layer Fortress Architecture for House Bernard.
+# House Bernard Infrastructure
 
 ## Architecture
 
 ```
-┌──────────────────────────────────────┐
-│  LAYER 1: 1984 Hosting VPS (Iceland) │
-│  intake_server.py — public shield    │
-│  Accepts submissions, stores to      │
-│  staging/, serves results/           │
-│  NEVER processes artifacts           │
-└──────────────┬───────────────────────┘
-               │ Tailscale VPN (encrypted)
-               │ rsync pull/push
-┌──────────────▼───────────────────────┐
-│  LAYER 2: Beelink EQ13 (home)       │
-│  Lab A (memory) + Lab B (security)   │
-│  Airlock → Scanner → Executioner     │
-│  Local Ollama models                 │
-│  ALL processing happens here         │
-└──────────────┬───────────────────────┘
-               │ git push (twice daily)
-┌──────────────▼───────────────────────┐
-│  LAYER 3: GitHub                     │
-│  Archive / version control           │
-│  Dead state storage                  │
-│  Public README, private genetics     │
-└──────────────────────────────────────┘
+┌─────────────────────────────────────────────────────┐
+│  LAYER 1: Beelink EQ13 (Windham, CT)                │
+│  OpenClaw Gateway + AchillesRun Agent                │
+│                                                      │
+│  ┌──────────┐  ┌──────────┐  ┌──────────────────┐  │
+│  │  Ollama   │  │  Docker   │  │  OpenClaw Gateway │  │
+│  │ Worker    │  │ Sandbox   │  │  :18789 localhost │  │
+│  │ Master    │  │ Executor  │  │  Sessions/Memory  │  │
+│  │ Watcher   │  │ Lab A/B   │  │  Cron/Heartbeat   │  │
+│  └──────────┘  └──────────┘  └──────────────────┘  │
+│                                                      │
+│  Discord ←→ Governor phone                           │
+│  (Phase 1: iMessage via Mac Mini bridge)             │
+└─────────────────────────────────────┬───────────────┘
+                                      │ git push
+                                      ▼
+┌─────────────────────────────────────────────────────┐
+│  LAYER 2: GitHub                                     │
+│  Archive, version control, dead state storage        │
+└─────────────────────────────────────────────────────┘
 ```
 
-## Contents
+## Two-Layer Design
 
-### vps/
-| File | Purpose |
-|------|---------|
-| `intake_server.py` | HTTP server for SAIF artifact submissions |
-| `vps_setup.sh` | One-time VPS provisioning (UFW, Tailscale, fail2ban, systemd) |
-| `vps_sync.sh` | Beelink-side sync script (pull artifacts, push results) |
+**No VPS.** OpenClaw IS the gateway. The Beelink IS the server.
+
+OpenClaw provides everything the VPS was designed to do: public intake (via messaging channels), session isolation (per-channel-peer), rate limiting, and always-on availability (systemd daemon). Adding a separate VPS would only add cost, latency, and attack surface.
+
+| Layer | Hardware | Role |
+|-------|----------|------|
+| **Layer 1** | Beelink EQ13 (N150, 16GB, 500GB SSD) | OpenClaw gateway, AchillesRun agent, Labs, local models, treasury |
+| **Layer 2** | GitHub | Archive, version control, dead state storage |
+
+## Files
 
 ### deployment/
+
 | File | Purpose |
 |------|---------|
-| `fortress_deploy.sh` | Beelink-side deployment (cron, systemd timers, integration) |
+| `deploy_achillesrun.sh` | One-shot Beelink setup: packages, firewall, Tailscale, Ollama, OpenClaw, repo clone |
 
 ## Data Flow
 
-1. Submitter → POST artifact to VPS `:8443/submit`
-2. VPS validates (size, format, rate limit) → stores in `staging/`
-3. Beelink cron pulls `staging/*.zip` → local `inbox/`
-4. Airlock detects → moves to `sandbox/`
-5. Security scanner (I1) → Executioner (T0-T4) or Lab B (I2-I6)
-6. Results → local `results/`
-7. Beelink cron pushes results → VPS `results/`
-8. Beelink timer archives to GitHub (twice daily)
+1. Governor → sends message via Discord (or iMessage in Phase 1)
+2. OpenClaw gateway receives → routes to AchillesRun agent
+3. AchillesRun processes locally (Worker/Master on Ollama)
+4. If scale needed → Oracle call to Claude API
+5. Results written to workspace → archived to GitHub via cron
 
-## Security Rules
+For SAIF artifact submissions (from external contributors):
+1. Contributor submits via approved channel (Discord DM)
+2. OpenClaw session isolation separates from Governor traffic
+3. Airlock picks up submission from agent workspace
+4. Executioner pipeline runs in Docker sandbox
+5. Results logged to Ledger, pushed to GitHub
 
-- VPS NEVER executes artifacts
-- Beelink NEVER exposes ports to the internet
-- All VPS ↔ Beelink traffic goes through Tailscale
-- SSH is key-only, no passwords
-- fail2ban protects both SSH and intake server
+## Security Model
+
+- Gateway binds to `127.0.0.1` only — never exposed to internet
+- Remote access via Tailscale VPN only
+- mDNS disabled
+- DM policy: allowlist (Governor only by default)
+- Docker sandbox for all artifact execution
+- Seccomp profile blocks dangerous syscalls
+- UFW default deny incoming
+
+## Phase 1: iMessage Bridge
+
+When a Mac Mini is available, add it as the iMessage bridge:
+
+```
+Beelink (OpenClaw gateway) ──SSH/Tailscale──→ Mac Mini (Messages.app + imsg)
+```
+
+The Mac Mini runs `imsg rpc` and relays iMessages. The Beelink stays as the brain.
+Enable by setting `channels.imessage.enabled: true` in openclaw.json.
 
 ---
 
-*House Bernard — The Shield Wall Holds*
+*House Bernard — Research Without Permission*
