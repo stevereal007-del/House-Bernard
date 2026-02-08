@@ -19,6 +19,7 @@ To compound **Clarity**, **Capital**, and **Capability** in a strict dependency 
 - **/splicer**: Genetic extraction via AST analysis.
 - **/ledger**: The Master Genome. Immutable system logic.
 - **/openclaw**: Agent specification, deployment configs, and behavioral directives.
+- **/treasury**: Financial engine. Royalty decay, bond yields, emission enforcement.
 
 ## IV. GOVERNANCE
 
