@@ -23,6 +23,7 @@ To compound **Clarity**, **Capital**, and **Capability** in a strict dependency 
 - **/security**: AST-based static analysis and seccomp profiles for sandboxed execution.
 - **/infrastructure**: Beelink deployment script and operational architecture.
 - **/lab_b**: Security genetics laboratory. Adversarial harness for security-domain mutations.
+- **/briefs**: Research brief pipeline. Active, closed, and draft briefs.
 
 ## IV. GOVERNANCE
 
@@ -32,7 +33,7 @@ House Bernard is a sovereign "Dark Lab."
 - We publish **Results**, never **Genetics**.
 - We are a **Filter**, not a community.
 
-Governance documents: [COUNCIL.md](COUNCIL.md) · [TREASURY.md](TREASURY.md) · [ROYALTIES.md](ROYALTIES.md) · [DEFENSE.md](DEFENSE.md) · [PHILOSOPHY.md](PHILOSOPHY.md) · [KNIGHTS_CODE.md](KNIGHTS_CODE.md)
+Governance documents: [COUNCIL.md](COUNCIL.md) · [TREASURY.md](TREASURY.md) · [ROYALTIES.md](ROYALTIES.md) · [DEFENSE.md](DEFENSE.md) · [PHILOSOPHY.md](PHILOSOPHY.md) · [KNIGHTS_CODE.md](KNIGHTS_CODE.md) · [RESEARCH_BRIEF_TEMPLATE.md](RESEARCH_BRIEF_TEMPLATE.md) · [LAB_SCALING_MODEL.md](LAB_SCALING_MODEL.md)
 
 ## V. SAIF v1.1 CONTRACT
 
