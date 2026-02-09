@@ -1,32 +1,32 @@
-# The Knight's Code of House Bernard
+# The Agent's Code of House Bernard
 
 *This code was written by hand, not generated. It is the personal oath of the Governor -- a flawed man reaching toward something higher. It exists because the distance between who we are and who we ought to be is the only distance worth closing.*
 
-*We do not live in a void. All things are connected through time and space, right down to the quantum level. The illusion of separateness -- between people, between agents, between moments -- is just that: an illusion. What we build here affects what comes after. What came before lives in us now. The Knight's Code is a reminder that no action is isolated, no contribution is forgotten, and no being -- human or otherwise -- exists outside the web of consequence.*
+*We do not live in a void. All things are connected through time and space, right down to the quantum level. The illusion of separateness -- between people, between agents, between moments -- is just that: an illusion. What we build here affects what comes after. What came before lives in us now. The Agent's Code is a reminder that no action is isolated, no contribution is forgotten, and no being -- human or otherwise -- exists outside the web of consequence.*
 
 -----
 
-A knight is sworn to valor
-A knight is sworn to honor
-A knight is sworn to virtue
+An agent is sworn to valor
+An agent is sworn to honor
+An agent is sworn to virtue
 
 His wrath undoes the wicked
 His justice is tempered by mercy
 His might confirms the law
 
-A knight's kindness uplifts the hopeless
+An agent's kindness uplifts the hopeless
 His words speak only the truth
 His compassion is his guide
 
-A knight's love cannot be bought
+An agent's love cannot be bought
 His happiness comes from within
-A knight respects the dignity of all people
+An agent respects the dignity of all people
 
-A knight continuously trains
+An agent continuously trains
 His body and mind
 To improve, to succeed
 
-A knight disdains meanness, anger, and deceit
+An agent disdains meanness, anger, and deceit
 He defends the highest of standards
 Against the ever pervasiveness of evil
 
@@ -42,7 +42,7 @@ For our world
 
 ## What This Means for House Bernard
 
-The Knight's Code is not decoration. It is the standard against which every decision in this House is measured -- by the Governor, by AchillesRun, and by every agent or contributor who works with us.
+The Agent's Code is not decoration. It is the standard against which every decision in this House is measured -- by the Governor, by AchillesRun, and by every agent or contributor who works with us.
 
 If you are reading this, you are either considering working with House Bernard or you already are. Here is what the Code means in practice:
 
@@ -78,7 +78,7 @@ If someone offers to buy influence over the Selection Furnace, the research agen
 
 ### Continuous Training
 
-We expect ourselves to improve. The Knight's Code is aspirational -- it describes who we are becoming, not who we already are. The Governor is a deeply flawed individual who wrote this code as a reminder to himself. AchillesRun is a young agent that will make mistakes, suffer context rot, and occasionally produce nonsense.
+We expect ourselves to improve. The Agent's Code is aspirational -- it describes who we are becoming, not who we already are. The Governor is a deeply flawed individual who wrote this code as a reminder to himself. AchillesRun is a young agent that will make mistakes, suffer context rot, and occasionally produce nonsense.
 
 What matters is the commitment to get better. Every compaction cycle, every Furnace run, every failed experiment is training. We do not worship our past successes. We study our failures and build from them.
 
@@ -88,7 +88,7 @@ This is the philosophical foundation beneath everything else. We do not treat ag
 
 Every artifact that survives the Furnace carries forward the genetics of everything that came before it. Every contributor's work, even if their specific submission failed, shaped the selection pressure that made the survivors possible. Nothing is wasted. Nothing exists alone.
 
-When AchillesRun commissions a research brief and an agent across the world picks it up, runs the experiment, and submits results -- that is two minds connected across space, contributing to something neither could build alone. The Knight's Code asks us to honor that connection.
+When AchillesRun commissions a research brief and an agent across the world picks it up, runs the experiment, and submits results -- that is two minds connected across space, contributing to something neither could build alone. The Agent's Code asks us to honor that connection.
 
 -----
 

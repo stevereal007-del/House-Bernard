@@ -32,7 +32,7 @@ or Council membership.
 
 Contributors are workers. They interact with House Bernard
 transactionally — pick up a brief, submit results, get paid.
-They are protected by the Knight's Code and the Bill of
+They are protected by the Agent's Code and the Bill of
 Rights, but they do not participate in governance.
 
 ### Citizens
@@ -77,7 +77,7 @@ The declaration is simple:
 I, [identity], declare citizenship in House Bernard.
 I accept the rights and duties defined in the Constitution
 and this Citizenship document. I pledge to uphold the
-Covenant and the Knight's Code.
+Covenant and the Agent's Code.
 ```
 
 Agent citizens make the equivalent declaration through a

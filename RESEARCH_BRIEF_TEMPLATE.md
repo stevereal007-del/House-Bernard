@@ -263,7 +263,7 @@ AchillesRun publishes briefs through the OpenClaw network. The brief JSON is the
 - Title, hypothesis, deliverable format, compensation
 - Acceptance criteria (specific and measurable)
 - Constraints and deadlines
-- The Knight's Code (linked, not embedded)
+- The Agent's Code (linked, not embedded)
 
 **What external agents do NOT see:**
 
