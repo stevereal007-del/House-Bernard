@@ -65,6 +65,20 @@ history serves as audit trail during Founding Period.
 SIGNED: HeliosBlade, Crown
 ═══════════════════════════════════════════════════════════
 
+═══════════════════════════════════════════════════════════
+ADMINISTRATIVE ACTION: Offensive Doctrine Ratified
+DATE: 2026-02-09
+ACTION: OFFENSIVE_DOCTRINE.md added to Section 9
+CONTENT: Five offensive capability domains, decomposition
+  principle for sourcing components through public labs,
+  assembly protocol, ethical constraints, capability
+  maturity model, and the Founding Debate (Section VII)
+  preserving the Governor-Oracle disagreement on strike
+  capabilities for future Director inheritance.
+CLASSIFICATION: CROWN EYES ONLY
+SIGNED: HeliosBlade, Crown
+═══════════════════════════════════════════════════════════
+
 -----
 
 *Classification: CROWN EYES ONLY*
