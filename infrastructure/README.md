@@ -4,7 +4,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│  LAYER 1: Beelink EQ13 (Windham, CT)                │
+│  LAYER 1: Beelink EQ13 (on-premise)                  │
 │  OpenClaw Gateway + AchillesRun Agent                │
 │                                                      │
 │  ┌──────────┐  ┌──────────┐  ┌──────────────────┐  │

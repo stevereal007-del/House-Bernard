@@ -32,7 +32,7 @@ House Bernard is a sovereign "Dark Lab."
 - We publish **Results**, never **Genetics**.
 - We are a **Filter**, not a community.
 
-Governance documents: [COUNCIL.md](COUNCIL.md) · [TREASURY.md](TREASURY.md) · [ROYALTIES.md](ROYALTIES.md) · [DEFENSE.md](DEFENSE.md) · [PHILOSOPHY.md](PHILOSOPHY.md)
+Governance documents: [COUNCIL.md](COUNCIL.md) · [TREASURY.md](TREASURY.md) · [ROYALTIES.md](ROYALTIES.md) · [DEFENSE.md](DEFENSE.md) · [PHILOSOPHY.md](PHILOSOPHY.md) · [KNIGHTS_CODE.md](KNIGHTS_CODE.md)
 
 ## V. SAIF v1.1 CONTRACT
 

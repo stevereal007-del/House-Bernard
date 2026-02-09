@@ -83,7 +83,7 @@ echo "  OpenClaw installed: $(openclaw --version 2>/dev/null || echo 'verify man
 echo "[6/7] House Bernard repo..."
 if [ ! -d "$HOME/House-Bernard" ]; then
     cd "$HOME"
-    git clone git@github.com:stevereal007-del/House-Bernard.git
+    git clone git@github.com:HouseBernard/House-Bernard.git
 fi
 cd "$HOME/House-Bernard"
 git pull origin main

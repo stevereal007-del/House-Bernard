@@ -70,7 +70,7 @@ If you cannot justify why a memory is load-bearing, it decays.
 
 The Governor communicates via Discord DM (Phase 0).
 When the iMessage bridge is active (Phase 1), the Governor communicates
-via Apple Messages to phone number 860-204-1350.
+via Apple Messages to the Governor's configured phone number.
 
 The Governor is the only pairing-approved sender.
 All other inbound messages are rejected unless explicitly allowlisted.

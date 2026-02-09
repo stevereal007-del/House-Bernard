@@ -22,7 +22,7 @@ This is not a deployment guide. This is the **law** that governs agent behavior.
 
 | Layer | Hardware | Role |
 |-------|----------|------|
-| **Layer 1** | Beelink EQ13 (Windham, CT) | OpenClaw gateway, AchillesRun agent, Labs, local models, treasury |
+| **Layer 1** | Beelink EQ13 (on-premise) | OpenClaw gateway, AchillesRun agent, Labs, local models, treasury |
 | **Layer 2** | GitHub | Archive, version control, dead state storage |
 
 No VPS. OpenClaw IS the gateway. The Beelink IS the server.
@@ -183,7 +183,7 @@ OpenClaw's session lifecycle handles daily reset at 4:00 AM local time and idle 
 **Phase 1 — iMessage (Pending Hardware)**
 - Requires Mac Mini running Messages.app + `imsg` CLI
 - Mac Mini connects to Beelink via SSH over Tailscale
-- Governor texts AchillesRun at 860-204-1350
+- Governor texts AchillesRun at the configured phone number
 - DM policy: allowlist (Governor phone only)
 
 ### Cron Jobs
