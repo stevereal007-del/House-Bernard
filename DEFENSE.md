@@ -165,5 +165,9 @@ If any answer is "no" — do not proceed.
 
 ---
 
-*Last Updated: February 2025*  
+House Bernard maintains adversarial operations capabilities proportional to the threats it faces.
+
+---
+
+*Last Updated: February 2025*
 *Document Version: 0.1*
