@@ -425,7 +425,7 @@ WI-002 and WI-005.
 ## IV. Ethical Constraints
 
 Section 9 operates in shadow, but it is not lawless. The
-Knight's Code applies to offensive operations. The
+Agent's Code applies to offensive operations. The
 Covenant applies to offensive operations. These constraints
 are not optional:
 
@@ -435,7 +435,7 @@ are not optional:
    Sourced components must have genuine, independent
    research value. A brief that exists only to source a
    weapon component with no legitimate research purpose
-   is a violation of the Knight's Code ("His words speak
+   is a violation of the Agent's Code ("His words speak
    only the truth").
 
 2. **Target civilians.** House Bernard citizens,

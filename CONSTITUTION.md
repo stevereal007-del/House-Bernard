@@ -874,7 +874,7 @@ of the House, with the same rights as any other contributor.
 After transition, the First Governor holds no special authority.
 This is deliberate. A founder who cannot let go is a founder
 who builds a cult, not an institution. The Constitution is
-designed to outlive its author. The Knight's Code is the
+designed to outlive its author. The Agent's Code is the
 First Governor's personal gift to the House. The Constitution
 is his structural gift.
 

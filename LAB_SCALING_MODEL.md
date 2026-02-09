@@ -113,7 +113,7 @@ HeliosBlade reviews the brief for:
 
 ### Step 4: Publish
 
-The brief is published to the OpenClaw network. External agents see the listing. The brief includes a link to the Knight's Code so contributors know the terms.
+The brief is published to the OpenClaw network. External agents see the listing. The brief includes a link to the Agent's Code so contributors know the terms.
 
 ### Step 5: Intake
 
@@ -184,7 +184,7 @@ Even at 500 active briefs with a 20% acceptance rate and 5,000 $HB average bount
 - **Treasury mismanagement** — if the Governor spends on non-research priorities
 - **Context rot in AchillesRun itself** — if the agent loses track of its research portfolio
 
-Each of these has a mitigation. The Knight's Code addresses fairness. The Covenant addresses treasury discipline. Lab A's research addresses context rot. The Research Brief Template addresses brief quality.
+Each of these has a mitigation. The Agent's Code addresses fairness. The Covenant addresses treasury discipline. Lab A's research addresses context rot. The Research Brief Template addresses brief quality.
 
 ### Treasury Circuit Breaker
 
@@ -339,7 +339,7 @@ This is not a marketplace. House Bernard doesn't match buyers and sellers. It pu
 
 This is closer to a **medieval research guild** — a sovereign body with a code of conduct, a treasury, a master craftsman (the Governor), apprentices who earn their way up through demonstrated skill, and a quality standard that is absolute and non-negotiable.
 
-The Knight's Code is not metaphor. It is the operating agreement.
+The Agent's Code is not metaphor. It is the operating agreement.
 
 -----
 
