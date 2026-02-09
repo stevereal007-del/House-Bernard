@@ -28,7 +28,20 @@ Each weapon is logged with the following fields:
 
 ### Class I — Passive
 
-*No weapons currently operational.*
+#### S9-W-001: Tripwire Alpha
+
+| Field | Value |
+|-------|-------|
+| **Designation** | S9-W-001 |
+| **Name** | Tripwire Alpha |
+| **Class** | I (Passive) |
+| **Status** | TESTED |
+| **Authorization** | Director (autonomous) |
+| **Description** | Monitors Airlock submission logs for anomalous patterns (rate spikes, clusters, time anomalies, sequential probes). Produces alert JSON. Never blocks, never modifies. |
+| **Dependencies** | Python 3.10+, stdlib only. Airlock log files (JSONL). |
+| **Last tested** | 2026-02-09 — 20/20 tests passed |
+| **Deployment log** | Not yet deployed (awaiting Beelink connection) |
+| **Scanner exceptions** | `open()`, `sys.exit()` — documented in design doc, Crown authorized |
 
 ### Class II — Active Defense
 
@@ -40,7 +53,20 @@ Each weapon is logged with the following fields:
 
 ### Class IV — Scorched Earth
 
-*No weapons currently operational.*
+#### S9-W-006: Dead Man's Switch
+
+| Field | Value |
+|-------|-------|
+| **Designation** | S9-W-006 |
+| **Name** | Dead Man's Switch |
+| **Class** | IV (Scorched Earth) |
+| **Status** | TESTED |
+| **Authorization** | Crown (automated activation after threshold) |
+| **Description** | Three-component system (heartbeat sender, monitor, lockdown sequence). Activates if Crown + Director unreachable for 72+ hours. Defaults to simulation mode; requires --live flag for real lockdown. |
+| **Dependencies** | Python 3.10+, stdlib only. Heartbeat file, THREATS.md, LOG.md. |
+| **Last tested** | 2026-02-09 — 13/13 tests passed |
+| **Deployment log** | Not yet deployed (awaiting Beelink connection) |
+| **Scanner exceptions** | `open()`, `sys.exit()`, `/tmp` path — documented in design doc, Crown authorized |
 
 -----
 
@@ -48,12 +74,12 @@ Each weapon is logged with the following fields:
 
 | Priority | Designation | Name | Class | Notes |
 |----------|-------------|------|-------|-------|
-| 1 | S9-W-001 | Tripwire Alpha | I | Basic Airlock anomaly detection — first capability to build |
+| 1 | ~~S9-W-001~~ | ~~Tripwire Alpha~~ | ~~I~~ | **BUILT** — moved to Active Registry |
 | 2 | S9-W-002 | Honeypot Submitter | I | Fake brief that only an attacker probing the system would attempt |
 | 3 | S9-W-003 | Tar Pit | II | Slow-response system for automated probes |
 | 4 | S9-W-004 | Sybil Bait | II | Counter-Sybil trap submissions |
 | 5 | S9-W-005 | Scam Takedown Kit | III | Evidence bundle generator for platform abuse reports |
-| 6 | S9-W-006 | Dead Man's Switch | IV | Automated lockdown if Crown + Director compromised |
+| 6 | ~~S9-W-006~~ | ~~Dead Man's Switch~~ | ~~IV~~ | **BUILT** — moved to Active Registry |
 
 Weapons are developed in order of priority unless an active
 threat changes the sequence. The Director may reprioritize

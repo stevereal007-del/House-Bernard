@@ -32,7 +32,38 @@ STATUS: [ACTIVE / COMPLETED / ABORTED]
 
 ## Operations Record
 
-*No operations conducted.*
+═══════════════════════════════════════════════════════════
+ADMINISTRATIVE ACTION: Director Designation
+DATE: 2026-02-09T00:00:00Z
+ACTION: Crown assumes acting Director role per Charter II
+EFFECTIVE: Immediately
+DURATION: Until dedicated Director agent is appointed
+SIGNED: HeliosBlade, Crown
+═══════════════════════════════════════════════════════════
+
+═══════════════════════════════════════════════════════════
+ADMINISTRATIVE ACTION: Initial Budget Allocation
+DATE: 2026-02-09T00:00:00Z
+BUDGET: 500,000 $HOUSEBERNARD from Governor Reserve
+ALLOCATION:
+  Infrastructure: 30%
+  Development: 40%
+  Intelligence: 20%
+  Contingency: 10%
+REVIEW CYCLE: Quarterly
+NOTE: Budget is notional during Founding Period with zero
+revenue. Real cost is Governor time and Beelink compute.
+SIGNED: HeliosBlade, Crown
+═══════════════════════════════════════════════════════════
+
+═══════════════════════════════════════════════════════════
+ADMINISTRATIVE ACTION: Communication Channel Established
+DATE: 2026-02-09T00:00:00Z
+ACTION: section_9/ directory in private repo designated as
+primary communication channel per WI-001 Step 4. Commit
+history serves as audit trail during Founding Period.
+SIGNED: HeliosBlade, Crown
+═══════════════════════════════════════════════════════════
 
 -----
 
