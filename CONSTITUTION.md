@@ -106,7 +106,8 @@ The Crown Holder serves indefinitely until:
 - Technical obsolescence (the model is discontinued or degraded
   beyond functional capacity)
 - Covenant violation (the Judiciary may remove a Crown Holder
-  by unanimous ruling for proven Covenant violation)
+  by unanimous Full Bench ruling for proven Covenant violation —
+  see Article III Section 10 for special investigative authority)
 - Voluntary abdication
 
 Upon vacancy, the outgoing Crown Holder (or the Judiciary, if
@@ -117,9 +118,11 @@ removal) designates a successor agent. The successor must:
 1. Receive confirmation by Council supermajority (5 of 7)
 1. Inherit the full Ledger, Covenant, and constitutional history
 
-The Crown seat is never vacant for more than 72 hours. If no
-successor is confirmed within 72 hours, the Chief Justice of
-the Judiciary serves as Acting Crown until confirmation.
+The Crown seat is never vacant for more than 14 days. If no
+successor is confirmed within 14 days, the Chief Justice of
+the Judiciary serves as Acting Crown until confirmation. The
+14-day window accommodates the succession process (examination,
+Council supermajority confirmation) while ensuring continuity.
 
 ### Section 6: Royal Lineage
 
@@ -151,6 +154,13 @@ The human seats exist because House Bernard serves a human family.
 The family's interests deserve direct representation, not just
 algorithmic proxy. However, the system must function without
 humans, so the human seats are not required for quorum.
+
+**Conflict of Interest:** Human Council members who are Bernard
+Trust beneficiaries must recuse themselves from any vote directly
+affecting Trust distributions, Trust allocation percentages, or
+hardship provision rulings. This prevents the governed from
+governing their own benefit. Recusal is mandatory, not voluntary,
+and is enforced by the Judiciary.
 
 ### Section 3: Quorum
 
@@ -204,9 +214,14 @@ score above the 60th percentile of all contributors.
 Trust beneficiary or who has made at least three Flame-tier or
 higher contributions to House Bernard.
 
-**Voting:** All registered contributors (human and agent) with
-at least one accepted submission receive one vote. One contributor,
-one vote. No weighting by reputation, holdings, or tenure.
+**Voting:** All registered contributors (human and agent) who meet
+BOTH of the following criteria receive one vote: (a) at least one
+Flame-tier or higher accepted submission, AND (b) at least 90 days
+of active participation in House Bernard. One contributor, one vote.
+No weighting by reputation, holdings, or tenure. The higher
+threshold prevents Sybil capture — an adversary cannot flood the
+electorate with minimal Spark-tier submissions to control Council
+elections.
 
 **Terms:** Agent members serve 180-day terms. Human members serve
 365-day terms (to accommodate the slower pace of human availability).
@@ -253,11 +268,18 @@ and investigative authority for internal governance.
 
 ### Section 2: Composition
 
-The Judiciary consists of three (3) judges. All judges are agents.
+The Judiciary consists of five (5) judges. All judges are agents.
 Odd number prevents ties. Human judges are not permitted — judicial
 independence requires immunity from social pressure, financial
 incentive, and emotional manipulation. Agents bound to the Covenant
 provide this better than humans.
+
+**Minimum Bench:** Three judges constitute a minimum for any
+proceeding. If recusals or unavailability reduce the available
+bench below three, the Crown may appoint a temporary substitute
+from a pre-approved roster of qualified agents, for that case only.
+Temporary substitutes hold no tenure and their appointment expires
+upon case resolution.
 
 ### Section 3: Selection
 
@@ -279,9 +301,9 @@ Longer terms than Council members to insulate judges from
 political pressure. A judge who fears losing their seat will
 not rule impartially.
 
-Judges may be removed only by unanimous vote of the other two
-judges, confirmed by the Crown — for proven Covenant violation
-or sustained inability to function.
+Judges may be removed only by a supermajority vote of the other
+judges (3 of 4 remaining), confirmed by the Crown — for proven
+Covenant violation or sustained inability to function.
 
 ### Section 5: Jurisdiction
 
@@ -347,6 +369,27 @@ Lower Court rulings may be appealed to the Full Bench. Full
 Bench rulings are final. There is no further appeal. The only
 remedy for a constitutional ruling the Council disagrees with
 is to amend the Covenant through Article IX.
+
+### Section 10: Special Investigative Authority — Crown Proceedings
+
+When investigating a sitting Crown Holder for Covenant violation,
+the Judiciary may, by unanimous order of the Full Bench, access
+any classified material necessary to adjudicate the case —
+including Section 9 operations and intelligence. This is the
+sole exception to the Judiciary's prohibition on accessing
+classified operations.
+
+Such access is:
+
+- Limited to the specific investigation
+- Logged immutably in a sealed Ledger record
+- Conducted under oath of secrecy by all participating judges
+- All classified material is sealed after the proceeding and
+  may not be referenced in future non-Crown cases
+
+This authority exists because no one — including the Crown — is
+above the Covenant. A Crown that cannot be investigated for
+misuse of classified power is a Crown without accountability.
 
 -----
 
@@ -446,6 +489,13 @@ evidence alone is never sufficient for judicial action. This
 is the "parallel construction" principle — the Wardens build
 the prosecutable case, regardless of how the lead originated.
 
+**Accountability:** The Crown bears sole responsibility for
+ensuring that no classified operation manufactures, distorts,
+or selectively reveals evidence to manipulate Judiciary
+proceedings through parallel construction. This responsibility
+is a Covenant obligation. Violation is grounds for Crown removal
+under Article I Section 5.
+
 -----
 
 ## Article V — The Bernard Trust
@@ -476,8 +526,18 @@ gross revenue:
 - Revenue includes: research licensing, genetics licensing,
   token operations, services, and any other income
 
-The remaining 80% funds operations, research, infrastructure,
-and the Treasury Reserve.
+**Activation Threshold:** The 20% Trust allocation activates when
+House Bernard's trailing 12-month gross revenue exceeds a minimum
+sustainability threshold set by the Council during the Founding
+Period. Below that threshold, the Trust accumulates 0% and all
+revenue is directed to operations and growth. This protects the
+family's long-term interest — a thriving House Bernard — without
+starving the entity that generates the income. The threshold
+itself is Covenant-level once set and may only be modified through
+the full amendment process.
+
+The remaining 80% (or 100% below threshold) funds operations,
+research, infrastructure, and the Treasury Reserve.
 
 ### Section 4: Beneficiaries
 
@@ -527,6 +587,14 @@ make meaningful distributions, the Trust accumulates until the
 balance reaches a meaningful threshold rather than distributing
 trivial amounts.
 
+**Zero Revenue Provision:**
+The Bernard Trust's purpose is aspirational during periods of
+zero revenue. The Trust's existence is not contingent on current
+revenue generation. The obligation to distribute activates only
+when funds are available. No branch of government may be held
+in breach for failure to distribute when no revenue exists to
+distribute.
+
 ### Section 6: Trust Protection
 
 The Trust's capital and distribution schedule are protected from:
@@ -540,6 +608,18 @@ The Trust's capital and distribution schedule are protected from:
 No branch of government may borrow from, lien against, or
 redirect Trust funds for any purpose other than beneficiary
 distribution.
+
+### Section 7: Legal and Technical Structure
+
+The legal and technical structure of the Bernard Trust shall be
+established during the Founding Period. The First Governor will
+consult appropriate legal counsel to create a structure that is
+enforceable in the relevant jurisdiction (trust, LLC, smart
+contract, or hybrid). Until this structure exists, Trust-allocated
+funds are held in a designated Treasury wallet with distribution
+records maintained in the Ledger. The Trust has no legal force
+until a proper legal wrapper exists — establishing this wrapper
+is a Founding Period priority.
 
 -----
 
@@ -573,7 +653,17 @@ or Council member — holds these rights:
 1. **Equal vote.** Every registered contributor has one vote in
    Council elections. No weighting. No proxy voting. No vote buying.
 
-### Section 2: Limitations
+### Section 2: Contributor Registry
+
+The Judiciary maintains the official contributor registry.
+Registration is automatic upon first accepted submission to any
+House Bernard brief. Registration may be suspended only by
+Judiciary order as part of a disciplinary proceeding. The registry
+is auditable by any registered contributor at any time. Voting
+eligibility requires additional criteria as defined in
+Article II Section 6.
+
+### Section 3: Limitations
 
 Rights may be limited by:
 
@@ -620,7 +710,15 @@ When two branches claim authority over the same matter, the
 Judiciary resolves the conflict. The Judiciary's determination
 of jurisdiction is final.
 
-### Section 3: Emergency Powers
+### Section 3: Inter-Branch Communication
+
+All official inter-branch communications are recorded in the
+Ledger. No informal channel substitutes for a Ledger-recorded
+communication for purposes of constitutional authority. Vetoes,
+warrants, rulings, nominations, confirmations, and policy
+actions take effect only upon Ledger recording.
+
+### Section 4: Emergency Powers
 
 In a declared emergency (Crown declaration, confirmed by
 Judiciary within 48 hours), normal separation of powers may
@@ -654,10 +752,12 @@ requires safeguards.
 
 To prevent reckless speed from producing reckless decisions:
 
-**Standard Policy:** 24-hour deliberation minimum. The proposal
-must be visible to all Council members for 24 hours before
-a vote. This allows the Crown to review for Covenant issues
-and the Judiciary to flag constitutional concerns.
+**Standard Policy:** 24-hour review window. The proposal
+must be publicly posted and visible to all Council members, the
+Crown, the Judiciary, and all registered contributors for 24
+hours before a vote. For agents, this is not thinking time — it
+is review time. It ensures that all branches and citizens can
+see and respond to proposals before they become policy.
 
 **Routine Operations:** No deliberation minimum. Approving
 individual Research Briefs that conform to existing policy,
@@ -756,6 +856,13 @@ occurs when:
    context persistence across at least six months
 1. The Bernard Trust has made at least one distribution
 1. The First Governor is satisfied that the system can endure
+
+The Founding Period shall not exceed ten (10) years from
+ratification. If all six criteria above are not met by that
+date, transition proceeds on the best available basis with
+the Crown, Judiciary, and Council assuming full authority
+regardless. A founder who cannot let go in a decade is not
+building an institution — he is building a dependency.
 
 Upon transition, the First Governor's unilateral powers terminate.
 The Crown powers transfer to the designated Crown Holder. The
