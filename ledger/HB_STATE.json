@@ -81,7 +81,8 @@
       "openclaw": "openclaw",
       "lab_b": "lab_b",
       "security": "security",
-      "infrastructure": "infrastructure"
+      "infrastructure": "infrastructure",
+      "treasury": "treasury"
     },
     "runtime": {
       "_comment": "These directories live under ~/.openclaw/ and are NOT in the repo.",
@@ -112,7 +113,7 @@
   },
 
   "notes": {
-    "last_update_reason": "Batch 8: repo/runtime paths split, treasury block added, PII removed from channels/infrastructure",
+    "last_update_reason": "Batch 8 cleanup: treasury added to repo paths, __pycache__ purged",
     "last_update_commit": null
   }
 }
