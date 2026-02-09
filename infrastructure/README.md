@@ -35,14 +35,14 @@ OpenClaw provides everything the VPS was designed to do: public intake (via mess
 |-------|----------|------|
 | **Layer 1** | Beelink EQ13 (N150, 16GB, 500GB SSD) | OpenClaw gateway, AchillesRun agent, Labs, local models, treasury |
 | **Layer 2** | GitHub | Archive, version control, dead state storage |
+| **Layer 3** | Google Cloud (house-bernard) | Gmail, Drive, Sheets, Docs, Calendar, Chat, Cloud Logging |
 
 ## Files
 
-### deployment/
-
 | File | Purpose |
 |------|---------|
-| `deploy_achillesrun.sh` | One-shot Beelink setup: packages, firewall, Tailscale, Ollama, OpenClaw, repo clone |
+| `GOOGLE_CLOUD.md` | Google Cloud project config, enabled APIs, authentication, cost controls |
+| `deployment/deploy_achillesrun.sh` | One-shot Beelink setup: packages, firewall, Tailscale, Ollama, OpenClaw, repo clone |
 
 ## Data Flow
 
