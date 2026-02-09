@@ -3,7 +3,7 @@
   "_version": "1.0",
   "_agent": "AchillesRun",
   "_spec": "See AGENT_SPEC.md for the law governing this config",
-  "_deploy": "Beelink EQ13, Windham CT",
+  "_deploy": "Beelink EQ13, on-premise",
 
   "agents": {
     "main": {
@@ -85,7 +85,7 @@
       "cliPath": "/usr/local/bin/imsg",
       "dbPath": "/Users/achillesrun/Library/Messages/chat.db",
       "dmPolicy": "allowlist",
-      "allowedUsers": ["+18602041350"]
+      "allowedUsers": ["${GOVERNOR_PHONE}"]
     }
   },
 

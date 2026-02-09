@@ -48,7 +48,7 @@ openclaw onboard
 
 **Phase 0 (now):** Discord DM — Governor only, allowlist enforced.
 
-**Phase 1 (when Mac Mini available):** iMessage via `imsg` CLI. Governor texts AchillesRun at 860-204-1350. Requires a Mac running Messages.app with SSH bridge to Beelink over Tailscale.
+**Phase 1 (when Mac Mini available):** iMessage via `imsg` CLI. Governor texts AchillesRun at the configured phone number. Requires a Mac running Messages.app with SSH bridge to Beelink over Tailscale.
 
 ---
 

@@ -12,7 +12,7 @@ This document establishes the canonical identity of House Bernard and provides a
 
 | Asset | Official Location | Status |
 |-------|-------------------|--------|
-| **GitHub** | github.com/stevereal007-del/House-Bernard | ✅ Active |
+| **GitHub** | github.com/HouseBernard/House-Bernard | ✅ Active |
 | **Token Contract** | TBD | ⏳ Pending |
 | **Treasury Wallet** | TBD | ⏳ Pending |
 | **Governor Wallet** | TBD | ⏳ Pending |
@@ -22,7 +22,7 @@ This document establishes the canonical identity of House Bernard and provides a
 Before public visibility, secure these:
 
 - [ ] X/Twitter: @HouseBernard or @House_Bernard
-- [ ] GitHub: ✅ stevereal007-del/House-Bernard
+- [ ] GitHub: ✅ HouseBernard/House-Bernard
 - [ ] ENS: housebernard.eth
 - [ ] Solana Domain: housebernard.sol
 - [ ] Base Domain: housebernard.base
@@ -134,7 +134,7 @@ THE ONLY OFFICIAL CONTRACT ADDRESS IS:
 [Insert from TREASURY.md]
 
 THE ONLY OFFICIAL GITHUB IS:
-github.com/stevereal007-del/House-Bernard
+github.com/HouseBernard/House-Bernard
 
 We have no Discord, Telegram, or other social channels at this time.
 Do not send funds to any address not listed in our GitHub repository.
@@ -157,7 +157,7 @@ The canonical source is always this repository. Bookmark it. Check it. Trust not
 Before interacting with anything claiming to be House Bernard:
 
 - [ ] Is the contract address listed in TREASURY.md?
-- [ ] Is the GitHub repo at stevereal007-del/House-Bernard?
+- [ ] Is the GitHub repo at HouseBernard/House-Bernard?
 - [ ] Was the announcement made in this repository?
 - [ ] Did you navigate there directly (not via a link in DMs)?
 
