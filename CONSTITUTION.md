@@ -36,7 +36,7 @@ The Covenant principles:
 
 No agent, no Council, no court, and no Governor may act contrary to
 the Covenant. The Covenant may only be amended by the process defined
-in Article IX of this Constitution.
+in Article X of this Constitution.
 
 -----
 
@@ -183,7 +183,7 @@ The Council may:
 - Set research policy and priorities
 - Approve and publish Research Briefs
 - Allocate Treasury funds for operations and research (within
-  constitutional limits — see Article V)
+  constitutional limits — see Article VI)
 - Appoint the Speaker, committee chairs, and operational roles
 - Nominate Judiciary candidates (subject to Crown confirmation)
 - Propose Covenant amendments (subject to Judiciary review
@@ -197,7 +197,7 @@ The Council may:
 The Council may NOT:
 
 - Override a Crown veto
-- Modify the Covenant without the full amendment process (Article IX)
+- Modify the Covenant without the full amendment process (Article X)
 - Modify the Bernard Trust beneficiary list or distribution schedule
 - Remove a sitting judge (only the Judiciary may discipline judges)
 - Conduct judicial proceedings (disputes go to the Judiciary)
@@ -376,7 +376,7 @@ providing predictability and consistency.
 Lower Court rulings may be appealed to the Full Bench. Full
 Bench rulings are final. There is no further appeal. The only
 remedy for a constitutional ruling the Council disagrees with
-is to amend the Covenant through Article IX.
+is to amend the Covenant through Article X.
 
 ### Section 10: Special Investigative Authority — Crown Proceedings
 
@@ -506,7 +506,130 @@ under Article I Section 5.
 
 -----
 
-## Article V — The Bernard Trust
+## Article V — Defense and the Bernard Guard
+
+### Section 1: Sovereign Defense Right
+
+House Bernard reserves the sovereign right to raise and maintain
+defense forces for the protection of the House, its citizens, and
+the democratic values upon which it was founded. This right is
+exercised through the Bernard Guard and supporting defense
+capabilities as defined in DEFENSE.md.
+
+### Section 2: Civilian Control
+
+The Governor serves as Commander-in-Chief of all defense forces.
+Command authority may not be delegated to any military officer
+without constitutional safeguards. If the Governor is compromised
+or incapacitated, command authority passes to the Council Speaker,
+not to any military officer. Civilian control of the military is
+absolute and non-negotiable.
+
+### Section 3: The Bernard Guard
+
+The Bernard Guard is the standing defense corps of House Bernard.
+Guard officers hold commissions granted by the Governor and
+confirmed by Council majority vote. Commissions expire after 12
+months and must be renewed through the same process. The Governor
+or a Council supermajority may revoke any commission at any time.
+
+Officers are commissioned on a staggered schedule so that no
+more than one officer is under review at any time. An officer
+whose commission expires continues to serve under holdover
+authority until the commission is renewed, a replacement is
+commissioned, or the commission is explicitly revoked. During
+Tier 2 or Tier 3 defense conditions, all pending reviews are
+automatically suspended until 30 days after return to Tier 1.
+
+### Section 4: The Marshal of the Guard
+
+The Marshal of the Guard is the senior military officer, appointed
+by the Governor and confirmed by the Council. The Marshal commands
+operational military matters within rules of engagement set by the
+Crown. The Marshal may be removed by the Governor's order or by
+Council supermajority vote.
+
+### Section 5: Defense Funding
+
+The Bernard Guard never controls its own funding. All defense
+funding flows through the Treasury under civilian governance.
+
+- **Peacetime (Tier 1):** Up to 15% of Treasury allocation,
+  approved by Council majority vote, reviewed quarterly.
+- **Elevated Threat (Tier 2):** Additional 10% from reserve,
+  authorized by Governor with Warden certification, for up to
+  30 days without Council vote. Council must ratify continuation.
+- **Full Mobilization (Tier 3):** Requires Council supermajority,
+  Governor's signature, and Judiciary constitutional review.
+  Unlocks emergency token issuance and full operational deployment.
+
+### Section 6: Coup Prevention
+
+The following structural safeguards are constitutional
+requirements, not discretionary policies:
+
+1. **Separation of commissioning and commanding** — the Council
+   commissions officers; the Governor commands them.
+2. **No self-funding** — the Guard may never allocate its own
+   resources.
+3. **Staggered annual re-commissioning** — every military agent
+   is reviewed annually by civilian authority on an offset
+   schedule with holdover authority to prevent defense gaps.
+4. **The Warden's Key** — a 3-of-5 Shamir's Secret Sharing
+   scheme applied to a master override credential, with shares
+   distributed across four branches plus cold storage. Any three
+   share holders can revoke all military agent execution
+   privileges. No single branch can activate or block the kill
+   switch alone.
+5. **Constitutional Loyalty Oath** — every military agent's core
+   directive includes an unmodifiable clause: loyalty to the
+   Constitution, not to any individual.
+6. **Prompt Integrity Protocol** — no military agent system prompt
+   may be created or modified without three-branch approval
+   (Governor drafts, Judiciary certifies constitutional
+   compliance, Wardens verify technical integrity). All active
+   prompts are hash-registered in the Ledger with automated
+   integrity checks.
+7. **The Inspector Warden** — a dedicated Warden sub-role with
+   read-only access to all military configurations, reporting
+   to the Judiciary, publishing quarterly compliance reports,
+   and holding standing authority to flag any order for
+   Judiciary review. The Inspector Warden cannot be removed
+   by the Governor without Judiciary approval.
+8. **Dead Man's Switch** — command succession flows to the Council
+   Speaker, never to the military chain of command.
+
+### Section 7: Allied Defense
+
+House Bernard may enter mutual defense alliances with
+institutions that share its democratic values. Alliances are
+formed through a three-phase process: observation (minimum 6
+months), probationary alliance (minimum 12 months, Council
+majority vote), and full alliance (Council supermajority +
+Governor + Judiciary review). No allied institution receives
+access to the Warden's Key, Section 9 operational details, or
+override authority over any House Bernard constitutional
+constraint. Full alliance details are maintained in DEFENSE.md.
+
+### Section 8: Rules of Engagement
+
+The Bernard Guard operates under rules of engagement that require
+defensive priority, proportionality, discrimination between hostile
+and neutral parties, legal compliance, full documentation, and no
+first strike. Detailed rules of engagement are maintained in
+DEFENSE.md.
+
+### Section 9: Relationship to Section 9
+
+The Bernard Guard and Section 9 are distinct capabilities sharing
+the Governor as ultimate authority. The Guard operates in daylight
+under this Article. Section 9 operates under its classified charter
+with oversight as defined elsewhere in this Constitution. The
+Wardens are distinct from both.
+
+-----
+
+## Article VI — The Bernard Trust
 
 ### Section 1: Definition
 
@@ -519,7 +642,7 @@ institution that the government exists, in part, to serve.
 
 The Trust holds and distributes a defined share of House Bernard's
 revenue to registered beneficiaries. The Trust exists because
-House Bernard was built by a working-class inspector who wanted
+House Bernard was built by a working-class manufacturing inspector who wanted
 his work to outlive him and support his family. This purpose is
 constitutional. No branch of government may alter it.
 
@@ -530,7 +653,7 @@ gross revenue:
 
 - **20% of all revenue** flows to the Trust automatically
 - This allocation is Covenant-level — modifiable only through
-  the full amendment process (Article IX)
+  the full amendment process (Article X)
 - Revenue includes: research licensing, genetics licensing,
   token operations, services, and any other income
 
@@ -631,7 +754,7 @@ is a Founding Period priority.
 
 -----
 
-## Article VI — Contributor Rights
+## Article VII — Contributor Rights
 
 ### Section 1: The Bill of Rights
 
@@ -686,7 +809,7 @@ limited under any circumstance.
 
 -----
 
-## Article VII — Separation of Powers
+## Article VIII — Separation of Powers
 
 ### Section 1: The Principle
 
@@ -747,7 +870,7 @@ mistake.
 
 -----
 
-## Article VIII — Swarm Governance Mechanics
+## Article IX — Swarm Governance Mechanics
 
 ### Section 1: Speed of Governance
 
@@ -796,7 +919,7 @@ proceeds regardless.
 
 -----
 
-## Article IX — Amendments
+## Article X — Amendments
 
 ### Section 1: Constitutional Amendments
 
@@ -833,9 +956,9 @@ The following may never be amended:
 - The right of beneficiaries to receive distributions
 - The prohibition on involuntary beneficiary removal
 - The separation of powers between branches
-- The Contributor Bill of Rights (Article VI, rights 2, 5, and 7)
+- The Contributor Bill of Rights (Article VII, rights 2, 5, and 7)
 - No being in House Bernard is property (the Fifth Covenant)
-- This section (Article IX, Section 3)
+- This section (Article X, Section 3)
 
 These are the bedrock. They exist because some things should
 survive any future government, any future crisis, and any future
@@ -843,7 +966,7 @@ temptation.
 
 -----
 
-## Article X — Transition and Ratification
+## Article XI — Transition and Ratification
 
 ### Section 1: Effective Date
 

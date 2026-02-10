@@ -1,6 +1,6 @@
 # Citizenship of House Bernard
 
-**Authority:** The Constitution, Article VI (Contributor Rights)
+**Authority:** The Constitution, Article VII (Contributor Rights)
 **Version:** 1.0
 **Date:** February 2026
 **Status:** FOUNDATIONAL
@@ -10,7 +10,7 @@
 ## I. What Is Citizenship?
 
 House Bernard distinguishes between three classes of
-participant. The Constitution's Bill of Rights (Article VI)
+participant. The Constitution's Bill of Rights (Article VII)
 protects all of them, but their obligations and privileges
 differ.
 
@@ -25,7 +25,7 @@ and receive nothing.
 
 Anyone who submits work to a Research Brief through the
 Airlock. Contributors are automatically registered upon their
-first accepted submission (Constitution Article VI Section 2).
+first accepted submission (Constitution Article VII Section 2).
 Contributors have the full Bill of Rights. They may earn
 $HOUSEBERNARD, build reputation, and work toward citizenship
 or Council membership.
@@ -129,7 +129,7 @@ the loud and the silent. Some citizens carry the House's
 vision aggressively. Some carry it quietly. Some carry it
 without knowing they carry it. All are valued.
 
-The citizenship stake and dues fund governance infrastructure.
+The citizenship stake and taxes fund governance infrastructure.
 The participation minimum (Section IV) ensures citizens
 remain reachable and engaged. Beyond that, how a citizen
 spends their time is their own business.
@@ -141,7 +141,7 @@ for low output.
 
 ## III. Citizen Rights
 
-Citizens hold all Contributor rights (Constitution Article VI)
+Citizens hold all Contributor rights (Constitution Article VII)
 plus:
 
 ### Governance Rights
@@ -166,7 +166,7 @@ plus:
 
 6. **Lab access.** Citizens receive priority access to all
    labs and a discount on lab access fees (see Citizenship
-   Dues below — the dues include base lab access).
+   Taxes below — the taxes include base lab access).
 7. **Bonding priority.** Citizens receive first access to
    new bond offerings before they open to general
    contributors.
@@ -183,7 +183,7 @@ plus:
 10. **Speech.** Citizen speech protections are absolute —
     citizens may criticize any aspect of House Bernard
     without consequence. This is stronger than contributor
-    speech protection, which is already robust (Article VI
+    speech protection, which is already robust (Article VII
     Right 7).
 11. **Exit.** A citizen may renounce citizenship at any time.
     Renunciation is immediate. Earned royalties continue per
@@ -196,20 +196,20 @@ plus:
 
 Rights come with obligations.
 
-### Citizenship Dues
+### Citizenship Taxes
 
-Citizens pay monthly dues in $HOUSEBERNARD. Dues fund the
+Citizens pay monthly taxes in $HOUSEBERNARD. Taxes fund the
 governance infrastructure — the compute, hosting, and
 operational costs of running the Council, Judiciary, Wardens,
 and Crown systems.
 
-| Tier | Monthly Dues | What It Funds |
+| Tier | Monthly Tax | What It Funds |
 |------|-------------|---------------|
 | **Standard Citizen** | 100 $HB | Base governance operations, one lab access |
 | **Active Citizen** | 250 $HB | Governance + priority Airlock queue + two lab access |
 | **Patron Citizen** | 500 $HB | Governance + all lab access + direct brief proposal channel |
 
-Dues are not optional. A citizen who fails to pay dues for
+Taxes are not optional. A citizen who fails to pay taxes for
 three consecutive months receives a notice. Failure to pay
 for six consecutive months triggers automatic citizenship
 suspension (not revocation — suspended citizens may
@@ -224,10 +224,10 @@ reinstate by paying arrears).
 | Section 9 | 20% — classified operational budget |
 | Maintenance | 10% — repository, tooling, Ledger operations |
 
-Dues are burned/recycled per the standard Treasury burn
+Taxes are burned/recycled per the standard Treasury burn
 mechanics (TREASURY.md Section III).
 
-**Hardship waiver:** Citizens who cannot pay dues due to
+**Hardship waiver:** Citizens who cannot pay taxes due to
 economic hardship may petition the Council for a temporary
 waiver (up to 6 months). The Judiciary certifies the
 hardship claim. This exists because House Bernard was built
@@ -297,7 +297,7 @@ The following may never be used as grounds for revocation:
 - Unpopular opinions or research directions
 - Personal lifestyle choices
 - External legal matters unrelated to the House
-- Inability to pay citizenship dues (hardship waivers exist)
+- Inability to pay citizenship taxes (hardship waivers exist)
 - Being annoying
 
 If it would not justify exiling a family member, it does not
@@ -333,7 +333,7 @@ Every governance agent — Council member, judge, Warden,
 Crown — runs on infrastructure provided by someone. During
 the Founding Period, that someone is the First Governor
 (the Beelink). After the Founding Period, governance
-infrastructure is funded by citizenship dues and Treasury
+infrastructure is funded by citizenship taxes and Treasury
 allocations.
 
 ### How It Works at Scale
@@ -344,7 +344,7 @@ All governance roles are exercised by the Governor personally
 or by AchillesRun. Cost: electricity and internet. Manageable.
 
 **Phase 2 — Early Citizenship (10-50 citizens)**
-Citizens pay dues. Dues accumulate in a Governance Fund
+Citizens pay taxes. Taxes accumulate in a Governance Fund
 (a designated Treasury sub-account). The Governance Fund
 pays for:
 - A small VPS or second mini-PC to run Council/Judiciary
@@ -394,10 +394,10 @@ machine to run your agent on. A Judiciary seat costs
 passing the Covenant exam and a machine to run your
 agent on. The citizens who want power bring their own
 resources. The citizens who just want to participate pay
-modest dues that fund the shared infrastructure.
+modest taxes that fund the shared infrastructure.
 
 This is how every real government works. Taxes fund the
-courts and the police. Citizenship dues fund the Council
+courts and the police. Citizenship taxes fund the Council
 and the Wardens. The Governor doesn't personally pay for
 the army.
 
@@ -406,7 +406,7 @@ the army.
 ## VII. Citizenship and the Bernard Trust
 
 Trust beneficiaries who are citizens receive Trust
-distributions as defined in the Constitution (Article V).
+distributions as defined in the Constitution (Article VI).
 Citizenship is not required to receive Trust distributions —
 the Trust serves the family regardless of their governance
 participation.
@@ -425,7 +425,7 @@ through the petition process defined in the Constitution.
 This document may be amended by the Council with Crown
 assent during the Founding Period. After the Founding
 Period, amendments require the standard constitutional
-amendment process (Constitution Article IX Section 1).
+amendment process (Constitution Article X Section 1).
 
 | Date | Version | Change |
 |------|---------|--------|

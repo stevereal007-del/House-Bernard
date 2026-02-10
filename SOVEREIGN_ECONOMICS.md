@@ -8,22 +8,22 @@
 
 ### Current Structure
 
-House Bernard operates as a sole proprietorship under Steve Bernard
-(HeliosBlade), filed on Schedule C against W-2 income from primary
+House Bernard operates as a sole proprietorship under HeliosBlade
+(the Governor), filed on Schedule C against W-2 income from primary
 employment. This is the simplest legal structure and appropriate
 for the Founding Period.
 
 ### Planned Structure
 
-File a single-member LLC in the State of Connecticut:
+File a single-member LLC in the Governor's home state:
 
 | Field | Value |
 |-------|-------|
 | Entity Name | House Bernard LLC |
 | Type | Single-member LLC (disregarded entity for tax) |
-| State | Connecticut |
+| State | Governor's home state (New England) |
 | Filing Fee | ~$120 |
-| Registered Agent | Steve Bernard (self, or CT registered agent service) |
+| Registered Agent | HeliosBlade (self, or registered agent service) |
 | EIN | Obtain from IRS (free, online, immediate) |
 | Purpose | Artificial intelligence research, software development, digital asset management |
 
@@ -187,7 +187,7 @@ Bernard LLC. It is:
 
 - **Earned** primarily through labor (research contributions
   that survive the Selection Furnace)
-- **Used** within the House economy (citizenship stakes, dues,
+- **Used** within the House economy (citizenship stakes, taxes,
   bond purchases, governance participation)
 - **Backed** by the intellectual property output of the Furnace
   (surviving artifacts, genetics, licensed research)
@@ -257,7 +257,7 @@ expectation of profits, (4) derived from the efforts of others.
 **Mitigation strategy:**
 
 - Token is primarily *earned*, not purchased
-- Token has genuine utility (governance, dues, access)
+- Token has genuine utility (governance, taxes, access)
 - No ICO, no presale, no "invest for returns" marketing
 - Governance is progressively decentralized (Founding Period
   transition)
@@ -297,7 +297,7 @@ transactions under constitutional constraints:
 
 - Bounty payments (automatic on Furnace survival)
 - Royalty distributions (scheduled per ROYALTIES.md)
-- Citizenship dues (monthly, with hardship waivers)
+- Citizenship taxes (monthly, with hardship waivers)
 - Bond purchases and yield payments
 - Citizen-to-citizen transfers
 - Exchange deposits and withdrawals (Phase 3+)
@@ -385,7 +385,7 @@ doesn't stop because the market is down.
 ### Immediate (2026)
 
 - [ ] Obtain EIN from IRS
-- [ ] File Connecticut LLC ($120)
+- [ ] File state LLC (~$120)
 - [ ] File "House Bernard" trademark Class 42 ($250-350)
 - [ ] Consult CPA for 2026 tax strategy ($300-500)
 - [ ] Begin tracking all expenses with receipts
@@ -463,7 +463,7 @@ Nothing was hidden. Nothing was fraudulent. The invisible hand
 determined the value, and the value was zero. That happens to
 businesses every day. It is not a crime to try and fail. It is
 not a crime to build something ambitious on nights and weekends
-from a mini-PC in Connecticut.
+from a mini-PC in New England.
 
 We did our best.
 
