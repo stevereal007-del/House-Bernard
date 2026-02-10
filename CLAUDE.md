@@ -31,7 +31,6 @@ This is a sovereign research micro-nation's codebase.
 - openclaw/           — Agent config and deployment (LAST to build)
 - lab_b/              — Security genetics laboratory
 - legal/              — LLC agreement, token TOS, trademark guide (DRAFTS)
-- token/              — $HOUSEBERNARD SPL token metadata + records
 
 ## Architecture: How Money Flows
 

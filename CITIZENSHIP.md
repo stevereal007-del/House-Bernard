@@ -214,7 +214,7 @@ contributors pay the standard rates in TREASURY.md.
 New citizens pay no taxes for their first 12 months after
 filing their citizenship declaration. The Welcome Year
 exists because House Bernard was built by a working-class
-inspector who believes you should experience what the House
+founder who believes you should experience what the House
 offers before you're asked to fund it.
 
 During the Welcome Year, citizens receive:
@@ -370,7 +370,10 @@ The ladder has two dimensions: **commitment** (stake) and
 **funding** (tax tier). Journeyman requires a higher stake
 because it bridges toward Council — you're demonstrating
 sustained accumulation. Patron requires a higher tax because
-you're funding more infrastructure access. Citizens choose
+you're funding more infrastructure access. Note: Patron stake
+is 1,000 $HB (same as Standard) because the Patron commitment
+is expressed through higher monthly tax, not higher capital
+lockup. Citizens choose
 the path that fits their trajectory: Journeyman for those
 building toward governance power, Patron for those who want
 maximum lab access without the governance ambition.

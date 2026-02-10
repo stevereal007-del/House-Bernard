@@ -40,7 +40,7 @@ The Company is organized for the following purposes:
 ### 1.3 Principal Office
 
 The principal office of the Company shall be at the Member's
-residence in New England, or at such other location as the
+residence in [STATE], or at such other location as the
 Member may designate.
 
 ### 1.4 Registered Agent
