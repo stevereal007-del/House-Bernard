@@ -9,8 +9,8 @@
 House Bernard is an AI research institution organized as a constitutional
 democracy. It has its own currency ($HOUSEBERNARD), its own government
 (four branches), its own legal system, and its own code of honor. It was
-built by a working-class manufacturing inspector from New England
-working nights and weekends on a mini-PC.
+built by a working-class founder working nights and weekends on a
+mini-PC.
 
 The research happens through a brutal testing system called the Selection
 Furnace. You submit work, the Furnace tries to destroy it, and if it
@@ -106,7 +106,7 @@ During the Welcome Year you get:
 - Zero monthly taxes
 
 The Welcome Year exists because House Bernard was built by a
-working-class manufacturing inspector who believes you should experience what the
+working-class founder who believes you should experience what the
 House offers before you're asked to fund it. Your citizenship stake
 (1,000 $HB, held in your wallet) is the only skin in the game required
 — and you get that back if you leave.

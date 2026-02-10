@@ -24,6 +24,7 @@ To compound **Clarity**, **Capital**, and **Capability** in a strict dependency 
 - **/infrastructure**: Beelink deployment script and operational architecture.
 - **/lab_b**: Security genetics laboratory. Adversarial harness for security-domain mutations.
 - **/briefs**: Research brief pipeline. Active, closed, and draft briefs.
+- **/legal**: LLC operating agreement, token terms of service, trademark guide (DRAFTS).
 - **/section_9**: Classified security operations. Crown authority only.
 
 ## IV. GOVERNANCE
@@ -35,7 +36,7 @@ House Bernard is a sovereign "Dark Lab."
 - We are a **Filter**, not a community.
 - We maintain **The Bernard Guard** — a standing defense corps (see [DEFENSE.md](DEFENSE.md)).
 
-Governance documents: [CONSTITUTION.md](CONSTITUTION.md) · [CITIZENSHIP.md](CITIZENSHIP.md) · [COUNCIL.md](COUNCIL.md) · [TREASURY.md](TREASURY.md) · [ROYALTIES.md](ROYALTIES.md) · [DEFENSE.md](DEFENSE.md) · [PHILOSOPHY.md](PHILOSOPHY.md) · [AGENTS_CODE.md](AGENTS_CODE.md) · [VISION.md](VISION.md) · [SOVEREIGN_ECONOMICS.md](SOVEREIGN_ECONOMICS.md) · [RESEARCH_BRIEF_TEMPLATE.md](RESEARCH_BRIEF_TEMPLATE.md) · [LAB_SCALING_MODEL.md](LAB_SCALING_MODEL.md)
+Governance documents: [COVENANT.md](COVENANT.md) · [CONSTITUTION.md](CONSTITUTION.md) · [CITIZENSHIP.md](CITIZENSHIP.md) · [CITIZENSHIP_GUIDE.md](CITIZENSHIP_GUIDE.md) · [COUNCIL.md](COUNCIL.md) · [TREASURY.md](TREASURY.md) · [ROYALTIES.md](ROYALTIES.md) · [DEFENSE.md](DEFENSE.md) · [PHILOSOPHY.md](PHILOSOPHY.md) · [AGENTS_CODE.md](AGENTS_CODE.md) · [VISION.md](VISION.md) · [SOVEREIGN_ECONOMICS.md](SOVEREIGN_ECONOMICS.md) · [RESEARCH_BRIEF_TEMPLATE.md](RESEARCH_BRIEF_TEMPLATE.md) · [LAB_SCALING_MODEL.md](LAB_SCALING_MODEL.md)
 
 Legal infrastructure: [legal/](legal/) · [Operating Agreement](legal/OPERATING_AGREEMENT.md) · [Token Terms of Service](legal/TOKEN_TERMS_OF_SERVICE.md) · [Trademark Guide](legal/TRADEMARK_GUIDE.md)
 

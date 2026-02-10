@@ -21,7 +21,7 @@ File a single-member LLC in the Governor's home state:
 |-------|-------|
 | Entity Name | House Bernard LLC |
 | Type | Single-member LLC (disregarded entity for tax) |
-| State | Governor's home state (New England) |
+| State | Governor's home state ([STATE]) |
 | Filing Fee | ~$120 |
 | Registered Agent | HeliosBlade (self, or registered agent service) |
 | EIN | Obtain from IRS (free, online, immediate) |
@@ -468,7 +468,7 @@ Nothing was hidden. Nothing was fraudulent. The invisible hand
 determined the value, and the value was zero. That happens to
 businesses every day. It is not a crime to try and fail. It is
 not a crime to build something ambitious on nights and weekends
-from a mini-PC in New England.
+from a mini-PC.
 
 We did our best.
 

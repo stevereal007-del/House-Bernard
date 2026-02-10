@@ -8,8 +8,8 @@
 
 This is not a tagline. It is a trajectory.
 
-House Bernard was founded on February 9, 2026 by a factory parts
-inspector working nights and weekends on a mini-PC in New England.
+House Bernard was founded on February 9, 2026 by its founder
+working nights and weekends on a mini-PC.
 It began as one man's conviction that context rot — the fundamental
 problem of intelligent systems losing coherence over time — could be
 solved through adversarial testing, economic incentives, and the rule
@@ -119,7 +119,7 @@ endure?**
 
 **Success looks like:** The institution exists. The research
 compounds. The question keeps being answered, refined, and applied
-at increasing scale — from a mini-PC in New England to wherever
+at increasing scale — from a mini-PC to wherever
 intelligence can reach.
 
 ---

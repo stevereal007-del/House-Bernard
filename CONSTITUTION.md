@@ -313,6 +313,13 @@ Judges may be removed only by a supermajority vote of the other
 judges (3 of 4 remaining), confirmed by the Crown — for proven
 Covenant violation or sustained inability to function.
 
+If recusals reduce the available bench below the supermajority
+threshold required for removal proceedings, the Crown may appoint
+temporary substitutes from the pre-approved roster (per Section 2)
+to restore the bench to the size required for the action. Temporary
+substitutes appointed for removal proceedings hold no tenure and
+their appointment expires upon resolution of the removal question.
+
 ### Section 5: Jurisdiction
 
 The Judiciary hears three types of cases:
@@ -325,14 +332,14 @@ The Judiciary hears three types of cases:
 - Conduct violations
 - Brief interpretation disagreements
 
-**Constitutional Review (Full Bench — all three judges)**
+**Constitutional Review (Full Bench — all five judges)**
 
 - Does a Council policy violate the Covenant?
 - Does a Crown veto meet the constitutional standard?
 - Is a proposed Covenant amendment internally consistent?
 - Does an operational practice violate contributor rights?
 
-**Internal Discipline (Full Bench — all three judges)**
+**Internal Discipline (Full Bench — all five judges)**
 
 - Council member corruption investigations
 - Crown Holder Covenant violation proceedings
@@ -642,7 +649,7 @@ institution that the government exists, in part, to serve.
 
 The Trust holds and distributes a defined share of House Bernard's
 revenue to registered beneficiaries. The Trust exists because
-House Bernard was built by a working-class manufacturing inspector who wanted
+House Bernard was built by a working-class founder who wanted
 his work to outlive him and support his family. This purpose is
 constitutional. No branch of government may alter it.
 
