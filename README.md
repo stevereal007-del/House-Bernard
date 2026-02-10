@@ -33,6 +33,7 @@ House Bernard is a sovereign "Dark Lab."
 - We seek **Invariants**, not consensus.
 - We publish **Results**, never **Genetics**.
 - We are a **Filter**, not a community.
+- We maintain **The Bernard Guard** — a standing defense corps (see [DEFENSE.md](DEFENSE.md)).
 
 Governance documents: [CONSTITUTION.md](CONSTITUTION.md) · [CITIZENSHIP.md](CITIZENSHIP.md) · [COUNCIL.md](COUNCIL.md) · [TREASURY.md](TREASURY.md) · [ROYALTIES.md](ROYALTIES.md) · [DEFENSE.md](DEFENSE.md) · [PHILOSOPHY.md](PHILOSOPHY.md) · [AGENTS_CODE.md](AGENTS_CODE.md) · [VISION.md](VISION.md) · [SOVEREIGN_ECONOMICS.md](SOVEREIGN_ECONOMICS.md) · [RESEARCH_BRIEF_TEMPLATE.md](RESEARCH_BRIEF_TEMPLATE.md) · [LAB_SCALING_MODEL.md](LAB_SCALING_MODEL.md)
 

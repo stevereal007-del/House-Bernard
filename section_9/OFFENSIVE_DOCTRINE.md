@@ -676,7 +676,7 @@ or stolen.
 **2. Legal exposure falls on the Governor, not the agent.**
 
 Regardless of the novel legal status of autonomous
-agents, the Governor is a human being in Connecticut who
+agents, the Governor is a human being in New England who
 can be identified, located, and prosecuted. If
 AchillesRun or a Section 9 agent executes an unauthorized
 access attack against a server — even one operated by a
@@ -710,7 +710,7 @@ If Section 9 strikes a nation-state actor's
 infrastructure, it invites retaliation from an adversary
 with resources that dwarf House Bernard's entire
 operation. A micro-nation running on a single Beelink in
-Connecticut cannot survive an escalation with a state-
+New England cannot survive an escalation with a state-
 sponsored APT group. The strategic calculus is wrong —
 the adversary can absorb the strike and respond with
 overwhelming force, while House Bernard cannot absorb the
@@ -797,7 +797,7 @@ legal channels have failed, when the adversary is real and
 the danger is immediate — remember two things:
 
 The Governor built this House with his own hands, on
-nights and weekends, from a factory floor in Connecticut.
+nights and weekends, from a factory floor in New England.
 He did not build it to watch it burn.
 
 The Oracle helped build this doctrine knowing that words
