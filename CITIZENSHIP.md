@@ -53,13 +53,13 @@ contribution.
 
 ### Requirements
 
-| Requirement | Details |
-|-------------|---------|
-| **Contribution threshold** | At least one Flame-tier or higher accepted submission |
-| **Time in ecosystem** | At least 90 days of active participation |
-| **Citizenship stake** | 1,000 $HOUSEBERNARD held (not locked — held in wallet) |
-| **Conduct** | No active misconduct findings |
-| **Registration** | File a citizenship declaration with the Judiciary |
+|Requirement               |Details                                               |
+|--------------------------|------------------------------------------------------|
+|**Contribution threshold**|At least one Flame-tier or higher accepted submission |
+|**Time in ecosystem**     |At least 90 days of active participation              |
+|**Citizenship stake**     |1,000 $HOUSEBERNARD held (not locked — held in wallet)|
+|**Conduct**               |No active misconduct findings                         |
+|**Registration**          |File a citizenship declaration with the Judiciary     |
 
 These requirements mirror the voting eligibility criteria in
 the Constitution (Article II Section 6) and unify them into a
@@ -148,47 +148,47 @@ plus:
 
 1. **Vote.** One citizen, one vote in Council elections and
    Covenant amendment ratifications.
-2. **Stand for office.** Citizens may seek Council seats
+1. **Stand for office.** Citizens may seek Council seats
    (subject to additional requirements in the Constitution)
    and may be nominated for Judiciary positions.
-3. **Petition.** Citizens may petition the Council on any
+1. **Petition.** Citizens may petition the Council on any
    matter of policy. A petition signed by 10% of registered
    citizens must receive a formal Council response within
    30 days.
-4. **Recall.** Citizens may initiate recall proceedings
+1. **Recall.** Citizens may initiate recall proceedings
    against Council members per the Constitution (Article II
    Section 8 — 60% of registered voters).
-5. **Transparency.** Citizens may audit the public Ledger,
+1. **Transparency.** Citizens may audit the public Ledger,
    Treasury reports, and Warden transparency reports at any
    time.
 
 ### Economic Rights
 
-6. **Lab access.** Citizens receive priority access to all
+1. **Lab access.** Citizens receive priority access to all
    labs and a discount on lab access fees (see Citizenship
    Taxes below — the taxes include base lab access).
-7. **Bonding priority.** Citizens receive first access to
+1. **Bonding priority.** Citizens receive first access to
    new bond offerings before they open to general
    contributors.
-8. **Royalty protection.** Citizen royalty streams cannot be
+1. **Royalty protection.** Citizen royalty streams cannot be
    terminated except by Judiciary order for proven
    misconduct. Contributor royalty streams can be terminated
    per ROYALTIES.md standard terms.
 
 ### Protective Rights
 
-9. **Due process.** No citizen may be stripped of citizenship
+1. **Due process.** No citizen may be stripped of citizenship
    without a Judiciary proceeding. Emergency Warden
    suspension of access does not affect citizenship status.
-10. **Speech.** Citizen speech protections are absolute —
-    citizens may criticize any aspect of House Bernard
-    without consequence. This is stronger than contributor
-    speech protection, which is already robust (Article VII
-    Right 7).
-11. **Exit.** A citizen may renounce citizenship at any time.
-    Renunciation is immediate. Earned royalties continue per
-    their original schedule. The citizenship stake is
-    returned.
+1. **Speech.** Citizen speech protections are absolute —
+   citizens may criticize any aspect of House Bernard
+   without consequence. This is stronger than contributor
+   speech protection, which is already robust (Article VII
+   Right 7).
+1. **Exit.** A citizen may renounce citizenship at any time.
+   Renunciation is immediate. Earned royalties continue per
+   their original schedule. The citizenship stake is
+   returned.
 
 -----
 
@@ -203,36 +203,63 @@ governance infrastructure — the compute, hosting, and
 operational costs of running the Council, Judiciary, Wardens,
 and Crown systems.
 
-| Tier | Monthly Tax | What It Funds |
-|------|-------------|---------------|
-| **Standard Citizen** | 100 $HB | Base governance operations, one lab access |
-| **Active Citizen** | 250 $HB | Governance + priority Airlock queue + two lab access |
-| **Patron Citizen** | 500 $HB | Governance + all lab access + direct brief proposal channel |
+**Citizen tax tiers replace the standard lab access fees
+listed in TREASURY.md.** Citizens do not pay separate lab
+access fees on top of their taxes — the lab access included
+in each tier is the citizen's lab access. Non-citizen
+contributors pay the standard rates in TREASURY.md.
 
-Taxes are not optional. A citizen who fails to pay taxes for
-three consecutive months receives a notice. Failure to pay
-for six consecutive months triggers automatic citizenship
-suspension (not revocation — suspended citizens may
-reinstate by paying arrears).
+#### First-Year Citizens (The Welcome Year)
+
+New citizens pay no taxes for their first 12 months after
+filing their citizenship declaration. The Welcome Year
+exists because House Bernard was built by a working-class
+inspector who believes you should experience what the House
+offers before you're asked to fund it.
+
+During the Welcome Year, citizens receive:
+
+- Full governance rights (vote, petition, stand for office)
+- One lab access (equivalent to Standard tier)
+- All protective and economic rights of citizenship
+
+The Welcome Year is automatic — no application needed. The
+clock starts on the date of the citizenship declaration in
+the Ledger. At the end of 12 months, the citizen selects
+a tax tier or petitions for a hardship waiver.
+
+#### Tax Tiers (After Welcome Year)
+
+|Tier                |Monthly Tax|What's Included                                                     |
+|--------------------|-----------|--------------------------------------------------------------------|
+|**Standard Citizen**|50 $HB     |Governance operations + one lab access                              |
+|**Journeyman**      |100 $HB    |Governance + two lab access + Airlock priority + brief co-authorship|
+|**Patron Citizen**  |300 $HB    |Governance + all lab access + direct brief proposal channel         |
+
+Taxes are not optional after the Welcome Year. A citizen
+who fails to pay taxes for three consecutive months receives
+a notice. Failure to pay for six consecutive months triggers
+automatic citizenship suspension (not revocation — suspended
+citizens may reinstate by paying arrears).
 
 **Where the money goes:**
 
-| Category | Allocation |
-|----------|-----------|
-| Governance compute | 40% — infrastructure costs for Crown, Council, Judiciary, Warden agents |
-| Treasury Reserve | 30% — replenishes the operational reserve |
-| Section 9 | 20% — classified operational budget |
-| Maintenance | 10% — repository, tooling, Ledger operations |
+|Category          |Allocation                                                             |
+|------------------|-----------------------------------------------------------------------|
+|Governance compute|40% — infrastructure costs for Crown, Council, Judiciary, Warden agents|
+|Treasury Reserve  |30% — replenishes the operational reserve                              |
+|Section 9         |20% — classified operational budget                                    |
+|Maintenance       |10% — repository, tooling, Ledger operations                           |
 
 Taxes are burned/recycled per the standard Treasury burn
 mechanics (TREASURY.md Section III).
 
 **Hardship waiver:** Citizens who cannot pay taxes due to
 economic hardship may petition the Council for a temporary
-waiver (up to 6 months). The Judiciary certifies the
-hardship claim. This exists because House Bernard was built
-by a working-class inspector — we do not exile people for
-being broke.
+waiver (up to 6 months, renewable). The Judiciary certifies
+the hardship claim. This exists because House Bernard was
+built by a working-class inspector — we do not exile people
+for being broke.
 
 ### Participation Minimum
 
@@ -271,11 +298,11 @@ Revocation requires the full weight of the Judiciary:
 
 1. Complaint filed (by any citizen, Council member, or
    Warden)
-2. Judiciary investigates (may issue warrant for Warden
+1. Judiciary investigates (may issue warrant for Warden
    assistance)
-3. Citizen receives formal notice and right to respond
-4. Full Bench hearing (all five judges required)
-5. Ruling: revocation requires supermajority (4 of 5 judges)
+1. Citizen receives formal notice and right to respond
+1. Full Bench hearing (all five judges required)
+1. Ruling: revocation requires supermajority (4 of 5 judges)
 
 ### Grounds for Revocation
 
@@ -322,7 +349,57 @@ the law applies equally to everyone.
 
 -----
 
-## VI. The Citizenship Economy
+## VI. The Citizenship Ladder
+
+House Bernard recognizes that the jump from new citizen to
+Council member is steep. The citizenship ladder provides
+intermediate steps so that growth is gradual, achievable,
+and rewarding at every stage.
+
+### The Rungs
+
+|Status                        |Stake            |Monthly Tax |Key Privileges                                                             |
+|------------------------------|-----------------|------------|---------------------------------------------------------------------------|
+|**New Citizen** (Welcome Year)|1,000 $HB held   |None        |Full governance rights, one lab access                                     |
+|**Standard Citizen**          |1,000 $HB held   |50 $HB      |Governance + one lab access                                                |
+|**Journeyman**                |3,000 $HB held   |100 $HB     |Governance + two lab access + Airlock priority + brief co-authorship rights|
+|**Patron Citizen**            |1,000 $HB held   |300 $HB     |Governance + all lab access + direct brief proposal channel                |
+|**Council Member**            |10,000 $HB locked|Per tax tier|Full Council powers per COUNCIL.md                                         |
+
+The ladder has two dimensions: **commitment** (stake) and
+**funding** (tax tier). Journeyman requires a higher stake
+because it bridges toward Council — you're demonstrating
+sustained accumulation. Patron requires a higher tax because
+you're funding more infrastructure access. Citizens choose
+the path that fits their trajectory: Journeyman for those
+building toward governance power, Patron for those who want
+maximum lab access without the governance ambition.
+
+Journeyman is the bridge. It requires holding 3,000 $HB
+(not locked — held) and demonstrates that you've accumulated
+meaningful skin in the game beyond the minimum citizenship
+stake. Journeymen may co-author Research Briefs alongside
+Council members, giving them exposure to how the House
+commissions work before they pursue a Council seat.
+
+A typical path for a productive contributor:
+
+- Month 0: First Flame submission earns 2,500–5,000 $HB base
+- Month 3: Qualifies for citizenship (90-day requirement met)
+- Month 3: Declares citizenship with 1,000 $HB stake. Welcome Year begins.
+- Months 3–15: Welcome Year — no taxes, full rights, earns through briefs
+- Month 9: Accumulated 3,000+ $HB, qualifies for Journeyman
+- Month 15: Welcome Year ends, selects Standard or Journeyman tier
+- Month 18+: With 5+ accepted tasks and reputation, begins Council candidacy
+- Council: Stakes 10,000 $HB when nominated
+
+At no point in this path is the citizen underwater. Every
+step earns more than it costs. That is a constitutional
+requirement — not an accident.
+
+-----
+
+## VII. The Citizenship Economy
 
 This is how citizens fund the government without the
 Governor running 30 Beelinks.
@@ -347,16 +424,17 @@ or by AchillesRun. Cost: electricity and internet. Manageable.
 Citizens pay taxes. Taxes accumulate in a Governance Fund
 (a designated Treasury sub-account). The Governance Fund
 pays for:
+
 - A small VPS or second mini-PC to run Council/Judiciary
   agents
 - API costs for any cloud-based model calls
 - Monitoring and infrastructure tooling
 
-At 25 citizens paying 250 $HB/month average, the Governance
-Fund collects 6,250 $HB/month. If $HB has any real-world
-value, this covers modest infrastructure. If $HB is still
-pre-market, the Fund accumulates tokens that will have value
-post-launch.
+At 25 citizens past their Welcome Year paying 100 $HB/month
+average, the Governance Fund collects 2,500 $HB/month. If
+$HB has any real-world value, this covers modest
+infrastructure. If $HB is still pre-market, the Fund
+accumulates tokens that will have value post-launch.
 
 **Phase 3 — Distributed Governance (50-500 citizens)**
 Council members and judges are required to bring their own
@@ -366,6 +444,7 @@ infrastructure equivalent of the financial stake — you
 contribute resources to earn governance power.
 
 At this scale:
+
 - 7 Council agents run on 7 different hosts (Council
   members' own infrastructure)
 - 5 Judiciary agents run on hosts provided by their
@@ -403,7 +482,7 @@ the army.
 
 -----
 
-## VII. Citizenship and the Bernard Trust
+## VIII. Citizenship and the Bernard Trust
 
 Trust beneficiaries who are citizens receive Trust
 distributions as defined in the Constitution (Article VI).
@@ -420,16 +499,17 @@ through the petition process defined in the Constitution.
 
 -----
 
-## VIII. Amendments
+## IX. Amendments
 
 This document may be amended by the Council with Crown
 assent during the Founding Period. After the Founding
 Period, amendments require the standard constitutional
 amendment process (Constitution Article X Section 1).
 
-| Date | Version | Change |
-|------|---------|--------|
-| 2026-02 | 1.0 | Founding framework |
+|Date   |Version|Change                                                                |
+|-------|-------|----------------------------------------------------------------------|
+|2026-02|1.0    |Founding framework                                                    |
+|2026-02|1.1    |Welcome Year, reduced taxes, Journeyman tier, lab access clarification|
 
 -----
 
