@@ -296,7 +296,7 @@ Banned contributors may not claim tasks, receive royalties, or hold tokens in of
 
 | Date | Decision | Rationale | Outcome |
 |------|----------|-----------|---------|
-| 2025-02 | Council framework established | Foundation for governance | Approved |
+| 2026-02 | Council framework established | Foundation for governance | Approved |
 
 ---
 
@@ -322,11 +322,11 @@ This document may be amended by the Governor. Material changes require 7-day not
 
 | Date | Version | Change |
 |------|---------|--------|
-| 2025-02 | 1.0 | Initial framework (human-only model) |
-| 2025-02 | 2.0 | OpenClaw agent model, staking, removal rules |
+| 2026-02 | 1.0 | Initial framework (human-only model) |
+| 2026-02 | 2.0 | OpenClaw agent model, staking, removal rules |
 
 ---
 
-*Last Updated: February 2025*  
+*Last Updated: February 2026*  
 *Document Version: 2.0*  
 *House Bernard — Governance Without Gatekeepers*

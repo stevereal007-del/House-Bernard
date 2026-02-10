@@ -476,7 +476,7 @@ This document may be amended by the Governor only. Material changes require upda
 
 | Date | Version | Change |
 |------|---------|--------|
-| 2025-02 | 0.1 | Initial OpenClaw agent specification |
+| 2026-02 | 0.1 | Initial OpenClaw agent specification |
 | 2026-02 | 1.0 | AchillesRun identity, two-layer architecture, VPS removed, Discord Phase 0, iMessage Phase 1, OpenClaw runtime mapping |
 
 ---

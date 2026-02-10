@@ -140,9 +140,13 @@ class CPAAgent:
             contrib["yearly_usd"][year_key] + (usd_total or 0), 2
         )
 
-        # Check 1099 threshold
+        # Check 1099 threshold (year-aware)
         if contrib["yearly_usd"][year_key] >= THRESHOLD_1099:
-            contrib["needs_1099"] = True
+            if "needs_1099_years" not in contrib:
+                contrib["needs_1099_years"] = []
+            if year not in contrib["needs_1099_years"]:
+                contrib["needs_1099_years"].append(year)
+            contrib["needs_1099"] = True  # Keep legacy flag for current year
 
         self._save_ledger()
         return payment_record

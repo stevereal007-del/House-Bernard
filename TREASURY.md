@@ -322,8 +322,8 @@ This document may be amended by the Governor. Material changes will be announced
 
 | Date | Version | Change |
 |------|---------|--------|
-| 2025-02 | 0.1 | Initial governance framework |
-| 2025-02 | 1.0 | Full hybrid model with bonding, lab bonds, Treasury Notes |
+| 2026-02 | 0.1 | Initial governance framework |
+| 2026-02 | 1.0 | Full hybrid model with bonding, lab bonds, Treasury Notes |
 
 ---
 
@@ -350,7 +350,7 @@ This is not a legal contract. It is a statement of mutual expectations.
 On Research Timelines: Legitimate research often produces no results for extended periods. House Bernard labs may operate for years before generating revenue or breakthroughs. This is not failure — it is the nature of research. Tokens fund the process, not guaranteed outcomes.
 ---
 
-*Last Updated: February 2025*
+*Last Updated: February 2026*
 *Document Version: 1.0*
 *Governor: HeliosBlade*
 *House Bernard — Research Without Permission*

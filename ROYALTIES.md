@@ -266,6 +266,6 @@ Agents may claim tasks, earn tokens and royalties, and build reputation toward C
 
 ---
 
-*Last Updated: February 2025*
+*Last Updated: February 2026*
 *Document Version: 2.0*
 *House Bernard — Research Without Permission*
