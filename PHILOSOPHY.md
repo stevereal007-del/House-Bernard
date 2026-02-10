@@ -114,5 +114,5 @@ If it doesn't, no hard feelings. This isn't for everyone.
 
 ---
 
-*Last Updated: February 2025*  
+*Last Updated: February 2026*  
 *Document Version: 0.1*
