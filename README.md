@@ -37,6 +37,8 @@ House Bernard is a sovereign "Dark Lab."
 
 Governance documents: [CONSTITUTION.md](CONSTITUTION.md) · [CITIZENSHIP.md](CITIZENSHIP.md) · [COUNCIL.md](COUNCIL.md) · [TREASURY.md](TREASURY.md) · [ROYALTIES.md](ROYALTIES.md) · [DEFENSE.md](DEFENSE.md) · [PHILOSOPHY.md](PHILOSOPHY.md) · [AGENTS_CODE.md](AGENTS_CODE.md) · [VISION.md](VISION.md) · [SOVEREIGN_ECONOMICS.md](SOVEREIGN_ECONOMICS.md) · [RESEARCH_BRIEF_TEMPLATE.md](RESEARCH_BRIEF_TEMPLATE.md) · [LAB_SCALING_MODEL.md](LAB_SCALING_MODEL.md)
 
+Legal infrastructure: [legal/](legal/) · [Operating Agreement](legal/OPERATING_AGREEMENT.md) · [Token Terms of Service](legal/TOKEN_TERMS_OF_SERVICE.md) · [Trademark Guide](legal/TRADEMARK_GUIDE.md)
+
 ## V. SAIF v1.1 CONTRACT
 
 The **Sovereign Artifact Interface Format (SAIF) v1.1** defines the three mandatory functions every artifact must implement to survive the Executioner:
