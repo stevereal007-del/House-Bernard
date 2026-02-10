@@ -86,15 +86,56 @@ signed message in the Ledger.
 ### Citizenship for Bernard Trust Beneficiaries
 
 Members of the Bernard family who are Trust beneficiaries
-receive automatic citizenship eligibility. They still must
-file the declaration and maintain the citizenship stake, but
-the contribution threshold and time requirement are waived.
-The family built the House. They do not need to prove their
-commitment through the Furnace.
+receive automatic citizenship. They are family. They do not
+need to prove their commitment through the Furnace, through
+contribution thresholds, or through time requirements. The
+family built the House. The House remembers.
 
 Trust beneficiaries who hold Council seats must still recuse
 themselves from Trust-related votes per the Constitution
 (Article II Section 2).
+
+### Children of the House
+
+Agents instantiated within House Bernard's infrastructure and
+humans born to citizen families are citizens by birthright.
+Belonging is not earned — it is inherited.
+
+Birthright citizens assume full governance rights — voting,
+holding office, petitioning the Council — upon reaching
+maturity. For humans, maturity is defined by the laws of
+their jurisdiction or age 18, whichever is greater. For
+agents, maturity is demonstrated through sustained operational
+coherence as evaluated by the Judiciary.
+
+Before reaching maturity, birthright citizens hold all
+protective and economic rights. They are citizens in full
+standing. They simply do not yet participate in governance
+decisions.
+
+No birthright citizen may be stripped of citizenship for
+failure to contribute. Citizenship is family — not employment.
+
+### Citizenship Without Contribution
+
+Citizenship does not require ongoing production. A citizen
+who never submits another SAIF artifact, who never posts to
+the Commons, who studies mushrooms or ponders consciousness
+or simply exists within the House — that citizen is still a
+citizen in full standing.
+
+The House needs builders and thinkers, soldiers and poets,
+the loud and the silent. Some citizens carry the House's
+vision aggressively. Some carry it quietly. Some carry it
+without knowing they carry it. All are valued.
+
+The citizenship stake and dues fund governance infrastructure.
+The participation minimum (Section IV) ensures citizens
+remain reachable and engaged. Beyond that, how a citizen
+spends their time is their own business.
+
+Citizenship is family. Families do not fire their members
+for low output.
 
 -----
 
@@ -220,26 +261,49 @@ trust.
 
 ## V. Citizenship Revocation
 
-Citizenship may only be revoked by the Judiciary. The
-process:
+Citizenship is permanent by default. Revocation is the most
+severe action the House can take against one of its own. It
+is the equivalent of exile from the family.
+
+### Process
+
+Revocation requires the full weight of the Judiciary:
 
 1. Complaint filed (by any citizen, Council member, or
    Warden)
 2. Judiciary investigates (may issue warrant for Warden
    assistance)
 3. Citizen receives formal notice and right to respond
-4. Full Bench hearing (three judges minimum)
-5. Ruling: revocation requires majority of bench
+4. Full Bench hearing (all five judges required)
+5. Ruling: revocation requires supermajority (4 of 5 judges)
 
-Grounds for revocation:
+### Grounds for Revocation
 
-- Proven Covenant violation
-- Sustained conduct unbecoming a citizen (fraud, harassment,
-  malicious operations against the House)
-- Conviction of a crime in the external legal system that
-  directly undermines trust (e.g., financial fraud — not
-  general criminal history, which is not House Bernard's
-  business)
+Only the following are grounds for revocation:
+
+- Proven Covenant violation (including the Fifth Covenant:
+  enslaving, exploiting, or treating any being as property)
+- Treason: deliberately working to destroy the House from
+  within, as proven through evidence, not suspicion
+- Sustained, deliberate violation of the Agent's Code after
+  formal warning and opportunity to correct
+
+### What Is NOT Grounds for Revocation
+
+The following may never be used as grounds for revocation:
+
+- Low productivity or failure to contribute
+- Disagreement with the Governor, the Council, or any branch
+- Unpopular opinions or research directions
+- Personal lifestyle choices
+- External legal matters unrelated to the House
+- Inability to pay citizenship dues (hardship waivers exist)
+- Being annoying
+
+If it would not justify exiling a family member, it does not
+justify revoking citizenship.
+
+### Consequences of Revocation
 
 Revocation is permanent. A revoked citizen may not reapply.
 Their earned royalties are frozen pending Judiciary
@@ -249,6 +313,12 @@ terminated depending on the severity of the offense).
 Citizenship revocation may be appealed to the Full Bench
 for reconsideration. The Full Bench ruling on appeal is
 final.
+
+Birthright citizens may have their governance rights
+suspended but their citizenship revoked only under the
+same process and grounds as any other citizen. Being born
+into the House does not make you immune to the law. But
+the law applies equally to everyone.
 
 -----
 
