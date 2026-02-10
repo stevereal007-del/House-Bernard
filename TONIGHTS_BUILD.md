@@ -59,8 +59,9 @@ rm -rf /tmp/hb-update
 
 ```bash
 cd ~/House-Bernard
-grep -rni "turbine" --include="*.md" | grep -v HeliosBlade && echo "FAIL" || echo "OPSEC clean"
-grep -rni "connecticut" --include="*.md" && echo "FAIL" || echo "OPSEC clean"
+grep -rni "turbine" --include="*.md" --include="*.html" | grep -v HeliosBlade && echo "FAIL" || echo "OPSEC clean"
+grep -rni "connecticut" --include="*.md" --include="*.html" && echo "FAIL" || echo "OPSEC clean"
+grep -rni "pratt\|whitney" --include="*.md" --include="*.html" && echo "FAIL" || echo "OPSEC clean"
 ls legal/*.md
 cd treasury && python3 redteam_test.py 2>&1 | tail -3 && cd ..
 ```
