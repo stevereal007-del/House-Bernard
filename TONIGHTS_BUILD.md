@@ -194,7 +194,8 @@ This makes $HOUSEBERNARD tradeable by anyone in the world.
 ### How it works
 
 You deposit tokens + SOL into a pool. The ratio = starting price.
-10,000,000 tokens + 5 SOL = each token starts at 0.0000005 SOL.
+15,000,000 tokens + 3 SOL = each token starts at 0.0000002 SOL.
+Use the full 15M liquidity allocation per TREASURY.md.
 
 ### Create the pool
 
@@ -203,7 +204,7 @@ You deposit tokens + SOL into a pool. The ratio = starting price.
 3. Select **Standard AMM** (no OpenBook needed)
 4. Base Token: paste MINT_ADDRESS
 5. Quote Token: SOL
-6. Enter amounts (e.g., 10,000,000 tokens + 5-10 SOL)
+6. Enter amounts: 15,000,000 tokens + 3-5 SOL ($65-110)
 7. Fee tier: 1%
 8. Review price, click Confirm
 9. Approve transaction in Phantom
@@ -222,34 +223,43 @@ You deposit tokens + SOL into a pool. The ratio = starting price.
 
 ### Create wallets for each constitutional allocation
 
+Per TREASURY.md (canonical allocation authority):
+- 60% Unmined Treasury (60M) — bounties, royalties, bonds
+- 15% Liquidity Pool (15M) — Raydium pool
+- 15% Governor Reserve (15M) — operational flexibility
+- 10% Genesis Contributors (10M) — early Council members
+
 ```bash
-solana-keygen new --outfile ~/hb-contributor-pool.json --no-bip39-passphrase
+solana-keygen new --outfile ~/hb-unmined-treasury.json --no-bip39-passphrase
 solana-keygen new --outfile ~/hb-governor-reserve.json --no-bip39-passphrase
-solana-keygen new --outfile ~/hb-bernard-trust.json --no-bip39-passphrase
+solana-keygen new --outfile ~/hb-genesis-contributors.json --no-bip39-passphrase
 ```
 
 ### Transfer allocations
 
 ```bash
-spl-token transfer <MINT_ADDRESS> 40000000 \
-  $(solana address -k ~/hb-contributor-pool.json) --fund-recipient
+# 60M to unmined treasury (bounties, royalties, bonds, founder vest, Bernard Trust)
+spl-token transfer <MINT_ADDRESS> 60000000 \
+  $(solana address -k ~/hb-unmined-treasury.json) --fund-recipient
 
+# 15M to governor reserve
 spl-token transfer <MINT_ADDRESS> 15000000 \
   $(solana address -k ~/hb-governor-reserve.json) --fund-recipient
 
-spl-token transfer <MINT_ADDRESS> 15000000 \
-  $(solana address -k ~/hb-bernard-trust.json) --fund-recipient
+# 10M to genesis contributors
+spl-token transfer <MINT_ADDRESS> 10000000 \
+  $(solana address -k ~/hb-genesis-contributors.json) --fund-recipient
 ```
 
-Remaining in main wallet: 20M (founder, 4-year vesting via treasury engine).
+Remaining in main wallet: 15M (liquidity pool — goes to Raydium in Phase 5).
 
 ### Verify all balances
 
 ```bash
 spl-token balance <MINT_ADDRESS>
-spl-token balance --owner $(solana address -k ~/hb-contributor-pool.json) <MINT_ADDRESS>
+spl-token balance --owner $(solana address -k ~/hb-unmined-treasury.json) <MINT_ADDRESS>
 spl-token balance --owner $(solana address -k ~/hb-governor-reserve.json) <MINT_ADDRESS>
-spl-token balance --owner $(solana address -k ~/hb-bernard-trust.json) <MINT_ADDRESS>
+spl-token balance --owner $(solana address -k ~/hb-genesis-contributors.json) <MINT_ADDRESS>
 spl-token supply <MINT_ADDRESS>
 ```
 
@@ -299,12 +309,11 @@ git push origin main
 
 | Item | Cost |
 |------|------|
-| SOL for operations (~2 SOL) | ~$45 |
-| SOL for liquidity pool (5-10 SOL) | $110-220 |
+| SOL for operations (~1 SOL) | ~$22 |
+| SOL for liquidity pool (3-5 SOL) | $65-110 |
 | Pool creation fee | ~$1-2 |
-| LLC filing (do this week) | $120 |
-| **TONIGHT TOTAL** | **~$160-270** |
-| **WITH LLC THIS WEEK** | **~$280-390** |
+| **TONIGHT TOTAL** | **~$90-135** |
+| **WITH LLC THIS WEEK** | **~$210-255** |
 
 ### Monthly going forward
 

@@ -198,28 +198,30 @@ Bernard LLC. It is:
 
 | Allocation | Percentage | Governance |
 |------------|-----------|------------|
-| Contributors | 40% | Earned through Furnace survival |
-| Founder | 20% | 4-year vest, sale rate limit |
-| Governor Reserve | 15% | Constitutional rules, Council oversight |
-| Bernard Trust | 15% | Family legacy, locked |
-| Liquidity | 10% | Market making, exchange listing |
+| Unmined Treasury | 60% | Bounties, royalties, bonds, lab funding, founder vest, Bernard Trust |
+| Liquidity Pool | 15% | Enables secondary market trading |
+| Governor Reserve | 15% | Operational flexibility, partnerships, emergencies |
+| Genesis Contributors | 10% | Early believers, initial Council members |
+
+**Note:** Founder allocation (4-year vest) and Bernard Trust are
+funded from the Unmined Treasury through documented constitutional
+mechanisms — not as separate genesis allocations. This matches
+TREASURY.md Section I, which is the canonical allocation authority.
 
 ### Exchange Strategy
 
-**Phase 1 — Internal only.** Token exists as Ledger entries in
-the Treasury engine. No external trading. This is the current
-state and continues through early Founding Period.
+**Phase 1 — Token deployed.** $HOUSEBERNARD exists as an SPL token
+on Solana mainnet. Fixed supply, mint authority burned. Treasury
+engine and CPA Agent track all internal allocations.
 
-**Phase 2 — Token contract.** Deploy $HOUSEBERNARD as an ERC-20
-token (or equivalent standard) on a public blockchain. The smart
-contract encodes emission caps, vesting schedules, and sale rate
-limits. Contract audited by independent security firm before
-deployment.
+**Phase 2 — Decentralized exchange.** Listed on Raydium (Standard
+AMM pool). Liquidity provided from the 15% liquidity allocation.
+Anyone with a Phantom wallet can buy or sell. Price discovered
+organically by the invisible hand.
 
-**Phase 3 — Decentralized exchange.** List on Uniswap or
-equivalent permissionless DEX. This allows organic price
-discovery without requiring centralized exchange approval.
-Liquidity provided from the 10% liquidity allocation.
+**Phase 3 — Aggregator visibility.** Jupiter, Birdeye, DexScreener
+index the Raydium pool automatically. CoinGecko and CoinMarketCap
+listing applied for when trading volume justifies it.
 
 **Phase 4 — Centralized exchanges.** If organic volume and
 community demand justify it, pursue listing on centralized
@@ -396,7 +398,8 @@ doesn't stop because the market is down.
 - [ ] Consult securities attorney ($1,000-3,000)
 - [ ] File "$HOUSEBERNARD" trademark Class 36 ($250-350)
 - [ ] File "OpenClaw" trademark Class 42 ($250-350)
-- [ ] Smart contract security audit ($2,000-10,000 depending on scope)
+- [ ] No custom smart contract audit needed — SPL tokens use
+      Solana's built-in Token Program (audited by Solana Labs)
 - [ ] Draft contributor terms of service
 - [ ] Implement 1099 reporting in Treasury engine
 - [ ] Establish KYC process for US contributors above $600 threshold

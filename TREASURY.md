@@ -24,7 +24,7 @@ This is not "backed by nothing." It is backed by productive capacity and trust â
 |--------|-------|
 | **Token Name** | $HOUSEBERNARD |
 | **Total Supply** | 100,000,000 (hard cap, never exceeded) |
-| **Chain** | TBD (Base or Solana) |
+| **Chain** | Solana Mainnet (SPL Token) |
 | **Contract Address** | TBD |
 
 **Why 100 million:**
