@@ -11,7 +11,7 @@ This is a sovereign research micro-nation's codebase.
 - NEVER run weapons code outside Docker sandbox
 - NEVER modify CONSTITUTION.md or COVENANT.md without
   explicit Governor instruction
-- NEVER commit .env files or private keys
+- NEVER commit .env files, wallet .json files, or private keys
 - All Python code must pass security_scanner.py
 - All test output goes to JSON format
 
@@ -19,20 +19,54 @@ This is a sovereign research micro-nation's codebase.
 - section_9/          — CLASSIFIED. Crown eyes only.
 - security/           — AST scanner, seccomp profiles
 - executioner/        — Selection Furnace (T0-T4 testing)
-- treasury/           — Token economics engine (61 tests)
-- openclaw/           — Agent config and deployment
+- treasury/           — Token economics engine + backend
+    - treasury_engine.py      — Core: royalties, bonds, emissions, burns
+    - treasury_cli.py         — CLI for manual operations
+    - monthly_ops.py          — Cron job: automated lifecycle management
+    - solana_dispatcher.py    — On-chain payment execution (SPL transfers)
+    - cpa_agent.py            — Tax tracking, 1099 generation, expense logging
+    - treasury_state.json     — Financial state (source of truth)
+    - tax_ledger.json         — CPA Agent's tax records
+    - dispatcher_config.json  — Wallet paths + mint address (NEVER commit)
+- openclaw/           — Agent config and deployment (LAST to build)
 - lab_b/              — Security genetics laboratory
-- legal/              — LLC operating agreement, token terms,
-                        trademark guide. All DRAFTS pending
-                        Cowork Legal Plugin review.
-- token/              — $HOUSEBERNARD SPL token on Solana.
-                        Metadata, logo, and TOKEN_RECORD.md.
+- legal/              — LLC agreement, token TOS, trademark guide (DRAFTS)
+- token/              — $HOUSEBERNARD SPL token metadata + records
+
+## Architecture: How Money Flows
+
+```
+Contributor survives Furnace
+    → Executioner verdict: SURVIVOR_PHASE_0
+    → treasury_engine.record_base_payment()  (validates, computes burn)
+    → solana_dispatcher.pay()                (executes on-chain transfer)
+    → cpa_agent.record_payment()             (logs USD value for taxes)
+    → dispatch_log.jsonl                     (immutable receipt)
+```
+
+The Governor does NOT sign routine payments. AchillesRun
+(or monthly_ops.py cron) triggers the flow. The Governor
+only intervenes for:
+- Reserve draws (Governor + AchillesRun + Council member)
+- Emergency distributions
+- Bond issuance > 1% of supply
+- Epoch transitions
+
+## Canonical Allocation (TREASURY.md is authority)
+
+| Allocation | % | Tokens | Wallet |
+|------------|---|--------|--------|
+| Unmined Treasury | 60% | 60,000,000 | ~/hb-unmined-treasury.json |
+| Liquidity Pool | 15% | 15,000,000 | Raydium AMM pool |
+| Governor Reserve | 15% | 15,000,000 | ~/hb-governor-reserve.json |
+| Genesis Contributors | 10% | 10,000,000 | ~/hb-genesis-contributors.json |
+
+SOVEREIGN_ECONOMICS.md Section IV has been reconciled to
+match. If there is ever a conflict, TREASURY.md wins.
 
 ## Tonight's Build
 If the Governor says "run tonight's build" or "let's go",
 read TONIGHTS_BUILD.md for the full deployment playbook.
-Priority order: repo update → ENS domain → system check →
-token scaffold → testnet deploy.
 
 ## Code Standards
 - Python 3.10+, type hints on all functions
@@ -42,17 +76,21 @@ token scaffold → testnet deploy.
 - All weapons must fail to PASSIVE, never fail to ACTIVE
 - Test before commit. Always.
 
+## Token Notes
+- Token is SPL on Solana mainnet — no custom smart contract
+- Solana's built-in Token Program handles mint/transfer/burn
+- Constitutional constraints enforced by treasury_engine.py
+- Kill switch: create PAUSE file in treasury/ to halt all transfers
+- Price feed: Jupiter API via solana_dispatcher.py
+- Wallet files stored in ~/hb-*.json (NEVER commit)
+
 ## Section 9 Designations
 - Weapons: S9-W-XXX (next available: 007)
 - Threats: S9-T-XXX (next available: 001)
 - Check section_9/WORK_INSTRUCTIONS.md Appendix C
 
-## Legal / Token Notes
-- The legal/ docs reference the Cowork Legal Plugin for
-  review. Commands: /review-contract, /brief, /triage-nda
-- Token is SPL on Solana mainnet — no custom smart contract,
-  uses Solana's built-in Token Program
-- Treasury engine handles vesting, allocation tracking, and
-  constitutional constraints — not the token contract
-- Allocation wallets stored in ~/hb-*.json (NEVER commit)
-- LLC: House Bernard LLC (file in Governor's home state)
+## Build Order (Steve Jobs rule: customer first)
+1. Backend first: treasury engine + dispatcher + CPA agent ← DONE
+2. Token deployment: Solana SPL + Raydium pool ← TONIGHT
+3. Automation: monthly_ops.py cron + AchillesRun integration
+4. Frontend last: OpenClaw public interface

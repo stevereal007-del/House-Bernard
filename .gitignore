@@ -49,3 +49,4 @@ treasury/_test_workspace/
 
 # Section 9 weapon symlinks (local convenience for Python imports)
 section_9/weapons/S9_W_*.py
+GOVERNORS_BRIEFING.md
