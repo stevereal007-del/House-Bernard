@@ -351,6 +351,7 @@ class TreasuryEngine:
             raise ValueError(f"No active royalty for gene {gene_id}")
         target["total_royalties_paid"] = round(target.get("total_royalties_paid", 0) + amount, 2)
         target["attributed_revenue_this_period"] = 0
+        self.state["emission"]["epoch_emitted"] += amount
         self.state["emission"]["total_emitted"] += amount
         self.state["emission"]["total_circulating"] += amount
         return {"gene_id": gene_id, "amount": amount, "total_paid": target["total_royalties_paid"], "reason": reason, "timestamp": _format_dt(_now())}
@@ -408,6 +409,7 @@ class TreasuryEngine:
         self.state["emission"]["total_circulating"] += target["principal"]
         self.state["emission"]["total_burned"] += burn_amount
         if returned_yield > 0:
+            self.state["emission"]["epoch_emitted"] += returned_yield
             self.state["emission"]["total_emitted"] += returned_yield
             self.state["emission"]["total_circulating"] += returned_yield
         return {

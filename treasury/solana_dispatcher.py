@@ -447,8 +447,8 @@ def generate_config_template(output_path="dispatcher_config.json"):
         "network": "mainnet-beta",
         "wallets": {
             "unmined_treasury": {
-                "keypair_path": "~/hb-contributor-pool.json",
-                "address": "<CONTRIBUTOR_POOL_ADDRESS>",
+                "keypair_path": "~/hb-unmined-treasury.json",
+                "address": "<UNMINED_TREASURY_ADDRESS>",
                 "purpose": "60M unmined treasury — bounties, royalties, bonds",
             },
             "governor_reserve": {
@@ -456,16 +456,14 @@ def generate_config_template(output_path="dispatcher_config.json"):
                 "address": "<GOVERNOR_RESERVE_ADDRESS>",
                 "purpose": "15M governor reserve — emergencies, partnerships",
             },
-            "founder": {
-                "keypair_path": "~/house-bernard-wallet.json",
-                "address": "<FOUNDER_WALLET_ADDRESS>",
-                "purpose": "20M founder allocation (within 60M treasury)",
+            "genesis_contributors": {
+                "keypair_path": "~/hb-genesis-contributors.json",
+                "address": "<GENESIS_CONTRIBUTORS_ADDRESS>",
+                "purpose": "10M genesis contributors allocation",
             },
         },
         "rate_limits": {
             "max_single_transfer": 100000,
-            "max_daily_total": 500000,
-            "cooldown_seconds": 1,
         },
         "price_api": "https://price.jup.ag/v4/price",
     }

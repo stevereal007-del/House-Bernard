@@ -136,15 +136,16 @@ LLC.
 
 ### 5.1 Technology Risk
 
-Tokens exist as entries in a smart contract on a public
-blockchain and/or as Ledger entries in the Treasury engine.
-Holders acknowledge the following risks:
+Tokens exist as SPL token entries on the Solana blockchain
+(using Solana's built-in Token Program) and/or as Ledger
+entries in the Treasury engine. Holders acknowledge the
+following risks:
 
-- Smart contract bugs or vulnerabilities
+- Token Program bugs or vulnerabilities
 - Blockchain network failures, forks, or protocol changes
 - Loss of private keys resulting in permanent loss of Tokens
 - Regulatory changes affecting Token legality or transferability
-- Cyber attacks or exploits targeting the Token contract or
+- Cyber attacks or exploits targeting the Token Program or
   House Bernard infrastructure
 
 ### 5.2 Regulatory Risk
