@@ -287,7 +287,7 @@ git add -A
 git commit -m "Deploy $HOUSEBERNARD SPL token on Solana mainnet
 
 - Mint: <ADDRESS> | Supply: 100M | Authority: BURNED
-- Allocations: 40/20/15/15/10 per TREASURY.md
+- Allocations: 60/15/15/10 per TREASURY.md
 - Raydium pool live: HOUSEBERNARD/SOL
 - Visible on Solscan, Birdeye, DexScreener, Jupiter"
 

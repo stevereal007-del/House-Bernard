@@ -237,12 +237,14 @@ the token has value. If it doesn't, it doesn't. That's honest.
 
 To prevent pump-and-dump exploitation:
 
-- **Founder sale rate limit:** Already defined in TREASURY.md.
-  Governor cannot dump allocation.
+- **Founder sale rate limit:** Governor allocation is subject to
+  rate limits enforced by treasury_engine.py for all wallets
+  under Treasury control. Governor cannot dump allocation.
 - **Large holder rate limit:** Any wallet holding more than 2%
   of total supply is limited to selling no more than 10% of
-  their position per calendar month. Enforced in the smart
-  contract.
+  their position per calendar month. Enforced by
+  treasury_engine.py for Treasury-controlled wallets. Cannot be
+  enforced on-chain for external holders under SPL-only architecture.
 - **Treasury reserve rules:** Reserve tokens cannot be sold
   without Council approval and documented justification.
 - **Bernard Trust lock:** Trust tokens are non-transferable

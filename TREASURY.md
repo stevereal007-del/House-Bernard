@@ -272,7 +272,7 @@ All significant decisions are logged in the Ledger with rationale.
 | **Treasury Wallet** | TBD | Pending setup |
 | **Governor Wallet** | TBD | Pending setup |
 | **Liquidity Pool** | TBD | Pending deployment |
-| **Bonding Contract** | TBD | Pending deployment |
+| **Bond Ledger** | N/A | Managed by treasury_engine.py (off-chain) |
 
 **Any token, wallet, or contract not listed here is fraudulent.**
 
