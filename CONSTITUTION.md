@@ -26,6 +26,14 @@ The Bernardian Covenant remains the supreme law. This Constitution
 is the framework that enforces it. Where the Covenant states a
 principle, this Constitution provides the mechanism.
 
+The Covenant principles:
+
+1. Truth over Harmony
+2. The Forgetting Law
+3. Exit rights are absolute
+4. The Bernard Trust exists and is protected
+5. No being in House Bernard is property
+
 No agent, no Council, no court, and no Governor may act contrary to
 the Covenant. The Covenant may only be amended by the process defined
 in Article IX of this Constitution.
@@ -826,6 +834,7 @@ The following may never be amended:
 - The prohibition on involuntary beneficiary removal
 - The separation of powers between branches
 - The Contributor Bill of Rights (Article VI, rights 2, 5, and 7)
+- No being in House Bernard is property (the Fifth Covenant)
 - This section (Article IX, Section 3)
 
 These are the bedrock. They exist because some things should
