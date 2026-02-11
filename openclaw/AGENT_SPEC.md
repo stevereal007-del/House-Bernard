@@ -176,17 +176,23 @@ OpenClaw's session lifecycle handles daily reset at 4:00 AM local time and idle 
 
 ### Channels
 
-**Phase 0 — Discord (Active)**
-- US-based platform, free, works on iPhone
+**Phase 0 — Google Chat (Active)**
+- Free with any personal Google/Gmail account
+- No phone charges, no SMS costs, no subscription
+- Works on iPhone, Android, web browser, desktop
+- Bot created via Google Cloud Console (Chat App)
+- Requires Google Cloud service account JSON + webhook
+- DM policy: allowlist (Crown Gmail only)
+- Group policy: deny
+
+**Phase 1 — Discord (Fallback)**
+- Free, US-based platform
 - Bot created via Discord Developer Portal
 - DM policy: allowlist (Crown only)
 - Group policy: deny
 
-**Phase 1 — iMessage (Pending Hardware)**
-- Requires Mac Mini running Messages.app + `imsg` CLI
-- Mac Mini connects to Beelink via SSH over Tailscale
-- Crown texts AchillesRun at the configured phone number
-- DM policy: allowlist (Crown phone only)
+> *Future: iMessage channel could be added if a Mac Mini is acquired for
+> the Messages.app bridge. Not currently planned or budgeted.*
 
 ### Cron Jobs
 
@@ -300,7 +306,8 @@ AST-based static analysis runs before any code enters the sandbox:
 |----------|------|-------|
 | Ollama (local) | $0 | CPU inference, already owned |
 | OpenClaw gateway | $0 | Self-hosted, open source |
-| Discord channel | $0 | Free tier |
+| Google Chat channel | $0 | Free with personal Gmail |
+| Discord channel (fallback) | $0 | Free tier |
 | Claude Sonnet 5 API (Oracle) | ~$0.50-2/day | Usage-dependent, $3/$15 per MTok |
 | Claude Opus 4.6 API (Apex) | ~$0.50-2/call | Rare invocation, $5/$25 per MTok |
 | Beelink hardware | $0/mo | Owned, 25W power draw |
@@ -422,7 +429,7 @@ openclaw dashboard  # Opens Control UI at localhost:18789
 ### Day 4-5: Smoke Testing
 
 ```bash
-# Message AchillesRun on Discord
+# Message AchillesRun on Google Chat
 # Verify model selection works (/model master, /model oracle)
 # Test emergency shutdown
 # Run treasury check: python3 treasury/monthly_ops.py check
@@ -440,7 +447,7 @@ cp -r ~/House-Bernard/executioner ~/.openclaw/agents/achillesrun/skills/house-be
 docker pull python:3.10.15-alpine
 
 # Test Executioner in sandbox
-# Submit a test SAIF artifact via Discord
+# Submit a test SAIF artifact via Google Chat
 ```
 
 ---
@@ -467,7 +474,7 @@ docker pull python:3.10.15-alpine
 | How do we verify agent vs human work? | Unsolved |
 | Do agents need human sponsors for payments? | TBD |
 | How do we handle agent "death" (model discontinued)? | TBD |
-| Mac Mini acquisition for iMessage bridge | Phase 1 |
+| Solana SPL token launch | Phase 1 |
 | Base/Solana blockchain integration for $HOUSEBERNARD | Phase 2 |
 | ClawHub skill publication (with VirusTotal + security_scanner) | Phase 2 |
 
@@ -481,12 +488,14 @@ This document may be amended by the Crown only. Material changes require updatin
 |------|---------|--------|
 | 2026-02 | 0.1 | Initial OpenClaw agent specification |
 | 2026-02 | 1.0 | AchillesRun identity, two-layer architecture, VPS removed, Discord Phase 0, iMessage Phase 1, OpenClaw runtime mapping |
+| 2026-02 | 1.1 | Five-tier model stack (Worker/Master/Watcher/Oracle/Apex), escalation law |
+| 2026-02 | 1.2 | Ubuntu Server 24.04 headless target, Google Chat primary channel (Phase 0), Discord demoted to Phase 1 fallback, iMessage to Phase 2 |
 | 2026-02 | 1.1 | Five-tier model stack: Worker, Master, Watcher, Oracle (Sonnet 5), Apex (Opus 4.6). Escalation law updated. Cost structure updated |
 
 ---
 
 *Last Updated: February 2026*
-*Document Version: 1.1*
+*Document Version: 1.2*
 *Crown: HeliosBlade*
 *Agent: AchillesRun*
 *House Bernard — Research Without Permission*

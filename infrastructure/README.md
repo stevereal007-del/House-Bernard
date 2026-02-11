@@ -14,8 +14,8 @@
 │  │ Watcher   │  │ Lab A/B   │  │  Cron/Heartbeat   │  │
 │  └──────────┘  └──────────┘  └──────────────────┘  │
 │                                                      │
-│  Discord ←→ Crown phone                           │
-│  (Phase 1: iMessage via Mac Mini bridge)             │
+│  Google Chat ←→ Crown phone                        │
+│  Discord ←→ Crown (fallback)                        │
 └─────────────────────────────────────┬───────────────┘
                                       │ git push
                                       ▼
@@ -46,14 +46,14 @@ OpenClaw provides everything the VPS was designed to do: public intake (via mess
 
 ## Data Flow
 
-1. Crown → sends message via Discord (or iMessage in Phase 1)
+1. Crown → sends message via Google Chat (or Discord fallback)
 2. OpenClaw gateway receives → routes to AchillesRun agent
 3. AchillesRun processes locally (Worker/Master on Ollama)
 4. If scale needed → Oracle call to Claude API
 5. Results written to workspace → archived to GitHub via cron
 
 For SAIF artifact submissions (from external contributors):
-1. Contributor submits via approved channel (Discord DM)
+1. Contributor submits via approved channel (Google Chat or Discord DM)
 2. OpenClaw session isolation separates from Crown traffic
 3. Airlock picks up submission from agent workspace
 4. Executioner pipeline runs in Docker sandbox
@@ -69,16 +69,11 @@ For SAIF artifact submissions (from external contributors):
 - Seccomp profile blocks dangerous syscalls
 - UFW default deny incoming
 
-## Phase 1: iMessage Bridge
+## Future Possibilities
 
-When a Mac Mini is available, add it as the iMessage bridge:
-
-```
-Beelink (OpenClaw gateway) ──SSH/Tailscale──→ Mac Mini (Messages.app + imsg)
-```
-
-The Mac Mini runs `imsg rpc` and relays iMessages. The Beelink stays as the brain.
-Enable by setting `channels.imessage.enabled: true` in openclaw.json.
+- **iMessage channel:** Would require a Mac Mini running Messages.app
+  with SSH bridge to the Beelink over Tailscale. Not currently owned
+  or planned. Can be revisited if needed.
 
 ---
 

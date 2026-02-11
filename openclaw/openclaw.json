@@ -1,6 +1,6 @@
 {
   "_comment": "House Bernard — AchillesRun OpenClaw Agent Config",
-  "_version": "1.1",
+  "_version": "1.2",
   "_agent": "AchillesRun",
   "_spec": "See AGENT_SPEC.md for the law governing this config",
   "_deploy": "Beelink EQ13, on-premise",
@@ -79,23 +79,29 @@
   },
 
   "channels": {
-    "discord": {
+    "googlechat": {
+      "_comment": "Phase 0: Primary channel. Free with personal Gmail account",
       "enabled": true,
+      "serviceAccountFile": "${GOOGLE_CHAT_SERVICE_ACCOUNT_FILE}",
+      "audienceType": "app-url",
+      "audience": "${GOOGLE_CHAT_WEBHOOK_URL}",
+      "webhookPath": "/googlechat",
+      "dm": {
+        "policy": "allowlist",
+        "allowFrom": ["${GOVERNOR_GMAIL}"]
+      },
+      "groupPolicy": "deny"
+    },
+
+    "discord": {
+      "_comment": "Phase 1: Fallback channel",
+      "enabled": false,
       "token": "${DISCORD_BOT_TOKEN}",
       "dmPolicy": "allowlist",
       "allowedUsers": ["${GOVERNOR_DISCORD_ID}"],
       "groups": {
         "policy": "deny"
       }
-    },
-
-    "imessage": {
-      "_comment": "Phase 1: Enable when Mac Mini bridge is available",
-      "enabled": false,
-      "cliPath": "/usr/local/bin/imsg",
-      "dbPath": "/Users/achillesrun/Library/Messages/chat.db",
-      "dmPolicy": "allowlist",
-      "allowedUsers": ["${GOVERNOR_PHONE}"]
     }
   },
 
