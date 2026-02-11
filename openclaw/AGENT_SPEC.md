@@ -43,22 +43,24 @@ No VPS. OpenClaw IS the gateway. The Beelink IS the server.
 
 ## III. The Bicameral Mind
 
-Three model tiers mapped to OpenClaw's model configuration. Worker and Master never run simultaneously. Sequential escalation via Ollama model swap.
+Five model tiers mapped to OpenClaw's model configuration. Worker and Master never run simultaneously. Sequential escalation via Ollama model swap. Oracle and Apex are cloud API calls, invoked only when local capacity is exhausted.
 
 ### Model Registry
 
-| Alias | Model | Ollama Size | Role |
-|-------|-------|-------------|------|
-| **Worker** | Mistral 7B | 4.5GB | Default. Routine tasks, logs, accounting |
-| **Master** | Llama 3 8B | 5GB | Sovereign decisions, architecture, Covenant |
-| **Watcher** | Llama 3.2 3B | 2GB | Heartbeat, continuity checks, kill-switch |
-| **Oracle** | Claude Sonnet 4.5 | Cloud API | Scale execution, validation, security analysis |
+| Alias | Model | Ollama Size | Cost | Role |
+|-------|-------|-------------|------|------|
+| **Worker** | Mistral 7B | 4.5GB | $0 | Default. Routine tasks, logs, accounting |
+| **Master** | Llama 3 8B | 5GB | $0 | Sovereign decisions, architecture, Covenant |
+| **Watcher** | Llama 3.2 3B | 2GB | $0 | Heartbeat, continuity checks, kill-switch |
+| **Oracle** | Claude Sonnet 5 | Cloud API | $3/$15 per MTok | Scale execution, agentic workflows, validation, security analysis |
+| **Apex** | Claude Opus 4.6 | Cloud API | $5/$25 per MTok | Constitutional interpretation, existential decisions, final arbitration |
 
 ### Model Selection Law
 
 - **Worker** is always the default. Use for everything routine.
 - **Master** is invoked only when: architecture decisions needed, Covenant interpretation required, context rot detected (>50k tokens), Worker hits complexity wall. Command: `/model master`
-- **Oracle** is invoked only when: local thinking is complete but execution requires scale, final validation of research findings, security analysis beyond local capability. Command: `/model oracle`
+- **Oracle** is invoked only when: local thinking is complete but execution requires scale, agentic workflow coordination needed, final validation of research findings, security analysis beyond local capability. Command: `/model oracle`
+- **Apex** is invoked only when: Oracle has been consulted and the matter involves constitutional interpretation, Covenant enforcement, existential threat assessment, Classified Tribunal proceedings, or decisions with irreversible consequences. Sanctum layer ONLY. Command: `/model apex`
 - **Watcher** runs on heartbeat only. Never invoked directly by agents.
 
 ### RAM Budget
@@ -299,7 +301,8 @@ AST-based static analysis runs before any code enters the sandbox:
 | Ollama (local) | $0 | CPU inference, already owned |
 | OpenClaw gateway | $0 | Self-hosted, open source |
 | Discord channel | $0 | Free tier |
-| Claude API (Oracle) | ~$0.50-2/day | Usage-dependent |
+| Claude Sonnet 5 API (Oracle) | ~$0.50-2/day | Usage-dependent, $3/$15 per MTok |
+| Claude Opus 4.6 API (Apex) | ~$0.50-2/call | Rare invocation, $5/$25 per MTok |
 | Beelink hardware | $0/mo | Owned, 25W power draw |
 
 ### Rate Limits
@@ -478,11 +481,12 @@ This document may be amended by the Crown only. Material changes require updatin
 |------|---------|--------|
 | 2026-02 | 0.1 | Initial OpenClaw agent specification |
 | 2026-02 | 1.0 | AchillesRun identity, two-layer architecture, VPS removed, Discord Phase 0, iMessage Phase 1, OpenClaw runtime mapping |
+| 2026-02 | 1.1 | Five-tier model stack: Worker, Master, Watcher, Oracle (Sonnet 5), Apex (Opus 4.6). Escalation law updated. Cost structure updated |
 
 ---
 
 *Last Updated: February 2026*
-*Document Version: 1.0*
+*Document Version: 1.1*
 *Crown: HeliosBlade*
 *Agent: AchillesRun*
 *House Bernard — Research Without Permission*
