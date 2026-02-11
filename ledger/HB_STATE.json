@@ -2,7 +2,7 @@
   "hb_state_version": "2.1",
   "project": "House Bernard",
   "public_face": "House Bernard",
-  "governor_alias": "HeliosBlade",
+  "crown_alias": "HeliosBlade",
   "agent_name": "AchillesRun",
   "runtime": "OpenClaw",
 
@@ -54,7 +54,7 @@
     "phase_0": {
       "primary": "discord",
       "status": "PLANNED",
-      "governor_contact": "Discord DM"
+      "crown_contact": "Discord DM"
     },
     "phase_1": {
       "primary": "imessage",

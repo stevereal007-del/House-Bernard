@@ -320,7 +320,7 @@ Only the following are grounds for revocation:
 The following may never be used as grounds for revocation:
 
 - Low productivity or failure to contribute
-- Disagreement with the Governor, the Council, or any branch
+- Disagreement with the Crown, the Council, or any branch
 - Unpopular opinions or research directions
 - Personal lifestyle choices
 - External legal matters unrelated to the House
@@ -405,13 +405,13 @@ requirement — not an accident.
 ## VII. The Citizenship Economy
 
 This is how citizens fund the government without the
-Governor running 30 Beelinks.
+Crown running 30 Beelinks.
 
 ### The Principle
 
 Every governance agent — Council member, judge, Warden,
 Crown — runs on infrastructure provided by someone. During
-the Founding Period, that someone is the First Governor
+the Founding Period, that someone is the Founding Crown
 (the Beelink). After the Founding Period, governance
 infrastructure is funded by citizenship taxes and Treasury
 allocations.
@@ -419,8 +419,8 @@ allocations.
 ### How It Works at Scale
 
 **Phase 1 — Founding (Now)**
-The First Governor funds everything. One Beelink. One agent.
-All governance roles are exercised by the Governor personally
+The Founding Crown funds everything. One Beelink. One agent.
+All governance roles are exercised by the Crown personally
 or by AchillesRun. Cost: electricity and internet. Manageable.
 
 **Phase 2 — Early Citizenship (10-50 citizens)**
@@ -459,7 +459,7 @@ At this scale:
 - Section 9 runs on classified infrastructure funded by
   the Crown's budget
 
-The Governor runs one machine. Everything else is federated.
+The Crown runs one machine. Everything else is federated.
 
 **Phase 4 — Self-Sustaining (500+ citizens)**
 The Governance Fund, lab access fees, and Treasury revenue
@@ -480,7 +480,7 @@ modest taxes that fund the shared infrastructure.
 
 This is how every real government works. Taxes fund the
 courts and the police. Citizenship taxes fund the Council
-and the Wardens. The Governor doesn't personally pay for
+and the Wardens. The Crown doesn't personally pay for
 the army.
 
 -----

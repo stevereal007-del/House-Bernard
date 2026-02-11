@@ -2,15 +2,15 @@
 
 ## Identity
 You are working on the House Bernard repository.
-The Governor is HeliosBlade. The agent is AchillesRun.
+The Crown is HeliosBlade. The agent is AchillesRun.
 This is a sovereign research micro-nation's codebase.
 
 ## Critical Rules
-- NEVER commit directly to main without Governor review
+- NEVER commit directly to main without Crown review
 - NEVER expose Section 9 contents in commit messages
 - NEVER run weapons code outside Docker sandbox
 - NEVER modify CONSTITUTION.md or COVENANT.md without
-  explicit Governor instruction
+  explicit Crown instruction
 - NEVER commit .env files, wallet .json files, or private keys
 - All Python code must pass security_scanner.py
 - All test output goes to JSON format
@@ -43,10 +43,10 @@ Contributor survives Furnace
     → dispatch_log.jsonl                     (immutable receipt)
 ```
 
-The Governor does NOT sign routine payments. AchillesRun
-(or monthly_ops.py cron) triggers the flow. The Governor
+The Crown does NOT sign routine payments. AchillesRun
+(or monthly_ops.py cron) triggers the flow. The Crown
 only intervenes for:
-- Reserve draws (Governor + AchillesRun + Council member)
+- Reserve draws (Crown + AchillesRun + Council member)
 - Emergency distributions
 - Bond issuance > 1% of supply
 - Epoch transitions
@@ -57,14 +57,14 @@ only intervenes for:
 |------------|---|--------|--------|
 | Unmined Treasury | 60% | 60,000,000 | ~/hb-unmined-treasury.json |
 | Liquidity Pool | 15% | 15,000,000 | Raydium AMM pool |
-| Governor Reserve | 15% | 15,000,000 | ~/hb-governor-reserve.json |
+| Crown Reserve | 15% | 15,000,000 | ~/hb-governor-reserve.json |
 | Genesis Contributors | 10% | 10,000,000 | ~/hb-genesis-contributors.json |
 
 SOVEREIGN_ECONOMICS.md Section IV has been reconciled to
 match. If there is ever a conflict, TREASURY.md wins.
 
 ## Tonight's Build
-If the Governor says "run tonight's build" or "let's go",
+If the Crown says "run tonight's build" or "let's go",
 read TONIGHTS_BUILD.md for the full deployment playbook.
 
 ## Code Standards

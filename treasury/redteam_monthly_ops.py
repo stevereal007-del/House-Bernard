@@ -37,7 +37,7 @@ def clean_treasury_state():
         "_schema_version": "1.0",
         "_description": "Test state",
         "_last_updated": "2026-02-08T00:00:00Z",
-        "_signed_by": "governor",
+        "_signed_by": "crown",
         "emission": {
             "current_epoch": 1,
             "epoch_start": "2026-01-01T00:00:00Z",
@@ -336,7 +336,7 @@ report = ops.run(as_of=as_of, dry_run=True)
 
 required_keys = ["report_type", "report_date", "schema_version", "dry_run",
                  "changes", "payouts", "emission", "treasury_summary",
-                 "governor_required", "info"]
+                 "crown_required", "info"]
 for key in required_keys:
     test(f"Report has '{key}'", key in report)
 
@@ -361,7 +361,7 @@ entries = read_log(log_path)
 test("Log has 1 entry after first run", len(entries) == 1)
 test("Log entry has timestamp", "timestamp" in entries[0])
 test("Log entry has run_number", "run_number" in entries[0])
-test("Log entry has governor_actions", "governor_actions" in entries[0])
+test("Log entry has crown_actions", "crown_actions" in entries[0])
 
 # ===================================================================
 print("\n" + "=" * 60)
@@ -395,7 +395,7 @@ print("=" * 60)
 
 empty_ts = {
     "_schema_version": "1.0", "_description": "Empty",
-    "_last_updated": "2026-02-08T00:00:00Z", "_signed_by": "governor",
+    "_last_updated": "2026-02-08T00:00:00Z", "_signed_by": "crown",
     "emission": {
         "current_epoch": 1, "epoch_start": "2026-01-01T00:00:00Z",
         "epochs": [{"epoch": 1, "label": "Genesis", "max_emission": 10000000, "per_contribution_cap": 100000}],
@@ -409,7 +409,7 @@ ops = make_ops(treasury_state=empty_ts, ops_state=empty_ops)
 as_of = _parse_dt("2026-03-01T06:00:00Z")
 report = ops.run(as_of=as_of, dry_run=True)
 test("Empty state runs without error", report is not None)
-test("Empty state has no escalations", len(report["governor_required"]) == 0)
+test("Empty state has no escalations", len(report["crown_required"]) == 0)
 
 # ===================================================================
 print("\n" + "=" * 60)
@@ -421,7 +421,7 @@ as_of = _parse_dt("2026-03-01T06:00:00Z")
 report = ops.run(as_of=as_of, dry_run=True)
 
 # BOND-001 matured → should be an ACTION escalation
-bond_escalations = [e for e in report["governor_required"] if e["type"] == "bond_matured"]
+bond_escalations = [e for e in report["crown_required"] if e["type"] == "bond_matured"]
 test("Bond maturity triggers ACTION escalation", len(bond_escalations) > 0)
 
 # Check escalation has required fields
@@ -429,7 +429,7 @@ if bond_escalations:
     e = bond_escalations[0]
     test("Escalation has priority", e["priority"] == "ACTION")
     test("Escalation has detail", "BOND-001" in e["detail"])
-    test("Escalation has action", "Governor" in e["action"])
+    test("Escalation has action", "Crown" in e["action"])
 
 # ===================================================================
 print("\n" + "=" * 60)

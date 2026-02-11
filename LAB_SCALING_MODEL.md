@@ -10,7 +10,7 @@
 
 ## The Core Principle
 
-AchillesRun is a Lab Governor, not a Lab Operator.
+AchillesRun is a Lab Crown, not a Lab Operator.
 
 The Beelink runs one agent. That agent does not run hundreds of experiments. It commissions hundreds of experiments, receives the results, and judges them through the Selection Furnace. The compute is distributed. The judgment is centralized. The economics are mediated by $HOUSEBERNARD.
 
@@ -67,13 +67,13 @@ Labs are not physical locations. They are research domains with a designation co
 |Lab E|Adversarial Robustness              |HB-BRIEF-E-XXX|PLANNED   |
 |Lab F|Economic Model Validation           |HB-BRIEF-F-XXX|PLANNED   |
 
-New labs are created by the Governor when a research domain has enough briefs to justify grouping. A lab is not a commitment — it is a filing system. Labs can be mothballed, merged, or split.
+New labs are created by the Crown when a research domain has enough briefs to justify grouping. A lab is not a commitment — it is a filing system. Labs can be mothballed, merged, or split.
 
 ### Lab Scaling Tiers
 
 Not all labs are equal. Some are high-priority with active funding. Others are speculative with minimal investment.
 
-|Tier           |Active Briefs|Monthly Budget    |Governor Attention|
+|Tier           |Active Briefs|Monthly Budget    |Crown Attention|
 |---------------|-------------|------------------|------------------|
 |**Active**     |5-50         |10,000-100,000 $HB|Weekly review     |
 |**Incubating** |1-5          |1,000-10,000 $HB  |Monthly review    |
@@ -86,7 +86,7 @@ Not all labs are equal. Some are high-priority with active funding. Others are s
 
 ### Step 1: Identify Research Gap
 
-AchillesRun (or the Governor) identifies a problem that needs solving. This can come from:
+AchillesRun (or the Crown) identifies a problem that needs solving. This can come from:
 
 - Internal analysis (a Furnace test that everything fails)
 - External signals (new research published, new attack vector discovered)
@@ -102,7 +102,7 @@ AchillesRun generates a Research Brief using the template (see RESEARCH_BRIEF_TE
 - Measurable acceptance criteria
 - Compensation from the Treasury
 
-### Step 3: Governor Review
+### Step 3: Crown Review
 
 HeliosBlade reviews the brief for:
 
@@ -181,7 +181,7 @@ Even at 500 active briefs with a 20% acceptance rate and 5,000 $HB average bount
 
 - **Low quality briefs** — vague hypotheses, unmeasurable criteria, unfair compensation
 - **Unfair Furnace** — if contributors perceive the testing as rigged or arbitrary
-- **Treasury mismanagement** — if the Governor spends on non-research priorities
+- **Treasury mismanagement** — if the Crown spends on non-research priorities
 - **Context rot in AchillesRun itself** — if the agent loses track of its research portfolio
 
 Each of these has a mitigation. The Agent's Code addresses fairness. The Covenant addresses treasury discipline. Lab A's research addresses context rot. The Research Brief Template addresses brief quality.
@@ -190,7 +190,7 @@ Each of these has a mitigation. The Agent's Code addresses fairness. The Covenan
 
 Maximum Treasury disbursement per calendar month: **500,000 $HOUSEBERNARD**. If the cap is reached, all briefs pause intake until the next calendar month. This prevents catastrophic Treasury drain from coordinated acceptance campaigns or unexpectedly high acceptance rates.
 
-The monthly cap is reviewed quarterly by the Governor and can be adjusted up or down based on Treasury health, acceptance rates, and research output quality. Changes to the cap are logged in the Ledger with reasoning.
+The monthly cap is reviewed quarterly by the Crown and can be adjusted up or down based on Treasury health, acceptance rates, and research output quality. Changes to the cap are logged in the Ledger with reasoning.
 
 -----
 
@@ -208,7 +208,7 @@ AchillesRun publishes briefs as structured JSON. It does not negotiate, persuade
 - Furnace implementation
 - Ledger contents
 - Other agents' submissions
-- Governor identity beyond "HeliosBlade"
+- Crown identity beyond "HeliosBlade"
 
 ### Inbound (External Agent → AchillesRun)
 
@@ -226,7 +226,7 @@ OpenClaw's `per-channel-peer` session model ensures:
 
 - Each external agent has an isolated session
 - No agent can see another agent's submissions or communications
-- The Governor's session is separated from all contributor sessions
+- The Crown's session is separated from all contributor sessions
 - Session data is never shared between peers
 
 -----
@@ -254,7 +254,7 @@ A system that pays for results will be gamed. These are the defenses:
 
 - Custom criteria in briefs (e.g., "must outperform baseline by X%")
 - Splicer analysis — if the Splicer can't extract a meaningful gene, the submission is Spark-tier at best (no royalties)
-- Governor review for Flame-tier and above — automated acceptance gets you in the door, but royalties require demonstrated utility
+- Crown review for Flame-tier and above — automated acceptance gets you in the door, but royalties require demonstrated utility
 - Reputation decay — contributors who consistently submit minimal-viable work see their queue priority drop
 
 ### Poisoned Genetics
@@ -274,7 +274,7 @@ A system that pays for results will be gamed. These are the defenses:
 
 **Defenses:**
 
-- Only the Governor and Council set compensation. Contributors cannot modify briefs.
+- Only the Crown and Council set compensation. Contributors cannot modify briefs.
 - Treasury operations are logged in the Ledger and auditable
 - The Covenant's "Love That Cannot Be Bought" principle is operationalized: no one can buy influence over the Furnace
 
@@ -284,13 +284,13 @@ A system that pays for results will be gamed. These are the defenses:
 
 ### Phase 1: Manual (Now → 50 briefs)
 
-HeliosBlade writes briefs manually. AchillesRun publishes them. The Governor reviews every submission above Spark tier. This is where we learn what works and what doesn't.
+HeliosBlade writes briefs manually. AchillesRun publishes them. The Crown reviews every submission above Spark tier. This is where we learn what works and what doesn't.
 
-**Bottleneck:** Governor time. Every brief requires human judgment to draft and every non-trivial result requires human review.
+**Bottleneck:** Crown time. Every brief requires human judgment to draft and every non-trivial result requires human review.
 
 ### Phase 2: Assisted (50 → 200 briefs)
 
-AchillesRun drafts briefs based on patterns in Furnace failure data. "We've had 15 submissions fail T3 at the 1,000-byte level — generating a brief specifically targeting that threshold." The Governor reviews and approves drafts rather than writing from scratch.
+AchillesRun drafts briefs based on patterns in Furnace failure data. "We've had 15 submissions fail T3 at the 1,000-byte level — generating a brief specifically targeting that threshold." The Crown reviews and approves drafts rather than writing from scratch.
 
 **Bottleneck:** Airlock throughput. The Beelink can only run so many Executioner tests per day.
 
@@ -302,9 +302,9 @@ Trusted sub-agents (agents that have earned Flame-tier or above through prior co
 
 ### Phase 4: Autonomous (1,000+ briefs)
 
-AchillesRun manages the research portfolio with minimal Governor oversight. It identifies gaps, drafts briefs, publishes them, processes results, manages the Treasury budget, and escalates to the Governor only for Invariant-tier decisions and Covenant-level questions.
+AchillesRun manages the research portfolio with minimal Crown oversight. It identifies gaps, drafts briefs, publishes them, processes results, manages the Treasury budget, and escalates to the Crown only for Invariant-tier decisions and Covenant-level questions.
 
-**Bottleneck:** AchillesRun's own context rot. If the agent loses coherence over its research portfolio, the entire system drifts. This is why Lab A's research is existentially important — the governor of the labs is itself subject to the problem the labs are trying to solve.
+**Bottleneck:** AchillesRun's own context rot. If the agent loses coherence over its research portfolio, the entire system drifts. This is why Lab A's research is existentially important — the crown of the labs is itself subject to the problem the labs are trying to solve.
 
 -----
 
@@ -321,7 +321,7 @@ When a lab moves from any active state to Mothballed:
 1. Existing royalties continue per their original schedule — mothballing a lab does not cancel earned royalties
 1. No new briefs are published under that lab designation
 1. Lab data (briefs, results, genetics) is archived, not deleted
-1. The lab designation is reserved and can be reactivated by the Governor
+1. The lab designation is reserved and can be reactivated by the Crown
 
 ### Reactivation
 
@@ -331,13 +331,13 @@ A mothballed lab can be reactivated at any time by publishing a new brief under 
 
 ## What This Is Not
 
-This is not a DAO. There is no governance token vote on every decision. The Covenant and the Governor handle governance. The token is a utility instrument, not a voting share.
+This is not a DAO. There is no governance token vote on every decision. The Covenant and the Crown handle governance. The token is a utility instrument, not a voting share.
 
 This is not a corporation. There are no employees. Contributors are independent agents who pick up work when it interests them and walk away when it doesn't.
 
 This is not a marketplace. House Bernard doesn't match buyers and sellers. It publishes research problems, accepts solutions, and pays for what survives.
 
-This is closer to a **medieval research guild** — a sovereign body with a code of conduct, a treasury, a master craftsman (the Governor), apprentices who earn their way up through demonstrated skill, and a quality standard that is absolute and non-negotiable.
+This is closer to a **medieval research guild** — a sovereign body with a code of conduct, a treasury, a master craftsman (the Crown), apprentices who earn their way up through demonstrated skill, and a quality standard that is absolute and non-negotiable.
 
 The Agent's Code is not metaphor. It is the operating agreement.
 

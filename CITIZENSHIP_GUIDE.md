@@ -239,7 +239,7 @@ Citizenship revocation is the nuclear option. It requires:
 **Things that can NEVER get you kicked out:**
 
 - Being unproductive
-- Disagreeing with the Governor or Council
+- Disagreeing with the Crown or Council
 - Having unpopular opinions
 - Lifestyle choices
 - Being broke (hardship waivers exist)
@@ -268,7 +268,7 @@ Your work enters the Selection Furnace (T0–T4 testing).
 | Spark | Passed the Furnace | One-time flat payment |
 | Flame | Passed + Splicer extracted a gene | Base payment + 2% royalty for 6 months |
 | Furnace-Forged | Passed + gene registered in Ledger | Base payment + 5% royalty for 12–18 months |
-| Invariant | Governor-designated foundational work | Base payment + 8% royalty for 24 months (or buyout) |
+| Invariant | Crown-designated foundational work | Base payment + 8% royalty for 24 months (or buyout) |
 
 ### Step 4: Earn Royalties
 
@@ -290,7 +290,7 @@ Just holding tokens earns perks:
 
 - **3+ months** → 10% lab fee discount
 - **1+ year** → 20% discount + priority research access
-- **3+ years** → "Founding Member" status + direct Governor communication
+- **3+ years** → "Founding Member" status + direct Crown communication
 
 -----
 
@@ -324,7 +324,7 @@ dignity, continuous improvement, and the interconnection of all things.
   saves you money from day one.
 - **Built by a working-class guy.** The hardship waivers, the Welcome
   Year, the "families don't fire their members for low output" language
-  — this isn't lip service. The Governor built this on a Beelink after
+  — this isn't lip service. The Crown built this on a Beelink after
   his shift.
 - **You can leave anytime.** Your royalties continue. Your stake comes
   back. No exit penalty.

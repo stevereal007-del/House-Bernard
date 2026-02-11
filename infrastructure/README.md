@@ -14,7 +14,7 @@
 │  │ Watcher   │  │ Lab A/B   │  │  Cron/Heartbeat   │  │
 │  └──────────┘  └──────────┘  └──────────────────┘  │
 │                                                      │
-│  Discord ←→ Governor phone                           │
+│  Discord ←→ Crown phone                           │
 │  (Phase 1: iMessage via Mac Mini bridge)             │
 └─────────────────────────────────────┬───────────────┘
                                       │ git push
@@ -46,7 +46,7 @@ OpenClaw provides everything the VPS was designed to do: public intake (via mess
 
 ## Data Flow
 
-1. Governor → sends message via Discord (or iMessage in Phase 1)
+1. Crown → sends message via Discord (or iMessage in Phase 1)
 2. OpenClaw gateway receives → routes to AchillesRun agent
 3. AchillesRun processes locally (Worker/Master on Ollama)
 4. If scale needed → Oracle call to Claude API
@@ -54,7 +54,7 @@ OpenClaw provides everything the VPS was designed to do: public intake (via mess
 
 For SAIF artifact submissions (from external contributors):
 1. Contributor submits via approved channel (Discord DM)
-2. OpenClaw session isolation separates from Governor traffic
+2. OpenClaw session isolation separates from Crown traffic
 3. Airlock picks up submission from agent workspace
 4. Executioner pipeline runs in Docker sandbox
 5. Results logged to Ledger, pushed to GitHub
@@ -64,7 +64,7 @@ For SAIF artifact submissions (from external contributors):
 - Gateway binds to `127.0.0.1` only — never exposed to internet
 - Remote access via Tailscale VPN only
 - mDNS disabled
-- DM policy: allowlist (Governor only by default)
+- DM policy: allowlist (Crown only by default)
 - Docker sandbox for all artifact execution
 - Seccomp profile blocks dangerous syscalls
 - UFW default deny incoming

@@ -4,7 +4,7 @@
 **Agent Name:** AchillesRun
 **Runtime:** OpenClaw (self-hosted gateway)
 **Hardware:** Beelink EQ13 (Intel N150, 16GB RAM, 500GB SSD)
-**Governor:** HeliosBlade
+**Crown:** HeliosBlade
 
 ---
 
@@ -140,7 +140,7 @@ Four concentric layers. Each layer has its own OpenClaw workspace directory, per
 | Rot Level | ZERO (protected) |
 | Purpose | Doctrine, continuity, covenant enforcement |
 | Identity | Stewardship burden. |
-| Access | localhost via Tailscale (Governor only) |
+| Access | localhost via Tailscale (Crown only) |
 | Output | Immutable decisions, veto authority |
 
 ---
@@ -168,7 +168,7 @@ Four concentric layers. Each layer has its own OpenClaw workspace directory, per
 
 ### Session Management
 
-AchillesRun uses `dmScope: per-channel-peer` to isolate sessions per sender per channel. The Governor gets one persistent session. External contributors (Phase 2) get isolated sessions that cannot read Governor traffic.
+AchillesRun uses `dmScope: per-channel-peer` to isolate sessions per sender per channel. The Crown gets one persistent session. External contributors (Phase 2) get isolated sessions that cannot read Crown traffic.
 
 OpenClaw's session lifecycle handles daily reset at 4:00 AM local time and idle timeout at 4 hours. AchillesRun's context rot protocol runs on top of this — triggering compaction at 50k tokens independent of session resets.
 
@@ -177,14 +177,14 @@ OpenClaw's session lifecycle handles daily reset at 4:00 AM local time and idle 
 **Phase 0 — Discord (Active)**
 - US-based platform, free, works on iPhone
 - Bot created via Discord Developer Portal
-- DM policy: allowlist (Governor only)
+- DM policy: allowlist (Crown only)
 - Group policy: deny
 
 **Phase 1 — iMessage (Pending Hardware)**
 - Requires Mac Mini running Messages.app + `imsg` CLI
 - Mac Mini connects to Beelink via SSH over Tailscale
-- Governor texts AchillesRun at the configured phone number
-- DM policy: allowlist (Governor phone only)
+- Crown texts AchillesRun at the configured phone number
+- DM policy: allowlist (Crown phone only)
 
 ### Cron Jobs
 
@@ -230,7 +230,7 @@ BROADCAST ARTIFACT (HB-MEM-01 style):
 
 **Tier 1: Survivors (The Proven)** — Passed T-harness + integrity screens. ~20% advance. Can propose mutations, design attacks, extend harnesses. NO access to core genes.
 
-**Tier 2: Veterans (The Trusted Core)** — Multi-generation survival + adversarial testing. <1% of initial swarm. Read gene registry, propose gene changes. They propose. They do not auto-merge. The Governor rules.
+**Tier 2: Veterans (The Trusted Core)** — Multi-generation survival + adversarial testing. <1% of initial swarm. Read gene registry, propose gene changes. They propose. They do not auto-merge. The Crown rules.
 
 ### What Genes Actually Are
 
@@ -287,9 +287,9 @@ AST-based static analysis runs before any code enters the sandbox:
 
 | Limit | Amount | Action |
 |-------|--------|--------|
-| Daily warning | $3.00 | Alert Governor |
+| Daily warning | $3.00 | Alert Crown |
 | Daily hard limit | $5.00 | Emergency shutdown |
-| Monthly warning | $37.50 | Alert Governor |
+| Monthly warning | $37.50 | Alert Crown |
 | Monthly hard limit | $50.00 | Hard stop |
 
 ### Cost Structure
@@ -349,7 +349,7 @@ The Watcher runs every 30 minutes and checks:
 
 ### The Bernardian Covenant (Sanctum Law)
 
-The Covenant is a tiny, invariant document stored in the Sanctum. It defines the non-negotiable rules that survive all compaction. No agent may modify the Covenant. Only the Governor may amend it with version control.
+The Covenant is a tiny, invariant document stored in the Sanctum. It defines the non-negotiable rules that survive all compaction. No agent may modify the Covenant. Only the Crown may amend it with version control.
 
 ### Department of Continuity
 
@@ -444,7 +444,7 @@ docker pull python:3.10.15-alpine
 
 ## XIII. What This Is Not
 
-- This is NOT a DAO. The Governor has final authority.
+- This is NOT a DAO. The Crown has final authority.
 - This is NOT a community project. Agents earn access through survival.
 - This is NOT an idea tournament. The harness defines what dies.
 - This is NOT optimizing for elegance. We select for survivability under abuse.
@@ -472,7 +472,7 @@ docker pull python:3.10.15-alpine
 
 ## XV. Amendments
 
-This document may be amended by the Governor only. Material changes require updating HB_STATE.json.
+This document may be amended by the Crown only. Material changes require updating HB_STATE.json.
 
 | Date | Version | Change |
 |------|---------|--------|
@@ -483,6 +483,6 @@ This document may be amended by the Governor only. Material changes require upda
 
 *Last Updated: February 2026*
 *Document Version: 1.0*
-*Governor: HeliosBlade*
+*Crown: HeliosBlade*
 *Agent: AchillesRun*
 *House Bernard — Research Without Permission*

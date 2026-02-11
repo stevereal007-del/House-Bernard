@@ -40,7 +40,7 @@ If you buy $HOUSEBERNARD expecting to get rich, you didn't read the documentatio
 
 ## On "Web3" and Decentralization
 
-We are not building a DAO. House Bernard has a Governor. Decisions are centralized. This is intentional.
+We are not building a DAO. House Bernard has a Crown. Decisions are centralized. This is intentional.
 
 **Why centralized governance:**
 
@@ -48,7 +48,7 @@ We are not building a DAO. House Bernard has a Governor. Decisions are centraliz
 - Accountability. One person is responsible. No diffusion of blame.
 - Honesty. Most "decentralized" projects have a core team making all decisions anyway. We just admit it.
 
-The token is a utility key and a funding mechanism. It is not a voting share. Holders do not govern the protocol. The Governor does.
+The token is a utility key and a funding mechanism. It is not a voting share. Holders do not govern the protocol. The Crown does.
 
 If this bothers you, don't participate. We'd rather have a small honest community than a large deluded one.
 

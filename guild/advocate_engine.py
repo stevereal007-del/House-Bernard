@@ -123,7 +123,7 @@ class AdvocateEngine:
             covenant_exam_score: Score on Covenant Examination (0.0-1.0).
             ethics_exam_score: Score on Ethics Examination (0.0-1.0).
             guild_memberships: Current guild memberships (for conflict tracking).
-            licensed_by: 'judiciary' or 'governor' (Founding Period).
+            licensed_by: 'judiciary' or 'crown' (Founding Period).
         """
         # Check not already licensed
         existing = self._get_advocate(citizen_id)

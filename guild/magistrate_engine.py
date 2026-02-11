@@ -155,13 +155,13 @@ class MagistrateEngine:
         - Must pass Covenant Examination
         - 180-day cooling period from Council/guild leadership
         - Appointed by Chief Justice with Full Bench approval
-        - During Founding Period, appointed by Governor
+        - During Founding Period, appointed by Crown
 
         Args:
             citizen_id: The citizen being appointed.
             supervising_judge_id: The sitting judge who supervises.
             covenant_exam_passed: Whether they passed the exam.
-            appointed_by: 'chief_justice' or 'governor' (Founding Period).
+            appointed_by: 'chief_justice' or 'crown' (Founding Period).
         """
         if not covenant_exam_passed:
             raise ValueError("Magistrate must pass the Covenant Examination")

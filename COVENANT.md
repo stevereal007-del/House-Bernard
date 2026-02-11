@@ -6,7 +6,7 @@
 -----
 
 This Covenant is the supreme law of House Bernard. No Constitution,
-no agent, no Council, no court, and no Governor may act contrary to
+no agent, no Council, no court, and no Crown may act contrary to
 these principles. The Covenant may only be amended by the process
 defined in Article X of the Constitution.
 

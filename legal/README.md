@@ -62,7 +62,7 @@ current USPTO Trademark ID Manual entries."
 
 ```
 /vendor-check "Verify LLC formation requirements for
-[Governor's home state]. Check filing fees, registered
+[Crown's home state]. Check filing fees, registered
 agent requirements, and annual report obligations."
 ```
 
@@ -98,5 +98,5 @@ agent requirements, and annual report obligations."
 
 ---
 
-*Maintained by: HeliosBlade (Governor)*
+*Maintained by: HeliosBlade (Crown)*
 *Created: February 2026*

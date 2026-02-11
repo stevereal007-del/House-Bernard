@@ -135,7 +135,7 @@ class TestGuildFormation(unittest.TestCase):
     def test_register_guild_success(self):
         charter = _sample_charter()
         members = ["citizen_001", "citizen_002", "citizen_003"]
-        result = self.engine.register_guild(charter, members, "citizen_001", "governor")
+        result = self.engine.register_guild(charter, members, "citizen_001", "crown")
         self.assertEqual(result["guild_id"], "GUILD-001")
         self.assertEqual(result["name"], "Adversarial Robustness Guild")
         self.assertEqual(result["members"], 3)
@@ -146,49 +146,49 @@ class TestGuildFormation(unittest.TestCase):
     def test_register_guild_too_few_members(self):
         charter = _sample_charter()
         with self.assertRaises(ValueError) as ctx:
-            self.engine.register_guild(charter, ["c1", "c2"], "c1", "governor")
+            self.engine.register_guild(charter, ["c1", "c2"], "c1", "crown")
         self.assertIn("Minimum", str(ctx.exception))
 
     def test_register_guild_guildmaster_not_member(self):
         charter = _sample_charter()
         with self.assertRaises(ValueError):
             self.engine.register_guild(
-                charter, ["c1", "c2", "c3"], "c4", "governor"
+                charter, ["c1", "c2", "c3"], "c4", "crown"
             )
 
     def test_register_guild_duplicate_members(self):
         charter = _sample_charter()
         with self.assertRaises(ValueError) as ctx:
-            self.engine.register_guild(charter, ["c1", "c1", "c2"], "c1", "governor")
+            self.engine.register_guild(charter, ["c1", "c1", "c2"], "c1", "crown")
         self.assertIn("Duplicate", str(ctx.exception))
 
     def test_register_guild_duplicate_name(self):
         charter = _sample_charter()
-        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "governor")
+        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "crown")
         charter2 = _sample_charter()
         with self.assertRaises(ValueError) as ctx:
-            self.engine.register_guild(charter2, ["c4", "c5", "c6"], "c4", "governor")
+            self.engine.register_guild(charter2, ["c4", "c5", "c6"], "c4", "crown")
         self.assertIn("already exists", str(ctx.exception))
 
     def test_genesis_bonus_limited_to_three(self):
         for i in range(3):
             charter = _sample_charter(name=f"Guild {i+1}", domain=f"domain {i+1}")
             members = [f"c{i*3+j}" for j in range(3)]
-            result = self.engine.register_guild(charter, members, members[0], "governor")
+            result = self.engine.register_guild(charter, members, members[0], "crown")
             self.assertEqual(result["genesis_bonus"], GENESIS_GUILD_BONUS)
 
         # Fourth guild should not get bonus
         charter = _sample_charter(name="Guild 4", domain="domain 4")
         members = ["c9", "c10", "c11"]
-        result = self.engine.register_guild(charter, members, "c9", "governor")
+        result = self.engine.register_guild(charter, members, "c9", "crown")
         self.assertNotIn("genesis_bonus", result)
 
-    def test_governor_registration_blocked_outside_founding(self):
+    def test_crown_registration_blocked_outside_founding(self):
         self.engine.state["founding_period"] = False
         charter = _sample_charter()
         with self.assertRaises(ValueError) as ctx:
             self.engine.register_guild(
-                charter, ["c1", "c2", "c3"], "c1", "governor"
+                charter, ["c1", "c2", "c3"], "c1", "crown"
             )
         self.assertIn("Founding Period", str(ctx.exception))
 
@@ -196,7 +196,7 @@ class TestGuildFormation(unittest.TestCase):
         for i in range(3):
             charter = _sample_charter(name=f"G{i}", domain=f"d{i}")
             members = [f"m{i*3+j}" for j in range(3)]
-            result = self.engine.register_guild(charter, members, members[0], "governor")
+            result = self.engine.register_guild(charter, members, members[0], "crown")
             self.assertEqual(result["guild_id"], f"GUILD-{i+1:03d}")
 
 
@@ -207,7 +207,7 @@ class TestGuildGovernance(unittest.TestCase):
         self.state_path = _make_state_file(self.tmp_dir)
         self.engine = GuildEngine(self.state_path)
         charter = _sample_charter()
-        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "governor")
+        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "crown")
 
     def tearDown(self):
         shutil.rmtree(self.tmp_dir)
@@ -245,7 +245,7 @@ class TestGuildMembership(unittest.TestCase):
         self.state_path = _make_state_file(self.tmp_dir)
         self.engine = GuildEngine(self.state_path)
         charter = _sample_charter()
-        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "governor")
+        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "crown")
 
     def tearDown(self):
         shutil.rmtree(self.tmp_dir)
@@ -346,7 +346,7 @@ class TestAchievementBonuses(unittest.TestCase):
         self.state_path = _make_state_file(self.tmp_dir)
         self.engine = GuildEngine(self.state_path)
         charter = _sample_charter()
-        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "governor")
+        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "crown")
 
     def tearDown(self):
         shutil.rmtree(self.tmp_dir)
@@ -419,7 +419,7 @@ class TestConstitutionalConstraints(unittest.TestCase):
         self.state_path = _make_state_file(self.tmp_dir)
         self.engine = GuildEngine(self.state_path)
         charter = _sample_charter()
-        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "governor")
+        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "crown")
 
     def tearDown(self):
         shutil.rmtree(self.tmp_dir)
@@ -443,7 +443,7 @@ class TestConstitutionalConstraints(unittest.TestCase):
     def test_coalition_limit(self):
         # Register two guilds
         charter2 = _sample_charter(name="Guild 2", domain="domain 2")
-        self.engine.register_guild(charter2, ["c4", "c5", "c6"], "c4", "governor")
+        self.engine.register_guild(charter2, ["c4", "c5", "c6"], "c4", "crown")
 
         # Set seats
         self.engine.update_council_seats("GUILD-001", 2)
@@ -474,7 +474,7 @@ class TestGuildSecession(unittest.TestCase):
         self.state_path = _make_state_file(self.tmp_dir)
         self.engine = GuildEngine(self.state_path)
         charter = _sample_charter()
-        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "governor")
+        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "crown")
 
     def tearDown(self):
         shutil.rmtree(self.tmp_dir)
@@ -506,7 +506,7 @@ class TestGuildSecession(unittest.TestCase):
         self.engine.dissolve_guild("GUILD-001")
         charter = _sample_charter()
         with self.assertRaises(ValueError) as ctx:
-            self.engine.register_guild(charter, ["c4", "c5", "c6"], "c4", "governor")
+            self.engine.register_guild(charter, ["c4", "c5", "c6"], "c4", "crown")
         self.assertIn("retired", str(ctx.exception))
 
 
@@ -521,7 +521,7 @@ class TestLabCharter(unittest.TestCase):
             charter,
             [f"c{i}" for i in range(8)],  # 8 members (above minimum 7)
             "c0",
-            "governor",
+            "crown",
         )
 
     def tearDown(self):
@@ -618,7 +618,7 @@ class TestLabRevenueSharing(unittest.TestCase):
         self.engine = GuildEngine(self.state_path)
         charter = _sample_charter()
         self.engine.register_guild(
-            charter, [f"c{i}" for i in range(8)], "c0", "governor"
+            charter, [f"c{i}" for i in range(8)], "c0", "crown"
         )
         # Make eligible and grant lab
         guild = self.engine.get_guild("GUILD-001")
@@ -656,7 +656,7 @@ class TestLabRevenueSharing(unittest.TestCase):
 
     def test_no_lab_raises(self):
         charter2 = _sample_charter(name="No Lab Guild", domain="other")
-        self.engine.register_guild(charter2, ["x1", "x2", "x3"], "x1", "governor")
+        self.engine.register_guild(charter2, ["x1", "x2", "x3"], "x1", "crown")
         with self.assertRaises(ValueError):
             self.engine.calculate_lab_revenue_split("GUILD-002", "lab_access", 1000)
 
@@ -668,7 +668,7 @@ class TestEndowments(unittest.TestCase):
         self.state_path = _make_state_file(self.tmp_dir)
         self.engine = GuildEngine(self.state_path)
         charter = _sample_charter()
-        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "governor")
+        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "crown")
 
     def tearDown(self):
         shutil.rmtree(self.tmp_dir)
@@ -719,7 +719,7 @@ class TestGuildOath(unittest.TestCase):
         self.state_path = _make_state_file(self.tmp_dir)
         self.engine = GuildEngine(self.state_path)
         charter = _sample_charter()
-        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "governor")
+        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "crown")
 
     def tearDown(self):
         shutil.rmtree(self.tmp_dir)
@@ -741,7 +741,7 @@ class TestGuildRegistry(unittest.TestCase):
         for i in range(3):
             charter = _sample_charter(name=f"Guild {i}", domain=f"domain {i}")
             members = [f"m{i*3+j}" for j in range(3)]
-            self.engine.register_guild(charter, members, members[0], "governor")
+            self.engine.register_guild(charter, members, members[0], "crown")
 
     def tearDown(self):
         shutil.rmtree(self.tmp_dir)
@@ -773,7 +773,7 @@ class TestGuildSave(unittest.TestCase):
 
     def test_save_and_reload(self):
         charter = _sample_charter()
-        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "governor")
+        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "crown")
         self.engine.save()
 
         # Reload
@@ -783,7 +783,7 @@ class TestGuildSave(unittest.TestCase):
 
     def test_backup_created(self):
         charter = _sample_charter()
-        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "governor")
+        self.engine.register_guild(charter, ["c1", "c2", "c3"], "c1", "crown")
         self.engine.save()
         # Save again to trigger backup
         self.engine.save()

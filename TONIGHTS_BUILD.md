@@ -1,12 +1,12 @@
 # TONIGHT'S BUILD — Master Work Instructions for Claude Code
 
 **Date:** February 10, 2026
-**Author:** HeliosBlade (Governor)
+**Author:** HeliosBlade (Crown)
 **Target:** Solana SPL Token — $HOUSEBERNARD live and tradeable
 **Budget:** ~$200-400 total (one-time, not recurring)
 
 **READ THIS FIRST, CLAUDE CODE.** This document is your
-playbook for tonight. The Governor is home from work and has
+playbook for tonight. The Crown is home from work and has
 limited time. Execute each phase in order. Ask for confirmation
 before any irreversible action (mainnet transactions, burning
 mint authority). Be efficient. Be precise.
@@ -31,7 +31,7 @@ electricity + essentially zero blockchain fees).
 
 ## PHASE 0 — DEPLOY REPO UPDATE (10 min)
 
-The Governor has a zip file: House-Bernard-main.zip
+The Crown has a zip file: House-Bernard-main.zip
 
 ### Step 0.1 — Backup Current Repo
 
@@ -227,7 +227,7 @@ Use the full 15M liquidity allocation per TREASURY.md.
 Per TREASURY.md (canonical allocation authority):
 - 60% Unmined Treasury (60M) — bounties, royalties, bonds
 - 15% Liquidity Pool (15M) — Raydium pool
-- 15% Governor Reserve (15M) — operational flexibility
+- 15% Crown Reserve (15M) — operational flexibility
 - 10% Genesis Contributors (10M) — early Council members
 
 ```bash
@@ -243,7 +243,7 @@ solana-keygen new --outfile ~/hb-genesis-contributors.json --no-bip39-passphrase
 spl-token transfer <MINT_ADDRESS> 60000000 \
   $(solana address -k ~/hb-unmined-treasury.json) --fund-recipient
 
-# 15M to governor reserve
+# 15M to crown reserve
 spl-token transfer <MINT_ADDRESS> 15000000 \
   $(solana address -k ~/hb-governor-reserve.json) --fund-recipient
 

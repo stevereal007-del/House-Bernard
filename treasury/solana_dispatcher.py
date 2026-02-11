@@ -9,12 +9,12 @@ between the constitutional ledger and the blockchain.
 
 WHO CALLS THIS:
   - monthly_ops.py (automated royalty/bond disbursements)
-  - treasury_cli.py (manual Governor-approved payments)
+  - treasury_cli.py (manual Crown-approved payments)
   - AchillesRun (automated Furnace survival bounties)
 
 WHO DOES NOT CALL THIS:
   - Contributors (they receive, they don't initiate)
-  - The Governor (for routine payments — he has a day job)
+  - The Crown (for routine payments — he has a day job)
 
 DESIGN:
   - Every payment is logged BEFORE execution (intent)
@@ -388,7 +388,7 @@ class SolanaDispatcher:
                 if item["retry_count"] < 3:
                     remaining.append(item)
                 else:
-                    # Escalate — 3 failures, needs Governor
+                    # Escalate — 3 failures, needs Crown
                     item["escalated"] = True
                     remaining.append(item)
                     results.append(receipt)
@@ -451,10 +451,10 @@ def generate_config_template(output_path="dispatcher_config.json"):
                 "address": "<UNMINED_TREASURY_ADDRESS>",
                 "purpose": "60M unmined treasury — bounties, royalties, bonds",
             },
-            "governor_reserve": {
+            "crown_reserve": {
                 "keypair_path": "~/hb-governor-reserve.json",
                 "address": "<GOVERNOR_RESERVE_ADDRESS>",
-                "purpose": "15M governor reserve — emergencies, partnerships",
+                "purpose": "15M crown reserve — emergencies, partnerships",
             },
             "genesis_contributors": {
                 "keypair_path": "~/hb-genesis-contributors.json",

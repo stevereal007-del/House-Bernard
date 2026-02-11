@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 House Bernard — Monthly Operations Automation v1.0
-Runs on cron. Handles all repeatable maintenance that doesn't need the Governor.
+Runs on cron. Handles all repeatable maintenance that doesn't need the Crown.
 
 What it does (every run):
   1. Lifecycle — expire royalties, mature bonds
@@ -10,12 +10,12 @@ What it does (every run):
   4. Reputation decay — deduct 5 rep/month after 90 days inactive
   5. Emission tracking — check epoch utilization, flag warnings
   6. Generate report — write JSON + human-readable summary
-  7. Escalation — flag items that REQUIRE Governor action
+  7. Escalation — flag items that REQUIRE Crown action
 
 What it does NOT do:
-  - Disburse tokens (Governor signs off on the report first)
-  - Change tier assignments (Governor-only)
-  - Modify emission caps or epoch transitions (Governor-only)
+  - Disburse tokens (Crown signs off on the report first)
+  - Change tier assignments (Crown-only)
+  - Modify emission caps or epoch transitions (Crown-only)
   - Touch anything outside treasury_state.json and ops_state.json
 
 Design principles:
@@ -188,7 +188,7 @@ class MonthlyOps:
                 "priority": "ACTION",
                 "type": "bond_matured",
                 "detail": f"Bond {bond_id} matured — return {principal:,.0f} principal + yield to {holder}",
-                "action": "Governor must authorize disbursement",
+                "action": "Crown must authorize disbursement",
             })
 
         return result
@@ -301,7 +301,7 @@ class MonthlyOps:
                 "priority": "ACTION",
                 "type": "payouts_due",
                 "detail": f"{len(due)} royalty payouts ready — total {total:,.2f} $HOUSEBERNARD",
-                "action": "Governor must review and authorize disbursements within 14 days",
+                "action": "Crown must review and authorize disbursements within 14 days",
             })
 
         return {"due": due, "rollover": rollover}
@@ -317,7 +317,7 @@ class MonthlyOps:
         treasury_report = self.engine.monthly_report(as_of)
 
         # Separate escalations by priority
-        governor_required = [e for e in self.escalations if e["priority"] in ("ACTION", "CRITICAL")]
+        crown_required = [e for e in self.escalations if e["priority"] in ("ACTION", "CRITICAL")]
         info_items = [e for e in self.escalations if e["priority"] in ("INFO", "WARNING")]
 
         report = {
@@ -346,7 +346,7 @@ class MonthlyOps:
                 "total_burned": emission.get("total_burned", 0),
             },
 
-            "governor_required": governor_required,
+            "crown_required": crown_required,
             "info": info_items,
         }
 
@@ -402,12 +402,12 @@ class MonthlyOps:
         print()
 
         # Print escalations
-        governor_items = report["governor_required"]
-        if governor_items:
+        crown_items = report["crown_required"]
+        if crown_items:
             print("=" * 60)
             print("  GOVERNOR ACTION REQUIRED")
             print("=" * 60)
-            for e in governor_items:
+            for e in crown_items:
                 print(f"  ► [{e['type']}] {e['detail']}")
                 print(f"    → {e['action']}")
             print()
@@ -422,7 +422,7 @@ class MonthlyOps:
                 print(f"  {icon} [{e['type']}] {e['detail']}")
             print()
 
-        if not governor_items and not info_items:
+        if not crown_items and not info_items:
             print("  ✓ No escalations. Treasury is clean.")
             print()
 
@@ -461,7 +461,7 @@ class MonthlyOps:
                     len(v) if isinstance(v, list) else 0
                     for v in report["changes"].values()
                 ),
-                "governor_actions": len(governor_items),
+                "crown_actions": len(crown_items),
                 "total_due": ts["total_due"],
                 "epoch_utilization": em["epoch_utilization_pct"],
             }
@@ -472,8 +472,8 @@ class MonthlyOps:
 
         print()
         print("=" * 60)
-        if governor_items:
-            print("  AWAITING GOVERNOR REVIEW")
+        if crown_items:
+            print("  AWAITING CROWN REVIEW")
         else:
             print("  OPS COMPLETE — NO ACTION REQUIRED")
         print("=" * 60)
@@ -528,7 +528,7 @@ def main():
             for e in entries:
                 print(f"  [{e['timestamp'][:10]}] Run #{e['run_number']} — "
                       f"{e['changes_count']} changes, "
-                      f"{e['governor_actions']} escalations, "
+                      f"{e['crown_actions']} escalations, "
                       f"due: {e['total_due']:,.0f}, "
                       f"epoch: {e['epoch_utilization']}%")
 

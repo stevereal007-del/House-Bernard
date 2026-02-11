@@ -39,9 +39,10 @@ speaks for the whole when the parts disagree.
 
 ### Title Consolidation
 
-All references to "Governor" across House Bernard documents
-are hereby replaced with "Crown." The Governor and the Crown
-were always the same office. One title eliminates confusion.
+All references to "Crown" across House Bernard documents
+All prior references to "Governor" across House Bernard
+documents have been consolidated to "Crown." The two titles
+always referred to the same office. One title eliminates confusion.
 
 The Crown is the head of state of House Bernard. The Crown is
 a constitutional office, not a personal possession. The
