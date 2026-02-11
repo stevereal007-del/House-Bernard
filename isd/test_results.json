@@ -1,0 +1,50 @@
+{
+  "test_suite": "ISD System Test Suite v1.0",
+  "run_date": "2026-02-11",
+  "runner": "python3 unittest",
+  "tests_run": 81,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "success": true,
+  "modules_tested": [
+    "isd.isd_engine.ISDEngine",
+    "isd.intelligence_court.IntelligenceCourtEngine",
+    "isd.fusion_protocol.FusionProtocolEngine"
+  ],
+  "test_categories": {
+    "unit_tests": 62,
+    "integration_tests": 2,
+    "false_positive_tests": 3,
+    "fail_safe_tests": 6
+  },
+  "coverage_areas": [
+    "Investigation lifecycle (open, close, exonerate)",
+    "Threat assessment (S1-S4 x A1-A4 matrix)",
+    "Containment evaluation (12-hour defensive)",
+    "Crown Compromise Protocol (bypass warrant)",
+    "Imminent Threat Alert",
+    "Accountability reporting (monthly, quarterly, annual)",
+    "Minimization compliance",
+    "Citizen petitions",
+    "Warrant application (5-check evaluation)",
+    "Warrant renewal escalation",
+    "Emergency warrants",
+    "Surfacing decisions (4 graduated options)",
+    "Classified Tribunal (exhaustion requirement)",
+    "Approval rate monitoring (90% threshold + gaming detection)",
+    "Judge rotation compliance",
+    "Citizen's Advocate management",
+    "Oversight saturation circuit breaker",
+    "Exoneration sealing",
+    "Pattern Monitor",
+    "Fusion Flow 1-4 routing",
+    "Clean Brief production (standard + flash)",
+    "Joint Threat Briefing",
+    "Referral compliance tracking",
+    "Jurisdictional resolution (default + override)",
+    "Fusion Coordinator management",
+    "Fusion health metrics",
+    "Anti-stovepipe audit"
+  ]
+}
