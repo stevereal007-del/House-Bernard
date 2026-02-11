@@ -25,7 +25,7 @@ def clean_state():
         "_schema_version": "1.0",
         "_description": "Test state",
         "_last_updated": "2026-02-08T00:00:00Z",
-        "_signed_by": "governor",
+        "_signed_by": "crown",
         "emission": {
             "current_epoch": 1,
             "epoch_start": "2026-01-01T00:00:00Z",

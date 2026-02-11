@@ -79,8 +79,8 @@ the infrastructure budget for a second dedicated agent yet.
 
 **Step 3 — Set the initial budget.**
 
-Review the Governor Reserve allocation in TREASURY.md.
-Determine what percentage of the Governor Reserve is
+Review the Crown Reserve allocation in TREASURY.md.
+Determine what percentage of the Crown Reserve is
 allocated to Section 9 operations. Log the decision:
 
 ```
@@ -89,7 +89,7 @@ section_9/operations/LOG.md — append:
 ═══════════════════════════════════════════════════════════
 ADMINISTRATIVE ACTION: Initial Budget Allocation
 DATE: [today, ISO 8601]
-BUDGET: [X] $HOUSEBERNARD from Governor Reserve
+BUDGET: [X] $HOUSEBERNARD from Crown Reserve
 ALLOCATION:
   Infrastructure: [X]%
   Development: [X]%

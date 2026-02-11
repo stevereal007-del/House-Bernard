@@ -287,7 +287,7 @@ pricing.
   DBA House Bernard (if filing before LLC formation)
 - **Entity type:** Limited liability company (or individual
   DBA if pre-LLC)
-- **State of formation:** Governor's home state
+- **State of formation:** Crown's home state
 - **Address:** Registered business address
 
 ### Step 7: Upload Specimen (Use in Commerce only)

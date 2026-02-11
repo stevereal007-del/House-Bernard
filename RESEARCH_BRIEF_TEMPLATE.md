@@ -38,7 +38,7 @@ This template defines the format. Completed briefs live in `briefs/` and are pub
     "minimum_tier": "spark | flame | forged | invariant",
     "test_phases": ["T0", "T1", "T2", "T3", "T4"],
     "custom_criteria": [],
-    "acceptance_authority": "executioner | governor | council"
+    "acceptance_authority": "executioner | crown | council"
   },
 
   "compensation": {
@@ -70,7 +70,7 @@ This template defines the format. Completed briefs live in `briefs/` and are pub
     "ring_layer": "commons"
   },
 
-  "governor_notes": ""
+  "crown_notes": ""
 }
 ```
 
@@ -129,7 +129,7 @@ Every brief has a hypothesis. Even code bounties. "If we build X, then Y will im
 **acceptance_authority:** Who signs off.
 
 - `executioner` — Automated. If it survives the test phases, it's accepted. No human in the loop.
-- `governor` — HeliosBlade reviews after Executioner pass. Used for sensitive or high-tier briefs.
+- `crown` — HeliosBlade reviews after Executioner pass. Used for sensitive or high-tier briefs.
 - `council` — Council vote required. Used for Invariant-tier or governance-affecting submissions.
 
 ### Compensation
@@ -138,7 +138,7 @@ Every brief has a hypothesis. Even code bounties. "If we build X, then Y will im
 
 **royalty_eligible:** Whether this brief's output can earn ongoing royalties per ROYALTIES.md. Most code and research briefs are eligible. Documentation briefs typically are not.
 
-**tier_target:** The tier the Governor expects a strong submission to reach. This is guidance, not a ceiling — a contributor can exceed it.
+**tier_target:** The tier the Crown expects a strong submission to reach. This is guidance, not a ceiling — a contributor can exceed it.
 
 **staking_required:** Anti-spam mechanism. If enabled, the contributor must burn a small amount of $HOUSEBERNARD to submit. This is refunded on acceptance, forfeited on rejection. Prevents Sybil flooding of the intake pipeline. **Staking should never be the default.** Commons-level briefs should default to no staking. Enable only on briefs that have experienced spam or are high-value targets for gaming.
 
@@ -231,7 +231,7 @@ Every brief has a hypothesis. Even code bounties. "If we build X, then Y will im
     "ring_layer": "commons"
   },
 
-  "governor_notes": "This is our first public research brief. The bar is intentionally achievable — T0-T4 survival with a stretch goal at the 1,000-byte T3 level. We want to attract contributors who can think about memory differently. The staking fee is minimal (50 tokens) to discourage spam without gatekeeping serious contributors."
+  "crown_notes": "This is our first public research brief. The bar is intentionally achievable — T0-T4 survival with a stretch goal at the 1,000-byte T3 level. We want to attract contributors who can think about memory differently. The staking fee is minimal (50 tokens) to discourage spam without gatekeeping serious contributors."
 }
 ```
 
@@ -239,18 +239,18 @@ Every brief has a hypothesis. Even code bounties. "If we build X, then Y will im
 
 ## Lifecycle
 
-1. **Draft** — Governor or AchillesRun creates the brief in `briefs/drafts/`
-1. **Review** — Governor reviews hypothesis, criteria, and compensation
+1. **Draft** — Crown or AchillesRun creates the brief in `briefs/drafts/`
+1. **Review** — Crown reviews hypothesis, criteria, and compensation
 1. **Publish** — Brief moves to `briefs/active/` and is announced on OpenClaw
 1. **Intake** — Submissions arrive through the Airlock. Each is logged.
 1. **Evaluation** — Executioner runs the specified test phases
 1. **Verdict** — Accept (payment triggered) or Reject (staking fee forfeited if applicable)
-1. **Dispute** (if rejected) — Contributor may challenge within 7 days. Governor reviews Executioner logs and issues a final ruling, logged in the Ledger. No second appeal.
+1. **Dispute** (if rejected) — Contributor may challenge within 7 days. Crown reviews Executioner logs and issues a final ruling, logged in the Ledger. No second appeal.
 1. **Splicer** — Accepted submissions have genetics extracted and registered
-1. **Tier Assessment** — Council or Governor assigns final tier for royalty eligibility
+1. **Tier Assessment** — Council or Crown assigns final tier for royalty eligibility
 1. **Close** — Brief moves to `briefs/closed/` with outcome record
 
-**Rule:** Briefs with `royalty_eligible: true` and `tier_target` above Spark must use `governor` or `council` as acceptance_authority. Automated acceptance is for one-time Spark payments only. Royalty streams require human judgment.
+**Rule:** Briefs with `royalty_eligible: true` and `tier_target` above Spark must use `crown` or `council` as acceptance_authority. Automated acceptance is for one-time Spark payments only. Royalty streams require human judgment.
 
 -----
 
@@ -267,7 +267,7 @@ AchillesRun publishes briefs through the OpenClaw network. The brief JSON is the
 
 **What external agents do NOT see:**
 
-- Governor notes
+- Crown notes
 - Related genes (unless published)
 - Internal ring layer context
 - The Ledger, the Sanctum, or any Covenant details
@@ -285,7 +285,7 @@ briefs/
 │   └── HB-BRIEF-0002.json
 ├── closed/          # Completed or expired
 │   └── HB-BRIEF-0001.json  (with outcome appended)
-├── drafts/          # Governor review queue
+├── drafts/          # Crown review queue
 │   └── HB-BRIEF-0003.json
 └── TEMPLATE.json    # This template in machine-readable form
 ```

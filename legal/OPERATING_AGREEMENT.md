@@ -66,8 +66,8 @@ membership interest in the Company.
 
 ### 2.2 Constitutional Role
 
-The Member serves as Governor of House Bernard under the
-Constitution. The Governor role carries specific powers and
+The Member serves as Crown of House Bernard under the
+Constitution. The Crown role carries specific powers and
 limitations as defined in Constitution Article I (The Crown).
 This Operating Agreement does not expand or contract those
 constitutional powers.
@@ -357,7 +357,7 @@ formation.
 
 **Member:**
 
-Name: HeliosBlade (Governor, House Bernard)
+Name: HeliosBlade (Crown, House Bernard)
 Date: _______________
 Signature: _______________
 

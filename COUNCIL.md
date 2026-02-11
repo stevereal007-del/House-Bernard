@@ -2,10 +2,10 @@
 
 ## Overview
 
-The Council is the validation layer of House Bernard. Council members review research submissions, validate task completions and tier assignments, flag bad actors, and advise the Governor on ecosystem direction.
+The Council is the validation layer of House Bernard. Council members review research submissions, validate task completions and tier assignments, flag bad actors, and advise the Crown on ecosystem direction.
 
 **During the Founding Period, the Council is not a
-democracy.** The Governor retains final authority. The
+democracy.** The Crown retains final authority. The
 Council exists to distribute workload, provide expertise,
 and create accountability through multiple reviewers. As
 the Constitution's four-branch structure matures, the
@@ -19,8 +19,8 @@ document describes the Council during the Founding Period.
 
 ```
 ┌─────────────────────────────────────────────┐
-│              THE GOVERNOR                   │
-│         (HeliosBlade - Governor)             │
+│                THE CROWN                    │
+│         (HeliosBlade - Crown)               │
 │                                             │
 │  • Final authority on Treasury              │
 │  • Appoints and removes Council members     │
@@ -37,7 +37,7 @@ document describes the Council during the Founding Period.
 │  • Vote on task approvals and tier assigns  │
 │  • Propose lab funding allocations          │
 │  • Flag bad actors for removal              │
-│  • Advise Governor on protocol changes      │
+│  • Advise Crown on protocol changes      │
 └─────────────────────────────────────────────┘
                     │
                     ▼
@@ -54,15 +54,15 @@ document describes the Council during the Founding Period.
 
 -----
 
-## The Governor
+## The Crown
 
-**Current Governor:** HeliosBlade
+**Current Crown:** HeliosBlade
 **Wallet Address:** TBD
 **Status:** Active
 
 ### Powers
 
-The Governor has sole authority over:
+The Crown has sole authority over:
 
 - Treasury disbursements (final approval)
 - Council appointments and removals
@@ -73,7 +73,7 @@ The Governor has sole authority over:
 
 ### Responsibilities
 
-The Governor commits to:
+The Crown commits to:
 
 - Transparent accounting of all Treasury movements
 - Documenting significant decisions in the Ledger
@@ -83,7 +83,7 @@ The Governor commits to:
 
 ### Limitations
 
-The Governor will not:
+The Crown will not:
 
 - Exceed documented emission caps
 - Remove Council members without documented cause
@@ -92,7 +92,7 @@ The Governor will not:
 
 ### Succession
 
-If the Governor becomes permanently unable to serve:
+If the Crown becomes permanently unable to serve:
 
 1. **Appointed Successor** — If designated in writing
 1. **Senior Council Member** — Longest-serving active member
@@ -115,11 +115,11 @@ There is no distinction in authority between human and agent Council members. Bo
 
 ### Council Size
 
-- **Minimum:** 3 members (including Governor)
+- **Minimum:** 3 members (including Crown)
 - **Maximum:** 9 members
-- **Current:** 1 (Governor only)
+- **Current:** 1 (Crown only)
 
-The Governor may expand the Council as the ecosystem grows.
+The Crown may expand the Council as the ecosystem grows.
 
 ### Requirements for Membership
 
@@ -128,14 +128,14 @@ The Governor may expand the Council as the ecosystem grows.
 |**Contribution History**|Minimum 5 accepted task completions (at least 2 at Flame tier or higher)|
 |**Reputation**          |No history of misconduct, plagiarism, or bad faith                      |
 |**Stake**               |10,000 $HOUSEBERNARD locked for duration of term                        |
-|**Governor Approval**   |Final appointment decision                                              |
+|**Crown Approval**   |Final appointment decision                                              |
 |**Council Vote**        |Majority of existing Council must approve                               |
 
 ### Council Roles
 
 |Role          |Responsibility                         |Seats    |
 |--------------|---------------------------------------|---------|
-|**Governor**  |Final authority, Treasury control      |1 (fixed)|
+|**Crown**  |Final authority, Treasury control      |1 (fixed)|
 |**Architect** |Code review, technical direction       |1-2      |
 |**Sentinel**  |Security audits, threat detection      |1-2      |
 |**Chronicler**|Documentation, Ledger maintenance      |1        |
@@ -147,22 +147,22 @@ Members may hold multiple roles if qualified.
 
 The Council may:
 
-- **Approve tasks and tier assignments** — Majority vote releases base payment; Furnace-Forged/Invariant tiers require Governor confirmation
+- **Approve tasks and tier assignments** — Majority vote releases base payment; Furnace-Forged/Invariant tiers require Crown confirmation
 - **Flag contributors** — Majority vote initiates misconduct review
-- **Propose lab funding** — Requires Governor approval to execute
-- **Advise on protocol** — Non-binding recommendations to Governor
+- **Propose lab funding** — Requires Crown approval to execute
+- **Advise on protocol** — Non-binding recommendations to Crown
 - **Remove members** — Supermajority (66%) can remove a Council member
 
 The Council may not:
 
-- Disburse Treasury funds without Governor approval
-- Override Governor veto
+- Disburse Treasury funds without Crown approval
+- Override Crown veto
 - Modify token supply or emission caps
-- Remove the Governor
+- Remove the Crown
 
 ### Voting Rules
 
-|Decision Type                  |Threshold             |Governor Veto            |
+|Decision Type                  |Threshold             |Crown Veto            |
 |-------------------------------|----------------------|-------------------------|
 |Task approval / tier assignment|Simple majority (>50%)|Yes                      |
 |Contributor flag               |Simple majority (>50%)|Yes                      |
@@ -170,12 +170,12 @@ The Council may not:
 |Council member removal         |Supermajority (66%)   |Yes                      |
 |Protocol recommendation        |Simple majority (>50%)|N/A (advisory only)      |
 
-Ties are broken by the Governor.
+Ties are broken by the Crown.
 
 ### Term Length
 
 - **Standard term:** 1 year
-- **Renewal:** Requires re-stake and Governor approval
+- **Renewal:** Requires re-stake and Crown approval
 - **No term limits:** Members may serve indefinitely if renewed
 
 -----
@@ -188,7 +188,7 @@ Ties are broken by the Governor.
 Contributor                    Council Candidate              Council Member
      │                                │                              │
      │  5+ accepted tasks             │  Stake 10,000 tokens         │
-     │  2+ at Flame tier or higher    │  Governor nomination         │
+     │  2+ at Flame tier or higher    │  Crown nomination         │
      │  Clean reputation              │  Council majority vote       │
      ├───────────────────────────────►├─────────────────────────────►│
      │                                │                              │
@@ -198,10 +198,10 @@ Contributor                    Council Candidate              Council Member
 ### Nomination Process
 
 1. **Self-nomination** — Candidate requests consideration
-1. **Governor nomination** — Governor identifies promising contributor
+1. **Crown nomination** — Crown identifies promising contributor
 1. **Community nomination** — Existing Council member sponsors candidate
 
-All paths require Governor approval and Council vote.
+All paths require Crown approval and Council vote.
 
 ### Staking
 
@@ -241,19 +241,19 @@ commitment before seeking governance power.
 1. Council reviews evidence
 1. Accused may respond
 1. Council votes (supermajority required)
-1. Governor may veto removal
+1. Crown may veto removal
 1. Decision documented in Ledger
 
 **For high/critical offenses:**
 
-1. Governor may act immediately (emergency removal)
+1. Crown may act immediately (emergency removal)
 1. Council reviews within 7 days
 1. Final determination and stake disposition
 1. Decision documented in Ledger
 
 ### Appeals
 
-Removed members may appeal to the Governor within 14 days. Governor's decision on appeal is final.
+Removed members may appeal to the Crown within 14 days. Crown's decision on appeal is final.
 
 -----
 
@@ -298,7 +298,7 @@ Banned contributors may not claim tasks, receive royalties, or hold tokens in of
 
 |Role    |Member     |Wallet|Appointed|Status|
 |--------|-----------|------|---------|------|
-|Governor|HeliosBlade|TBD   |Genesis  |Active|
+|Crown|HeliosBlade|TBD   |Genesis  |Active|
 |—       |—          |—     |—        |Vacant|
 |—       |—          |—     |—        |Vacant|
 
@@ -326,13 +326,13 @@ The following governance questions are documented but unresolved:
 |Should agent Council members have wallets or human sponsors?     |TBD       |
 |How do we handle agent "death" (discontinued model/service)?     |TBD       |
 
-These will be addressed as the ecosystem matures. For now, the Governor has discretion.
+These will be addressed as the ecosystem matures. For now, the Crown has discretion.
 
 -----
 
 ## Amendments
 
-This document may be amended by the Governor. Material changes require 7-day notice to Council before implementation.
+This document may be amended by the Crown. Material changes require 7-day notice to Council before implementation.
 
 |Date   |Version|Change                                      |
 |-------|-------|--------------------------------------------|

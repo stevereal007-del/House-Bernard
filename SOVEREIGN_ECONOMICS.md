@@ -9,19 +9,19 @@
 ### Current Structure
 
 House Bernard operates as a sole proprietorship under HeliosBlade
-(the Governor), filed on Schedule C against W-2 income from primary
+(the Crown), filed on Schedule C against W-2 income from primary
 employment. This is the simplest legal structure and appropriate
 for the Founding Period.
 
 ### Planned Structure
 
-File a single-member LLC in the Governor's home state:
+File a single-member LLC in the Crown's home state:
 
 | Field | Value |
 |-------|-------|
 | Entity Name | House Bernard LLC |
 | Type | Single-member LLC (disregarded entity for tax) |
-| State | Governor's home state ([STATE]) |
+| State | Crown's home state ([STATE]) |
 | Filing Fee | ~$120 |
 | Registered Agent | HeliosBlade (self, or registered agent service) |
 | EIN | Obtain from IRS (free, online, immediate) |
@@ -100,7 +100,7 @@ task for the CPA Agent or a dedicated legal automation:
 House Bernard was founded February 9, 2026. The 2026 tax year
 is the first filing year.
 
-**Filing method:** Schedule C attached to the Governor's personal
+**Filing method:** Schedule C attached to the Crown's personal
 1040. Single-member LLC (when formed) is a disregarded entity —
 same treatment.
 
@@ -200,7 +200,7 @@ Bernard LLC. It is:
 |------------|-----------|------------|
 | Unmined Treasury | 60% | Bounties, royalties, bonds, lab funding, founder vest, Bernard Trust |
 | Liquidity Pool | 15% | Enables secondary market trading |
-| Governor Reserve | 15% | Operational flexibility, partnerships, emergencies |
+| Crown Reserve | 15% | Operational flexibility, partnerships, emergencies |
 | Genesis Contributors | 10% | Early believers, initial Council members |
 
 **Note:** Founder allocation (4-year vest) and Bernard Trust are
@@ -237,9 +237,9 @@ the token has value. If it doesn't, it doesn't. That's honest.
 
 To prevent pump-and-dump exploitation:
 
-- **Founder sale rate limit:** Governor allocation is subject to
+- **Founder sale rate limit:** Crown allocation is subject to
   rate limits enforced by treasury_engine.py for all wallets
-  under Treasury control. Governor cannot dump allocation.
+  under Treasury control. Crown cannot dump allocation.
 - **Large holder rate limit:** Any wallet holding more than 2%
   of total supply is limited to selling no more than 10% of
   their position per calendar month. Enforced by
@@ -313,10 +313,10 @@ thresholds require multiple signatures:
 |-----------------|-----------|-------------------|
 | Routine bounty | Any amount | AchillesRun (automatic) |
 | Royalty distribution | Any amount | AchillesRun (automatic, scheduled) |
-| Reserve draw | Any amount | Governor + AchillesRun + 1 Council member |
-| Emergency distribution | Any amount | Governor + Judiciary Chief + AchillesRun |
-| Bond issuance | >1% of supply | Council majority + Governor |
-| Smart contract update | Any change | Council supermajority + Judiciary review + Governor |
+| Reserve draw | Any amount | Crown + AchillesRun + 1 Council member |
+| Emergency distribution | Any amount | Crown + Judiciary Chief + AchillesRun |
+| Bond issuance | >1% of supply | Council majority + Crown |
+| Smart contract update | Any change | Council supermajority + Judiciary review + Crown |
 
 **Transparency Layer.** The Treasury state is published to
 Google Sheets via the Sheets API. Any citizen can view:
@@ -340,7 +340,7 @@ minimum-wage labor in the citizen's jurisdiction — whichever
 is lower.**
 
 This preserves skin in the game without pricing out
-working-class participants. The Governor's working-class
+working-class participants. The Crown's working-class
 origin is not decorative — it's a constitutional commitment
 to accessibility.
 
@@ -375,7 +375,7 @@ requires active management:
 |------------------|---------|------------|
 | $HOUSEBERNARD holdings | Core reserve, governance weight | Constitutional rules |
 | Stablecoin holdings | Operational expenses (servers, subscriptions, legal) | Council-approved budget |
-| Fiat holdings | Tax obligations, filing fees, professional services | Governor discretion within budget |
+| Fiat holdings | Tax obligations, filing fees, professional services | Crown discretion within budget |
 
 **Reserve policy:** Maintain at minimum 12 months of
 operational expenses in stablecoin or fiat. This ensures
@@ -460,7 +460,7 @@ then the following happens:
 3. All trademarks were properly registered
 4. All contributors were fairly compensated for work performed
 5. All records exist in the Ledger, on GitHub, and in the
-   Governor's tax filings
+   Crown's tax filings
 6. The Bernard Trust distributions, if any were made, were
    legitimate family support from a legitimate business
 

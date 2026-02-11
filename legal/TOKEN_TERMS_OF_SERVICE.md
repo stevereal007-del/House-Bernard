@@ -58,7 +58,7 @@ no representation, warranty, or guarantee that Tokens will:
 - Maintain any particular value
 - Be tradeable on any exchange
 - Generate passive income or returns
-- Appreciate due to the efforts of House Bernard or its Governor
+- Appreciate due to the efforts of House Bernard or its Crown
 
 Tokens are earned primarily through labor contribution and used
 for governance and access within the House Bernard ecosystem.
@@ -222,7 +222,7 @@ Holders shall NOT:
   profit-generating instruments
 - Manipulate Token markets through wash trading, spoofing,
   or coordinated manipulation
-- Impersonate House Bernard or its Governor in connection
+- Impersonate House Bernard or its Crown in connection
   with Token promotion
 - Deploy counterfeit or unauthorized tokens using the
   House Bernard name or branding
@@ -341,7 +341,7 @@ For questions regarding these Terms:
 
 - Repository: github.com/[House-Bernard]
 - ENS: housebernard.eth (when registered)
-- Governor: HeliosBlade
+- Crown: HeliosBlade
 
 ---
 

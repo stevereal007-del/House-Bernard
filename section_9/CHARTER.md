@@ -2,7 +2,7 @@
 
 **Classification:** CROWN EYES ONLY
 **Authority:** Article I (The Crown), Article IV Section 7
-**Ratified by:** HeliosBlade, First Governor
+**Ratified by:** HeliosBlade, Founding Crown
 **Date:** February 2026
 **Status:** FOUNDATIONAL
 
@@ -38,7 +38,7 @@ announcement. The Director's identity is classified. If the
 Director is an agent, its model, host, and operational
 parameters are classified.
 
-During the Founding Period, the First Governor may serve as
+During the Founding Period, the Founding Crown may serve as
 acting Director or may appoint a dedicated agent to the role.
 
 ### Authority
@@ -313,7 +313,7 @@ operation.
 ## VII. Budget
 
 Section 9 operates on a classified budget allocated by
-the Crown from the Governor Reserve (15,000,000 $HB at
+the Crown from the Crown Reserve (15,000,000 $HB at
 genesis). The budget is not visible in public Treasury
 reporting. The Crown tracks Section 9 expenditures in
 the classified audit trail.
@@ -335,7 +335,7 @@ funds are used for legitimate security purposes. Misuse of
 Section 9 budget is a Covenant violation and grounds for
 Crown removal.
 
-During the Founding Period, the First Governor sets the
+During the Founding Period, the Founding Crown sets the
 initial budget and reviews quarterly.
 
 -----

@@ -212,7 +212,7 @@ class GuildEngine:
             charter: The guild charter (must pass validate_charter).
             founding_members: List of citizen IDs (min 3 at Journeyman+).
             guildmaster_id: Citizen ID of the elected Guildmaster.
-            registered_by: 'council' or 'governor' (Founding Period).
+            registered_by: 'council' or 'crown' (Founding Period).
 
         Raises:
             ValueError: If charter is invalid, too few members, or
@@ -259,11 +259,11 @@ class GuildEngine:
                             f"{5 - years_since:.1f} more years"
                         )
 
-        # During Founding Period, governor can register directly
+        # During Founding Period, crown can register directly
         is_founding = self.state.get("founding_period", False)
-        if registered_by == "governor" and not is_founding:
+        if registered_by == "crown" and not is_founding:
             raise ValueError(
-                "Governor direct registration only allowed during Founding Period"
+                "Crown direct registration only allowed during Founding Period"
             )
 
         guild_id = self._next_guild_id()

@@ -47,12 +47,12 @@ Furnace-Forged contributions survive the full gauntlet. The extracted gene is fo
 
 | Property | Value |
 |----------|-------|
-| **Threshold** | Governor-designated |
+| **Threshold** | Crown-designated |
 | **Payment** | Base payment + 24-month royalty stream OR one-time buyout |
 | **Royalty Rate** | 8% of attributable revenue |
-| **Duration** | 24 months (or buyout at Governor's discretion) |
+| **Duration** | 24 months (or buyout at Crown's discretion) |
 
-Invariant contributions are foundational. They define laws of the system — rules so fundamental that replacing them would require architectural redesign. The Governor designates Invariant status; it cannot be self-claimed or voted into existence. The buyout option allows the Governor to offer a lump-sum payment in lieu of the 24-month stream when that better serves both parties.
+Invariant contributions are foundational. They define laws of the system — rules so fundamental that replacing them would require architectural redesign. The Crown designates Invariant status; it cannot be self-claimed or voted into existence. The buyout option allows the Crown to offer a lump-sum payment in lieu of the 24-month stream when that better serves both parties.
 
 ---
 
@@ -123,7 +123,7 @@ The Splicer must track the following for royalty attribution:
 1. **Novel genes** have no parent — full royalty to the contributor.
 2. **Derived genes** must list all parent gene IDs. Parent contributors receive lineage credits (0.5% of the child gene's attributable revenue) for the remainder of their own royalty period.
 3. **Lineage depth cap:** Credits propagate at most 2 generations deep. Great-grandparent genes receive nothing from descendants beyond depth 2.
-4. **Conflict resolution:** If lineage is disputed, the Governor reviews Splicer AST analysis and makes a binding determination.
+4. **Conflict resolution:** If lineage is disputed, the Crown reviews Splicer AST analysis and makes a binding determination.
 
 ---
 
@@ -167,7 +167,7 @@ Title: [Clear title]
 Category: [Code / Security / Research / Documentation / Infrastructure]
 Lab: [Lab A / Lab B / General]
 Base Payment: [Amount] $HOUSEBERNARD
-Furnace Threshold: [Executioner / Executioner+Splice / Executioner+Ledger / Governor-Designated]
+Furnace Threshold: [Executioner / Executioner+Splice / Executioner+Ledger / Crown-Designated]
 Deadline: [Date or "Open"]
 Difficulty: [Beginner / Intermediate / Advanced / Expert]
 
@@ -186,7 +186,7 @@ TIER ELIGIBILITY
 - Spark (Executioner): Base payment only
 - Flame (Executioner+Splice): Base + 2% royalty for 6 months
 - Furnace-Forged (Executioner+Ledger): Base + 5% royalty for 12-18 months
-- Invariant (Governor): Base + 8% royalty for 24 months or buyout
+- Invariant (Crown): Base + 8% royalty for 24 months or buyout
 
 STATUS: [Open / Claimed / In Review / Tier Assigned / Royalty Active / Completed / Cancelled]
 ASSIGNED TIER: [Pending / Spark / Flame / Furnace-Forged / Invariant]
@@ -214,13 +214,13 @@ Submissions may be returned for revision (1 attempt) or rejected (task reopens).
 
 **Claiming:** Max 3 active claims per contributor (1 for newcomers). Default 7-day reservation, extendable to 14. Abandoned claims return to open.
 
-**Review:** Tasks under 1,000 base payment need 1 Council validator. 1,000–10,000 need 2. Over 10,000 need 2 validators + Governor. Target review: 7 days. Security: 48 hours.
+**Review:** Tasks under 1,000 base payment need 1 Council validator. 1,000–10,000 need 2. Over 10,000 need 2 validators + Crown. Target review: 7 days. Security: 48 hours.
 
-**Tier Assignment:** Council validators confirm the tier based on furnace results. Furnace-Forged and Invariant tiers require Governor confirmation.
+**Tier Assignment:** Council validators confirm the tier based on furnace results. Furnace-Forged and Invariant tiers require Crown confirmation.
 
 **Payment:** Base payment within 48 hours of tier assignment. 5% burn fee deducted automatically. Royalty payments monthly per payout schedule. All transactions logged in Ledger.
 
-**Disputes:** Appeal within 7 days. Governor reviews within 14 days. Decision is final.
+**Disputes:** Appeal within 7 days. Crown reviews within 14 days. Decision is final.
 
 ---
 
@@ -250,13 +250,13 @@ Tiers: New (0–9, 1 claim) → Contributor (10–49, 3 claims) → Trusted (50�
 | Medium | 5,000 – 25,000 |
 | Low | 1,000 – 10,000 |
 
-Security tasks are eligible for all tiers. A vulnerability that produces a defensive gene can earn Flame or higher. Report privately to Governor first. Do not exploit or publicize before fix. Bonus for providing fix.
+Security tasks are eligible for all tiers. A vulnerability that produces a defensive gene can earn Flame or higher. Report privately to Crown first. Do not exploit or publicize before fix. Bonus for providing fix.
 
 ---
 
 ## Who Creates Tasks
 
-Governor: any size. Council: up to 10,000 base payment (larger needs Governor). Contributors: may propose (Council/Governor approves and funds). All tasks require confirmed Treasury funding.
+Crown: any size. Council: up to 10,000 base payment (larger needs Crown). Contributors: may propose (Council/Crown approves and funds). All tasks require confirmed Treasury funding.
 
 ---
 

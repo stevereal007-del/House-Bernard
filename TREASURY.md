@@ -9,7 +9,7 @@ We use cryptocurrency infrastructure because it exists and provides permissionle
 **What backs $HOUSEBERNARD:**
 
 - The research output of all House Bernard labs
-- The Governor's commitment to the ecosystem
+- The Crown's commitment to the ecosystem
 - The collective work of all contributors
 - The utility access the token provides
 
@@ -43,7 +43,7 @@ This is not "backed by nothing." It is backed by productive capacity and trust �
 |------------------------|----------|---|---------------------------------------------------------------|
 |**Unmined Treasury**    |60,000,000|60%|Future lab funding, task payments, royalty streams, bond yields|
 |**Liquidity Pool**      |15,000,000|15%|Enables secondary market trading                               |
-|**Governor Reserve**    |15,000,000|15%|Operational flexibility, partnerships, emergencies             |
+|**Crown Reserve**    |15,000,000|15%|Operational flexibility, partnerships, emergencies             |
 |**Genesis Contributors**|10,000,000|10%|Early believers, initial Council members                       |
 
 **The Treasury is the "central bank" of House Bernard.** It holds unmined tokens that are released only through documented mechanisms: research bounties, lab funding, and bond yields.
@@ -70,7 +70,7 @@ Inspired by Bitcoin, early contributors earn more. This rewards those who take r
 |3          |Year 3 |2,500,000            |25,000              |
 |4+         |Year 4+|1,250,000/year       |12,500              |
 
-**Governor Discretion:** The Governor may slow emission below these caps based on ecosystem needs. The Governor may never exceed these caps.
+**Crown Discretion:** The Crown may slow emission below these caps based on ecosystem needs. The Crown may never exceed these caps.
 
 ### Research Mining
 
@@ -81,7 +81,7 @@ Tokens are "mined" by contributing valuable work to House Bernard. Contributions
 |**Spark**         |Passes full Executioner gauntlet (T0–T4)|Flat one-time payment                              |
 |**Flame**         |Passes Executioner + gene splice        |Base payment + 2% royalty for 6 months             |
 |**Furnace-Forged**|Passes Executioner + Ledger registration|Base payment + 5% royalty for 12–18 months         |
-|**Invariant**     |Governor-designated                     |Base payment + 8% royalty for 24 months (or buyout)|
+|**Invariant**     |Crown-designated                     |Base payment + 8% royalty for 24 months (or buyout)|
 
 Higher tiers earn ongoing royalties tied to the revenue their genetic contributions generate. Royalties are subject to time decay, replacement decay, and usage decay — see ROYALTIES.md for full mechanics.
 
@@ -93,7 +93,7 @@ Higher tiers earn ongoing royalties tied to the revenue their genetic contributi
 |Documentation improvement                                |100 – 20,000                       |
 |Community support / onboarding                           |100 – 5,000                        |
 
-The Governor validates contributions and confirms tier assignments. Furnace-Forged and Invariant tiers require Governor confirmation. All disbursements and royalty payouts are logged in the Ledger.
+The Crown validates contributions and confirms tier assignments. Furnace-Forged and Invariant tiers require Crown confirmation. All disbursements and royalty payouts are logged in the Ledger.
 
 -----
 
@@ -158,7 +158,7 @@ Inspired by government bonds, House Bernard rewards patience and commitment. Bon
 |--------------------|-----------|-------------------|-----------------------------------------|
 |**Contributor Bond**|3 months   |5% bonus tokens    |10% discount on lab fees                 |
 |**Builder Bond**    |1 year     |15% bonus tokens   |Council voting rights, 20% discount      |
-|**Founder Bond**    |3 years    |30% bonus tokens   |"Founding Member" status, Governor access|
+|**Founder Bond**    |3 years    |30% bonus tokens   |"Founding Member" status, Crown access|
 
 ### Bonding Rules
 
@@ -182,7 +182,7 @@ Even without formal bonding, long-term holders earn privileges:
 |< 30 days       |Base access only                                       |
 |3+ months       |10% discount on lab fees                               |
 |1+ year         |20% discount, priority research access                 |
-|3+ years        |"Founding Member" status, direct Governor communication|
+|3+ years        |"Founding Member" status, direct Crown communication|
 
 Duration is tracked on-chain from first acquisition. Selling resets the clock.
 
@@ -210,14 +210,14 @@ Payback Period: [X years]
 
 Accountability:
 - Quarterly progress reports in Ledger
-- Annual review by Governor
+- Annual review by Crown
 
 Failure Clause:
 If lab produces no revenue within [X] years, remaining
 unvested allocation returns to Treasury.
 
 Approved: [Date]
-Governor: HeliosBlade
+Crown: HeliosBlade
 ═══════════════════════════════════════════════════════════
 ```
 
@@ -255,15 +255,15 @@ For contributors who want to make significant commitments to House Bernard's inf
 
 ## IX. Governance
 
-### The Governor
+### The Crown
 
-**Current Governor:** HeliosBlade
+**Current Crown:** HeliosBlade
 **Wallet Address:** TBD
 **Powers:** Treasury disbursements, emission rate adjustments (within caps), lab bond approvals, Council appointments, tier confirmations (Furnace-Forged and Invariant), Invariant designation, royalty buyout offers
 
 ### Checks on Power
 
-The Governor cannot:
+The Crown cannot:
 
 - Exceed epoch emission caps
 - Mint tokens outside documented mechanisms
@@ -282,7 +282,7 @@ All significant decisions are logged in the Ledger with rationale.
 |-------------------|-------|-----------------------------------------|
 |**Token Contract** |TBD    |Pending deployment                       |
 |**Treasury Wallet**|TBD    |Pending setup                            |
-|**Governor Wallet**|TBD    |Pending setup                            |
+|**Crown Wallet**|TBD    |Pending setup                            |
 |**Liquidity Pool** |TBD    |Pending deployment                       |
 |**Bond Ledger**    |N/A    |Managed by treasury_engine.py (off-chain)|
 
@@ -328,7 +328,7 @@ We will be transparent. We will document everything. We will not lie about risks
 
 ## XII. Amendments
 
-This document may be amended by the Governor. Material changes will be announced publicly. All versions are tracked via Git commit history.
+This document may be amended by the Crown. Material changes will be announced publicly. All versions are tracked via Git commit history.
 
 **Amendment Log:**
 
@@ -347,9 +347,9 @@ By acquiring $HOUSEBERNARD, you acknowledge:
 1. You understand the risks disclosed above
 1. You are not acquiring tokens as an investment for profit
 1. You accept that House Bernard may fail
-1. You will not hold the Governor liable for market losses
+1. You will not hold the Crown liable for market losses
 
-By issuing $HOUSEBERNARD, the Governor commits:
+By issuing $HOUSEBERNARD, the Crown commits:
 
 1. To transparency in all Treasury operations
 1. To never exceed documented emission caps
@@ -363,5 +363,5 @@ This is not a legal contract. It is a statement of mutual expectations.
 
 *Last Updated: February 2026*
 *Document Version: 1.0*
-*Governor: HeliosBlade*
+*Crown: HeliosBlade*
 *House Bernard — Research Without Permission*

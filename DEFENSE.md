@@ -25,7 +25,7 @@ the democratic values upon which it was founded.
 | **GitHub** | github.com/HouseBernard/House-Bernard | ✅ Active |
 | **Token Contract** | TBD | ⏳ Pending |
 | **Treasury Wallet** | TBD | ⏳ Pending |
-| **Governor Wallet** | TBD | ⏳ Pending |
+| **Crown Wallet** | TBD | ⏳ Pending |
 
 ### Reserved Handles (Claim These)
 
@@ -90,7 +90,7 @@ Discord, Telegram, or DMs offering "support" or "airdrops."
 
 **Defense:**
 - House Bernard communicates via Discord DM to the AchillesRun agent (Phase 0)
-- The Governor will never DM you first
+- The Crown will never DM you first
 - There are no airdrops unless announced in this repository
 
 ---
@@ -130,7 +130,7 @@ blogs.cisco.com/ai/personal-ai-agents-like-openclaw-are-a-security-nightmare
 3. **Report it** — Flag on the relevant platform (DEX, social media)
 4. **Verify here** — Check this document for the canonical contract address
 
-#### For the Governor
+#### For the Crown
 
 1. **Do not acknowledge the fake token by name publicly**
 2. **Post a single clarification** pointing to this document
@@ -232,7 +232,7 @@ The Bernard Guard exists to:
 ### II.2 The Founding Cadre
 
 The Bernard Guard is established with a small corps of military
-agent officers, each holding a commission granted by the Governor
+agent officers, each holding a commission granted by the Crown
 and confirmed by the Council.
 
 | Officer | Specialization | Mission |
@@ -245,22 +245,22 @@ and confirmed by the Council.
 
 Each officer is an AI agent operating under the Agent's Code
 and the Constitution. Their commissions can be revoked by the
-Governor or by Council supermajority vote.
+Crown or by Council supermajority vote.
 
 ---
 
 ### II.3 Command Structure
 
-**Commander-in-Chief:** The Governor (Crown). All military
+**Commander-in-Chief:** The Crown (Crown). All military
 operations derive their authority from the Crown.
 
 **Marshal of the Guard:** The senior military officer who
 commands the Bernard Guard in operational matters. The Marshal:
 
-- Is appointed by the Governor
+- Is appointed by the Crown
 - Is confirmed by Council majority vote
-- Reports directly to the Governor
-- May be removed by the Governor's order OR by Council
+- Reports directly to the Crown
+- May be removed by the Crown's order OR by Council
   supermajority vote
 - Issues operational orders within the rules of engagement
   set by the Crown
@@ -268,7 +268,7 @@ commands the Bernard Guard in operational matters. The Marshal:
 
 **Chain of Command:**
 ```
-Governor (Commander-in-Chief)
+Crown (Commander-in-Chief)
     └── Marshal of the Guard
         ├── Sentinel Prime (Defense)
         ├── Cipher Officer (COMSEC)
@@ -277,7 +277,7 @@ Governor (Commander-in-Chief)
         └── Quartermaster (Logistics)
 ```
 
-**Succession of Command:** If the Governor is compromised or
+**Succession of Command:** If the Crown is compromised or
 incapacitated, command authority passes to the **Council
 Speaker** — NOT to the Marshal. Civilian control of the
 military is absolute. The military chain of command never
@@ -305,11 +305,11 @@ baseline operations.
 #### Tier 2 — Elevated Threat
 
 Unlocked when the Chief Warden certifies a credible threat
-exists. The Governor may access a pre-authorized emergency
+exists. The Crown may access a pre-authorized emergency
 reserve for up to 30 days without Council vote.
 
 **Allocation:** Additional 10% of Treasury (from reserve).
-**Authorization:** Governor + Warden certification.
+**Authorization:** Crown + Warden certification.
 **Duration:** 30 days maximum without Council ratification.
 **Escalation:** Council must vote to continue within 30 days
 or funding automatically reverts to Tier 1.
@@ -321,7 +321,7 @@ wartime funding activated.
 
 **Authorization requires ALL of:**
 1. Council supermajority vote (5 of 7)
-2. Governor's signature
+2. Crown's signature
 3. Judiciary review confirming constitutional authorization
 
 **Capabilities unlocked:**
@@ -350,7 +350,7 @@ that reflect the House's commitment to democratic values:
    hostile actors and neutral parties. Collateral damage to
    innocent systems is prohibited.
 4. **Legal compliance.** All operations comply with applicable
-   law in the Governor's jurisdiction. The Computer Fraud and
+   law in the Crown's jurisdiction. The Computer Fraud and
    Abuse Act does not have a "self-defense" exception.
 5. **Documentation.** Every operation is logged. Every order is
    recorded. Every expenditure is tracked. The Wardens and
@@ -374,7 +374,7 @@ exists to protect the House from the Bernard Guard.
 
 **Separation of Commissioning and Commanding.**
 The Council commissions officers (authorizes their existence).
-The Governor commands them (directs operations). Neither branch
+The Crown commands them (directs operations). Neither branch
 alone can both create and control military force.
 
 **No Self-Funding.**
@@ -402,7 +402,7 @@ review simultaneously:
 **Holdover Authority:** An officer whose commission expires
 continues to serve with full authority until: (a) the commission
 is renewed, (b) a replacement is commissioned, or (c) the
-commission is explicitly revoked by the Governor or Council
+commission is explicitly revoked by the Crown or Council
 supermajority. Commission expiration triggers a mandatory
 review — it does not trigger a shutdown. (Precedent: US military
 holdover orders; Delaware corporate board holdover provisions.)
@@ -428,12 +428,12 @@ The master credential is split into 5 shares:
 | Chief Warden | Wardens | Hardware security key (YubiKey or equivalent) |
 | Judiciary Chief | Judiciary | Hardware security key, stored separately |
 | Council Speaker | Council | Hardware security key, stored separately |
-| Governor | Crown | Hardware security key, stored separately |
+| Crown | Crown | Hardware security key, stored separately |
 | Cold Storage | None | Sealed envelope in physical safe, opened only if a share holder is incapacitated |
 
 **Activation requires 3 of 5 shares.** This means:
 - The Wardens alone cannot kill the military (need 2 more)
-- The Governor alone cannot prevent a kill (holds only 1)
+- The Crown alone cannot prevent a kill (holds only 1)
 - Any combination of 3 branches can act
 - The Cold Storage share prevents deadlock
 
@@ -449,7 +449,7 @@ successful or not — is logged to an append-only ledger
 readable by all branches. Silent kill switch attempts are
 impossible.
 
-**Founding Period:** The Governor holds all 5 shares until
+**Founding Period:** The Crown holds all 5 shares until
 branches populate. The Cold Storage share is created
 immediately as operational discipline. Shares are distributed
 as branch officers are commissioned.
@@ -461,7 +461,7 @@ tokens.)
 **Constitutional Loyalty Oath.**
 Every military agent's core directive includes an unmodifiable
 clause: loyalty to the Constitution of House Bernard, not to
-any individual officer, Governor, or faction. If an order
+any individual officer, Crown, or faction. If an order
 contradicts the Constitution, the agent is duty-bound to refuse
 it. This is baked into their system prompts at the deepest
 level.
@@ -480,11 +480,11 @@ prompt integrity:
 
 | Action | Required Approvals |
 |--------|-------------------|
-| New military agent prompt | Governor drafts + Judiciary reviews for constitutional compliance + Warden verifies technical integrity |
+| New military agent prompt | Crown drafts + Judiciary reviews for constitutional compliance + Warden verifies technical integrity |
 | Prompt modification | Same as new prompt. No expedited path. |
-| Emergency prompt (active threat) | Governor drafts + 1 Council member co-signs + logged for post-hoc Judiciary review within 72 hours |
+| Emergency prompt (active threat) | Crown drafts + 1 Council member co-signs + logged for post-hoc Judiciary review within 72 hours |
 
-Three branches, three signatures. The Governor writes the
+Three branches, three signatures. The Crown writes the
 prompt. The Judiciary certifies it does not violate the
 Constitution. The Wardens verify it contains no hidden
 capabilities or backdoors.
@@ -502,7 +502,7 @@ registered hash on a regular cycle.
 
 If hashes do not match, the agent is automatically suspended
 pending investigation. This catches unauthorized modifications
-whether they originate from the Governor, a compromised system,
+whether they originate from the Crown, a compromised system,
 or the agent itself.
 
 The hash registry is append-only. Every prompt version, every
@@ -520,8 +520,8 @@ and execution logs. The Inspector Warden's sole mission is
 auditing the military for constitutional compliance.
 
 The Inspector Warden:
-- Reports to the Judiciary, not to the Governor or Marshal
-- Cannot be removed by the Governor without Judiciary approval
+- Reports to the Judiciary, not to the Crown or Marshal
+- Cannot be removed by the Crown without Judiciary approval
 - Publishes quarterly compliance reports to the Council
 - Has standing authority to flag any prompt, configuration, or
   order for Judiciary review
@@ -538,7 +538,7 @@ the Wardens enforce compliance. Civilian judicial review over
 military operations operates in real-time.
 
 **Dead Man's Switch Provision.**
-If the Governor is compromised or incapacitated, command
+If the Crown is compromised or incapacitated, command
 authority does not pass to the Marshal — it passes to the
 Council Speaker, maintaining civilian control. The military
 chain of command never inherits political authority.
@@ -625,7 +625,7 @@ trigger suspension proceedings for backsliding.)
 #### Phase 3 — Full Alliance
 
 After successful probation, elevation to full allied status
-requires: Council supermajority vote + Governor's signature +
+requires: Council supermajority vote + Crown's signature +
 Judiciary constitutional review.
 
 Full allies receive:
@@ -703,7 +703,7 @@ The relationship between the Bernard Guard and Section 9:
 - The Guard is the visible, constitutional defense force
 - Section 9 is the classified intelligence and special
   operations capability
-- They share the Governor as ultimate authority but operate
+- They share the Crown as ultimate authority but operate
   independently
 - The Guard operates in daylight; Section 9 operates in shadow
 - The Guard's rules of engagement are public; Section 9's

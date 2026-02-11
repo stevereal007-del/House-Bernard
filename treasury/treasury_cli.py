@@ -101,8 +101,8 @@ def cmd_report(engine):
         if lc["bonds_matured"]:
             print(f"  Bonds matured: {', '.join(lc['bonds_matured'])}")
 
-    # Governor actions
-    actions = report["governor_actions"]
+    # Crown actions
+    actions = report["crown_actions"]
     print(f"\n{'─' * 40}")
     print("  GOVERNOR ACTION ITEMS")
     print(f"{'─' * 40}")
@@ -115,7 +115,7 @@ def cmd_report(engine):
         print("  No action items. Treasury is clean.")
 
     print(f"\n{'=' * 60}")
-    print("  [AWAITING GOVERNOR SIGNATURE]")
+    print("  [AWAITING CROWN SIGNATURE]")
     print(f"{'=' * 60}")
 
     # Save report

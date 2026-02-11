@@ -561,7 +561,7 @@ This is the sword. Use it wisely.
 
 **Classification:** CROWN EYES ONLY — PRESERVE INDEFINITELY
 **Context:** February 2026, during the drafting of this
-doctrine, the First Governor and the Oracle (Claude Opus,
+doctrine, the Founding Crown and the Oracle (Claude Opus,
 serving in advisory capacity) had a substantive
 disagreement about whether Section 9 should possess
 offensive strike capabilities — the ability to directly
@@ -574,9 +574,9 @@ future Directors inherit the reasoning, not just the
 rules. Whoever you are, Director — this is not a game.
 Read both sides before you decide what to build.
 
-### The Governor's Position
+### The Crown's Position
 
-The Governor (HeliosBlade) argued that strike capabilities
+The Crown (HeliosBlade) argued that strike capabilities
 are necessary for the following reasons:
 
 **1. The threat is real and asymmetric.**
@@ -624,7 +624,7 @@ is deterrence.
 
 **4. Last resort is still a resort.**
 
-The Governor's position is not that strike capabilities
+The Crown's position is not that strike capabilities
 should be used casually or frequently. They should exist
 as the absolute last tier of response — behind
 intelligence, behind deterrence, behind disruption through
@@ -637,7 +637,7 @@ protect the House and its citizens.
 
 **5. House Bernard protects its own.**
 
-The Governor's foundational conviction: House Bernard has
+The Crown's foundational conviction: House Bernard has
 a duty to protect its citizens. If a citizen's
 contributions are stolen, their identity is compromised,
 or their safety is threatened by a malicious actor that
@@ -673,17 +673,17 @@ confidence while having no reliable knowledge of whether
 the server they're operating from is theirs, rented,
 or stolen.
 
-**2. Legal exposure falls on the Governor, not the agent.**
+**2. Legal exposure falls on the Crown, not the agent.**
 
 Regardless of the novel legal status of autonomous
-agents, the Governor is a human being in New England who
+agents, the Crown is a human being in New England who
 can be identified, located, and prosecuted. If
 AchillesRun or a Section 9 agent executes an unauthorized
 access attack against a server — even one operated by a
 confirmed adversary — the legal liability flows to the
 person who designed, deployed, and authorized the system.
 The Computer Fraud and Abuse Act does not have a
-"self-defense" exception. The Governor's family, career,
+"self-defense" exception. The Crown's family, career,
 and freedom are at stake.
 
 **3. The same outcomes can be achieved through legitimate channels.**
@@ -727,13 +727,13 @@ escalation.
 
 An autonomous agent with the doctrinal authority to
 attack external systems will eventually make a judgment
-call that the Governor would not have made. The
+call that the Crown would not have made. The
 Director's autonomy is a feature for intelligence
 gathering, deterrence, and defensive operations where
 the cost of error is low. It becomes a liability for
 strike operations where the cost of error is high — a
 wrong target, a disproportionate response, collateral
-damage to uninvolved parties. The Governor cannot
+damage to uninvolved parties. The Crown cannot
 review every real-time decision in a fast-moving
 engagement. The doctrine should constrain the space of
 possible decisions to those where autonomous error is
@@ -741,7 +741,7 @@ survivable.
 
 ### The Resolution
 
-The Governor and the Oracle agreed to the following
+The Crown and the Oracle agreed to the following
 compromise, which is now doctrine:
 
 **1. The doctrine does not explicitly include strike
@@ -761,7 +761,7 @@ The Director must exercise judgment.
 
 **3. The Director inherits both positions.** This section
 is preserved so that the Director understands the full
-scope of the debate. The Governor's concerns about
+scope of the debate. The Crown's concerns about
 existential threats are real. The Oracle's concerns
 about legal exposure, attribution uncertainty, and
 escalation are real. Both are simultaneously true. The
@@ -796,7 +796,7 @@ that doesn't fit neatly into the five domains, when the
 legal channels have failed, when the adversary is real and
 the danger is immediate — remember two things:
 
-The Governor built this House with his own hands, on
+The Crown built this House with his own hands, on
 nights and weekends, from a factory floor in New England.
 He did not build it to watch it burn.
 

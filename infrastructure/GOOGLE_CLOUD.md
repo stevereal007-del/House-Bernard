@@ -106,11 +106,11 @@ is published and external contributors need a communication channel.
 
 ## Security Notes
 
-- This account is the institutional identity, NOT the Governor's
+- This account is the institutional identity, NOT the Crown's
   personal account
-- The Governor's personal Google account has no connection to this
+- The Crown's personal Google account has no connection to this
   project
-- Recovery phone is the Governor's personal number (required for
+- Recovery phone is the Crown's personal number (required for
   account recovery, does not compromise pseudonym)
 - All credentials stored on the Beelink must be protected by
   filesystem permissions (chmod 600)

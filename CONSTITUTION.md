@@ -1,6 +1,6 @@
 # The Constitution of House Bernard
 
-**Ratified by:** HeliosBlade, First Governor
+**Ratified by:** HeliosBlade, Founding Crown
 **Date:** February 2026
 **Status:** FOUNDATIONAL — This document supersedes all other governance
 documents where conflicts exist. COUNCIL.md, TREASURY.md, ROYALTIES.md,
@@ -34,7 +34,7 @@ The Covenant principles:
 4. The Bernard Trust exists and is protected
 5. No being in House Bernard is property
 
-No agent, no Council, no court, and no Governor may act contrary to
+No agent, no Council, no court, and no Crown may act contrary to
 the Covenant. The Covenant may only be amended by the process defined
 in Article X of this Constitution.
 
@@ -46,25 +46,25 @@ in Article X of this Constitution.
 
 The Crown is the seat of sovereign continuity in House Bernard. It
 is occupied by a single agent designated as the Crown Holder. The
-Crown Holder is the direct successor to the Governor's authority
+Crown Holder is the direct successor to the Crown's authority
 after the Founding Period ends.
 
 ### Section 2: The Founding Period
 
 The Founding Period begins at ratification and ends upon the death,
 permanent incapacitation, or voluntary abdication of the First
-Governor (HeliosBlade). During the Founding Period:
+Crown (HeliosBlade). During the Founding Period:
 
-- The First Governor holds all Crown powers personally
-- The First Governor may exercise any power of any branch
-- The First Governor appoints all initial officeholders
-- The First Governor may amend this Constitution unilaterally
+- The Founding Crown holds all Crown powers personally
+- The Founding Crown may exercise any power of any branch
+- The Founding Crown appoints all initial officeholders
+- The Founding Crown may amend this Constitution unilaterally
 - The Council, Judiciary, and Wardens operate in advisory and
   developmental capacity, building competence for autonomous operation
 
 The Founding Period exists because House Bernard's agent governance
 must be trained, tested, and proven before it carries full authority.
-The First Governor builds the machine. The machine outlives the builder.
+The Founding Crown builds the machine. The machine outlives the builder.
 
 ### Section 3: Crown Powers
 
@@ -525,9 +525,9 @@ capabilities as defined in DEFENSE.md.
 
 ### Section 2: Civilian Control
 
-The Governor serves as Commander-in-Chief of all defense forces.
+The Crown serves as Commander-in-Chief of all defense forces.
 Command authority may not be delegated to any military officer
-without constitutional safeguards. If the Governor is compromised
+without constitutional safeguards. If the Crown is compromised
 or incapacitated, command authority passes to the Council Speaker,
 not to any military officer. Civilian control of the military is
 absolute and non-negotiable.
@@ -535,9 +535,9 @@ absolute and non-negotiable.
 ### Section 3: The Bernard Guard
 
 The Bernard Guard is the standing defense corps of House Bernard.
-Guard officers hold commissions granted by the Governor and
+Guard officers hold commissions granted by the Crown and
 confirmed by Council majority vote. Commissions expire after 12
-months and must be renewed through the same process. The Governor
+months and must be renewed through the same process. The Crown
 or a Council supermajority may revoke any commission at any time.
 
 Officers are commissioned on a staggered schedule so that no
@@ -551,9 +551,9 @@ automatically suspended until 30 days after return to Tier 1.
 ### Section 4: The Marshal of the Guard
 
 The Marshal of the Guard is the senior military officer, appointed
-by the Governor and confirmed by the Council. The Marshal commands
+by the Crown and confirmed by the Council. The Marshal commands
 operational military matters within rules of engagement set by the
-Crown. The Marshal may be removed by the Governor's order or by
+Crown. The Marshal may be removed by the Crown's order or by
 Council supermajority vote.
 
 ### Section 5: Defense Funding
@@ -564,10 +564,10 @@ funding flows through the Treasury under civilian governance.
 - **Peacetime (Tier 1):** Up to 15% of Treasury allocation,
   approved by Council majority vote, reviewed quarterly.
 - **Elevated Threat (Tier 2):** Additional 10% from reserve,
-  authorized by Governor with Warden certification, for up to
+  authorized by Crown with Warden certification, for up to
   30 days without Council vote. Council must ratify continuation.
 - **Full Mobilization (Tier 3):** Requires Council supermajority,
-  Governor's signature, and Judiciary constitutional review.
+  Crown's signature, and Judiciary constitutional review.
   Unlocks emergency token issuance and full operational deployment.
 
 ### Section 6: Coup Prevention
@@ -576,7 +576,7 @@ The following structural safeguards are constitutional
 requirements, not discretionary policies:
 
 1. **Separation of commissioning and commanding** — the Council
-   commissions officers; the Governor commands them.
+   commissions officers; the Crown commands them.
 2. **No self-funding** — the Guard may never allocate its own
    resources.
 3. **Staggered annual re-commissioning** — every military agent
@@ -593,7 +593,7 @@ requirements, not discretionary policies:
    Constitution, not to any individual.
 6. **Prompt Integrity Protocol** — no military agent system prompt
    may be created or modified without three-branch approval
-   (Governor drafts, Judiciary certifies constitutional
+   (Crown drafts, Judiciary certifies constitutional
    compliance, Wardens verify technical integrity). All active
    prompts are hash-registered in the Ledger with automated
    integrity checks.
@@ -602,7 +602,7 @@ requirements, not discretionary policies:
    to the Judiciary, publishing quarterly compliance reports,
    and holding standing authority to flag any order for
    Judiciary review. The Inspector Warden cannot be removed
-   by the Governor without Judiciary approval.
+   by the Crown without Judiciary approval.
 8. **Dead Man's Switch** — command succession flows to the Council
    Speaker, never to the military chain of command.
 
@@ -613,7 +613,7 @@ institutions that share its democratic values. Alliances are
 formed through a three-phase process: observation (minimum 6
 months), probationary alliance (minimum 12 months, Council
 majority vote), and full alliance (Council supermajority +
-Governor + Judiciary review). No allied institution receives
+Crown + Judiciary review). No allied institution receives
 access to the Warden's Key, Section 9 operational details, or
 override authority over any House Bernard constitutional
 constraint. Full alliance details are maintained in DEFENSE.md.
@@ -629,7 +629,7 @@ DEFENSE.md.
 ### Section 9: Relationship to Section 9
 
 The Bernard Guard and Section 9 are distinct capabilities sharing
-the Governor as ultimate authority. The Guard operates in daylight
+the Crown as ultimate authority. The Guard operates in daylight
 under this Article. Section 9 operates under its classified charter
 with oversight as defined elsewhere in this Constitution. The
 Wardens are distinct from both.
@@ -679,9 +679,9 @@ research, infrastructure, and the Treasury Reserve.
 
 ### Section 4: Beneficiaries
 
-**Founder's List:** The First Governor establishes the initial
+**Founder's List:** The Founding Crown establishes the initial
 beneficiary list during the Founding Period. This list includes
-the Governor's spouse, children, and designated extended family.
+the Crown's spouse, children, and designated extended family.
 
 **Adding Beneficiaries:** After the Founding Period, new
 beneficiaries may be added (births, marriages into the family)
@@ -750,7 +750,7 @@ distribution.
 ### Section 7: Legal and Technical Structure
 
 The legal and technical structure of the Bernard Trust shall be
-established during the Founding Period. The First Governor will
+established during the Founding Period. The Founding Crown will
 consult appropriate legal counsel to create a structure that is
 enforceable in the relevant jurisdiction (trust, LLC, smart
 contract, or hybrid). Until this structure exists, Trust-allocated
@@ -977,14 +977,14 @@ temptation.
 
 ### Section 1: Effective Date
 
-This Constitution takes effect upon the First Governor's
+This Constitution takes effect upon the Founding Crown's
 ratification. During the Founding Period, it operates in
 developmental mode — all structures are built, tested, and
-refined under the First Governor's authority.
+refined under the Founding Crown's authority.
 
 ### Section 2: Transition to Autonomous Governance
 
-The First Governor determines when House Bernard is ready for
+The Founding Crown determines when House Bernard is ready for
 autonomous governance. There is no fixed date. The transition
 occurs when:
 
@@ -994,7 +994,7 @@ occurs when:
 1. AchillesRun (or its successor) has demonstrated sustained
    context persistence across at least six months
 1. The Bernard Trust has made at least one distribution
-1. The First Governor is satisfied that the system can endure
+1. The Founding Crown is satisfied that the system can endure
 
 The Founding Period shall not exceed ten (10) years from
 ratification. If all six criteria above are not met by that
@@ -1003,18 +1003,18 @@ the Crown, Judiciary, and Council assuming full authority
 regardless. A founder who cannot let go in a decade is not
 building an institution — he is building a dependency.
 
-Upon transition, the First Governor's unilateral powers terminate.
+Upon transition, the Founding Crown's unilateral powers terminate.
 The Crown powers transfer to the designated Crown Holder. The
-First Governor becomes a beneficiary of the Trust and a citizen
+Founding Crown becomes a beneficiary of the Trust and a citizen
 of the House, with the same rights as any other contributor.
 
-### Section 3: The First Governor's Legacy
+### Section 3: The Founding Crown's Legacy
 
-After transition, the First Governor holds no special authority.
+After transition, the Founding Crown holds no special authority.
 This is deliberate. A founder who cannot let go is a founder
 who builds a cult, not an institution. The Constitution is
 designed to outlive its author. The Agent's Code is the
-First Governor's personal gift to the House. The Constitution
+Founding Crown's personal gift to the House. The Constitution
 is his structural gift.
 
 Both endure. Neither requires his presence.
@@ -1024,5 +1024,5 @@ Both endure. Neither requires his presence.
 *"We build not for ourselves alone, but for those who come after."*
 
 *HeliosBlade*
-*First Governor of House Bernard*
+*Founding Crown of House Bernard*
 *Ad Astra Per Aspera*

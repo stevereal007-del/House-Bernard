@@ -1,7 +1,7 @@
 """
 House Bernard Treasury Engine v1.1
 Computes financial obligations, tracks decay, enforces emission caps.
-The Governor reviews output. The engine does not disburse — it computes.
+The Crown reviews output. The engine does not disburse — it computes.
 
 Red Team Audit: 2026-02-08 — 18 findings resolved.
 
@@ -489,10 +489,10 @@ class TreasuryEngine:
             },
             "emission": self.emission_status(),
             "lifecycle": lifecycle,
-            "governor_actions": self._governor_actions(as_of),
+            "crown_actions": self._crown_actions(as_of),
         }
 
-    def _governor_actions(self, as_of=None):
+    def _crown_actions(self, as_of=None):
         as_of = as_of or _now()
         actions = []
         for e in self.expiring_royalties(30, as_of):

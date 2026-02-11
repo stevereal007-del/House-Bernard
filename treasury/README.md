@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Automated bookkeeping for the Governor. Tracks royalties, bonds, emission caps, and generates monthly obligation reports. The engine computes — the Governor decides.
+Automated bookkeeping for the Crown. Tracks royalties, bonds, emission caps, and generates monthly obligation reports. The engine computes — the Crown decides.
 
 ## Files
 
@@ -10,12 +10,12 @@ Automated bookkeeping for the Governor. Tracks royalties, bonds, emission caps, 
 |------|---------|
 | `treasury_engine.py` | Core computation module. Royalty decay, bond yields, emission tracking. |
 | `treasury_cli.py` | Command-line interface. Run reports, record payments, activate royalties/bonds. |
-| `treasury_state.json` | Master state. All active obligations. Governor commits changes. |
+| `treasury_state.json` | Master state. All active obligations. Crown commits changes. |
 | `treasury_report.json` | Generated monthly report. Archive in Ledger after signing. |
 | `monthly_ops.py` | Automated monthly cycle: lifecycle, decay, reputation, escalations. Runs on cron. |
 | `ops_state.json` | Ops state: contributor reputation, gene usage tracking, run history. |
 | `ops_log.jsonl` | Append-only log of every ops run. |
-| `monthly_ops_report.json` | Latest ops report. Includes Governor escalations. |
+| `monthly_ops_report.json` | Latest ops report. Includes Crown escalations. |
 | `redteam_monthly_ops.py` | Red team test suite for monthly_ops (51 tests). |
 
 ## Usage
@@ -69,12 +69,12 @@ Cron entry (1st of month, 6am UTC):
 - Resume royalties for genes that re-enter active use
 - Decay reputation for contributors inactive 90+ days (-5 rep/month)
 - Check emission utilization and flag warnings
-- Generate report with Governor escalations
+- Generate report with Crown escalations
 - Write to ops_log.jsonl (append-only audit trail)
 
 ### What YOU review (only when escalated)
 
-1. Open `monthly_ops_report.json` — check `governor_required` section
+1. Open `monthly_ops_report.json` — check `crown_required` section
 2. If bond matured → authorize principal + yield return
 3. If payouts due → review and authorize disbursements within 14 days
 4. If emission warning → review pace, consider slowing

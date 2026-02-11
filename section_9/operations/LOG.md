@@ -44,7 +44,7 @@ SIGNED: HeliosBlade, Crown
 ═══════════════════════════════════════════════════════════
 ADMINISTRATIVE ACTION: Initial Budget Allocation
 DATE: 2026-02-09T00:00:00Z
-BUDGET: 500,000 $HOUSEBERNARD from Governor Reserve
+BUDGET: 500,000 $HOUSEBERNARD from Crown Reserve
 ALLOCATION:
   Infrastructure: 30%
   Development: 40%
@@ -52,7 +52,7 @@ ALLOCATION:
   Contingency: 10%
 REVIEW CYCLE: Quarterly
 NOTE: Budget is notional during Founding Period with zero
-revenue. Real cost is Governor time and Beelink compute.
+revenue. Real cost is Crown time and Beelink compute.
 SIGNED: HeliosBlade, Crown
 ═══════════════════════════════════════════════════════════
 
@@ -73,7 +73,7 @@ CONTENT: Five offensive capability domains, decomposition
   principle for sourcing components through public labs,
   assembly protocol, ethical constraints, capability
   maturity model, and the Founding Debate (Section VII)
-  preserving the Governor-Oracle disagreement on strike
+  preserving the Crown-Oracle disagreement on strike
   capabilities for future Director inheritance.
 CLASSIFICATION: CROWN EYES ONLY
 SIGNED: HeliosBlade, Crown

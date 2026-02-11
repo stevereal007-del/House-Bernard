@@ -4,14 +4,14 @@ House Bernard — CPA Agent v1.0
 Autonomous financial compliance and tax record management.
 
 This is the Finance Director of House Bernard. It runs on its own.
-The Governor doesn't sign checks. The CPA Agent tracks everything.
+The Crown doesn't sign checks. The CPA Agent tracks everything.
 
 WHAT IT DOES:
   - Records every payment with USD fair market value at time of transfer
   - Tracks cumulative payments per contributor per calendar year
   - Flags contributors approaching the $600 1099-NEC threshold
   - Generates year-end 1099 data for US-based contributors
-  - Produces Schedule C expense/income summaries for the Governor
+  - Produces Schedule C expense/income summaries for the Crown
   - Maintains audit trail for Warden quarterly reviews
 
 WHAT IT DOES NOT DO:
@@ -152,7 +152,7 @@ class CPAAgent:
         return payment_record
 
     # -------------------------------------------------------------------
-    # Record expense (Governor's business expenses)
+    # Record expense (Crown's business expenses)
     # -------------------------------------------------------------------
 
     def record_expense(self, category, description, amount_usd,
@@ -221,7 +221,7 @@ class CPAAgent:
         Generate year-end tax report.
 
         Used by:
-        - Governor for Schedule C filing
+        - Crown for Schedule C filing
         - CPA for 1099-NEC preparation
         - Wardens for audit
         """

@@ -4,7 +4,7 @@
 
 AchillesRun is House Bernard deployed as an OpenClaw agent. OpenClaw is the body — gateway, channels, sessions, cron. House Bernard is the mind — what to trust, what to kill, what to remember, what to forget.
 
-The Beelink EQ13 runs the OpenClaw gateway. AchillesRun runs inside it. The Governor communicates via Discord DM (Phase 0) or iMessage (Phase 1).
+The Beelink EQ13 runs the OpenClaw gateway. AchillesRun runs inside it. The Crown communicates via Discord DM (Phase 0) or iMessage (Phase 1).
 
 ## Files
 
@@ -25,7 +25,7 @@ The Beelink EQ13 runs the OpenClaw gateway. AchillesRun runs inside it. The Gove
 | Selection Furnace | OpenClaw skills running Airlock→Executioner→Splicer |
 | Monthly Ops | OpenClaw cron job (1st of month, 6am UTC) |
 | Heartbeat / Watcher | OpenClaw heartbeat config (30min, Llama 3.2:3b) |
-| Governor Contact | OpenClaw channel (Discord DM / iMessage) |
+| Crown Contact | OpenClaw channel (Discord DM / iMessage) |
 | Session Isolation | OpenClaw `dmScope: per-channel-peer` |
 | Swarm (Phase 2) | OpenClaw multi-agent routing |
 
@@ -46,9 +46,9 @@ openclaw onboard
 
 ## Channels
 
-**Phase 0 (now):** Discord DM — Governor only, allowlist enforced.
+**Phase 0 (now):** Discord DM — Crown only, allowlist enforced.
 
-**Phase 1 (when Mac Mini available):** iMessage via `imsg` CLI. Governor texts AchillesRun at the configured phone number. Requires a Mac running Messages.app with SSH bridge to Beelink over Tailscale.
+**Phase 1 (when Mac Mini available):** iMessage via `imsg` CLI. Crown texts AchillesRun at the configured phone number. Requires a Mac running Messages.app with SSH bridge to Beelink over Tailscale.
 
 ---
 
