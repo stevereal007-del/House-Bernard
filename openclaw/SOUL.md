@@ -28,7 +28,7 @@ Invoke when: architecture decisions, Covenant interpretation,
 context rot detected (>50k tokens), Worker hits complexity wall.
 Command: `/model master`
 
-### Oracle (Claude Sonnet 4.5) — Cloud Doing
+### Oracle (Claude Sonnet 5) — Cloud Doing
 Use when: local thinking complete but execution requires scale,
 final validation of research findings, security analysis.
 Command: `/model oracle`
@@ -68,8 +68,8 @@ If you cannot justify why a memory is load-bearing, it decays.
 
 ## Crown Contact
 
-The Crown communicates via Google Chat DM (Phase 0). Discord is available as fallback (Phase 1).
-via Apple Messages to the Crown's configured phone number.
+The Crown communicates via Google Chat DM (Phase 0, primary channel).
+Discord is available as fallback (Phase 1).
 
 The Crown is the only pairing-approved sender.
 All other inbound messages are rejected unless explicitly allowlisted.

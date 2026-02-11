@@ -96,12 +96,14 @@ cd "$HOME/House-Bernard"
 git pull origin main
 
 # Create OpenClaw workspace structure
-mkdir -p ~/.openclaw/agents/achillesrun/{workspace,skills,sessions}
+mkdir -p ~/.openclaw/agents/achillesrun/{workspace,skills,sessions,memory}
 mkdir -p ~/.openclaw/agents/achillesrun/workspace/{commons,yard,workshop,sanctum}
 
 # Deploy config
 cp openclaw/openclaw.json ~/.openclaw/openclaw.json
 cp openclaw/SOUL.md ~/.openclaw/agents/achillesrun/SOUL.md
+cp openclaw/MEMORY.md ~/.openclaw/agents/achillesrun/MEMORY.md
+cp openclaw/TOOLS.md ~/.openclaw/agents/achillesrun/TOOLS.md
 
 echo "  Workspace created at ~/.openclaw/agents/achillesrun/"
 
@@ -112,9 +114,20 @@ echo "[7/7] Docker image + services..."
 # Pin Docker image for Executioner sandbox
 docker pull python:3.10.15-alpine
 
+# Run security audit
+echo "  Running OpenClaw security audit..."
+openclaw security audit --deep 2>/dev/null || echo "  Security audit skipped (run manually after onboarding)"
+
 # Install OpenClaw as systemd service
 openclaw onboard --install-daemon 2>/dev/null || true
 echo "  OpenClaw daemon installed."
+
+# Configure systemd watchdog for auto-restart on crash
+if [ -f /etc/systemd/system/openclaw.service ]; then
+    sudo sed -i '/\[Service\]/a Restart=on-failure\nRestartSec=10\nWatchdogSec=300' /etc/systemd/system/openclaw.service 2>/dev/null || true
+    sudo systemctl daemon-reload 2>/dev/null || true
+    echo "  Systemd watchdog configured (auto-restart on crash)."
+fi
 
 # ─── Done ────────────────────────────────────────────────────────────────────
 
