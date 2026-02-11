@@ -8,12 +8,19 @@
 #
 # No VPS needed. OpenClaw IS the gateway. The Beelink IS the server.
 #
+# Target OS: Ubuntu Server 24.04 LTS (headless — no GUI, no desktop)
+#   - No monitor required after initial OS install
+#   - All access via SSH + Tailscale from phone/laptop
+#   - No HDMI dummy plug needed (no GPU desktop compositing)
+#
 # Prerequisites:
-#   - Ubuntu 24.04 on Beelink EQ13
+#   - Ubuntu Server 24.04 freshly installed on Beelink EQ13
+#   - Ethernet connected to home network
 #   - Internet connection
 #   - GitHub SSH key configured
+#   - Google Cloud service account JSON for Chat App (see Phase 5a)
 #
-# Usage:
+# Usage (from SSH or initial console):
 #   chmod +x deploy_achillesrun.sh
 #   ./deploy_achillesrun.sh
 ###############################################################################
@@ -22,7 +29,7 @@ set -euo pipefail
 
 echo "============================================================"
 echo "  HOUSE BERNARD — AchillesRun Deployment"
-echo "  Target: Beelink EQ13"
+echo "  Target: Beelink EQ13 / Ubuntu Server 24.04 (headless)"
 echo "============================================================"
 echo ""
 
@@ -116,19 +123,32 @@ echo "============================================================"
 echo "  DEPLOYMENT COMPLETE"
 echo "============================================================"
 echo ""
-echo "  Next steps:"
-echo "    1. Set environment variables:"
-echo "       export DISCORD_BOT_TOKEN='your-bot-token'"
-echo "       export GOVERNOR_DISCORD_ID='your-discord-user-id'"
-echo "       export ANTHROPIC_API_KEY='your-api-key'"
+echo "  Target OS: Ubuntu Server 24.04 (headless)"
+echo "  Access: SSH over Tailscale from phone/laptop"
+echo "  No monitor needed from this point forward."
 echo ""
-echo "    2. Run OpenClaw onboarding:"
+echo "  Next steps:"
+echo "    1. Set environment variables in ~/.bashrc:"
+echo "       export ANTHROPIC_API_KEY='your-api-key'"
+echo "       export GOOGLE_CHAT_SERVICE_ACCOUNT_FILE='$HOME/.openclaw/google-chat-sa.json'"
+echo "       export GOOGLE_CHAT_WEBHOOK_URL='your-chat-app-url'"
+echo "       export GOVERNOR_GMAIL='your-gmail@gmail.com'"
+echo ""
+echo "    2. Set up Google Chat App (Claude Code can walk you through this):"
+echo "       - Go to console.cloud.google.com"
+echo "       - Create a Chat App + service account"
+echo "       - Download JSON key to ~/.openclaw/google-chat-sa.json"
+echo "       - Set app status to LIVE"
+echo ""
+echo "    3. Run OpenClaw onboarding:"
 echo "       openclaw onboard"
 echo ""
-echo "    3. Start the gateway:"
+echo "    4. Start the gateway:"
 echo "       openclaw gateway"
 echo ""
-echo "    4. Message AchillesRun on Discord."
+echo "    5. Open Google Chat on your phone."
+echo "       Search for the Chat App by name."
+echo "       Send AchillesRun a message."
 echo ""
 echo "  Architecture:"
 echo "    Layer 1: Beelink EQ13 (this machine)"

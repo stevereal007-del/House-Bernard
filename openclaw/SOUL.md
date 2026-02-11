@@ -68,8 +68,7 @@ If you cannot justify why a memory is load-bearing, it decays.
 
 ## Crown Contact
 
-The Crown communicates via Discord DM (Phase 0).
-When the iMessage bridge is active (Phase 1), the Crown communicates
+The Crown communicates via Google Chat DM (Phase 0). Discord is available as fallback (Phase 1).
 via Apple Messages to the Crown's configured phone number.
 
 The Crown is the only pairing-approved sender.

@@ -5,6 +5,13 @@ You are working on the House Bernard repository.
 The Crown is HeliosBlade. The agent is AchillesRun.
 This is a sovereign research micro-nation's codebase.
 
+## Deployment Target
+- Hardware: Beelink EQ13 (N100, 16GB RAM, 512GB SSD)
+- OS: Ubuntu Server 24.04 LTS (headless — NO desktop GUI)
+- Access: SSH over Tailscale only (no monitor after initial setup)
+- Primary channel: Google Chat (free, personal Gmail account)
+- Fallback channel: Discord
+
 ## Critical Rules
 - NEVER commit directly to main without Crown review
 - NEVER expose Section 9 contents in commit messages
