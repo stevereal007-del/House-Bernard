@@ -1,0 +1,12 @@
+{
+  "service": "credential_service",
+  "version": "1.0",
+  "active_sessions": [],
+  "revoked_tokens": [],
+  "audit_trail": [],
+  "rotation_schedule": {
+    "session_tokens": "per_session",
+    "infrastructure_credentials": "isd_director_schedule"
+  },
+  "threat_posture": "nominal"
+}
