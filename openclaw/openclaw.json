@@ -1,95 +1,38 @@
 {
-  "_comment": "House Bernard — AchillesRun OpenClaw Agent Config",
-  "_version": "1.2",
-  "_agent": "AchillesRun",
-  "_spec": "See AGENT_SPEC.md for the law governing this config",
-  "_deploy": "Beelink EQ13, on-premise",
-
   "agents": {
-    "main": {
-      "name": "AchillesRun",
-      "model": "ollama/mistral:7b",
-      "systemPrompt": "openclaw/SOUL.md",
+    "defaults": {
       "workspace": "~/.openclaw/agents/achillesrun/workspace",
-      "models": {
-        "ollama/mistral:7b": {
-          "alias": "worker",
-          "temperature": 0.7,
-          "max_tokens": 4096,
-          "_role": "Default. Routine tasks, logs, accounting, Commons/Yard layers"
-        },
-        "ollama/llama3:8b": {
-          "alias": "master",
-          "temperature": 0.3,
-          "max_tokens": 8192,
-          "_role": "Sovereign decisions, architecture, Covenant interpretation, Sanctum layer"
-        },
-        "ollama/llama3.2:3b": {
-          "alias": "watcher",
-          "temperature": 0.1,
-          "max_tokens": 1024,
-          "_role": "Heartbeat only. Continuity checks, rot detection, kill-switch. Never invoked directly"
-        },
-        "anthropic/claude-sonnet-5-20260203": {
-          "alias": "oracle",
-          "temperature": 0.2,
-          "max_tokens": 16384,
-          "_role": "Scale execution, agentic workflows, validation, security analysis. Invoked when local thinking is complete but execution requires scale"
-        },
-        "anthropic/claude-opus-4-6": {
-          "alias": "apex",
-          "temperature": 0.1,
-          "max_tokens": 16384,
-          "_role": "Constitutional interpretation, existential threat assessment, Classified Tribunal proceedings, final arbitration. Sanctum layer ONLY. Never routine"
-        }
-      },
       "compaction": {
-        "mode": "safeguard",
-        "triggerTokens": 50000,
-        "targetTokens": 8000,
-        "reserveTokensFloor": 20000,
-        "memoryFlush": {
-          "enabled": true,
-          "softThresholdTokens": 4000,
-          "systemPrompt": "Session nearing compaction. Store durable memories to sanctum ledger now.",
-          "prompt": "Write any lasting notes to memory/YYYY-MM-DD.md; reply with NO_REPLY if nothing to store."
-        }
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
       }
     }
   },
 
   "session": {
     "dmScope": "per-channel-peer",
-    "reset": {
-      "daily": false
-    },
-    "idleMinutes": 0,
-    "expirationDays": 365,
-    "mainKey": "achilles"
-  },
-
-  "heartbeat": {
-    "every": "30m",
-    "model": "ollama/llama3.2:3b",
-    "session": "helios_continuity",
-    "target": "local",
-    "prompt": "Department of Continuity check: context size, rot indicators, alerts, monthly_ops status"
+    "idleMinutes": 1440
   },
 
   "gateway": {
-    "bind": "127.0.0.1",
+    "mode": "local",
+    "bind": "loopback",
     "port": 18789,
-    "cors": false
-  },
-
-  "mdns": {
-    "enabled": false
+    "auth": {
+      "mode": "token"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
   },
 
   "channels": {
     "googlechat": {
-      "_comment": "Phase 0: Primary channel. Free with personal Gmail account",
-      "enabled": true,
+      "enabled": false,
       "serviceAccountFile": "${GOOGLE_CHAT_SERVICE_ACCOUNT_FILE}",
       "audienceType": "app-url",
       "audience": "${GOOGLE_CHAT_WEBHOOK_URL}",
@@ -98,41 +41,13 @@
         "policy": "allowlist",
         "allowFrom": ["${GOVERNOR_GMAIL}"]
       },
-      "groupPolicy": "deny"
+      "groupPolicy": "disabled"
     },
 
     "discord": {
-      "_comment": "Phase 1: Fallback channel",
       "enabled": false,
-      "token": "${DISCORD_BOT_TOKEN}",
-      "dmPolicy": "allowlist",
-      "allowedUsers": ["${GOVERNOR_DISCORD_ID}"],
-      "groups": {
-        "policy": "deny"
-      }
+      "token": "${DISCORD_BOT_TOKEN}"
     }
-  },
-
-  "security": {
-    "sandbox": {
-      "enabled": true,
-      "mode": "docker",
-      "image": "python:3.10.15-alpine",
-      "workspace": "rw",
-      "network": false,
-      "timeout": 300
-    },
-    "tools": {
-      "requireApproval": ["exec", "shell", "write"],
-      "autoApprove": ["read", "search", "status"]
-    }
-  },
-
-  "budget": {
-    "daily_limit_usd": 5.00,
-    "daily_warning_usd": 3.00,
-    "monthly_limit_usd": 50.00,
-    "monthly_warning_usd": 37.50
   },
 
   "memory": {
@@ -143,10 +58,6 @@
       "sessions": { "enabled": true },
       "update": { "interval": "5m", "debounceMs": 15000 },
       "limits": { "maxResults": 6, "timeoutMs": 4000 },
-      "scope": {
-        "default": "deny",
-        "rules": [{ "action": "allow", "match": { "chatType": "direct" } }]
-      },
       "paths": [
         { "name": "sanctum", "path": "~/.openclaw/agents/achillesrun/workspace/sanctum", "pattern": "**/*.md" },
         { "name": "covenant", "path": "~/House-Bernard", "pattern": "COVENANT.md" }
@@ -154,45 +65,16 @@
     }
   },
 
-  "memorySearch": {
-    "provider": "local",
-    "vectorWeight": 0.6,
-    "textWeight": 0.4,
-    "candidateMultiplier": 4
+  "cron": {
+    "enabled": true
   },
 
-  "skills": {
-    "path": "~/.openclaw/agents/achillesrun/skills",
-    "managed": [],
-    "workspace": [
-      "house-bernard-airlock",
-      "house-bernard-executioner",
-      "house-bernard-treasury"
-    ]
+  "messages": {
+    "ackReactionScope": "group-mentions"
   },
 
-  "experimental": {
-    "sessionMemory": true
-  },
-
-  "cron": [
-    {
-      "id": "monthly-ops",
-      "schedule": "0 6 1 * *",
-      "command": "cd ~/House-Bernard/treasury && python3 monthly_ops.py run",
-      "session": "cron:monthly-ops"
-    },
-    {
-      "id": "git-archive",
-      "schedule": "0 */12 * * *",
-      "command": "cd ~/House-Bernard && git add -A && git commit -m 'auto: archive snapshot' --allow-empty && git push origin main",
-      "session": "cron:git-archive"
-    },
-    {
-      "id": "helios-watcher",
-      "schedule": "*/30 * * * *",
-      "command": "cd ~/House-Bernard && python3 openclaw/helios_watcher.py",
-      "session": "cron:watcher"
-    }
-  ]
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  }
 }
