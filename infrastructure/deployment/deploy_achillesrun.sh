@@ -19,14 +19,27 @@
 set -euo pipefail
 
 WSL2=false
+WSL2_SYSTEMD=false
 if [[ "${1:-}" == "--wsl2" ]] || grep -qi microsoft /proc/version 2>/dev/null; then
     WSL2=true
+    # Modern WSL2 (0.67.6+) supports systemd if enabled in /etc/wsl.conf
+    if $WSL2 && pidof systemd &>/dev/null; then
+        WSL2_SYSTEMD=true
+    fi
 fi
 
 echo "============================================================"
 echo "  HOUSE BERNARD — AchillesRun Deployment"
 if $WSL2; then
     echo "  Target: WSL2 / Ubuntu 24.04"
+    if $WSL2_SYSTEMD; then
+        echo "  Systemd: DETECTED (will install services)"
+    else
+        echo "  Systemd: NOT DETECTED (foreground mode)"
+        echo "    Tip: Enable systemd in /etc/wsl.conf:"
+        echo "      [boot]"
+        echo "      systemd=true"
+    fi
 else
     echo "  Target: Beelink EQ13 / Ubuntu Server 24.04 (headless)"
 fi
@@ -39,15 +52,26 @@ echo ""
 echo "[1/7] System packages..."
 sudo apt update && sudo apt upgrade -y
 if $WSL2; then
-    sudo apt install -y python3-pip git curl zstd
-    # Docker: use Docker Desktop or install docker-ce separately on WSL2
+    sudo apt install -y python3-pip python3-venv git curl zstd jq
+    # Docker: prefer Docker Desktop integration, fall back to docker-ce
     if command -v docker &>/dev/null; then
         echo "  Docker already installed: $(docker --version)"
     else
-        echo "  WARNING: Docker not found. Install Docker Desktop or docker-ce."
+        echo "  Docker not found. Installing docker-ce for WSL2..."
+        sudo apt install -y ca-certificates gnupg
+        sudo install -m 0755 -d /etc/apt/keyrings
+        if [ ! -f /etc/apt/keyrings/docker.gpg ]; then
+            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+            sudo chmod a+r /etc/apt/keyrings/docker.gpg
+            echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+            sudo apt update
+        fi
+        sudo apt install -y docker-ce docker-ce-cli containerd.io
+        sudo usermod -aG docker "$USER"
+        echo "  docker-ce installed. Relogin or 'newgrp docker' for group access."
     fi
 else
-    sudo apt install -y ufw fail2ban python3-pip docker.io git curl zstd
+    sudo apt install -y ufw fail2ban python3-pip python3-venv docker.io git curl zstd jq
     sudo usermod -aG docker "$USER"
 fi
 
@@ -177,8 +201,8 @@ docker pull python:3.10.15-alpine 2>/dev/null || echo "  Docker pull deferred (s
 echo "  Running OpenClaw security audit..."
 openclaw security audit --deep 2>/dev/null || echo "  Security audit skipped (run manually after onboarding)"
 
-# Systemd service (headless only — WSL2 typically lacks systemd)
-if ! $WSL2; then
+# Systemd service setup
+if ! $WSL2 || $WSL2_SYSTEMD; then
     openclaw onboard --install-daemon 2>/dev/null || true
     echo "  OpenClaw daemon installed."
 
@@ -188,8 +212,31 @@ if ! $WSL2; then
         sudo systemctl daemon-reload 2>/dev/null || true
         echo "  Systemd watchdog configured (auto-restart on crash)."
     fi
+
+    if $WSL2_SYSTEMD; then
+        echo "  WSL2 systemd detected — services will persist across sessions."
+    fi
 else
-    echo "  Systemd service — SKIPPED (WSL2, run gateway in foreground)"
+    echo "  Systemd service — SKIPPED (WSL2 without systemd)"
+    echo "  Use achillesrun_start.sh or enable systemd in /etc/wsl.conf"
+
+    # Deploy startup script for WSL2 without systemd
+    SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+    if [ -f "$SCRIPT_DIR/achillesrun_start.sh" ]; then
+        cp "$SCRIPT_DIR/achillesrun_start.sh" "$HOME/.openclaw/achillesrun_start.sh"
+        chmod +x "$HOME/.openclaw/achillesrun_start.sh"
+        echo "  Startup script deployed: ~/.openclaw/achillesrun_start.sh"
+
+        # Add to .bashrc for auto-start on WSL2 login
+        if ! grep -q "achillesrun_start.sh" "$HOME/.bashrc" 2>/dev/null; then
+            echo "" >> "$HOME/.bashrc"
+            echo "# House Bernard — auto-start AchillesRun services" >> "$HOME/.bashrc"
+            echo "if grep -qi microsoft /proc/version 2>/dev/null; then" >> "$HOME/.bashrc"
+            echo "    \$HOME/.openclaw/achillesrun_start.sh --quiet &>/dev/null &" >> "$HOME/.bashrc"
+            echo "fi" >> "$HOME/.bashrc"
+            echo "  Auto-start added to ~/.bashrc"
+        fi
+    fi
 fi
 
 # Run verification
@@ -206,6 +253,11 @@ echo ""
 if $WSL2; then
     echo "  Target: WSL2 / Ubuntu 24.04"
     echo "  Access: Local terminal"
+    if $WSL2_SYSTEMD; then
+        echo "  Systemd: ENABLED"
+    else
+        echo "  Systemd: DISABLED (using startup script)"
+    fi
 else
     echo "  Target: Ubuntu Server 24.04 (headless)"
     echo "  Access: SSH over Tailscale from phone/laptop"
@@ -229,9 +281,24 @@ echo "         --message 'Department of Continuity check'"
 echo ""
 echo "    4. Start the gateway:"
 if $WSL2; then
-    echo "       openclaw gateway --foreground"
+    if $WSL2_SYSTEMD; then
+        echo "       sudo systemctl start openclaw"
+        echo "       sudo systemctl enable openclaw   # auto-start on boot"
+    else
+        echo "       ~/.openclaw/achillesrun_start.sh   # starts Ollama + Docker + gateway"
+        echo "       # Or manually:"
+        echo "       openclaw gateway --foreground"
+    fi
 else
     echo "       openclaw gateway"
+fi
+echo ""
+if $WSL2; then
+    echo "    5. Configure Windows-side .wslconfig (in %USERPROFILE%):"
+    echo "       See infrastructure/deployment/wslconfig.template"
+    echo ""
+    echo "    6. Run post-gateway setup:"
+    echo "       ./infrastructure/deployment/post_gateway_setup.sh"
 fi
 echo ""
 echo "  AchillesRun is ready."
