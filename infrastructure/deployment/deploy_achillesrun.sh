@@ -131,6 +131,15 @@ cp openclaw/SOUL.md ~/.openclaw/agents/achillesrun/SOUL.md
 cp openclaw/MEMORY.md ~/.openclaw/agents/achillesrun/MEMORY.md
 cp openclaw/TOOLS.md ~/.openclaw/agents/achillesrun/TOOLS.md
 
+# Deploy House Bernard skills
+echo "  Deploying workspace skills..."
+cp -r openclaw/skills/house-bernard-airlock ~/.openclaw/agents/achillesrun/skills/
+cp -r openclaw/skills/house-bernard-executioner ~/.openclaw/agents/achillesrun/skills/
+cp -r openclaw/skills/house-bernard-treasury ~/.openclaw/agents/achillesrun/skills/
+
+# Initialize sanctum event ledger
+python3 openclaw/skills/house-bernard-treasury/scripts/sanctum_init.py 2>/dev/null || true
+
 # Secure permissions
 chmod 700 ~/.openclaw
 chmod 600 ~/.openclaw/openclaw.json
@@ -183,9 +192,9 @@ else
     echo "  Systemd service — SKIPPED (WSL2, run gateway in foreground)"
 fi
 
-# Run helios_watcher to verify deployment health
-echo "  Running deployment health check..."
-python3 openclaw/helios_watcher.py 2>/dev/null || true
+# Run verification
+echo "  Running deployment verification..."
+python3 infrastructure/deployment/verify_deployment.py 2>/dev/null || true
 
 # ─── Done ────────────────────────────────────────────────────────────────────
 
