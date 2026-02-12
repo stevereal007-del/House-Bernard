@@ -1,0 +1,45 @@
+# House Bernard — .wslconfig template
+#
+# Place this file at %USERPROFILE%\.wslconfig on the Windows host.
+# (e.g., C:\Users\YourName\.wslconfig)
+#
+# Then restart WSL2:  wsl --shutdown && wsl
+#
+# AchillesRun RAM Budget (from AGENT_SPEC.md):
+#   OS + OpenClaw gateway:  2 GB
+#   Ollama (active model):  5-6 GB
+#   Docker (sandbox):       2 GB
+#   Workspace + FS cache:   2 GB
+#   Reserve:                3-4 GB
+#   Total:                  ~16 GB
+#
+# If your Windows host has 32 GB+ RAM, use 16 GB for WSL2.
+# If your Windows host has 16 GB RAM, use 12 GB (models will swap).
+
+[wsl2]
+# Memory allocation — match Beelink EQ13 spec
+memory=14GB
+
+# Swap for model loading spikes (Ollama loads 5-6 GB models)
+swap=8GB
+
+# Processors — 4 cores matches N100/N150 baseline
+processors=4
+
+# Disk space reclaim — WSL2 VHD auto-shrinks on restart
+localhostForwarding=true
+
+# Nested virtualization (not needed)
+nestedVirtualization=false
+
+# DNS tunneling for Tailscale compatibility
+dnsTunneling=true
+
+# Network mode — default NAT is fine for loopback gateway
+networkingMode=NAT
+
+# Firewall — let Windows Defender handle it
+firewall=true
+
+# Auto-reclaim memory from WSL2 when idle
+autoMemoryReclaim=gradual

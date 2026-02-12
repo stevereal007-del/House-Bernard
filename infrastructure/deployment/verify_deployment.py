@@ -19,6 +19,23 @@ from pathlib import Path
 from typing import Any
 
 
+def is_wsl2() -> bool:
+    """Detect if running inside WSL2."""
+    try:
+        version = Path("/proc/version").read_text().lower()
+        return "microsoft" in version
+    except Exception:
+        return False
+
+
+def has_systemd() -> bool:
+    """Check if systemd is running (PID 1)."""
+    try:
+        return Path("/proc/1/comm").read_text().strip() == "systemd"
+    except Exception:
+        return False
+
+
 def check(name: str, fn: callable) -> dict[str, Any]:
     """Run a check function and return structured result."""
     try:
@@ -142,13 +159,92 @@ def check_docker() -> dict[str, Any]:
     r = subprocess.run(["docker", "info"], capture_output=True, text=True, timeout=10)
     if r.returncode != 0:
         return {"status": "warn", "detail": "docker installed but daemon not running"}
+    docker_type = "Docker Desktop" if "docker-desktop" in r.stdout else "docker-ce"
     r2 = subprocess.run(
         ["docker", "images", "--format", "{{.Repository}}:{{.Tag}}"],
         capture_output=True, text=True, timeout=10
     )
     if "python:3.10.15-alpine" in r2.stdout:
-        return {"status": "pass", "detail": "docker running, sandbox image present"}
-    return {"status": "warn", "detail": "docker running but sandbox image not pulled"}
+        return {"status": "pass", "detail": f"{docker_type} running, sandbox image present"}
+    return {"status": "warn", "detail": f"{docker_type} running but sandbox image not pulled"}
+
+
+def check_wsl2_config() -> dict[str, Any]:
+    """WSL2-specific: verify WSL2 environment is correctly configured."""
+    if not is_wsl2():
+        return {"status": "info", "detail": "not WSL2 (skipped)"}
+
+    issues = []
+    details = []
+
+    # Check systemd status
+    if has_systemd():
+        details.append("systemd=yes")
+    else:
+        issues.append("systemd not enabled (add [boot] systemd=true to /etc/wsl.conf)")
+
+    # Check available memory
+    try:
+        meminfo = Path("/proc/meminfo").read_text()
+        for line in meminfo.split("\n"):
+            if line.startswith("MemTotal:"):
+                mem_kb = int(line.split()[1])
+                mem_gb = mem_kb / (1024 * 1024)
+                details.append(f"ram={mem_gb:.1f}GB")
+                if mem_gb < 10:
+                    issues.append(f"low memory ({mem_gb:.1f}GB, need 12-16GB for full model stack)")
+                break
+    except Exception:
+        pass
+
+    # Check startup script
+    startup = Path.home() / ".openclaw" / "achillesrun_start.sh"
+    if startup.exists():
+        details.append("startup_script=yes")
+    elif not has_systemd():
+        issues.append("no startup script and no systemd")
+
+    # Check log directory
+    log_dir = Path.home() / ".openclaw" / "logs"
+    if log_dir.exists():
+        details.append("logs_dir=yes")
+
+    detail_str = ", ".join(details)
+    if issues:
+        return {"status": "warn", "detail": f"WSL2 [{detail_str}]; issues: {'; '.join(issues)}"}
+    return {"status": "pass", "detail": f"WSL2 [{detail_str}]"}
+
+
+def check_services() -> dict[str, Any]:
+    """Check that core services are running (Ollama, gateway)."""
+    running = []
+    stopped = []
+
+    # Ollama
+    r = subprocess.run(["pgrep", "-x", "ollama"], capture_output=True, timeout=5)
+    if r.returncode == 0:
+        running.append("ollama")
+    else:
+        stopped.append("ollama")
+
+    # OpenClaw gateway
+    try:
+        r = subprocess.run(
+            ["curl", "-sf", "http://127.0.0.1:18789/health"],
+            capture_output=True, text=True, timeout=5
+        )
+        if r.returncode == 0:
+            running.append("gateway")
+        else:
+            stopped.append("gateway")
+    except Exception:
+        stopped.append("gateway")
+
+    if not stopped:
+        return {"status": "pass", "detail": f"all running: {', '.join(running)}"}
+    if not running:
+        return {"status": "warn", "detail": f"all stopped: {', '.join(stopped)}"}
+    return {"status": "warn", "detail": f"running: {', '.join(running)}; stopped: {', '.join(stopped)}"}
 
 
 def main() -> None:
@@ -165,7 +261,10 @@ def main() -> None:
         check("permissions", check_permissions),
         check("env_vars", check_env_vars),
         check("docker", check_docker),
+        check("services", check_services),
     ]
+    if is_wsl2():
+        checks.append(check("wsl2", check_wsl2_config))
 
     statuses = [c["status"] for c in checks]
     if "fail" in statuses:
@@ -184,8 +283,10 @@ def main() -> None:
     print(json.dumps(report, indent=2))
 
     # Summary table
+    env_label = "WSL2" if is_wsl2() else "Beelink/Server"
     print(f"\n{'='*60}")
     print(f"  DEPLOYMENT VERIFICATION: {overall}")
+    print(f"  Environment: {env_label}")
     print(f"{'='*60}")
     for c in checks:
         icon = {"pass": "+", "warn": "~", "fail": "X", "error": "!", "info": "i"}
