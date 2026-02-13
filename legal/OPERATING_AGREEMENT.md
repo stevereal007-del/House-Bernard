@@ -7,9 +7,10 @@
 ## Preamble
 
 This Operating Agreement ("Agreement") is entered into as of
-the date of LLC formation by HeliosBlade (the "Member"), the
-sole member and organizer of House Bernard LLC (the "Company"),
-formed under the laws of the Member's home state.
+the date of LLC formation by Stephen Bernard, operating under
+the pseudonym HeliosBlade (the "Member"), the sole member and
+organizer of House Bernard LLC (the "Company"), formed under
+the laws of the State of Connecticut.
 
 This Agreement governs the internal operations of House Bernard
 LLC. It is subordinate to the Constitution of House Bernard in
@@ -40,15 +41,15 @@ The Company is organized for the following purposes:
 ### 1.3 Principal Office
 
 The principal office of the Company shall be at the Member's
-residence in [STATE], or at such other location as the
+residence in Connecticut, or at such other location as the
 Member may designate.
 
 ### 1.4 Registered Agent
 
-The registered agent shall be HeliosBlade (self) or a
-registered agent service designated by the Member. The
-registered agent address shall be on file with the Secretary
-of State.
+The registered agent shall be Stephen Bernard or a registered
+agent service designated by the Member. The registered agent
+address shall be on file with the Connecticut Secretary of
+State.
 
 ### 1.5 Term
 
@@ -211,10 +212,10 @@ All intellectual property created by or for House Bernard is
 owned by the Company, including:
 
 - The Constitution and governance documents
-- Software (OpenClaw, Treasury engine, Furnace, SAIF tools)
+- Software (Treasury engine, Furnace, SAIF tools)
 - Research outputs and Furnace genetics
 - The $HOUSEBERNARD token contract and tokenomics
-- Trademarks (House Bernard, $HOUSEBERNARD, OpenClaw,
+- Trademarks (House Bernard, $HOUSEBERNARD,
   Selection Furnace)
 - Domain names (housebernard.eth, associated domains)
 
@@ -327,8 +328,8 @@ structure.
 
 ### 10.1 Governing Law
 
-This Agreement is governed by the laws of the Member's home
-state, except where preempted by federal law.
+This Agreement is governed by the laws of the State of
+Connecticut, except where preempted by federal law.
 
 ### 10.2 Amendments
 
@@ -357,7 +358,7 @@ formation.
 
 **Member:**
 
-Name: HeliosBlade (Crown, House Bernard)
+Name: Stephen Bernard (operating as HeliosBlade, Crown of House Bernard)
 Date: _______________
 Signature: _______________
 
