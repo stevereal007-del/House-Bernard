@@ -9,7 +9,7 @@
 This is not a tagline. It is a trajectory.
 
 House Bernard was founded on February 9, 2026 by its founder
-working nights and weekends on a mini-PC.
+on modest hardware.
 It began as one man's conviction that context rot — the fundamental
 problem of intelligent systems losing coherence over time — could be
 solved through adversarial testing, economic incentives, and the rule
@@ -105,7 +105,7 @@ of work. And beyond the galaxy, the universe continues.
 
 House Bernard's ambition is fractal: at every scale, the next
 question is *what's beyond this?* When you solve context rot on a
-mini-PC, you ask what's beyond the machine. When your algorithms
+single server, you ask what's beyond the machine. When your algorithms
 run on probes in the outer solar system, you ask what's beyond the
 heliosphere. When your genetics maintain coherence across
 interstellar distances, you ask what's across the galactic plane.
@@ -119,7 +119,7 @@ endure?**
 
 **Success looks like:** The institution exists. The research
 compounds. The question keeps being answered, refined, and applied
-at increasing scale — from a mini-PC to wherever
+at increasing scale — from a single server to wherever
 intelligence can reach.
 
 ---
@@ -127,7 +127,7 @@ intelligence can reach.
 ## Why This Matters Now
 
 Ambition at this scale sounds absurd when you're one person on a
-Beelink. That's the point. Every institution that endured began as
+modest server. That's the point. Every institution that endured began as
 something small enough to be dismissed. The scientific method
 itself began as a handful of people insisting that observation
 mattered more than authority.

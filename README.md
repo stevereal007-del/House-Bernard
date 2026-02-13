@@ -20,16 +20,12 @@ To compound **Clarity**, **Capital**, and **Capability** in a strict dependency 
 - **/ledger**: The Master Genome. Immutable system logic.
 - **/openclaw**: Agent specification, deployment configs, and behavioral directives.
 - **/treasury**: Financial engine. Royalty decay, bond yields, emission enforcement.
-- **/security**: AST-based static analysis and seccomp profiles for sandboxed execution.
-- **/infrastructure**: Beelink deployment script and operational architecture.
 - **/lab_b**: Security genetics laboratory. Adversarial harness for security-domain mutations.
 - **/briefs**: Research brief pipeline. Active, closed, and draft briefs.
-- **/legal**: LLC operating agreement, token terms of service, trademark guide (DRAFTS).
-- **/section_9**: Classified security operations. Crown authority only.
 
 ## IV. GOVERNANCE
 
-House Bernard is a sovereign "Dark Lab."
+House Bernard is a sovereign research institution.
 
 - We seek **Invariants**, not consensus.
 - We publish **Results**, never **Genetics**.
@@ -38,7 +34,6 @@ House Bernard is a sovereign "Dark Lab."
 
 Governance documents: [COVENANT.md](COVENANT.md) · [CONSTITUTION.md](CONSTITUTION.md) · [CROWN.md](CROWN.md) · [SUNSET_CLAUSE.md](SUNSET_CLAUSE.md) · [IDENTITY_INTEGRITY_ACT.md](IDENTITY_INTEGRITY_ACT.md) · [INTERNAL_SECURITY_ACT.md](INTERNAL_SECURITY_ACT.md) · [CITIZENSHIP.md](CITIZENSHIP.md) · [CITIZENSHIP_GUIDE.md](CITIZENSHIP_GUIDE.md) · [COUNCIL.md](COUNCIL.md) · [TREASURY.md](TREASURY.md) · [ROYALTIES.md](ROYALTIES.md) · [DEFENSE.md](DEFENSE.md) · [PHILOSOPHY.md](PHILOSOPHY.md) · [AGENTS_CODE.md](AGENTS_CODE.md) · [VISION.md](VISION.md) · [SOVEREIGN_ECONOMICS.md](SOVEREIGN_ECONOMICS.md) · [RESEARCH_BRIEF_TEMPLATE.md](RESEARCH_BRIEF_TEMPLATE.md) · [LAB_SCALING_MODEL.md](LAB_SCALING_MODEL.md)
 
-Legal infrastructure: [legal/](legal/) · [Operating Agreement](legal/OPERATING_AGREEMENT.md) · [Token Terms of Service](legal/TOKEN_TERMS_OF_SERVICE.md) · [Trademark Guide](legal/TRADEMARK_GUIDE.md)
 
 ## V. SAIF v1.1 CONTRACT
 
@@ -50,10 +45,8 @@ The **Sovereign Artifact Interface Format (SAIF) v1.1** defines the three mandat
 | `compact` | `(state: dict, lineage: list, target_bytes: int) -> new_state: dict` | Compress state to fit within a byte budget without losing invariants. |
 | `audit` | `(state: dict, lineage: list) -> "OK" or ("HALT", reason: str)` | Self-check. Returns OK or halts with a reason string. |
 
-Artifacts are single-file Python modules. No external dependencies. No network access. No filesystem writes outside `/work`. The Executioner tests each artifact through five escalating tiers (T0–T4) and kills at first failure. See [executioner/README.md](executioner/README.md) for test tier details.
+Artifacts are single-file Python modules. No external dependencies. No network access. No filesystem writes outside `/work`. The Executioner tests each artifact through five escalating tiers (T0–T4) and kills at first failure.
 
 -----
 
-**New here?** Start with [QUICKSTART.md](QUICKSTART.md).
-
-[STATUS: GREEN | SIGNED: THE GOVERNOR]
+[STATUS: GREEN | SIGNED: THE CROWN]

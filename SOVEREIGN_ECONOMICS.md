@@ -66,7 +66,7 @@ use:
 
 - Tax filings showing business activity under "House Bernard"
 - GitHub repository with timestamped commits
-- Google Cloud project registered to house.bernard.gov@gmail.com
+- Google Cloud project registered to institutional email
 - Governance documents dated February 2026
 - This document and all constitutional records
 
@@ -111,7 +111,7 @@ phase).
 
 | Category | Examples | Notes |
 |----------|----------|-------|
-| Hardware | Beelink EQ13, peripherals, storage | Section 179 or depreciate |
+| Hardware | Server hardware, peripherals, storage | Section 179 or depreciate |
 | Software | Anthropic API credits, Google Workspace, domain registrations | Subscription = current expense |
 | Internet | Portion of home internet attributable to business | Calculate % of business use |
 | Phone | Portion of phone bill (2FA, account management) | Calculate % of business use |
@@ -467,8 +467,7 @@ then the following happens:
 Nothing was hidden. Nothing was fraudulent. The invisible hand
 determined the value, and the value was zero. That happens to
 businesses every day. It is not a crime to try and fail. It is
-not a crime to build something ambitious on nights and weekends
-from a mini-PC.
+not a crime to build something ambitious from modest hardware.
 
 We did our best.
 

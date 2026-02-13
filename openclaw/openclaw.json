@@ -39,7 +39,7 @@
       "webhookPath": "/googlechat",
       "dm": {
         "policy": "allowlist",
-        "allowFrom": ["${GOVERNOR_GMAIL}"]
+        "allowFrom": ["${CROWN_GMAIL}"]
       },
       "groupPolicy": "disabled"
     },

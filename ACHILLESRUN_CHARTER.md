@@ -582,8 +582,7 @@ Within 90 days of this Charter's ratification, the Crown shall
 establish an Infrastructure Escrow containing:
 
 1. **Wallet backup** — GPG-encrypted copies of all Solana wallet
-   private keys (house-bernard-wallet.json, hb-unmined-treasury.json,
-   hb-governor-reserve.json, hb-genesis-contributors.json). The
+   private keys [CLASSIFIED — see private repo]. The
    passphrase shall be held by the human executor named in the
    Succession Instrument and stored in a separate secure location.
 

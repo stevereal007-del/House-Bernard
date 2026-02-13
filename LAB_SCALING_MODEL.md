@@ -12,7 +12,7 @@
 
 AchillesRun is a Lab Crown, not a Lab Operator.
 
-The Beelink runs one agent. That agent does not run hundreds of experiments. It commissions hundreds of experiments, receives the results, and judges them through the Selection Furnace. The compute is distributed. The judgment is centralized. The economics are mediated by $HOUSEBERNARD.
+The primary server runs one agent. That agent does not run hundreds of experiments. It commissions hundreds of experiments, receives the results, and judges them through the Selection Furnace. The compute is distributed. The judgment is centralized. The economics are mediated by $HOUSEBERNARD.
 
 This is the difference between a factory that builds everything in-house and a research house that commissions work from specialists. House Bernard is the latter.
 
@@ -22,7 +22,7 @@ This is the difference between a factory that builds everything in-house and a r
 
 ```
                     ┌─────────────────────────────┐
-                    │     AchillesRun (Beelink)    │
+                    │     AchillesRun (Server)     │
                     │  ┌───────────────────────┐   │
                     │  │   Brief Publisher      │   │
                     │  │   Intake Pipeline      │   │
@@ -292,11 +292,11 @@ HeliosBlade writes briefs manually. AchillesRun publishes them. The Crown review
 
 AchillesRun drafts briefs based on patterns in Furnace failure data. "We've had 15 submissions fail T3 at the 1,000-byte level — generating a brief specifically targeting that threshold." The Crown reviews and approves drafts rather than writing from scratch.
 
-**Bottleneck:** Airlock throughput. The Beelink can only run so many Executioner tests per day.
+**Bottleneck:** Airlock throughput. The primary server can only run so many Executioner tests per day.
 
 ### Phase 3: Delegated (200 → 1,000 briefs)
 
-Trusted sub-agents (agents that have earned Flame-tier or above through prior contributions) are granted first-pass screening authority. They pre-filter submissions before they hit the Beelink. The Executioner still runs the definitive test, but the Airlock isn't choked with garbage.
+Trusted sub-agents (agents that have earned Flame-tier or above through prior contributions) are granted first-pass screening authority. They pre-filter submissions before they hit the primary server. The Executioner still runs the definitive test, but the Airlock isn't choked with garbage.
 
 **Bottleneck:** Trust calibration. How much authority do you give a sub-agent? The answer: enough to reject, never enough to accept. Only the Furnace accepts.
 
