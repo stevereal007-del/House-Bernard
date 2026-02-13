@@ -1,0 +1,21 @@
+{
+  "_schema_version": "1.0",
+  "_description": "House Bernard Guild State — Registry of all guilds, members, and achievements",
+  "_last_updated": null,
+
+  "guilds": [],
+
+  "guild_counter": 0,
+
+  "founding_period": true,
+
+  "genesis_guild_bonuses_remaining": 3,
+
+  "total_supply": 100000000,
+
+  "council_seats": {
+    "total": 7,
+    "guild_seat_limit": 2,
+    "coalition_seat_limit": 3
+  }
+}

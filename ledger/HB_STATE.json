@@ -1,0 +1,110 @@
+{
+  "hb_state_version": "2.1",
+  "project": "House Bernard",
+  "public_face": "House Bernard",
+  "crown_alias": "HeliosBlade",
+  "agent_name": "AchillesRun",
+  "runtime": "OpenClaw",
+
+  "protocols": {
+    "saif": "v1.1",
+    "splicer": "v0.2",
+    "executioner": "v1.0",
+    "airlock": "v1.0",
+    "openclaw_agent": "v1.0",
+    "security_scanner": "v1.0",
+    "monthly_ops": "v1.0"
+  },
+
+  "labs": {
+    "lab_a_memory": {
+      "status": "ACTIVE",
+      "harness_set": "T0-T4",
+      "harness_hash": null
+    },
+    "lab_b_intent_integrity": {
+      "status": "ACTIVATING",
+      "harness_set": "I1-I6",
+      "harness_hash": null,
+      "operational": ["I1"],
+      "pending": ["I2", "I3", "I4", "I5", "I6"]
+    }
+  },
+
+  "infrastructure": {
+    "layer_1_server": {
+      "role": "OpenClaw gateway, AchillesRun agent, Labs, local models, treasury",
+      "status": "ACTIVE",
+      "openclaw_version": "latest",
+      "models": {
+        "worker": "ollama/mistral:7b",
+        "master": "ollama/llama3:8b",
+        "watcher": "ollama/llama3.2:3b",
+        "oracle": "anthropic/claude-sonnet-4-5"
+      }
+    },
+    "layer_2_github": {
+      "role": "Archive, version control, dead state storage",
+      "status": "ACTIVE"
+    }
+  },
+
+  "channels": {
+    "phase_0": {
+      "primary": "googlechat",
+      "status": "ACTIVE",
+      "crown_contact": "Google Chat DM"
+    }
+  },
+
+  "active_artifacts": {
+    "master_genome_hash": null,
+    "denylist_hash": null,
+    "reputation_db_hash": null,
+    "gene_registry_hash": null
+  },
+
+  "paths": {
+    "_comment": "Repo paths are relative to repo root. Runtime paths are under ~/.openclaw/ and created at startup.",
+    "repo": {
+      "root": ".",
+      "airlock": "airlock",
+      "splicer": "splicer",
+      "ledger": "ledger",
+      "openclaw": "openclaw",
+      "lab_b": "lab_b",
+      "treasury": "treasury"
+    },
+    "runtime": {
+      "_comment": "These directories live under ~/.openclaw/ and are NOT in the repo.",
+      "genes": "genes",
+      "results": "results",
+      "inbox": "inbox",
+      "sandbox": "sandbox",
+      "purgatory": "purgatory",
+      "quarantine": "quarantine",
+      "nullsink": "nullsink"
+    }
+  },
+
+  "treasury": {
+    "engine": "PLANNED",
+    "fee_schedule": null,
+    "payout_address": null,
+    "balance_wei": 0
+  },
+
+  "governance": {
+    "release_manager": "HeliosBlade",
+    "single_canonical_projects_folder": true,
+    "filesystem_is_the_law": true,
+    "publish_genetics": false,
+    "publish_repair_instructions": false,
+    "provide_assistance": false
+  },
+
+  "notes": {
+    "last_update_reason": "Repo split: scrubbed hardware specs, updated channels, removed classified paths",
+    "last_update_commit": null
+  }
+}

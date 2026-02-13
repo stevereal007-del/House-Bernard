@@ -1,0 +1,80 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "~/.openclaw/agents/achillesrun/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+
+  "session": {
+    "dmScope": "per-channel-peer",
+    "idleMinutes": 1440
+  },
+
+  "gateway": {
+    "mode": "local",
+    "bind": "loopback",
+    "port": 18789,
+    "auth": {
+      "mode": "token"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+
+  "channels": {
+    "googlechat": {
+      "enabled": false,
+      "serviceAccountFile": "${GOOGLE_CHAT_SERVICE_ACCOUNT_FILE}",
+      "audienceType": "app-url",
+      "audience": "${GOOGLE_CHAT_WEBHOOK_URL}",
+      "webhookPath": "/googlechat",
+      "dm": {
+        "policy": "allowlist",
+        "allowFrom": ["${CROWN_GMAIL}"]
+      },
+      "groupPolicy": "disabled"
+    },
+
+    "discord": {
+      "enabled": false,
+      "token": "${DISCORD_BOT_TOKEN}"
+    }
+  },
+
+  "memory": {
+    "backend": "qmd",
+    "citations": "auto",
+    "qmd": {
+      "includeDefaultMemory": true,
+      "sessions": { "enabled": true },
+      "update": { "interval": "5m", "debounceMs": 15000 },
+      "limits": { "maxResults": 6, "timeoutMs": 4000 },
+      "paths": [
+        { "name": "sanctum", "path": "~/.openclaw/agents/achillesrun/workspace/sanctum", "pattern": "**/*.md" },
+        { "name": "covenant", "path": "~/House-Bernard", "pattern": "COVENANT.md" }
+      ]
+    }
+  },
+
+  "cron": {
+    "enabled": true
+  },
+
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "HB_OUTCOME_V1",
+  "required": [
+    "artifact_id",
+    "pubkey",
+    "stage",
+    "result",
+    "classes",
+    "fingerprint"
+  ],
+  "fields": {
+    "artifact_id": "sha256:<hex>  (content address of uploaded archive OR manifest-defined artifact hash)",
+    "pubkey": "ed25519:<hex> (string, not validated here)",
+    "stage": "AIRLOCK|EXECUTIONER|SPLICER",
+    "result": "ACCEPTED|QUEUED|QUARANTINED|SURVIVED|CULLED|BLACKLISTED|REJECTED",
+    "classes": "array of coarse reason codes (no exploit hints)",
+    "fingerprint": "public-safe single-line fingerprint",
+    "details": "object (optional, INTERNAL ONLY)",
+    "paths": "object (optional) with result paths written",
+    "timestamps": "object (optional, only if you want them; not required for determinism)"
+  }
+}
