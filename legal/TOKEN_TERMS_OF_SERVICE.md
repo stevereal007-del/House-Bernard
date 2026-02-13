@@ -339,7 +339,7 @@ extent necessary to make them valid and enforceable.
 
 For questions regarding these Terms:
 
-- Repository: github.com/[House-Bernard]
+- Repository: github.com/HouseBernard/House-Bernard
 - ENS: housebernard.eth (when registered)
 - Crown: HeliosBlade
 

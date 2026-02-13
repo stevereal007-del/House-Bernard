@@ -105,7 +105,7 @@ services involving digital currency"
 
 **Notes:** File as Intent to Use (1(b)) because the token
 is not yet deployed on a public blockchain. Convert to Use
-in Commerce when the ERC-20 contract is deployed and the
+in Commerce when the Solana SPL token is deployed and the
 token economy is active. The $ symbol is part of the mark
 as it is how the token is referenced in all governance
 documents.
@@ -130,37 +130,9 @@ blockchain-based governance and voting systems"
 
 ---
 
-## Mark 3: OPENCLAW
+## Mark 3: SELECTION FURNACE
 
 ### Filing 3A — Class 42
-
-| Field | Value |
-|-------|-------|
-| **Mark** | OPENCLAW |
-| **Mark type** | Standard character mark |
-| **Class** | 42 — Scientific and technological services |
-| **Basis** | 1(a) Use in Commerce |
-| **First use date** | February 2026 |
-| **First use in commerce date** | February 2026 |
-
-**Goods/Services Description (from ID Manual):**
-
-"Providing an online platform for artificial intelligence
-agent development and testing; Software as a service (SaaS)
-featuring software for artificial intelligence research;
-Computer software development in the field of autonomous
-agent systems"
-
-**Specimen:** Screenshot of the OpenClaw configuration
-(openclaw.json) and agent specification (AGENT_SPEC.md)
-showing the OPENCLAW mark in connection with AI agent
-development services.
-
----
-
-## Mark 4: SELECTION FURNACE
-
-### Filing 4A — Class 42
 
 | Field | Value |
 |-------|-------|
@@ -178,9 +150,9 @@ services in the field of artificial intelligence safety"
 
 ---
 
-## Mark 5: BERNARD GUARD
+## Mark 4: BERNARD GUARD
 
-### Filing 5A — Class 42
+### Filing 4A — Class 42
 
 | Field | Value |
 |-------|-------|
@@ -231,13 +203,12 @@ a filing date even though the token isn't live yet.
 
 | Mark | Class | Basis | Cost |
 |------|-------|-------|------|
-| OPENCLAW | 42 | Use in Commerce | $250 |
 | SELECTION FURNACE | 42 | Intent to Use | $250 |
 | BERNARD GUARD | 42 | Intent to Use | $250 |
 
-**Total remaining: $750**
+**Total remaining: $500**
 
-### Grand Total: $1,750
+### Grand Total: $1,500
 
 Versus $5,000-15,000+ with a trademark attorney for the
 same filings.
@@ -283,11 +254,11 @@ pricing.
 
 ### Step 6: Enter Owner Information
 
-- **Owner:** House Bernard LLC (once formed) or HeliosBlade
+- **Owner:** House Bernard LLC (once formed) or Stephen Bernard
   DBA House Bernard (if filing before LLC formation)
 - **Entity type:** Limited liability company (or individual
   DBA if pre-LLC)
-- **State of formation:** Crown's home state
+- **State of formation:** Connecticut
 - **Address:** Registered business address
 
 ### Step 7: Upload Specimen (Use in Commerce only)
