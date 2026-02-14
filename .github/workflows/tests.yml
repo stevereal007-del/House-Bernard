@@ -29,3 +29,6 @@ jobs:
 
       - name: Treasury red-team tests
         run: python3 treasury/redteam_test.py
+
+      - name: Site build
+        run: python3 openclaw/build.py

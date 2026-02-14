@@ -34,19 +34,19 @@
   <div class="page-width">
     <div class="stats-row animate-in">
       <div class="stat-item">
-        <div class="stat-number">{{survived}}</div>
+        <div class="stat-number">0</div>
         <div class="stat-label">Survived</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">{{culled}}</div>
+        <div class="stat-number">0</div>
         <div class="stat-label">Culled</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">{{blacklisted}}</div>
+        <div class="stat-number">0</div>
         <div class="stat-label">Blacklisted</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">{{quarantined}}</div>
+        <div class="stat-number">0</div>
         <div class="stat-label">Quarantined</div>
       </div>
     </div>
@@ -59,7 +59,7 @@
     <h2 class="section-title">Results</h2>
     <table class="clean-table">
       <tr><th>Artifact</th><th>Stage</th><th>Result</th><th>Classes</th><th>Fingerprint</th></tr>
-      {{result_rows}}
+      <tr><td colspan='5'>No results yet.</td></tr>
     </table>
   </div>
 </section>
@@ -75,7 +75,7 @@
     </div>
     <table class="clean-table">
       <tr><th>Gene SHA256</th><th>Functions</th><th>Source</th></tr>
-      {{gene_rows}}
+      <tr><td colspan='3'>Gene registry not yet published.</td></tr>
     </table>
   </div>
 </section>
@@ -90,7 +90,7 @@
     </div>
     <table class="clean-table">
       <tr><th>Fingerprint</th><th>Reason</th></tr>
-      {{denylist_rows}}
+      <tr><td colspan='2'>No entries.</td></tr>
     </table>
   </div>
 </section>
