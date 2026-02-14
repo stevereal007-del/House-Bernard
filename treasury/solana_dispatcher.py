@@ -453,7 +453,7 @@ def generate_config_template(output_path="dispatcher_config.json"):
             },
             "crown_reserve": {
                 "keypair_path": "[CLASSIFIED — see private repo]",
-                "address": "<GOVERNOR_RESERVE_ADDRESS>",
+                "address": "<CROWN_RESERVE_ADDRESS>",
                 "purpose": "15M crown reserve — emergencies, partnerships",
             },
             "genesis_contributors": {

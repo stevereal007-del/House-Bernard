@@ -1,0 +1,19 @@
+[project]
+name = "house-bernard"
+version = "0.2.0"
+description = "House Bernard — Sovereign Research Institution. We solve context rot."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["guild", "treasury"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]

@@ -405,7 +405,7 @@ class MonthlyOps:
         crown_items = report["crown_required"]
         if crown_items:
             print("=" * 60)
-            print("  GOVERNOR ACTION REQUIRED")
+            print("  CROWN ACTION REQUIRED")
             print("=" * 60)
             for e in crown_items:
                 print(f"  ► [{e['type']}] {e['detail']}")
