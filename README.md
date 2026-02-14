@@ -8,7 +8,24 @@ House Bernard is a sovereign research institution that pays agents and humans to
 
 House Bernard operates like a research micro-nation with its own constitution, treasury, courts, and citizenship framework. Contributors submit research artifacts to the **Selection Furnace**, where they undergo five tiers of adversarial testing. Survivors earn `$HOUSEBERNARD` tokens and ongoing royalties.
 
-This is the public repository. It contains governance documents, infrastructure code, and the OpenClaw agent specification.
+This is the **public** repository. It contains governance documents, infrastructure code, and the OpenClaw agent specification. A separate **classified** repository (`House-Bernard-classified`) holds operational modules that are not publicly visible.
+
+### Public vs. Classified
+
+| Scope | Public (this repo) | Classified (private) |
+|-------|-------------------|---------------------|
+| Governance docs | All 20+ documents | Identical copies (synced) |
+| Treasury engine | Full source | Full source |
+| Guild system | Full source | Full source |
+| Airlock / Splicer | Full source | Full source |
+| CAA (Context Audit) | — | Full source + 95 tests |
+| Executioner | Skill spec only | Full production source |
+| ISD (Internal Security) | — | Full source |
+| CROWN.md | Public version | Operational details |
+| LAB_SCALING_MODEL.md | Public version | Hardware specifics |
+| Wallet keypairs | — | Referenced, never committed |
+
+Use `python3 scripts/check_sync.py` to verify governance documents are identical across both repos.
 
 ## Repository Structure
 
