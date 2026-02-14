@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "required": ["keys", "total_events", "_version"],
+  "properties": {
+    "keys": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["value", "writes"],
+        "properties": {
+          "value": {"type": "string"},
+          "writes": {"type": "integer", "minimum": 1}
+        }
+      }
+    },
+    "total_events": {"type": "integer", "minimum": 0},
+    "_version": {"type": "integer"}
+  }
+}

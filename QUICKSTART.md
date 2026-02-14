@@ -1,108 +1,88 @@
-# House Bernard — Quick Start (Phase 0)
+# Quick Start Guide
 
-Get Lab A Phase 0 running in under 30 minutes.
+Get House Bernard running locally in under five minutes.
 
 ## Prerequisites
 
-- Ubuntu/Linux machine (Beelink EQ13 recommended)
-- Docker installed
-- Python 3.10+
-- 16 GB RAM minimum
+| Requirement | Version | Check |
+|-------------|---------|-------|
+| Python | 3.10+ | `python3 --version` |
+| Git | any | `git --version` |
+| pip | any | `pip3 --version` |
 
-## Installation
-
-### 1. Clone Repository
+## Setup
 
 ```bash
-cd ~
-git clone <CLASSIFIED_REPO_URL> House-Bernard
+# 1. Clone the repository
+git clone https://github.com/HouseBernard/House-Bernard.git
 cd House-Bernard
+
+# 2. (Optional) Create a virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 3. Install dev dependencies (if needed)
+pip3 install --break-system-packages ruff  # Linter (optional)
 ```
 
-### 2. Install Dependencies
+No external Python packages are required. House Bernard uses the standard library only.
+
+## Run Tests
 
 ```bash
-# Docker
-sudo apt install -y docker.io
-sudo usermod -aG docker $USER
-newgrp docker
-
-# Python packages
-pip3 install watchdog --break-system-packages
-```
-
-### 3. Create Runtime Directories
-
-```bash
-mkdir -p ~/.openclaw/lab_a/{results,survivors}
-mkdir -p ~/.openclaw/{inbox,sandbox,purgatory,quarantine,nullsink}
-```
-
-### 4. Pull and Pin Docker Image
-
-```bash
-docker pull python:3.10.15-alpine
-
-# Get digest and update executioner_production.py DOCKER_IMAGE constant
-docker inspect --format='{{index .RepoDigests 0}}' python:3.10.15-alpine
-```
-
-### 5. Start Airlock Monitor
-
-```bash
-cd ~/House-Bernard/airlock
-python3 airlock_monitor.py
-```
-
-Leave running in a terminal (or install the systemd service: `airlock/airlock.service`).
-
-### 6. Submit a SAIF Artifact
-
-In another terminal, create a valid SAIF v1.1 artifact (a `.zip` containing `manifest.json`, `schema.json`, `mutation.py`, `SELFTEST.py`, and `README.md` per the SAIF v1.1 contract), then drop it in the inbox:
-
-```bash
-cp my_artifact.zip ~/.openclaw/inbox/
-```
-
-> **Note:** No pre-built test artifact is shipped with the repo. See `executioner/README.md` for the required file structure.
-
-### 7. Watch the Results
-
-The airlock will detect the artifact, move it to sandbox, run the Executioner (T0–T4), and log the verdict.
-
-```bash
-# View logs
-cat ~/.openclaw/lab_a/results/ELIMINATION_LOG.jsonl
-cat ~/.openclaw/lab_a/results/SURVIVOR_LOG.jsonl
-
-# Check for survivors
-ls ~/.openclaw/lab_a/survivors/
-```
-
-### 8. Run All Tests
-
-```bash
-cd ~/House-Bernard
+# Run all test suites
 python3 run_tests.py
+
+# Run with verbose output
+python3 run_tests.py -v
+
+# Run individual suites
+python3 -m unittest guild/test_guild_system.py -v
+python3 treasury/redteam_test.py
+python3 treasury/redteam_monthly_ops.py
+python3 treasury/test_backend.py
 ```
 
-## Phase 0 Complete When
+## Build the Website
 
-- One survivor passes T0–T4
-- One gene extracted and documented in `ledger/GENE_REGISTRY.md`
-- System runs deterministically
-- No security incidents
-- All test suites pass (`run_tests.py`)
+```bash
+python3 openclaw/build.py
+# Output: openclaw_site/
+```
 
 ## Troubleshooting
 
-| Problem | Fix |
-|---------|-----|
-| Docker permission denied | `sudo usermod -aG docker $USER && newgrp docker` |
-| Executioner not found | Verify `executioner/executioner_production.py` exists |
-| No module 'watchdog' | `pip3 install watchdog --break-system-packages` |
-| CAA tests fail with import error | Run from repo root: `python3 caa/test_caa.py` |
+| Problem | Solution |
+|---------|----------|
+| `ModuleNotFoundError` | Run from repo root: `cd House-Bernard` |
+| `pip install` fails on Ubuntu 24+ | Add `--break-system-packages` flag |
+| Tests fail with import errors | Ensure Python 3.10+: `python3 --version` |
+| `openclaw/build.py` fails | Ensure `ledger/HB_STATE.json` exists |
+
+## Project Layout
+
+```
+House-Bernard/
+  run_tests.py          <- Master test runner
+  hb_utils.py           <- Shared utilities
+  pyproject.toml        <- Project metadata
+  treasury/             <- Financial engine + tests
+  guild/                <- Guild system + tests
+  airlock/              <- Intake monitoring
+  splicer/              <- Gene extraction
+  ledger/               <- Outcome records
+  openclaw/             <- Agent spec + site builder
+  briefs/               <- Research briefs
+  token/                <- Token metadata
+```
 
 ## Next Steps
 
-After first survivor: extract gene → document in ledger → plan Phase 1 (expanded adversarial testing, Splicer integration).
+1. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the submission process
+2. Browse [`briefs/active/`](briefs/active/) for open research problems
+3. Read the [CONSTITUTION.md](CONSTITUTION.md) and [COVENANT.md](COVENANT.md)
+4. Study the [RESEARCH_BRIEF_TEMPLATE.md](RESEARCH_BRIEF_TEMPLATE.md)
+
+---
+
+*Ad Astra Per Aspera*

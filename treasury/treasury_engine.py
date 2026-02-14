@@ -18,6 +18,14 @@ import os
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+# Shared utilities — canonical implementations in hb_utils.py
+import sys as _sys
+from pathlib import Path as _P
+_repo_root = str(_P(__file__).resolve().parents[1])
+if _repo_root not in _sys.path:
+    _sys.path.insert(0, _repo_root)
+from hb_utils import now as _now, parse_dt as _parse_dt, format_dt as _format_dt, months_between as _months_between, atomic_save as _atomic_save, load_json as _load_json
+
 
 # ---------------------------------------------------------------------------
 # Constants from ROYALTIES.md and TREASURY.md
@@ -48,22 +56,9 @@ EARLY_EXIT_FORFEIT     = 0.50
 # Utility
 # ---------------------------------------------------------------------------
 
-def _now():
-    return datetime.now(timezone.utc)
 
-def _parse_dt(s):
-    if s is None:
-        return None
-    if isinstance(s, datetime):
-        return s
-    return datetime.fromisoformat(s.replace("Z", "+00:00"))
 
-def _months_between(start, end):
-    delta = end - start
-    return max(0, delta.days / 30.44)
 
-def _format_dt(dt):
-    return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 # ---------------------------------------------------------------------------

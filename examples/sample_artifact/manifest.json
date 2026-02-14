@@ -1,0 +1,10 @@
+{
+  "saif_version": "1.1",
+  "artifact_name": "kv_counter",
+  "artifact_version": "1.0.0",
+  "author": "House Bernard (sample)",
+  "description": "Key-value counter with write frequency tracking. Demonstrates all three SAIF v1.1 functions.",
+  "entry_point": "mutation.py",
+  "selftest": "SELFTEST.py",
+  "invariants": ["total_events is never lost during compaction"]
+}

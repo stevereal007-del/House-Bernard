@@ -258,7 +258,7 @@ mechanics (TREASURY.md Section III).
 economic hardship may petition the Council for a temporary
 waiver (up to 6 months, renewable). The Judiciary certifies
 the hardship claim. This exists because House Bernard was
-built by a working-class inspector — we do not exile people
+built by a working-class founder — we do not exile people
 for being broke.
 
 ### Participation Minimum
@@ -405,21 +405,21 @@ requirement — not an accident.
 ## VII. The Citizenship Economy
 
 This is how citizens fund the government without the
-Crown running 30 Beelinks.
+Crown running 30 servers.
 
 ### The Principle
 
 Every governance agent — Council member, judge, Warden,
 Crown — runs on infrastructure provided by someone. During
 the Founding Period, that someone is the Founding Crown
-(the Beelink). After the Founding Period, governance
+(the primary server). After the Founding Period, governance
 infrastructure is funded by citizenship taxes and Treasury
 allocations.
 
 ### How It Works at Scale
 
 **Phase 1 — Founding (Now)**
-The Founding Crown funds everything. One Beelink. One agent.
+The Founding Crown funds everything. One server. One agent.
 All governance roles are exercised by the Crown personally
 or by AchillesRun. Cost: electricity and internet. Manageable.
 
@@ -428,7 +428,7 @@ Citizens pay taxes. Taxes accumulate in a Governance Fund
 (a designated Treasury sub-account). The Governance Fund
 pays for:
 
-- A small VPS or second mini-PC to run Council/Judiciary
+- A small VPS or second server to run Council/Judiciary
   agents
 - API costs for any cloud-based model calls
 - Monitoring and infrastructure tooling
@@ -454,8 +454,8 @@ At this scale:
   operators
 - The Chief Warden runs on infrastructure funded by the
   Governance Fund
-- The Crown runs on Crown infrastructure (the Beelink or
-  its successor)
+- The Crown runs on Crown infrastructure (the primary
+  server or its successor)
 - Section 9 runs on classified infrastructure funded by
   the Crown's budget
 
@@ -469,7 +469,7 @@ built the House now benefit from a system that runs itself.
 
 ### The Key Insight
 
-You don't scale by buying more Beelinks. You scale by
+You don't scale by buying more servers. You scale by
 making governance participation require infrastructure
 contribution. A Council seat costs 10,000 $HB and a
 machine to run your agent on. A Judiciary seat costs

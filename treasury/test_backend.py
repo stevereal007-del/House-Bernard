@@ -239,7 +239,7 @@ def test_cpa_expense_recording():
 
     try:
         cpa = CPAAgent(ledger_path=tmp_path)
-        cpa.record_expense("hardware", "Beelink EQ13", 180.00)
+        cpa.record_expense("hardware", "server hardware", 180.00)
         cpa.record_expense("software", "Claude Pro monthly", 20.00)
         cpa.record_expense("legal", "LLC filing", 120.00)
 
@@ -280,7 +280,7 @@ def test_cpa_yearly_report():
             "reason": "test",
             "tx_signature": "sig_1",
         })
-        cpa.record_expense("hardware", "Beelink", 180.00, date="2026-02-10T00:00:00Z")
+        cpa.record_expense("hardware", "server hardware", 180.00, date="2026-02-10T00:00:00Z")
         cpa.record_expense("software", "Claude Pro", 20.00, date="2026-02-10T00:00:00Z")
 
         report = cpa.yearly_report(2026)

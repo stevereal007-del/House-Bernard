@@ -224,7 +224,7 @@ for synthetic Crowns with indefinite lifespans.
 
 ### The Founding Crown
 
-Steve Bernard, HeliosBlade, is the Founding Crown. This is
+HeliosBlade is the Founding Crown. This is
 not subject to election. The founder built the House, wrote
 the Covenant, designed the Constitution, and deployed the
 infrastructure. The right to serve as Founding Crown is earned
