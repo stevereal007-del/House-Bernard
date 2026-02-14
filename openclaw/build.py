@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-OpenClaw Static Site Builder (v0.2)
+OpenClaw Static Site Builder (v0.3)
 Reads ledger/HB_STATE.json and results/*/outcome.json.
-Writes openclaw_site/ with dashboard, results, genes, denylist, about + assets.
+Writes docs/ (GitHub Pages) from openclaw/templates/.
 Standard library only. No network. No untrusted code execution.
 """
 from __future__ import annotations
@@ -15,7 +15,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 LEDGER_DIR = REPO_ROOT / "ledger"
 RESULTS_DIR = REPO_ROOT / "results"
 TEMPLATES_DIR = Path(__file__).resolve().parent / "templates"
-OUT_DIR = REPO_ROOT / "openclaw_site"
+OUT_DIR = REPO_ROOT / "docs"
+BRIEFS_DIR = REPO_ROOT / "briefs"
 ASSETS = ["style.css", "theme.js"]
 
 
@@ -76,41 +77,89 @@ def build_index(state, outcomes):
         r = o.get("result", "UNKNOWN")
         if r in counts:
             counts[r] += 1
+    active_briefs = 0
+    active_dir = BRIEFS_DIR / "active"
+    if active_dir.exists():
+        active_briefs = sum(1 for f in active_dir.iterdir() if f.suffix in (".md", ".json"))
     context = {
         "project": state.get("project", "House Bernard"),
         "survived": counts["SURVIVED"], "culled": counts["CULLED"],
         "blacklisted": counts["BLACKLISTED"], "queued": counts["QUEUED"],
         "quarantined": counts["QUARANTINED"], "rejected": counts["REJECTED"],
+        "active_briefs": active_briefs,
     }
     write_text(OUT_DIR / "index.html", render_template("index.html", context))
 
 
-def build_results(outcomes):
-    rows = []
+STATIC_PAGES = ["about.html", "economics.html", "governance.html"]
+
+
+def build_static_pages():
+    for page in STATIC_PAGES:
+        tpl_path = TEMPLATES_DIR / page
+        if tpl_path.exists():
+            write_text(OUT_DIR / page, render_template(page, {}))
+
+
+def build_pipeline(outcomes):
+    counts = {"SURVIVED": 0, "CULLED": 0, "BLACKLISTED": 0,
+              "QUARANTINED": 0}
     for o in outcomes:
-        rows.append(
+        r = o.get("result", "UNKNOWN")
+        if r in counts:
+            counts[r] += 1
+    result_rows = []
+    for o in outcomes:
+        result_rows.append(
             f"<tr><td>{o.get('artifact_id', '')}</td>"
             f"<td>{o.get('stage', '')}</td>"
             f"<td>{o.get('result', '')}</td>"
             f"<td>{','.join(o.get('classes', []))}</td>"
             f"<td>{o.get('fingerprint', '')}</td></tr>"
         )
-    context = {"rows": "\n".join(rows) if rows else "<tr><td colspan='5'>No results yet.</td></tr>"}
-    write_text(OUT_DIR / "results.html", render_template("results.html", context))
+    context = {
+        "survived": counts["SURVIVED"],
+        "culled": counts["CULLED"],
+        "blacklisted": counts["BLACKLISTED"],
+        "quarantined": counts["QUARANTINED"],
+        "result_rows": "\n".join(result_rows) if result_rows
+            else "<tr><td colspan='5'>No results yet.</td></tr>",
+        "gene_rows": "<tr><td colspan='3'>Gene registry not yet published.</td></tr>",
+        "denylist_rows": "<tr><td colspan='2'>No entries.</td></tr>",
+    }
+    write_text(OUT_DIR / "pipeline.html", render_template("pipeline.html", context))
 
 
-def build_genes():
-    context = {"rows": "<tr><td colspan='3'>Gene registry not yet published.</td></tr>"}
-    write_text(OUT_DIR / "genes.html", render_template("genes.html", context))
+def build_briefs():
+    def brief_card(path: Path) -> str:
+        text = path.read_text(encoding="utf-8")
+        title = path.stem.replace("_", " ").replace("-", " ").title()
+        for line in text.splitlines():
+            if line.startswith("# "):
+                title = line.lstrip("# ").strip()
+                break
+        return (f'<div class="card"><div class="card-title">{title}</div>'
+                f'<div class="card-text">{path.name}</div></div>')
 
-
-def build_denylist():
-    context = {"rows": "<tr><td colspan='2'>Denylist not yet published.</td></tr>"}
-    write_text(OUT_DIR / "denylist.html", render_template("denylist.html", context))
-
-
-def build_about():
-    write_text(OUT_DIR / "about.html", render_template("about.html", {}))
+    active_rows: List[str] = []
+    closed_rows: List[str] = []
+    active_dir = BRIEFS_DIR / "active"
+    closed_dir = BRIEFS_DIR / "closed"
+    if active_dir.exists():
+        for f in sorted(active_dir.iterdir()):
+            if f.suffix in (".md", ".json"):
+                active_rows.append(brief_card(f))
+    if closed_dir.exists():
+        for f in sorted(closed_dir.iterdir()):
+            if f.suffix in (".md", ".json"):
+                closed_rows.append(brief_card(f))
+    context = {
+        "active_brief_rows": "\n".join(active_rows) if active_rows
+            else '<div class="section-body"><p>No active briefs at this time.</p></div>',
+        "closed_brief_rows": "\n".join(closed_rows) if closed_rows
+            else '<div class="section-body"><p>No closed briefs yet.</p></div>',
+    }
+    write_text(OUT_DIR / "briefs.html", render_template("briefs.html", context))
 
 
 def main() -> int:
@@ -119,10 +168,9 @@ def main() -> int:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     copy_assets()
     build_index(state, outcomes)
-    build_results(outcomes)
-    build_genes()
-    build_denylist()
-    build_about()
+    build_pipeline(outcomes)
+    build_briefs()
+    build_static_pages()
     print(f"OpenClaw site built at: {OUT_DIR}")
     return 0
 

@@ -27,7 +27,6 @@ Thumbs.db
 docker-compose.override.yml
 
 # Build outputs
-openclaw_site/
 *.zip
 
 # Lab runtime data (generated, not source — anchored to repo root)
