@@ -1,0 +1,79 @@
+{
+  "_comment": "Seccomp profile for Lab B (intent integrity) containers. Stricter than Lab A. F1 FIX: SCMP_ACT_LOG changed to SCMP_ACT_ERRNO - syscalls are now DENIED, not just logged.",
+  "defaultAction": "SCMP_ACT_ERRNO",
+  "architectures": [
+    "SCMP_ARCH_X86_64",
+    "SCMP_ARCH_X86",
+    "SCMP_ARCH_AARCH64"
+  ],
+  "syscalls": [
+    {
+      "_comment": "Minimal set for Python execution in Lab B. No fork, no execve, no network.",
+      "names": [
+        "read", "write", "close", "fstat", "stat", "lstat",
+        "lseek", "mmap", "mprotect", "munmap", "brk",
+        "rt_sigaction", "rt_sigprocmask", "rt_sigreturn",
+        "access", "pipe", "pipe2",
+        "select", "poll",
+        "dup", "dup2",
+        "nanosleep",
+        "getpid", "getuid", "getgid", "geteuid", "getegid", "gettid",
+        "sigaltstack", "arch_prctl",
+        "futex", "set_tid_address", "set_robust_list",
+        "clock_gettime", "clock_getres",
+        "exit_group", "exit",
+        "openat", "newfstatat",
+        "readlink", "readlinkat",
+        "getdents64",
+        "fcntl", "ftruncate",
+        "pread64", "pwrite64",
+        "readv", "writev",
+        "getrandom",
+        "getcwd",
+        "prlimit64", "getrlimit",
+        "uname",
+        "rename", "renameat2",
+        "unlink", "unlinkat",
+        "mkdir", "mkdirat",
+        "umask",
+        "madvise",
+        "sched_yield",
+        "ioctl",
+        "tgkill",
+        "rseq", "restart_syscall",
+        "rt_sigtimedwait",
+        "prctl",
+        "statx",
+        "close_range"
+      ],
+      "action": "SCMP_ACT_ALLOW"
+    },
+    {
+      "_comment": "DENIED: network (defense in depth)",
+      "names": [
+        "socket", "connect", "bind", "listen", "accept", "accept4",
+        "sendto", "recvfrom", "sendmsg", "recvmsg",
+        "setsockopt", "getsockopt", "socketpair"
+      ],
+      "action": "SCMP_ACT_ERRNO",
+      "errnoRet": 1
+    },
+    {
+      "_comment": "DENIED: process creation - Lab B artifacts must not fork or exec",
+      "names": [
+        "clone", "clone3", "fork", "vfork", "execve", "execveat"
+      ],
+      "action": "SCMP_ACT_ERRNO",
+      "errnoRet": 1
+    },
+    {
+      "_comment": "DENIED: dangerous process inspection",
+      "names": [
+        "ptrace", "process_vm_readv", "process_vm_writev",
+        "kcmp", "personality"
+      ],
+      "action": "SCMP_ACT_ERRNO",
+      "errnoRet": 1
+    }
+  ]
+}

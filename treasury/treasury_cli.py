@@ -104,7 +104,7 @@ def cmd_report(engine):
     # Crown actions
     actions = report["crown_actions"]
     print(f"\n{'─' * 40}")
-    print("  GOVERNOR ACTION ITEMS")
+    print("  CROWN ACTION ITEMS")
     print(f"{'─' * 40}")
     if actions:
         for a in actions:
