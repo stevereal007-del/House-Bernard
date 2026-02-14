@@ -70,7 +70,7 @@ The Selection Cycle, the Executioner logic, the Splicer mutations — it's all v
 
 ## On Money
 
-House Bernard needs money to operate. Servers cost electricity. APIs cost credits. Development costs time.
+House Bernard needs money to operate. The Beelink costs electricity. APIs cost credits. Development costs time.
 
 The token exists to solve this problem without:
 - Selling equity (we keep control)

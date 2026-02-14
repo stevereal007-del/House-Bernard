@@ -447,17 +447,17 @@ def generate_config_template(output_path="dispatcher_config.json"):
         "network": "mainnet-beta",
         "wallets": {
             "unmined_treasury": {
-                "keypair_path": "[CLASSIFIED — see private repo]",
+                "keypair_path": "~/hb-unmined-treasury.json",
                 "address": "<UNMINED_TREASURY_ADDRESS>",
                 "purpose": "60M unmined treasury — bounties, royalties, bonds",
             },
             "crown_reserve": {
-                "keypair_path": "[CLASSIFIED — see private repo]",
+                "keypair_path": "~/hb-crown-reserve.json",
                 "address": "<CROWN_RESERVE_ADDRESS>",
                 "purpose": "15M crown reserve — emergencies, partnerships",
             },
             "genesis_contributors": {
-                "keypair_path": "[CLASSIFIED — see private repo]",
+                "keypair_path": "~/hb-genesis-contributors.json",
                 "address": "<GENESIS_CONTRIBUTORS_ADDRESS>",
                 "purpose": "10M genesis contributors allocation",
             },

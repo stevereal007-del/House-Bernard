@@ -1,19 +1,21 @@
 [project]
 name = "house-bernard"
-version = "0.2.0"
-description = "House Bernard — Sovereign Research Institution. We solve context rot."
+version = "0.1.0"
+description = "Sovereign AI research institution — context rot is the enemy"
 requires-python = ">=3.10"
+license = {text = "Proprietary"}
+
+[project.optional-dependencies]
+treasury = ["watchdog>=3.0"]
+dev = ["pytest>=7.0"]
 
 [tool.pytest.ini_options]
-testpaths = ["guild", "treasury"]
-python_files = ["test_*.py"]
-python_classes = ["Test*"]
-python_functions = ["test_*"]
+testpaths = ["treasury", "guild"]
+python_files = ["test_*.py", "*_test.py"]
 
 [tool.ruff]
 target-version = "py310"
-line-length = 120
+line-length = 100
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]
-ignore = ["E501"]

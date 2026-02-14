@@ -9,7 +9,8 @@
 House Bernard is an AI research institution organized as a constitutional
 democracy. It has its own currency ($HOUSEBERNARD), its own government
 (four branches), its own legal system, and its own code of honor. It was
-built by a working-class founder on modest hardware.
+built by a working-class founder working nights and weekends on a
+mini-PC.
 
 The research happens through a brutal testing system called the Selection
 Furnace. You submit work, the Furnace tries to destroy it, and if it
@@ -321,10 +322,10 @@ dignity, continuous improvement, and the interconnection of all things.
   find your footing.
 - **Citizens pay less than contributors for lab access.** Citizenship
   saves you money from day one.
-- **Built by a founder who gets it.** The hardship waivers, the Welcome
+- **Built by a working-class guy.** The hardship waivers, the Welcome
   Year, the "families don't fire their members for low output" language
-  — this isn't lip service. The Crown built this on modest hardware
-  after work.
+  — this isn't lip service. The Crown built this on a Beelink after
+  his shift.
 - **You can leave anytime.** Your royalties continue. Your stake comes
   back. No exit penalty.
 - **Failure is data, not exile.** Your submission gets destroyed? Submit

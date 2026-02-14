@@ -2,35 +2,18 @@ House Bernard Proprietary License
 
 Copyright (c) 2026 House Bernard LLC. All rights reserved.
 
-TERMS AND CONDITIONS
+This software and associated documentation files (the "Software") are the
+property of House Bernard LLC. Unauthorized copying, modification,
+distribution, or use of this Software, via any medium, is strictly
+prohibited without prior written permission from the Crown.
 
-1. GOVERNANCE DOCUMENTS: The governance documents in this repository
-   (CONSTITUTION.md, COVENANT.md, CROWN.md, TREASURY.md, ROYALTIES.md,
-   and all other .md files in the root directory) are published for
-   transparency and public review. They may be read, referenced, and
-   cited with attribution. They may NOT be used as templates for
-   competing projects without written permission from the Crown.
+Research artifacts submitted through the OpenClaw pipeline are subject to
+the terms defined in ROYALTIES.md and TOKEN_PROTECTION_CHARTER.md. 
+Contributors retain intellectual property rights as specified in
+CITIZENSHIP.md, Article IV.
 
-2. SOURCE CODE: The Python source code, test suites, configuration
-   files, and infrastructure tooling in this repository are proprietary.
-   They may NOT be copied, modified, distributed, or used in derivative
-   works without explicit written permission from House Bernard LLC.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED. IN NO EVENT SHALL HOUSE BERNARD LLC BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY ARISING FROM THE USE OF THE SOFTWARE.
 
-3. RESEARCH ARTIFACTS: Contributions submitted through the Research
-   Brief system are governed by the terms specified in each brief and
-   the House Bernard Constitution (Article VII — Economic Rights).
-   Contributors retain moral rights as specified in the Covenant.
-
-4. WEBSITE AND ASSETS: The OpenClaw website templates, stylesheets,
-   and visual assets are proprietary to House Bernard LLC.
-
-5. NO WARRANTY: This software is provided "as is" without warranty of
-   any kind, express or implied. House Bernard LLC is not liable for
-   any damages arising from the use of this software.
-
-For licensing inquiries, contact the Crown through the official
-House Bernard GitHub repository.
-
-House Bernard LLC
-Connecticut, United States
-NAICS 541511 — Custom Computer Programming Services
+For licensing inquiries, contact the Crown through official channels.

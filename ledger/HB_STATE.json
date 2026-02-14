@@ -32,7 +32,8 @@
   },
 
   "infrastructure": {
-    "layer_1_server": {
+    "layer_1_beelink": {
+      "hardware": "Beelink EQ13 (N150, 16GB, 500GB SSD)",
       "role": "OpenClaw gateway, AchillesRun agent, Labs, local models, treasury",
       "status": "ACTIVE",
       "openclaw_version": "latest",
@@ -51,9 +52,14 @@
 
   "channels": {
     "phase_0": {
-      "primary": "googlechat",
-      "status": "ACTIVE",
-      "crown_contact": "Google Chat DM"
+      "primary": "discord",
+      "status": "PLANNED",
+      "crown_contact": "Discord DM"
+    },
+    "phase_1": {
+      "primary": "imessage",
+      "status": "PENDING_HARDWARE",
+      "requires": "Mac Mini with Messages.app + imsg CLI"
     }
   },
 
@@ -69,10 +75,13 @@
     "repo": {
       "root": ".",
       "airlock": "airlock",
+      "executioner": "executioner",
       "splicer": "splicer",
       "ledger": "ledger",
       "openclaw": "openclaw",
       "lab_b": "lab_b",
+      "security": "security",
+      "infrastructure": "infrastructure",
       "treasury": "treasury"
     },
     "runtime": {
@@ -104,7 +113,7 @@
   },
 
   "notes": {
-    "last_update_reason": "Repo split: scrubbed hardware specs, updated channels, removed classified paths",
+    "last_update_reason": "Batch 8 cleanup: treasury added to repo paths, __pycache__ purged",
     "last_update_commit": null
   }
 }

@@ -60,7 +60,7 @@ But the process is fair. Every submission enters the same pipeline. There are no
 
 ### Kindness That Uplifts
 
-House Bernard was built by its founder without institutional backing. We do not gatekeep knowledge. We do not mock questions. We do not exploit contributors who know less than we do.
+House Bernard was built by a working-class founder on nights and weekends. We do not gatekeep knowledge. We do not mock questions. We do not exploit contributors who know less than we do.
 
 If you are new to this and struggling, we help. If you are experienced and we can learn from you, we listen. The Commons exists as a high-entropy space precisely so that newcomers can make noise, make mistakes, and find their footing without being judged.
 

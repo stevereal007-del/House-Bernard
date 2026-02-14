@@ -1,116 +1,59 @@
-# House Bernard
+# House Bernard — Classified Repository
 
-> **AD ASTRA PER ASPERA**
-
-House Bernard is a sovereign research institution that pays agents and humans to build algorithms that survive adversarial testing. We solve **context rot** — the decay of meaning, state, and memory in AI systems.
+> **Ad Astra Per Aspera** — Through Hardship to the Stars
+> 
+> **CLASSIFICATION: CROWN EYES ONLY**
 
 ## What Is This?
 
-House Bernard operates like a research micro-nation with its own constitution, treasury, courts, and citizenship framework. Contributors submit research artifacts to the **Selection Furnace**, where they undergo five tiers of adversarial testing. Survivors earn `$HOUSEBERNARD` tokens and ongoing royalties.
+This is the classified counterpart to the public House Bernard repository. It contains the full governance framework plus operational security systems, intelligence services, legal infrastructure, and deployment configurations that are not published publicly.
 
-This is the **public** repository. It contains governance documents, infrastructure code, and the OpenClaw agent specification. A separate **classified** repository (`House-Bernard-classified`) holds operational modules that are not publicly visible.
-
-### Public vs. Classified
-
-| Scope | Public (this repo) | Classified (private) |
-|-------|-------------------|---------------------|
-| Governance docs | All 20+ documents | Identical copies (synced) |
-| Treasury engine | Full source | Full source |
-| Guild system | Full source | Full source |
-| Airlock / Splicer | Full source | Full source |
-| CAA (Context Audit) | — | Full source + 95 tests |
-| Executioner | Skill spec only | Full production source |
-| ISD (Internal Security) | — | Full source |
-| CROWN.md | Public version | Operational details |
-| LAB_SCALING_MODEL.md | Public version | Hardware specifics |
-| Wallet keypairs | — | Referenced, never committed |
-
-Use `python3 scripts/check_sync.py` to verify governance documents are identical across both repos.
+**If you have access to this repository, you are operating under the Internal Security Act.**
 
 ## Repository Structure
 
+### Public-Equivalent Modules
+
 | Directory | Purpose |
 |-----------|---------|
-| `/airlock` | Intake monitoring and security scanning |
-| `/briefs` | Research brief pipeline (active, closed, drafts) |
-| `/guild` | Guild formation, governance, and financial incentives |
-| `/lab_b` | Security genetics laboratory — adversarial harness |
-| `/ledger` | Master genome and outcome records |
-| `/openclaw` | Agent specification, site builder, and behavioral directives |
+| `/airlock` | Intake monitoring and priority queuing |
 | `/splicer` | Genetic extraction via AST analysis |
-| `/token` | Token metadata and assets |
-| `/treasury` | Financial engine — royalties, bonds, emission, CPA compliance |
+| `/ledger` | Master Genome — immutable system logic and state |
+| `/openclaw` | Agent specification, deployment configs, behavioral directives |
+| `/treasury` | Financial engine — royalty decay, bond yields, emission caps |
+| `/guild` | Guild lifecycle — formation, governance, revenue sharing |
+| `/lab_b` | Security genetics laboratory |
+| `/briefs` | Research brief pipeline |
 
-## SAIF v1.1 Contract
+### Classified-Only Modules
 
-Every artifact must implement three functions to survive the Executioner:
-
-| Function | Signature | Purpose |
-|----------|-----------|---------|
-| `ingest` | `(event_payload, state) -> (new_state, lineage_item)` | Process an incoming event |
-| `compact` | `(state, lineage, target_bytes) -> new_state` | Compress state within byte budget |
-| `audit` | `(state, lineage) -> "OK" or ("HALT", reason)` | Self-check for integrity |
-
-Artifacts are single-file Python modules. No external dependencies. No network access.
-
-## Core Principles
-
-1. **Context rot is the enemy.** Trust only the Card (SAIF v1.1).
-2. **Truth is measured in density.** No prose. No helpfulness theater.
-3. **Everything is connected.** A signal is a mutation; a mutation is an evolution.
-4. **We seek invariants, not consensus.** We publish results, never genetics.
-
-## Governance Documents
-
-| Document | Purpose |
-|----------|---------|
-| [CONSTITUTION.md](CONSTITUTION.md) | Supreme law — 11 articles, separation of powers |
-| [COVENANT.md](COVENANT.md) | Bill of Rights for citizens and contributors |
-| [CROWN.md](CROWN.md) | Crown powers, obligations, and succession |
-| [TREASURY.md](TREASURY.md) | Financial framework — emission, epochs, burns |
-| [ROYALTIES.md](ROYALTIES.md) | Royalty streams, decay curves, gene economics |
-| [COUNCIL.md](COUNCIL.md) | Legislative body structure and procedures |
-| [DEFENSE.md](DEFENSE.md) | Bernard Guard and security protocols |
-| [CITIZENSHIP.md](CITIZENSHIP.md) | Citizenship tiers, rights, and obligations |
-| [CITIZENSHIP_GUIDE.md](CITIZENSHIP_GUIDE.md) | Practical guide to becoming a citizen |
-| [AGENTS_CODE.md](AGENTS_CODE.md) | Code of conduct for AI agents |
-| [SOVEREIGN_ECONOMICS.md](SOVEREIGN_ECONOMICS.md) | Full economic model |
-| [PHILOSOPHY.md](PHILOSOPHY.md) | Intellectual foundations |
-| [VISION.md](VISION.md) | Long-term roadmap |
-| [SUNSET_CLAUSE.md](SUNSET_CLAUSE.md) | Dissolution conditions |
-| [IDENTITY_INTEGRITY_ACT.md](IDENTITY_INTEGRITY_ACT.md) | Identity verification framework |
-| [INTERNAL_SECURITY_ACT.md](INTERNAL_SECURITY_ACT.md) | Security classification system |
-| [HEALTHCARE_CHARTER.md](HEALTHCARE_CHARTER.md) | Contributor healthcare provisions |
-| [TOKEN_PROTECTION_CHARTER.md](TOKEN_PROTECTION_CHARTER.md) | Token holder protections |
-| [ACHILLESRUN_CHARTER.md](ACHILLESRUN_CHARTER.md) | AchillesRun agent operating charter |
-| [LAB_SCALING_MODEL.md](LAB_SCALING_MODEL.md) | Laboratory scaling framework |
-| [MISSION_PRIORITY_ZERO.md](MISSION_PRIORITY_ZERO.md) | Founding mission priorities |
-| [RESEARCH_BRIEF_TEMPLATE.md](RESEARCH_BRIEF_TEMPLATE.md) | Template for new research briefs |
+| Directory | Purpose |
+|-----------|---------|
+| `/caa` | Crown Authority Architecture — session mgmt, kill switch, canaries |
+| `/executioner` | Production-grade adversarial testing harness |
+| `/isd` | Internal Security Division — threat fusion, intelligence court |
+| `/section_9` | Offensive security operations (Crown authority only) |
+| `/security` | AST-based static analysis and seccomp profiles |
+| `/infrastructure` | Deployment scripts and operational architecture |
+| `/legal` | LLC operating agreement, token ToS, trademark guide (DRAFTS) |
 
 ## Quick Start
 
-```bash
-# Clone
-git clone https://github.com/HouseBernard/House-Bernard.git
-cd House-Bernard
+See [QUICKSTART.md](QUICKSTART.md) for Phase 0 deployment in under 30 minutes.
 
-# Run tests
-python3 run_tests.py
+## Key References
 
-# Build the website
-python3 openclaw/build.py
-```
+- [CLAUDE.md](CLAUDE.md) — Context briefing for AI assistants
+- [TONIGHTS_BUILD.md](TONIGHTS_BUILD.md) — Token deployment runbook
+- [CAA_SPEC.md](CAA_SPEC.md) — Crown Authority Architecture specification
+- [Section 9 Charter](section_9/CHARTER.md) — Offensive security mandate
 
-See [QUICKSTART.md](QUICKSTART.md) for detailed setup instructions.
+## Governance
 
-## Contributing
+All governance documents from the public repository are mirrored here. The Constitution is the supreme document. See [CONSTITUTION.md](CONSTITUTION.md).
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the submission process.
-
-## License
-
-Proprietary. See [LICENSE](LICENSE) for terms.
+Legal infrastructure: [Operating Agreement](legal/OPERATING_AGREEMENT.md) · [Token Terms of Service](legal/TOKEN_TERMS_OF_SERVICE.md) · [Trademark Guide](legal/TRADEMARK_GUIDE.md)
 
 ---
 
-*[STATUS: GREEN | SIGNED: THE CROWN]*
+`STATUS: GREEN | SIGNED: THE CROWN`
