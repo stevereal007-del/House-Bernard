@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Briefs — House Bernard{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-eyebrow">Research</div>
+  <h1 class="hero-title">Open Briefs</h1>
+  <p class="hero-subtitle">Research problems accepting submissions. Pick one,
+  build a SAIF v1.1 artifact, survive the Furnace, get paid.</p>
+</section>
+
+<section class="section-block">
+  <div class="page-width">
+    <div class="section-eyebrow">Now Accepting Submissions</div>
+    <h2 class="section-title">Active briefs</h2>
+
+    <div class="card-grid animate-in">
+      {% for b in active_briefs %}
+      <a href="/briefs/{{ b.id }}" class="card" style="text-decoration:none; color:inherit;">
+        <div class="card-title">{{ b.title }}</div>
+        <div class="card-text">{{ b.description[:120] }}{% if b.description|length > 120 %}…{% endif %}</div>
+        {% if b.reward_tier %}<div style="color:var(--accent-green); font-size:13px; margin-top:8px;">Reward tier {{ b.reward_tier }}</div>{% endif %}
+      </a>
+      {% else %}
+      <div class="section-body"><p>No active briefs at this time.</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="page-width">
+    <div class="section-eyebrow">Reference</div>
+    <h2 class="section-title">Closed briefs</h2>
+    <div class="section-body">
+      <p>Fulfilled or retired. Listed so you can see what successful work looks like.</p>
+    </div>
+
+    {% if closed_briefs %}
+    <div class="card-grid animate-in">
+      {% for b in closed_briefs %}
+      <div class="card">
+        <div class="card-title">{{ b.title }}</div>
+        <div class="card-text">{{ b.description[:120] }}{% if b.description|length > 120 %}…{% endif %}</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="section-body"><p>No closed briefs yet.</p></div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="page-width">
+    <div class="section-eyebrow">Submission Format</div>
+    <h2 class="section-title">SAIF v1.1</h2>
+    <div class="section-body">
+      <p>Every submission is a single-file Python module implementing three functions:</p>
+    </div>
+    <table class="clean-table">
+      <tr><th>Function</th><th>Purpose</th></tr>
+      <tr><td><code>ingest</code></td><td>Process an incoming event, return updated state and lineage record</td></tr>
+      <tr><td><code>compact</code></td><td>Compress state to fit a byte budget without losing invariants</td></tr>
+      <tr><td><code>audit</code></td><td>Self-check — returns OK or halts with a reason</td></tr>
+    </table>
+    <div class="section-body" style="margin-top: 20px;">
+      <p>No external dependencies. No network access. No filesystem writes outside
+      <code>/work</code>. Your artifact is a self-contained unit of intelligence.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -30,5 +30,11 @@ jobs:
       - name: Treasury red-team tests
         run: python3 treasury/redteam_test.py
 
+      - name: Install platform dependencies
+        run: pip install fastapi uvicorn jinja2 python-multipart aiofiles pydantic
+
+      - name: Platform tests
+        run: python3 -m pytest hb_platform/test_platform.py -v
+
       - name: Site build
         run: python3 openclaw/build.py

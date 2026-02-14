@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}{{ brief.title }} — Briefs — House Bernard{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-eyebrow"><a href="/briefs" style="color:var(--text-secondary);">Briefs</a></div>
+  <h1 class="hero-title">{{ brief.title }}</h1>
+  <p class="hero-subtitle">{{ brief.id }} · Status: {{ brief.status }}
+    {% if brief.deadline %} · Deadline: {{ brief.deadline }}{% endif %}</p>
+</section>
+
+<section class="section-block">
+  <div class="page-width">
+    <div class="section-body" style="white-space: pre-wrap;">{{ brief.description }}</div>
+
+    {% if brief.status == 'open' and citizen %}
+    <div class="hero-cta" style="margin-top: 24px;">
+      <form method="post" action="/briefs/{{ brief.id }}/claim">
+        <button type="submit"
+                style="padding:12px 32px; background:var(--accent-blue); color:#fff;
+                       border:none; border-radius:8px; cursor:pointer; font-size:16px;">
+          Claim this brief</button>
+      </form>
+    </div>
+    {% elif brief.status == 'claimed' %}
+    <p style="color:var(--accent-orange); margin-top:16px;">Claimed by {{ brief.claimed_by }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% endblock %}
