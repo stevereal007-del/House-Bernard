@@ -12,7 +12,7 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from . import config
 from .auth import generate_token, verify_token
 from .database import get_db, init_db
-from .routes import briefs, citizen, dashboard, forum, governance, pipeline, submit
+from .routes import briefs, citizen, dashboard, forum, governance, pipeline, submit, webhooks
 
 app = FastAPI(title="House Bernard", docs_url=None, redoc_url=None)
 
@@ -60,6 +60,7 @@ app.include_router(submit.router)
 app.include_router(citizen.router)
 app.include_router(pipeline.router)
 app.include_router(governance.router)
+app.include_router(webhooks.router)
 
 
 @app.get("/login")

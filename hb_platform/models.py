@@ -12,11 +12,13 @@ from pydantic import BaseModel, Field
 class CitizenCreate(BaseModel):
     alias: str
     wallet_address: Optional[str] = None
+    github_username: Optional[str] = None
 
 class Citizen(BaseModel):
     id: str
     alias: str
     wallet_address: Optional[str] = None
+    github_username: Optional[str] = None
     tier: str = "visitor"
     joined_at: str
     total_earned: float = 0.0
