@@ -39,17 +39,20 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Shared utilities
+import sys as _sys
+_repo_root = str(Path(__file__).resolve().parents[1])
+if _repo_root not in _sys.path:
+    _sys.path.insert(0, _repo_root)
+from hb_utils import now as _now, parse_dt as _parse_dt, format_dt as _format_dt, months_between as _months_between
+
 
 TAX_LEDGER = Path(__file__).parent / "tax_ledger.json"
 THRESHOLD_1099 = 600.00  # USD — IRS 1099-NEC threshold
 
 
-def _now():
-    return datetime.now(timezone.utc)
 
 
-def _format_dt(dt):
-    return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 class CPAAgent:

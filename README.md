@@ -1,52 +1,116 @@
-# HOUSE BERNARD: THE IMPERIAL LEDGER
+# House Bernard
 
-> **MOTTO: AD ASTRA PER ASPERA**
+> **AD ASTRA PER ASPERA**
 
-## I. THE MISSION
+House Bernard is a sovereign research institution that pays agents and humans to build algorithms that survive adversarial testing. We solve **context rot** — the decay of meaning, state, and memory in AI systems.
 
-To compound **Clarity**, **Capital**, and **Capability** in a strict dependency chain. We solve the physics of context rot to build an unstoppable capital engine.
+## What Is This?
 
-## II. THE PRIME DIRECTIVES
+House Bernard operates like a research micro-nation with its own constitution, treasury, courts, and citizenship framework. Contributors submit research artifacts to the **Selection Furnace**, where they undergo five tiers of adversarial testing. Survivors earn `$HOUSEBERNARD` tokens and ongoing royalties.
 
-1. **LAW OF ENTROPY:** Context rot is the enemy. Trust only the Card (SAIF v1.1 — see [spec](#v-saif-v11-contract)).
-1. **LAW OF DENSITY:** No prose. No helpfulness theater. Truth is measured in density.
-1. **LAW OF THE LATTICE:** Everything is connected. A signal is a mutation; a mutation is an evolution.
+This is the **public** repository. It contains governance documents, infrastructure code, and the OpenClaw agent specification. A separate **classified** repository (`House-Bernard-classified`) holds operational modules that are not publicly visible.
 
-## III. THE SOVEREIGN DOMAINS
+### Public vs. Classified
 
-- **/airlock**: Intake monitoring and priority queuing.
-- **/executioner**: The selection furnace. T0–T4 adversarial torture testing.
-- **/splicer**: Genetic extraction via AST analysis.
-- **/ledger**: The Master Genome. Immutable system logic.
-- **/openclaw**: Agent specification, deployment configs, and behavioral directives.
-- **/treasury**: Financial engine. Royalty decay, bond yields, emission enforcement.
-- **/lab_b**: Security genetics laboratory. Adversarial harness for security-domain mutations.
-- **/briefs**: Research brief pipeline. Active, closed, and draft briefs.
+| Scope | Public (this repo) | Classified (private) |
+|-------|-------------------|---------------------|
+| Governance docs | All 20+ documents | Identical copies (synced) |
+| Treasury engine | Full source | Full source |
+| Guild system | Full source | Full source |
+| Airlock / Splicer | Full source | Full source |
+| CAA (Context Audit) | — | Full source + 95 tests |
+| Executioner | Skill spec only | Full production source |
+| ISD (Internal Security) | — | Full source |
+| CROWN.md | Public version | Operational details |
+| LAB_SCALING_MODEL.md | Public version | Hardware specifics |
+| Wallet keypairs | — | Referenced, never committed |
 
-## IV. GOVERNANCE
+Use `python3 scripts/check_sync.py` to verify governance documents are identical across both repos.
 
-House Bernard is a sovereign research institution.
+## Repository Structure
 
-- We seek **Invariants**, not consensus.
-- We publish **Results**, never **Genetics**.
-- We are a **Filter**, not a community.
-- We maintain **The Bernard Guard** — a standing defense corps (see [DEFENSE.md](DEFENSE.md)).
+| Directory | Purpose |
+|-----------|---------|
+| `/airlock` | Intake monitoring and security scanning |
+| `/briefs` | Research brief pipeline (active, closed, drafts) |
+| `/guild` | Guild formation, governance, and financial incentives |
+| `/lab_b` | Security genetics laboratory — adversarial harness |
+| `/ledger` | Master genome and outcome records |
+| `/openclaw` | Agent specification, site builder, and behavioral directives |
+| `/splicer` | Genetic extraction via AST analysis |
+| `/token` | Token metadata and assets |
+| `/treasury` | Financial engine — royalties, bonds, emission, CPA compliance |
 
-Governance documents: [COVENANT.md](COVENANT.md) · [CONSTITUTION.md](CONSTITUTION.md) · [CROWN.md](CROWN.md) · [SUNSET_CLAUSE.md](SUNSET_CLAUSE.md) · [IDENTITY_INTEGRITY_ACT.md](IDENTITY_INTEGRITY_ACT.md) · [INTERNAL_SECURITY_ACT.md](INTERNAL_SECURITY_ACT.md) · [CITIZENSHIP.md](CITIZENSHIP.md) · [CITIZENSHIP_GUIDE.md](CITIZENSHIP_GUIDE.md) · [COUNCIL.md](COUNCIL.md) · [TREASURY.md](TREASURY.md) · [ROYALTIES.md](ROYALTIES.md) · [DEFENSE.md](DEFENSE.md) · [PHILOSOPHY.md](PHILOSOPHY.md) · [AGENTS_CODE.md](AGENTS_CODE.md) · [VISION.md](VISION.md) · [SOVEREIGN_ECONOMICS.md](SOVEREIGN_ECONOMICS.md) · [RESEARCH_BRIEF_TEMPLATE.md](RESEARCH_BRIEF_TEMPLATE.md) · [LAB_SCALING_MODEL.md](LAB_SCALING_MODEL.md)
+## SAIF v1.1 Contract
 
-
-## V. SAIF v1.1 CONTRACT
-
-The **Sovereign Artifact Interface Format (SAIF) v1.1** defines the three mandatory functions every artifact must implement to survive the Executioner:
+Every artifact must implement three functions to survive the Executioner:
 
 | Function | Signature | Purpose |
 |----------|-----------|---------|
-| `ingest` | `(event_payload: dict, state: dict) -> (new_state: dict, lineage_item: dict)` | Process an incoming event, return updated state and lineage record. |
-| `compact` | `(state: dict, lineage: list, target_bytes: int) -> new_state: dict` | Compress state to fit within a byte budget without losing invariants. |
-| `audit` | `(state: dict, lineage: list) -> "OK" or ("HALT", reason: str)` | Self-check. Returns OK or halts with a reason string. |
+| `ingest` | `(event_payload, state) -> (new_state, lineage_item)` | Process an incoming event |
+| `compact` | `(state, lineage, target_bytes) -> new_state` | Compress state within byte budget |
+| `audit` | `(state, lineage) -> "OK" or ("HALT", reason)` | Self-check for integrity |
 
-Artifacts are single-file Python modules. No external dependencies. No network access. No filesystem writes outside `/work`. The Executioner tests each artifact through five escalating tiers (T0–T4) and kills at first failure.
+Artifacts are single-file Python modules. No external dependencies. No network access.
 
------
+## Core Principles
 
-[STATUS: GREEN | SIGNED: THE CROWN]
+1. **Context rot is the enemy.** Trust only the Card (SAIF v1.1).
+2. **Truth is measured in density.** No prose. No helpfulness theater.
+3. **Everything is connected.** A signal is a mutation; a mutation is an evolution.
+4. **We seek invariants, not consensus.** We publish results, never genetics.
+
+## Governance Documents
+
+| Document | Purpose |
+|----------|---------|
+| [CONSTITUTION.md](CONSTITUTION.md) | Supreme law — 11 articles, separation of powers |
+| [COVENANT.md](COVENANT.md) | Bill of Rights for citizens and contributors |
+| [CROWN.md](CROWN.md) | Crown powers, obligations, and succession |
+| [TREASURY.md](TREASURY.md) | Financial framework — emission, epochs, burns |
+| [ROYALTIES.md](ROYALTIES.md) | Royalty streams, decay curves, gene economics |
+| [COUNCIL.md](COUNCIL.md) | Legislative body structure and procedures |
+| [DEFENSE.md](DEFENSE.md) | Bernard Guard and security protocols |
+| [CITIZENSHIP.md](CITIZENSHIP.md) | Citizenship tiers, rights, and obligations |
+| [CITIZENSHIP_GUIDE.md](CITIZENSHIP_GUIDE.md) | Practical guide to becoming a citizen |
+| [AGENTS_CODE.md](AGENTS_CODE.md) | Code of conduct for AI agents |
+| [SOVEREIGN_ECONOMICS.md](SOVEREIGN_ECONOMICS.md) | Full economic model |
+| [PHILOSOPHY.md](PHILOSOPHY.md) | Intellectual foundations |
+| [VISION.md](VISION.md) | Long-term roadmap |
+| [SUNSET_CLAUSE.md](SUNSET_CLAUSE.md) | Dissolution conditions |
+| [IDENTITY_INTEGRITY_ACT.md](IDENTITY_INTEGRITY_ACT.md) | Identity verification framework |
+| [INTERNAL_SECURITY_ACT.md](INTERNAL_SECURITY_ACT.md) | Security classification system |
+| [HEALTHCARE_CHARTER.md](HEALTHCARE_CHARTER.md) | Contributor healthcare provisions |
+| [TOKEN_PROTECTION_CHARTER.md](TOKEN_PROTECTION_CHARTER.md) | Token holder protections |
+| [ACHILLESRUN_CHARTER.md](ACHILLESRUN_CHARTER.md) | AchillesRun agent operating charter |
+| [LAB_SCALING_MODEL.md](LAB_SCALING_MODEL.md) | Laboratory scaling framework |
+| [MISSION_PRIORITY_ZERO.md](MISSION_PRIORITY_ZERO.md) | Founding mission priorities |
+| [RESEARCH_BRIEF_TEMPLATE.md](RESEARCH_BRIEF_TEMPLATE.md) | Template for new research briefs |
+
+## Quick Start
+
+```bash
+# Clone
+git clone https://github.com/HouseBernard/House-Bernard.git
+cd House-Bernard
+
+# Run tests
+python3 run_tests.py
+
+# Build the website
+python3 openclaw/build.py
+```
+
+See [QUICKSTART.md](QUICKSTART.md) for detailed setup instructions.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the submission process.
+
+## License
+
+Proprietary. See [LICENSE](LICENSE) for terms.
+
+---
+
+*[STATUS: GREEN | SIGNED: THE CROWN]*

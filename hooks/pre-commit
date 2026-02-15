@@ -1,0 +1,53 @@
+#!/bin/bash
+# House Bernard pre-commit hook
+# Runs tests and sync check before allowing commits.
+# Install: cp hooks/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+
+set -e
+
+echo "╔══════════════════════════════════════╗"
+echo "║  House Bernard Pre-Commit Check      ║"
+echo "╚══════════════════════════════════════╝"
+
+# 1. Check for __pycache__ being staged
+if git diff --cached --name-only | grep -q "__pycache__"; then
+    echo "ERROR: __pycache__ files staged. Remove them:"
+    echo "  git reset HEAD -- '*/__pycache__/*'"
+    exit 1
+fi
+
+# 2. Check for secrets
+if git diff --cached --name-only | grep -qE "\.env$|\.key$|\.pem$|\.secret$"; then
+    echo "ERROR: Potential secret file staged. Review carefully."
+    exit 1
+fi
+
+# 3. Check for wallet files
+if git diff --cached --diff-filter=A --name-only | grep -qE "hb-.*\.json$|wallet.*\.json$"; then
+    echo "ERROR: Wallet file staged. NEVER commit wallet JSON files."
+    exit 1
+fi
+
+# 4. Run tests
+echo ""
+echo "Running tests..."
+if [ -f "run_tests.py" ]; then
+    python3 run_tests.py
+    if [ $? -ne 0 ]; then
+        echo "ERROR: Tests failed. Fix before committing."
+        exit 1
+    fi
+fi
+
+# 5. Sync check (classified only)
+if [ -f "scripts/check_sync.py" ] && [ -d "../House-Bernard" ]; then
+    echo ""
+    echo "Checking governance sync..."
+    python3 scripts/check_sync.py ../House-Bernard
+    if [ $? -ne 0 ]; then
+        echo "WARNING: Governance docs out of sync. Review before pushing."
+    fi
+fi
+
+echo ""
+echo "Pre-commit checks passed."

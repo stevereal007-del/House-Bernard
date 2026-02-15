@@ -42,6 +42,13 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Shared utilities
+import sys as _sys
+_repo_root = str(Path(__file__).resolve().parents[1])
+if _repo_root not in _sys.path:
+    _sys.path.insert(0, _repo_root)
+from hb_utils import now as _now, parse_dt as _parse_dt, format_dt as _format_dt, months_between as _months_between
+
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -52,12 +59,8 @@ DISPATCH_LOG = Path(__file__).parent / "dispatch_log.jsonl"
 FAILED_QUEUE = Path(__file__).parent / "failed_queue.json"
 
 
-def _now():
-    return datetime.now(timezone.utc)
 
 
-def _format_dt(dt):
-    return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def _run_cmd(cmd, timeout=30):
@@ -453,7 +456,7 @@ def generate_config_template(output_path="dispatcher_config.json"):
             },
             "crown_reserve": {
                 "keypair_path": "[CLASSIFIED — see private repo]",
-                "address": "<GOVERNOR_RESERVE_ADDRESS>",
+                "address": "<CROWN_RESERVE_ADDRESS>",
                 "purpose": "15M crown reserve — emergencies, partnerships",
             },
             "genesis_contributors": {

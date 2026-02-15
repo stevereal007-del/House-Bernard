@@ -42,6 +42,13 @@ import tempfile
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+# Shared utilities
+import sys as _sys
+_repo_root = str(Path(__file__).resolve().parents[1])
+if _repo_root not in _sys.path:
+    _sys.path.insert(0, _repo_root)
+from hb_utils import now as _now, parse_dt as _parse_dt, format_dt as _format_dt, months_between as _months_between, atomic_save as _atomic_save
+
 # Import the treasury engine (same directory)
 sys.path.insert(0, str(Path(__file__).parent))
 from treasury_engine import TreasuryEngine, TIER_CONFIG, _now, _parse_dt, _format_dt, _months_between
@@ -405,7 +412,7 @@ class MonthlyOps:
         crown_items = report["crown_required"]
         if crown_items:
             print("=" * 60)
-            print("  GOVERNOR ACTION REQUIRED")
+            print("  CROWN ACTION REQUIRED")
             print("=" * 60)
             for e in crown_items:
                 print(f"  ► [{e['type']}] {e['detail']}")

@@ -22,6 +22,13 @@ import tempfile
 import os
 from datetime import datetime, timezone
 from pathlib import Path
+
+# Shared utilities
+import sys as _sys
+_repo_root = str(Path(__file__).resolve().parents[1])
+if _repo_root not in _sys.path:
+    _sys.path.insert(0, _repo_root)
+from hb_utils import now as _now, parse_dt as _parse_dt, format_dt as _format_dt, months_between as _months_between, days_between as _days_between, atomic_save as _atomic_save
 from typing import Optional, List, Dict, Any
 
 
@@ -29,21 +36,9 @@ from typing import Optional, List, Dict, Any
 # Utility
 # ---------------------------------------------------------------------------
 
-def _now() -> datetime:
-    return datetime.now(timezone.utc)
 
-def _parse_dt(s: Optional[str]) -> Optional[datetime]:
-    if s is None:
-        return None
-    if isinstance(s, datetime):
-        return s
-    return datetime.fromisoformat(s.replace("Z", "+00:00"))
 
-def _format_dt(dt: datetime) -> str:
-    return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
 
-def _days_between(start: datetime, end: datetime) -> float:
-    return max(0, (end - start).days)
 
 
 # ---------------------------------------------------------------------------
