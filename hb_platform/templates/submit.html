@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Submit Artifact — House Bernard{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-eyebrow">Airlock</div>
+  <h1 class="hero-title">Submit an Artifact</h1>
+  <p class="hero-subtitle">Upload a SAIF v1.1 artifact (.zip). It enters the pipeline immediately.</p>
+</section>
+
+<section class="section-block">
+  <div class="page-width">
+    {% if not citizen %}
+    <div class="section-body">
+      <p>You must <a href="/login" style="color:var(--accent-blue);">log in</a> to submit artifacts.</p>
+    </div>
+    {% else %}
+    <form method="post" action="/submit" enctype="multipart/form-data" style="max-width: 600px;">
+      <label style="display:block; margin-bottom:16px;">
+        <span style="color:var(--text-secondary); font-size:14px;">Brief (optional)</span>
+        <select name="brief_id"
+                style="width:100%; padding:12px; margin-top:4px; background:var(--bg-card);
+                       border:1px solid var(--border); color:var(--text); border-radius:8px;
+                       font-family:inherit; font-size:15px;">
+          <option value="">— No specific brief —</option>
+          {% for b in open_briefs %}
+          <option value="{{ b.id }}">{{ b.title }}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label style="display:block; margin-bottom:16px;">
+        <span style="color:var(--text-secondary); font-size:14px;">Artifact file (.zip)</span>
+        <input type="file" name="artifact" accept=".zip" required
+               style="width:100%; padding:12px; margin-top:4px; background:var(--bg-card);
+                      border:1px solid var(--border); color:var(--text); border-radius:8px;
+                      font-family:inherit; font-size:15px;">
+      </label>
+
+      <button type="submit"
+              style="padding:12px 32px; background:var(--accent-blue); color:#fff;
+                     border:none; border-radius:8px; cursor:pointer; font-size:16px;">
+        Submit to Airlock</button>
+    </form>
+
+    {% if submissions %}
+    <div style="margin-top: 40px;">
+      <div class="section-eyebrow">Your Submissions</div>
+      <table class="clean-table animate-in">
+        <tr><th>ID</th><th>Brief</th><th>Status</th><th>Tier</th><th>Submitted</th></tr>
+        {% for s in submissions %}
+        <tr>
+          <td>{{ s.id }}</td>
+          <td>{{ s.brief_id or '—' }}</td>
+          <td>{{ s.status }}</td>
+          <td>{{ s.tier_reached or '—' }}</td>
+          <td>{{ s.submitted_at[:10] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    {% endif %}
+    {% endif %}
+  </div>
+</section>
+
+{% endblock %}

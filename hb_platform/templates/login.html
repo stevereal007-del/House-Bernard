@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Login — House Bernard{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-eyebrow">Access</div>
+  <h1 class="hero-title">Login</h1>
+  <p class="hero-subtitle">Phase 0: Token-based authentication.</p>
+</section>
+
+<section class="section-block">
+  <div class="page-width">
+    <form method="post" action="/login" style="max-width: 400px;">
+      {% if error %}
+      <p style="color:var(--accent-red); margin-bottom:16px;">{{ error }}</p>
+      {% endif %}
+
+      <label style="display:block; margin-bottom:16px;">
+        <span style="color:var(--text-secondary); font-size:14px;">Citizen ID</span>
+        <input type="text" name="citizen_id" placeholder="HB-CIT-0001" required
+               style="width:100%; padding:12px; margin-top:4px; background:var(--bg-card);
+                      border:1px solid var(--border); color:var(--text); border-radius:8px;
+                      font-family:inherit; font-size:15px;">
+      </label>
+
+      <label style="display:block; margin-bottom:16px;">
+        <span style="color:var(--text-secondary); font-size:14px;">Secret</span>
+        <input type="password" name="secret" required
+               style="width:100%; padding:12px; margin-top:4px; background:var(--bg-card);
+                      border:1px solid var(--border); color:var(--text); border-radius:8px;
+                      font-family:inherit; font-size:15px;">
+      </label>
+
+      <button type="submit"
+              style="padding:12px 32px; background:var(--accent-blue); color:#fff;
+                     border:none; border-radius:8px; cursor:pointer; font-size:16px; width:100%;">
+        Login</button>
+    </form>
+  </div>
+</section>
+
+{% endblock %}

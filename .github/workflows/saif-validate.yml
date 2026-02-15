@@ -1,0 +1,67 @@
+name: SAIF v1.1 Validation
+
+on:
+  pull_request:
+    paths:
+      - '**.zip'
+      - '**/manifest.json'
+      - '**/mutation.py'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check manifest
+        run: |
+          if [ ! -f manifest.json ]; then
+            echo "No manifest.json found — skipping SAIF validation"
+            exit 0
+          fi
+          python3 -c "
+          import json, sys
+          m = json.load(open('manifest.json'))
+          required = ['saif_version', 'artifact_name', 'entry_point', 'selftest']
+          missing = [k for k in required if k not in m]
+          if missing:
+              print(f'Missing manifest fields: {missing}')
+              sys.exit(1)
+          if m.get('saif_version') != '1.1':
+              print(f'Unsupported SAIF version: {m.get(\"saif_version\")}')
+              sys.exit(1)
+          print('Manifest OK')
+          "
+
+      - name: Run selftest
+        run: |
+          if [ -f SELFTEST.py ]; then
+            python3 SELFTEST.py
+          else
+            echo "No SELFTEST.py — skipping"
+          fi
+
+      - name: Secret scan
+        run: |
+          if grep -rE "(PRIVATE_KEY|SECRET_KEY|API_KEY|PASSWORD|ACCESS_TOKEN)" \
+              --include="*.py" --include="*.json" \
+              --exclude-dir=".git" --exclude-dir="node_modules" . 2>/dev/null; then
+            echo "::warning::Possible secrets detected — review before merge"
+          else
+            echo "No secrets detected"
+          fi
+
+      - name: Size check
+        run: |
+          MAX_MB=50
+          SIZE=$(du -sm . | cut -f1)
+          if [ "$SIZE" -gt "$MAX_MB" ]; then
+            echo "Artifact too large: ${SIZE}MB (max ${MAX_MB}MB)"
+            exit 1
+          fi
+          echo "Size OK: ${SIZE}MB"

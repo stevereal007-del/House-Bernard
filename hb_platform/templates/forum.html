@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Forum — House Bernard{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-eyebrow">Community</div>
+  <h1 class="hero-title">Forum</h1>
+  <p class="hero-subtitle">Discuss research, coordinate guilds, and shape governance.</p>
+</section>
+
+<section class="section-block">
+  <div class="page-width">
+    <div class="section-eyebrow">Topics</div>
+    <h2 class="section-title">Browse discussions</h2>
+
+    <div class="card-grid animate-in">
+      {% for topic in topics %}
+      <a href="/forum/{{ topic.id }}" class="card" style="text-decoration:none; color:inherit;">
+        <div class="card-title">{{ topic.name }}</div>
+        <div class="card-text">{{ topic.thread_count }} thread{{ 's' if topic.thread_count != 1 else '' }}</div>
+      </a>
+      {% else %}
+      <div class="section-body"><p>No topics yet.</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

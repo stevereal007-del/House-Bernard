@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}{{ profile.alias }} — House Bernard{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-eyebrow">Citizen Profile</div>
+  <h1 class="hero-title">{{ profile.alias }}</h1>
+  <p class="hero-subtitle">{{ profile.id }} · Tier: {{ profile.tier }}
+    · Joined {{ profile.joined_at[:10] }}</p>
+</section>
+
+<section class="section-block">
+  <div class="page-width">
+    <div class="stats-row animate-in">
+      <div class="stat-item">
+        <div class="stat-number">{{ profile.total_earned }}</div>
+        <div class="stat-label">Tokens Earned</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">{{ submissions|length }}</div>
+        <div class="stat-label">Submissions</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">{{ survived }}</div>
+        <div class="stat-label">Survived</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if submissions %}
+<section class="section-block">
+  <div class="page-width">
+    <div class="section-eyebrow">History</div>
+    <h2 class="section-title">Submissions</h2>
+    <table class="clean-table animate-in">
+      <tr><th>ID</th><th>Brief</th><th>Status</th><th>Tier</th><th>Submitted</th></tr>
+      {% for s in submissions %}
+      <tr>
+        <td>{{ s.id }}</td>
+        <td>{{ s.brief_id or '—' }}</td>
+        <td>{{ s.status }}</td>
+        <td>{{ s.tier_reached or '—' }}</td>
+        <td>{{ s.submitted_at[:10] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}

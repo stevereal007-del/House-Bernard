@@ -1,27 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Briefs — House Bernard</title>
-<link rel="stylesheet" href="style.css">
-<script src="theme.js"></script>
-</head>
-<body>
-
-<nav class="global-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-brand">House Bernard</a>
-    <div class="nav-links">
-      <a href="briefs.html">Briefs</a>
-      <a href="pipeline.html">Pipeline</a>
-      <a href="economics.html">Economics</a>
-      <a href="governance.html">Governance</a>
-      <a href="about.html">About</a>
-      <button class="theme-btn" aria-label="Toggle theme">☀</button>
-    </div>
-  </div>
-</nav>
+{% extends "base.html" %}
+{% block title %}Briefs — House Bernard{% endblock %}
+{% block content %}
 
 <section class="hero">
   <div class="hero-eyebrow">Research</div>
@@ -34,7 +13,18 @@
   <div class="page-width">
     <div class="section-eyebrow">Now Accepting Submissions</div>
     <h2 class="section-title">Active briefs</h2>
-    <div class="card"><div class="card-title">HB-BRIEF-0001: Entropy-Resistant State Compactor</div><div class="card-text">HB-BRIEF-0001.md</div></div>
+
+    <div class="card-grid animate-in">
+      {% for b in active_briefs %}
+      <a href="/briefs/{{ b.id }}" class="card" style="text-decoration:none; color:inherit;">
+        <div class="card-title">{{ b.title }}</div>
+        <div class="card-text">{{ b.description[:120] }}{% if b.description|length > 120 %}…{% endif %}</div>
+        {% if b.reward_tier %}<div style="color:var(--accent-green); font-size:13px; margin-top:8px;">Reward tier {{ b.reward_tier }}</div>{% endif %}
+      </a>
+      {% else %}
+      <div class="section-body"><p>No active briefs at this time.</p></div>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
@@ -45,7 +35,19 @@
     <div class="section-body">
       <p>Fulfilled or retired. Listed so you can see what successful work looks like.</p>
     </div>
+
+    {% if closed_briefs %}
+    <div class="card-grid animate-in">
+      {% for b in closed_briefs %}
+      <div class="card">
+        <div class="card-title">{{ b.title }}</div>
+        <div class="card-text">{{ b.description[:120] }}{% if b.description|length > 120 %}…{% endif %}</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
     <div class="section-body"><p>No closed briefs yet.</p></div>
+    {% endif %}
   </div>
 </section>
 
@@ -69,17 +71,4 @@
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="page-width">
-    <div class="footer-brand">House Bernard</div>
-    <div class="footer-motto">Ad Astra Per Aspera</div>
-    <div class="footer-links">
-      <a href="governance.html">Governance</a>
-      <a href="economics.html">Economics</a>
-      <a href="about.html">About</a>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
+{% endblock %}

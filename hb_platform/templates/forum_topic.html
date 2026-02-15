@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}{{ topic.name }} — Forum — House Bernard{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-eyebrow">Forum</div>
+  <h1 class="hero-title">{{ topic.name }}</h1>
+</section>
+
+<section class="section-block">
+  <div class="page-width">
+    {% if citizen %}
+    <form method="post" action="/forum/{{ topic.id }}/new" style="margin-bottom: 32px;">
+      <input type="text" name="title" placeholder="Thread title" required
+             style="width:100%; padding:12px; margin-bottom:8px; background:var(--bg-card);
+                    border:1px solid var(--border); color:var(--text); border-radius:8px;
+                    font-family:inherit; font-size:15px;">
+      <textarea name="body" placeholder="Your post…" rows="4" required
+                style="width:100%; padding:12px; margin-bottom:8px; background:var(--bg-card);
+                       border:1px solid var(--border); color:var(--text); border-radius:8px;
+                       font-family:inherit; font-size:15px; resize:vertical;"></textarea>
+      <button type="submit"
+              style="padding:10px 24px; background:var(--accent-blue); color:#fff;
+                     border:none; border-radius:8px; cursor:pointer; font-size:15px;">
+        New Thread</button>
+    </form>
+    {% endif %}
+
+    <table class="clean-table animate-in">
+      <tr><th>Thread</th><th>Author</th><th>Posts</th><th>Created</th></tr>
+      {% for t in threads %}
+      <tr>
+        <td><a href="/forum/{{ topic.id }}/{{ t.id }}" style="color:var(--accent-blue);">
+          {% if t.pinned %}📌 {% endif %}{{ t.title }}</a></td>
+        <td>{{ t.author_id }}</td>
+        <td>{{ t.post_count }}</td>
+        <td>{{ t.created_at[:10] }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="4">No threads yet. Be the first to start one.</td></tr>
+      {% endfor %}
+    </table>
+  </div>
+</section>
+
+{% endblock %}
